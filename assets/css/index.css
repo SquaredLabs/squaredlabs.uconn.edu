@@ -130,6 +130,12 @@ img#uconn {
     padding-top: 80px;
 }
 
+#about {
+    display: inline-block;
+    width: 231px;
+    padding-right: 20px;
+}
+
 .person {
     position: relative;
     display: inline-block;
@@ -137,9 +143,14 @@ img#uconn {
     height: 220px;
     margin-right: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.person-brief {
+.person .detailed {
+    display: none;
+}
+
+.person .content {
     position: absolute;
     bottom: -20px;
     left: 20px;
@@ -147,25 +158,36 @@ img#uconn {
     display: inline;
     background: white;
     text-align: center;
-}
-
-.person-brief .content {
+    transition: all 0.2s ease;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
-    padding-right: 30px;    
+    padding-right: 30px;  
+    overflow: scroll;
 }
 
-.person-brief .content .name {
+.person:hover .content {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0;
+    font-size: 13px;
+}
+
+.person:hover .detailed {
+    display: inline;
+}
+
+.person .content .name {
     font-weight: bold;
+    color: var(--dodger-blue);
+}
+
+.person .content .grad {
     color: var(--dodger-blue);
 }
 
 .person img {
     width: 100%;
     height: 100%;
-}
-
-#about {
-    width: 20vw;
 }
