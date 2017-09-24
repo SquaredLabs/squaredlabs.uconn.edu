@@ -16,14 +16,16 @@ html
             p We’ve only just taken our place on the Internet, so while we hope you enjoy our site, know that there is much more to come (soon)!
         section#projects
             h1.project-background projects
-            mixin project(id, name)
-                .project(id=id)
-                    p.project-name= name
-            +project("ip", "Innovation Portal")
-            +project("lincus", "Lincus")
-            +project("huskytrails", "Huskytrails")
-            +project("tip", "TIP")
-            +project("core", "COR²E")
+            mixin project(id, name, subdomain)
+                a(href="https://" + subdomain + ".uconn.edu", target="_blank")
+                    .project(id=id)
+                        p.project-name= name
+    
+            +project("ip", "Innovation Portal", "ip")
+            +project("lincus", "Lincus", "lincus")
+            +project("huskytrails", "Huskytrails", "huskytrails")
+            +project("tip", "TIP", "tip")
+            +project("core", "COR²E", "core")
         section#people
             #about
                 p ⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.
