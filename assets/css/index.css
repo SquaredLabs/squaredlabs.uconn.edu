@@ -1,0 +1,169 @@
+:root {
+	--dodger-blue: #6aa1f4;
+	--rouge-40: rgba(200, 17, 21, 0.4);
+	--white: #ffffff;
+	--silver: #d7d8df;
+	--slate-grey: #a9a9b0;
+	--stormy-grey: #717177;
+	--rouge: #c81115;
+	--onyx: #0c120c;
+	--pale-grey: #f2f3f7;
+	--charcoal-grey: #404044;
+}
+
+body {
+    background: var(--pale-grey);
+    font-family: "Moderat";
+    font-size: 16px;
+    line-height: 20px;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+img#uconn {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 25px;
+    padding-top: 20px;
+}
+
+#squaredlabs-logo {
+    padding-top: 80px;
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+#introduction {
+    padding-top: 170px;
+    margin: 0 auto;
+    width: 40vw;    
+	color: var(--charcoal-grey);
+}
+
+#projects {
+    padding-top: 80px;
+    position: relative;
+}
+
+.project:before {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    content: "";
+    opacity: 0.2;
+    position: absolute;
+    display: block;
+}
+
+.project {
+    position: relative;
+    display: inline-block;
+    width: 231px;
+    height: 220px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.project > * {
+    position: relative;
+}
+
+.project#ip {
+    background: url("/assets/png/projects/ip.png") center/150% no-repeat;    
+    
+}
+
+.project#lincus {
+    background: url("/assets/png/projects/lincus.png") center/150% no-repeat;    
+}
+
+.project#huskytrails {
+    background: url("/assets/png/projects/huskytrails.png") center/150% no-repeat;    
+    
+}
+
+.project#tip {
+    background: url("/assets/png/projects/tip.png") center/150% no-repeat;        
+}
+
+.project#core {
+    background: url("/assets/png/projects/core.png") center/150% no-repeat;
+}
+
+.project-name {
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: inline;
+    background: white;
+    font-size: 25px;
+    max-width: 55%;
+    padding: 10px;
+}
+
+.project-background {
+    position: absolute;
+    bottom: -100px;
+    right: 20px;
+    font-family: SpaceMono;
+    font-size: 149px;
+    color: #ffffff;
+    color: var(--white);
+}
+
+#people {
+    padding-top: 80px;
+}
+
+.person {
+    position: relative;
+    display: inline-block;
+    width: 231px;
+    height: 220px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.person-brief {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 20px;
+    display: inline;
+    background: white;
+    text-align: center;
+}
+
+.person-brief .content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;    
+}
+
+.person-brief .content .name {
+    font-weight: bold;
+    color: var(--dodger-blue);
+}
+
+.person img {
+    width: 100%;
+    height: 100%;
+}
+
+#about {
+    width: 20vw;
+}
