@@ -81,8 +81,7 @@ img#uconn {
 }
 
 .project#ip {
-    background: url("/assets/png/projects/ip.png") center/150% no-repeat;    
-    
+    background: url("/assets/png/projects/ip.png") center/150% no-repeat;       
 }
 
 .project#lincus {
@@ -109,7 +108,9 @@ img#uconn {
     left: 10px;
     display: inline;
     background: white;
+    color: var(--onyx);
     font-size: 25px;
+    line-height: 1.24;
     max-width: 55%;
     padding: 10px;
 }
@@ -119,6 +120,7 @@ img#uconn {
     bottom: -100px;
     right: 20px;
     font-family: SpaceMono;
+    font-weight: normal;
     font-size: 149px;
     color: #ffffff;
     color: var(--white);
