@@ -5,10 +5,12 @@
   "main": "server.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "pug index.pug"
   },
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "repository": {
     "type": "git",
