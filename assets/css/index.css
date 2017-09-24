@@ -80,27 +80,6 @@ img#uconn {
     position: relative;
 }
 
-.project#ip {
-    background: url("/assets/png/projects/ip.png") center/150% no-repeat;       
-}
-
-.project#lincus {
-    background: url("/assets/png/projects/lincus.png") center/150% no-repeat;    
-}
-
-.project#huskytrails {
-    background: url("/assets/png/projects/huskytrails.png") center/150% no-repeat;    
-    
-}
-
-.project#tip {
-    background: url("/assets/png/projects/tip.png") center/150% no-repeat;        
-}
-
-.project#core {
-    background: url("/assets/png/projects/core.png") center/150% no-repeat;
-}
-
 .project-name {
     margin: 0;
     position: absolute;
