@@ -21,22 +21,96 @@ html
                     p.project-name= name
             +project("ip", "Innovation Portal")
             +project("lincus", "Lincus")
-            +project("huskytrails", "HuskyTrails")
+            +project("huskytrails", "Huskytrails")
             +project("tip", "TIP")
             +project("core", "COR²E")
         section#people
             #about
                 p ⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.
+                br
                 p We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you, get in touch!
-            .person
-                img(src="assets/png/people/alec.jpg")
-                .person-brief
+            mixin person(img, name, role, grad, major, bio)
+                .person
+                    img(src="assets/png/people/" + img)
                     .content
-                        p.name= "Alec Marcus"
-                        p.role= "Design Lead"
-            .person
-                img(src="assets/png/people/dan.jpg")
-                .person-brief
-                    .content
-                        p.name Dan Schwartz
-                        p.role Director
+                        .brief
+                            p.name= name
+                            p.role= role
+                        .detailed
+                            br
+                            p.grad= grad
+                            p.major= major
+                            br
+                            p.bio!= bio
+            +person("dan.jpg",
+                "Dan Schwartz",
+                "Director",
+                "Associate Professor",
+                "Physiology & Neurobiology",
+                "Dan’s talent is surrounding himself with really really smart, talented, and hard working students who can make him look better than he ought to.")
+            +person("courtney.jpg",
+                "Courtney Wiley",
+                "Program Manager",
+                "",
+                "",
+                "We were extremely fortunate to snag Courtney from her previous job as Associate Director of  <a href='https://tip.uconn.edu' target='_blank'>TIP</a>.  But we built their website pro bono, so they owed us!")
+            +person("brandon.png",
+                "Brandon Cheng",
+                "Web Developer Lead",
+                "Class of 2019",
+                "UConn CSE",
+                "Brandon is a web wizard.  He pretty much eats, sleeps, and drinks computers.  Brandon coded 97.34% of <a href='https://huskytrails.uconn.edu' target='_blank'> Huskytrails</a> and <a href='https://tip.uconn.edu' target='_blank'>TIP</a>.")
+            +person("alec.jpg", 
+                "Alec Marcus", 
+                "Design Lead",
+                "Class of 2018", 
+                "UConn ART and DMD (double major)", 
+                "Alec’s ability to design logos and websites is, simply put, ridiculous (as is his motorcycle riding ability).  A note to employers: you’d be lucky if Alec chose to work for you.")
+            +person("andi.jpg",
+                "Andi Duro",
+                "Web Developer",
+                "Class of 2021",
+                "UConn CS",
+                "Andi is a freshman, but don’t let that fool you.  He can run circles around most web developers.  He coded the 100% of site you are currently on…  in his sleep.")
+            +person("chioma.png",
+                "Chioma Ezete",
+                "Web Developer",
+                "Class of 2018",
+                "UConn CSE",
+                "We knew Chioma was a good fit when she told us that she developed a cooking app using React over the summer - for fun.  She also shares our love for great sushi (and great code).")
+            +person("quinn.jpg",
+                "Quinn Vissak",
+                "Web Developer",
+                "Class of 2018",
+                "UConn CSE",
+                "Quinn is President of UConn’s ACM chapter, is a CSE Teaching Assistant, and still manages to work with us for 20+ hours/week.  Can you say “workaholic”?")
+            +person("rob.jpg",
+                "Rob Stolarz",
+                "Web Developer",
+                "Class of 2019",
+                "University of Hartford CS",
+                "Rob holds the honor of being the only non-UConn member of our team.  The fact that we were willing to jump through hoops to get him on the UConn payroll speaks volumes about his coding abilities.")
+            +person("joey.jpg",
+                "Joey O'Shea",
+                "Web Development Consultant",
+                "Class of 2015",
+                "UConn CSE",
+                "Joey and Dan go way back to when Joey was still a teenager with short hair.  Now Joey has long hair, and an ever longer web development skillset.")
+            +person("jack.jpg",
+                "Jack Leyland",
+                "Communcations Specialist",
+                "Class of 2018",
+                "UConn Finance",
+                "When he’s not developing content for Squared Labs, Jack is busy leading the Student Managed Fund in the Business School.  The only request we have is that he remember us when he makes it on the Forbes list.")
+            +person("taylor.jpg",
+                "Taylor Hudak",
+                "Communications Specialist",
+                "Class of 2019",
+                "UConn Mathematics and Secondary Math Education (double major)",
+                "Taylor has an absurd GPA, is an incredible photographer, and creates/maintains content on <a href='https://core.uconn.edu' target='_blank'>CORE</a>. and <a href='https://ip.uconn.edu' target='_blank'>Innovation Portal</a>. like it’s nobody’s business.")
+            +person("buddy.jpg",
+                "Buddy",
+                "Moral Support Lead",
+                "Class of 20XX",
+                "Introductory Dog Obedience",
+                "Buddy knows the commands for sit, down, stay, leave, and come, so long as treats are provided.  Buddy told us to write that he loves Squared Labs (and his owner Taylor).")
