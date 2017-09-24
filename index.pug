@@ -17,9 +17,9 @@ html
             p We’ve only just taken our place on the Internet, so while we hope you enjoy our site, know that there is much more to come (soon)!
         section#projects
             h1.project-background projects
-            mixin project(id, name, subdomain)
-                a(href="https://" + subdomain + ".uconn.edu", target="_blank")
-                    .project(id=id)
+            mixin project(img, name, subdomain)
+                a(href="http://" + subdomain + ".uconn.edu", target="_blank")
+                    .project(style=`background: url('/assets/png/projects/${img}.png') center/150% no-repeat;`)
                         p.project-name= name
     
             +project("ip", "Innovation Portal", "ip")
@@ -34,8 +34,7 @@ html
                 br
                 p We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you, get in touch!
             mixin person(img, name, role, grad, major, bio)
-                .person
-                    img(src="assets/png/people/" + img)
+                .person(style=`background: url('/assets/png/people/${img}') center/100% no-repeat;`)
                     .content
                         .brief
                             p.name= name
