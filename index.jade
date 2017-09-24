@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        title Squared Labs
+        link(rel="stylesheet", href="assets/fonts/fonts.css")
+        link(rel="stylesheet", href="assets/css/index.css")
+    body
+        section#uconn-logo
+            img#uconn(src="assets/png/uconn.png")
+        section#squaredlabs-logo
+            img(src="assets/svg/SquaredLabs.svg")
+        section#introduction
+            p Welcome to ⬚² labs (read: squared labs). Together with UConn's very best students, we build cutting-edge websites that support UConn's world-class research infrastructure.
+            p We’ve only just taken our place on the Internet, so while we hope you enjoy our site, know that there is much more to come (soon)!
+        section#projects
+            h1.project-background projects
+            mixin project(id, name)
+                .project(id=id)
+                    p.project-name= name
+            +project("ip", "Innovation Portal")
+            +project("lincus", "Lincus")
+            +project("huskytrails", "HuskyTrails")
+            +project("tip", "TIP")
+            +project("core", "COR²E")
+        section#people
+            #about
+                p ⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.
+                p We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you, get in touch!
+            mixin person(name, role, grad, major, img, desc)
+                .person
+                    img(src="assets/png/people/" + img)
+                    .person-brief
+                        .content
+                            p.name= name
+                            p.role= role
+            +person("Alec Marcus", "Designer", "Design Lead", "18", "alec.jpg", "Alec’s ability to design logos and websites is, simply put, ridiculous (as is his motorcycle riding ability).  A note to employers: you’d be lucky if Alec chose to work for you.")
