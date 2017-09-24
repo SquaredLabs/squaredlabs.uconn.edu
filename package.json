@@ -1,0 +1,17 @@
+{
+  "name": "squaredlabs-website",
+  "version": "0.1.0",
+  "description": "A server for the SquaredLabs website.",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SquaredLabs/squaredlabs.uconn.edu.git"
+  }
+}
