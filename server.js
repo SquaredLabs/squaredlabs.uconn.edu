@@ -1,10 +1,12 @@
 const express = require("express");
 const fs = require("fs");
+const pug = require("pug");
 const app = express();
 
-const indexPage = fs.readFileSync("index.html", "utf8");
-
 app.use(express.static("."));
+app.get("/", (req, res) => {
+    res.send(pug.renderFile("index.pug"));
+});
 app.listen(8080, () => {
     console.log("Ready!");
 });
