@@ -1,5 +1,6 @@
 :root {
     --dodger-blue: #6aa1f4;
+    --dodger-blue-50: rgba(106, 161, 244, .5);
     --rouge-40: rgba(200, 17, 21, 0.4);
     --white: #ffffff;
     --silver: #d7d8df;
@@ -17,9 +18,39 @@ body {
     font-size: 16px;
     line-height: 20px;
     padding: 20px;
-
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+}
+
+p a, .footer-link {
+    position: relative;
+    color: var(--onyx);
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: all .15s ease;
+    text-decoration: none;
+}
+
+p a:before, .footer-link:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1.3em;
+    width: 100%;
+    top: -.3em;
+    left: 0;
+    background-color: var(--dodger-blue-50);
+    transition: background-color .3s ease;
+    z-index: -1;
+}
+
+p a:hover, .footer-link:hover {
+    bottom: -2px;
+}
+
+p a:hover:before, .footer-link:hover:before {
+    background-color: var(--dodger-blue);
+    top: calc(-.3em - 2px);
 }
 
 img {
@@ -68,6 +99,11 @@ img#uconn {
     opacity: 0.2;
     position: absolute;
     display: block;
+    transition: opacity .3s ease;
+}
+
+.project:hover:before {
+    opacity: 0;
 }
 
 .project {
@@ -79,7 +115,7 @@ img#uconn {
     margin-top: 20px;
 }
 
-.project > * {
+.project>* {
     position: relative;
 }
 
@@ -95,6 +131,12 @@ img#uconn {
     line-height: 1.24;
     max-width: 55%;
     padding: 10px;
+    transition: color .3s ease;
+}
+
+.project:hover .project-name {
+    color: var(--dodger-blue;
+    )
 }
 
 .project-background {
@@ -138,9 +180,11 @@ img#uconn {
 .person .detailed {
     font-size: 13px;
     opacity: 0;
-    transition-duration: .3s;
-    width: 221px;
+    transition-duration: .2s;
+    transition-delay: .1s;
+    width: 211px;
     line-height: 1.3;
+    opacity: 0;
 }
 
 .person .content {
@@ -153,13 +197,14 @@ img#uconn {
     background: white;
     text-align: center;
     transition: all .3s ease;
-    padding: 10px 5px;
+    padding: 10px;
     overflow: hidden;
     height: 60px;
 }
 
 /* A workaround at the moment for animating height. The width and height of the
    box is a defined height, so this should work regardless of device width.*/
+
 .person .content.two-line-title {
     height: 80px;
 }
@@ -167,7 +212,6 @@ img#uconn {
 .person:hover .content {
     left: 0px;
     right: 0px;
-    font-size: 13px;
     height: 231px;
 }
 
@@ -214,7 +258,7 @@ section#connect {
     overflow: hidden;
 }
 
-.link-card > div {
+.link-card>div {
     height: 100%;
 }
 
@@ -257,12 +301,10 @@ section#connect {
     section#connect {
         flex-wrap: wrap;
     }
-
     #connect-description {
         order: 1;
         flex-basis: 100%;
     }
-
     .link-card {
         order: 2;
         flex: 1;
@@ -270,13 +312,27 @@ section#connect {
 }
 
 footer {
-    margin-top: 170px;
+    margin-top: 80px;
+    margin-bott: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link {
+    font-family: 'SpaceMono';
+    font-size: 16px;
+    display: inline-block;
+    transform: translateY(50%);
 }
 
 footer .stamp {
     text-align: center;
     color: var(--dodger-blue);
     font-size: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
 }
 
 footer .stamp p {

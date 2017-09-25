@@ -52,7 +52,7 @@ html
                 "Alec Marcus",
                 "Design Lead",
                 "Class of 2018",
-                "UConn ART and DMD (double major)",
+                "UConn Fine Art; DMD (double major)",
                 "Alec’s ability to design logos and websites is, simply put, ridiculous (as is his motorcycle riding ability).  A note to employers: you’d be lucky if Alec chose to work for you.")
             +person("andi.jpg",
                 "Andi Duro",
@@ -118,7 +118,7 @@ html
                 "Taylor Hudak",
                 "Communications Specialist",
                 "Class of 2019",
-                "UConn Mathematics and Secondary Math Education (double major)",
+                "UConn Mathematics; Secondary Math Education (double major)",
                 "Taylor has an absurd GPA, is an incredible photographer, and creates/maintains content on <a href='https://core.uconn.edu' target='_blank'>CORE</a>. and <a href='https://ip.uconn.edu' target='_blank'>Innovation Portal</a>. like it’s nobody’s business.")(class="two-line-title")
         section#connect
             h1.connect-background connect
@@ -134,7 +134,11 @@ html
                 //- Margin and padding don't affect the textbox, so use a newline to push it slightly above the link cards
                 br
         footer
+            mixin footer-link(content, href)
+                a.footer-link(href=href)= content
+            +footer-link("©2017 Uconn", "#")
             .stamp
-                p Designed & developed by
-                p(style="font-size: 25px; font-weight: bold;") [squared labs]
+                p Designed &amp; developed by
+                p(style="font-size: 25px; font-weight: bold; font-family: 'SpaceMono';") [squared labs]
                 p at UCONN
+            +footer-link("Uconn COR²E", "https://core.uconn.edu")
