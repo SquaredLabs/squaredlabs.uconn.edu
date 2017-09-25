@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="40px" viewBox="0 0 50 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>mail</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Connect-Buttons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Contact-Button" transform="translate(-91.000000, -31.000000)">
+            <rect id="bg" fill="#FFFFFF" x="0" y="0" width="231" height="100"></rect>
+            <path d="M136.072115,41.0598802 L136.072115,36.0299401 L116,48.5449102 L95.9278846,36.0299401 L95.9278846,41.0598802 L116,53.4550898 L136.072115,41.0598802 Z M136.072115,31 C137.434302,31 138.596149,31.498997 139.557692,32.497006 C140.519236,33.495015 141,34.6726479 141,36.0299401 L141,65.9700599 C141,67.3273521 140.519236,68.504985 139.557692,69.502994 C138.596149,70.501003 137.434302,71 136.072115,71 L95.9278846,71 C94.5656983,71 93.403851,70.501003 92.4423077,69.502994 C91.4807644,68.504985 91,67.3273521 91,65.9700599 L91,36.0299401 C91,34.6726479 91.4807644,33.495015 92.4423077,32.497006 C93.403851,31.498997 94.5656983,31 95.9278846,31 L136.072115,31 Z" id="mail---material" fill="#3289F1"></path>
+        </g>
+    </g>
+</svg>
