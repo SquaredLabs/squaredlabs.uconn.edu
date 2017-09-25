@@ -1,14 +1,14 @@
 :root {
-	--dodger-blue: #6aa1f4;
-	--rouge-40: rgba(200, 17, 21, 0.4);
-	--white: #ffffff;
-	--silver: #d7d8df;
-	--slate-grey: #a9a9b0;
-	--stormy-grey: #717177;
-	--rouge: #c81115;
-	--onyx: #0c120c;
-	--pale-grey: #f2f3f7;
-	--charcoal-grey: #404044;
+    --dodger-blue: #6aa1f4;
+    --rouge-40: rgba(200, 17, 21, 0.4);
+    --white: #ffffff;
+    --silver: #d7d8df;
+    --slate-grey: #a9a9b0;
+    --stormy-grey: #717177;
+    --rouge: #c81115;
+    --onyx: #0c120c;
+    --pale-grey: #f2f3f7;
+    --charcoal-grey: #404044;
 }
 
 body {
@@ -52,7 +52,7 @@ img#uconn {
     padding-top: 170px;
     margin: 0 auto;
     width: 40vw;
-	color: var(--charcoal-grey);
+    color: var(--charcoal-grey);
 }
 
 #projects {
