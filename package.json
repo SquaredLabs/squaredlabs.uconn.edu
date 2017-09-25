@@ -6,10 +6,16 @@
   "devDependencies": {},
   "scripts": {
     "start": "node server.js",
-    "build": "pug index.pug"
+    "build:css": "postcss assets/css/index.css -u postcss-custom-properties -o build/index.css",
+    "build:html": "pug index.pug",
+    "build": "npm run build:html && npm run build:css"
   },
   "dependencies": {
     "express": "^4.15.4",
+    "postcss": "^6.0.11",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-custom-properties": "^6.1.0",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6"
   },
