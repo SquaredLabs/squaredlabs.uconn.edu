@@ -130,10 +130,14 @@ img#uconn {
 }
 
 .person .detailed {
-    display: none;
+    font-size: 13px;
+    opacity: 0;
+    transition-duration: .3s;
+    width: 221px;
 }
 
 .person .content {
+    box-sizing: border-box;
     position: absolute;
     bottom: -20px;
     left: 20px;
@@ -141,24 +145,28 @@ img#uconn {
     display: inline;
     background: white;
     text-align: center;
-    transition: all 0.2s ease;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    overflow: scroll;
+    transition: all .3s ease;
+    padding: 10px 5px;
+    overflow: hidden;
+    height: 60px;
+}
+
+/* A workaround at the moment for animating height. The width and height of the
+   box is a defined height, so this should work regardless of device width.*/
+.person .content.two-line-title {
+    height: 80px;
 }
 
 .person:hover .content {
-    bottom: 0px;
     left: 0px;
     right: 0px;
-    top: 0;
     font-size: 13px;
+    height: 231px;
 }
 
 .person:hover .detailed {
-    display: inline;
+    display: block;
+    opacity: 1;
 }
 
 .person .content .name {
