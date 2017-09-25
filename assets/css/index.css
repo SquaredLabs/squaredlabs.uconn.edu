@@ -192,6 +192,7 @@ section#connect {
     height: 100px;
     background-color: var(--white);
     margin-right: 20px;
+    overflow: hidden;
 }
 
 .link-card > div {
@@ -213,6 +214,24 @@ section#connect {
     color: #ffffff;
     color: var(--white);
     z-index: -1;
+}
+
+#connect #contact div:first-child {
+    transition-duration: 0.2s;
+    transform: translateY(0);
+}
+
+#connect #contact:hover div:first-child {
+    transform: translateY(-15px);
+}
+
+#connect #contact img {
+    transform: translateY(0);
+    transition-duration: 0.2s;
+}
+
+#connect #contact:hover img {
+    transform: translateY(-44px);
 }
 
 @media (max-width: 650px) {
