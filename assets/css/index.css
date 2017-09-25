@@ -17,6 +17,9 @@ body {
     font-size: 16px;
     line-height: 20px;
     padding: 20px;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -48,7 +51,7 @@ img#uconn {
 #introduction {
     padding-top: 170px;
     margin: 0 auto;
-    width: 40vw;    
+    width: 40vw;
 	color: var(--charcoal-grey);
 }
 
@@ -142,7 +145,7 @@ img#uconn {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
-    padding-right: 30px;  
+    padding-right: 30px;
     overflow: scroll;
 }
 
