@@ -182,21 +182,24 @@ img#uconn {
 }
 
 section#connect {
+    display: flex;
     padding-top: 170px;
     position: relative;
 }
 
 .link-card {
-    display: inline-block;
-    width: 25vw;
+    flex: 1 1 20vw;
     height: 100px;
     background-color: var(--white);
     margin-right: 20px;
 }
 
+.link-card > div {
+    height: 100%;
+}
+
 #connect-description {
-    display: inline-block;
-    width: 231px;
+    flex: 1 1 231px;
     margin-bottom: 20px;
 }
 
@@ -210,6 +213,22 @@ section#connect {
     color: #ffffff;
     color: var(--white);
     z-index: -1;
+}
+
+@media (max-width: 650px) {
+    section#connect {
+        flex-wrap: wrap;
+    }
+
+    #connect-description {
+        order: 1;
+        flex-basis: 100%;
+    }
+
+    .link-card {
+        order: 2;
+        flex: 1;
+    }
 }
 
 footer {
