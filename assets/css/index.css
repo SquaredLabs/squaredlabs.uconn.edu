@@ -209,17 +209,17 @@ img#uconn {
     height: 80px;
 }
 
-.person:hover .content {
+.person:hover .content, .person:active .content {
     left: 0px;
     right: 0px;
     height: 231px;
 }
 
-.person:hover .photo {
+.person:hover .photo, .person:active .photo {
     transform: scale(.9);
 }
 
-.person:hover .detailed {
+.person:hover .detailed, .person:active .detailed {
     display: block;
     opacity: 1;
 }
