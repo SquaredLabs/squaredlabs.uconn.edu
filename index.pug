@@ -37,7 +37,7 @@ html
                 p We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you, get in touch!
             mixin person(img, name, role, grad, major, bio)
                 .person(style=`background: url('/assets/png/people/${img}') center/100% no-repeat;`)
-                    .content
+                    .content(class!=attributes.class)
                         .brief
                             p.name= name
                             p.role= role
@@ -94,13 +94,13 @@ html
                 "Communcations Specialist",
                 "Class of 2018",
                 "UConn Finance",
-                "When he’s not developing content for Squared Labs, Jack is busy leading the Student Managed Fund in the Business School.  The only request we have is that he remember us when he makes it on the Forbes list.")
+                "When he’s not developing content for Squared Labs, Jack is busy leading the Student Managed Fund in the Business School.  The only request we have is that he remember us when he makes it on the Forbes list.")(class="two-line-title")
             +person("joey.jpg",
                 "Joey O'Shea",
                 "Web Development Consultant",
                 "Class of 2015",
                 "UConn CSE",
-                "Joey and Dan go way back to when Joey was still a teenager with short hair.  Now Joey has long hair, and an ever longer web development skillset.")
+                "Joey and Dan go way back to when Joey was still a teenager with short hair.  Now Joey has long hair, and an ever longer web development skillset.")(class="two-line-title")
             +person("quinn.jpg",
                 "Quinn Vissak",
                 "Web Developer",
@@ -118,7 +118,7 @@ html
                 "Communications Specialist",
                 "Class of 2019",
                 "UConn Mathematics and Secondary Math Education (double major)",
-                "Taylor has an absurd GPA, is an incredible photographer, and creates/maintains content on <a href='https://core.uconn.edu' target='_blank'>CORE</a>. and <a href='https://ip.uconn.edu' target='_blank'>Innovation Portal</a>. like it’s nobody’s business.")
+                "Taylor has an absurd GPA, is an incredible photographer, and creates/maintains content on <a href='https://core.uconn.edu' target='_blank'>CORE</a>. and <a href='https://ip.uconn.edu' target='_blank'>Innovation Portal</a>. like it’s nobody’s business.")(class="two-line-title")
         section#connect
             h1.connect-background connect
             a.link-card(href="https://gitlab.com/squared-labs", target="_blank")
