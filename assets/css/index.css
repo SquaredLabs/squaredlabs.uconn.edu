@@ -205,7 +205,7 @@ section#connect {
 
 .connect-background {
     position: absolute;
-    top: 60px;
+    top: 10px;
     right: 20px;
     font-family: SpaceMono;
     font-weight: normal;
