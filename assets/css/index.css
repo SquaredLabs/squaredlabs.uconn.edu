@@ -129,6 +129,12 @@ img#uconn {
     margin-bottom: 20px;
 }
 
+.person .photo {
+    height: 100%;
+    transition-duration: .3s;
+    transform: scale(1);
+}
+
 .person .detailed {
     font-size: 13px;
     opacity: 0;
@@ -163,6 +169,10 @@ img#uconn {
     right: 0px;
     font-size: 13px;
     height: 231px;
+}
+
+.person:hover .photo {
+    transform: scale(.9);
 }
 
 .person:hover .detailed {

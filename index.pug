@@ -36,7 +36,8 @@ html
                 br
                 p We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you, get in touch!
             mixin person(img, name, role, grad, major, bio)
-                .person(style=`background: url('/assets/png/people/${img}') center/100% no-repeat;`)
+                .person
+                    div.photo(style=`background: url('/assets/png/people/${img}') center/100% no-repeat;`)
                     .content(class!=attributes.class)
                         .brief
                             p.name= name
