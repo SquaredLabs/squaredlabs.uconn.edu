@@ -134,6 +134,7 @@ img#uconn {
     opacity: 0;
     transition-duration: .3s;
     width: 221px;
+    line-height: 1.3;
 }
 
 .person .content {
