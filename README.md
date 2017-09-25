@@ -1,7 +1,7 @@
 # Website
 The team website.
 
-# Buliding
+# Building
 
 ```sh
 $ npm install
