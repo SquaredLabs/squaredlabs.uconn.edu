@@ -74,9 +74,11 @@ img#uconn {
 }
 
 #squaredlabs-logo {
-    padding-top: 170px;
+    max-width: 900px;
+    padding-top: calc(80px + 15vh);
     padding-left: 15vw;
     padding-right: 15vw;
+    margin: 0 auto;
 }
 
 #introduction {
