@@ -35,9 +35,9 @@ p a:before, .footer-link:before {
     content: '';
     position: absolute;
     display: block;
-    height: 1.3em;
+    height: 1em;
     width: 100%;
-    top: -.3em;
+    top: 0;
     left: 0;
     background-color: var(--dodger-blue-50);
     transition: background-color .3s ease;
@@ -50,7 +50,7 @@ p a:hover, .footer-link:hover {
 
 p a:hover:before, .footer-link:hover:before {
     background-color: var(--dodger-blue);
-    top: calc(-.3em - 2px);
+    top: -2px;
 }
 
 img {
@@ -67,14 +67,14 @@ p {
 
 img#uconn {
     display: block;
-    margin: 0 auto;
+    margin-left: 20px;
     width: 120px;
     height: 25px;
     padding-top: 20px;
 }
 
 #squaredlabs-logo {
-    padding-top: 80px;
+    padding-top: 170px;
     padding-left: 15vw;
     padding-right: 15vw;
 }
@@ -141,7 +141,7 @@ img#uconn {
 
 .project-background {
     position: absolute;
-    bottom: -100px;
+    top: 180px;
     right: 20px;
     font-family: SpaceMono;
     font-weight: normal;
