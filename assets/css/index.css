@@ -186,6 +186,12 @@ img#uconn {
     transition-delay: .1s;
     width: 211px;
     line-height: 1.3;
+
+    /* Create a new stacking context so our link highlights don't get buried.
+       This isn't ideal because we'd have to create new stacking contexes for
+       every link container, so it's a short-term solution.*/
+    position: relative;
+    z-index: 0;
 }
 
 .person .content {
