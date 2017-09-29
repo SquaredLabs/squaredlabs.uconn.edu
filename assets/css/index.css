@@ -23,34 +23,25 @@ body {
 }
 
 p a, .footer-link {
-    position: relative;
+    background-color: var(--dodger-blue-50);
+
+    /* Hardcode the height to keep the background a consistent
+       size. This alows us to only shift text using padding. */
+    display: inline-block;
+    box-sizing: border-box;
+    height: calc(1em + 1px);
+    vertical-align: text-top;
+
     color: var(--onyx);
     padding-left: 2px;
     padding-right: 2px;
-    transition: all .15s ease;
+    transition: background .15s, padding .05s;
     text-decoration: none;
 }
 
-p a:before, .footer-link:before {
-    content: '';
-    position: absolute;
-    display: block;
-    height: 1em;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--dodger-blue-50);
-    transition: background-color .3s ease;
-    z-index: -1;
-}
-
 p a:hover, .footer-link:hover {
-    bottom: -2px;
-}
-
-p a:hover:before, .footer-link:hover:before {
     background-color: var(--dodger-blue);
-    top: -2px;
+    padding-top: 2px;
 }
 
 img {
@@ -186,12 +177,6 @@ img#uconn {
     transition-delay: .1s;
     width: 211px;
     line-height: 1.3;
-
-    /* Create a new stacking context so our link highlights don't get buried.
-       This isn't ideal because we'd have to create new stacking contexes for
-       every link container, so it's a short-term solution.*/
-    position: relative;
-    z-index: 0;
 }
 
 .person .content {
