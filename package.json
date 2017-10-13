@@ -4,11 +4,16 @@
   "description": "A server for the SquaredLabs website.",
   "main": "server.js",
   "devDependencies": {},
+  "watch": {
+    "build:css": "assets/css/*.css",
+    "build:html": "*.pug"
+  },
   "scripts": {
     "start": "node server.js",
     "build:css": "postcss assets/css/index.css -u postcss-custom-properties -o build/index.css",
     "build:html": "pug index.pug",
-    "build": "npm run build:html && npm run build:css"
+    "build": "npm run build:html && npm run build:css",
+    "watch": "npm-watch"
   },
   "dependencies": {
     "express": "^4.15.4",
