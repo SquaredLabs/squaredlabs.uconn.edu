@@ -137,8 +137,7 @@ img#uconn {
 }
 
 .project:hover .project-name {
-    color: var(--dodger-blue;
-    )
+    color: var(--dodger-blue);
 }
 
 .project-background {
