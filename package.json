@@ -5,13 +5,16 @@
   "main": "server.js",
   "devDependencies": {},
   "watch": {
-    "build:css": "assets/css/*.css",
-    "build:html": "*.pug"
+    "build:css": "assets/css",
+    "build:html": "src/index.pug",
+    "build:html2": "src/navbar.pug"
   },
   "scripts": {
     "start": "node server.js",
     "build:css": "postcss assets/css/index.css -u postcss-custom-properties -o build/index.css",
-    "build:html": "pug index.pug",
+    "build:css2": "postcss assets/css/global.css -u postcss-custom-properties -o build/global.css",    
+    "build:html": "pug src/*.pug -o .",
+    "build:html2": "pug src/*.pug -o .",    
     "build": "npm run build:html && npm run build:css",
     "watch": "npm-watch"
   },

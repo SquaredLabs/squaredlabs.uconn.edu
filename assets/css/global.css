@@ -1,0 +1,76 @@
+:root {
+    --dodger-blue: #6aa1f4;
+    --dodger-blue-50: rgba(106, 161, 244, .5);
+    --rouge-40: rgba(200, 17, 21, 0.4);
+    --white: #ffffff;
+    --silver: #d7d8df;
+    --slate-grey: #a9a9b0;
+    --stormy-grey: #717177;
+    --rouge: #c81115;
+    --onyx: #0c120c;
+    --pale-grey: #f2f3f7;
+    --charcoal-grey: #404044;
+}
+
+body {
+    background: var(--pale-grey);
+    font-family: "Moderat";
+    font-size: 16px;
+    line-height: 20px;
+    padding: 20px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.navbar > .link {
+    position: relative;
+    color: var(--onyx);
+    font-family: SpaceMono;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all .15s ease;
+    text-decoration: none;
+}
+
+.navbar > .link:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1em;
+    width: 100%;
+    top: 2px;
+    left: 0;
+    background-color: var(--dodger-blue-50);
+    transition: background-color .3s ease;
+    z-index: -1;
+}
+
+.navbar > .link:hover {
+    bottom: -2px;
+}
+
+.navbar .link:hover:before {
+    background-color: var(--dodger-blue);
+    top: -2px;
+}
+
+a.mobile-navbar {
+    text-decoration: none;
+    width: 500px;
+    background-color: var(--dodger-blue-50);
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: block;
+    }
+}
