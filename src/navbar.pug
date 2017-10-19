@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        title Squared Labs - Testing
+        link(rel="stylesheet", href="assets/fonts/fonts.css")
+        link(rel="stylesheet", href="build/global.css")
+    body
+        .navbar
+            mixin link(content, href)
+                a.link(href=href)= content
+            - tabs = ["home", "projects", "people", "workshops", "the lab", "connect"]
+            - for (var i in tabs) {
+                +link(tabs[i], "#")
+            - }
+        a.mobile-navbar(href="$") helloooo
