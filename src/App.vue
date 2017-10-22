@@ -5,17 +5,15 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
+  import Navbar from './components/Navbar.vue'
 
-export default {
-  name: 'app',
-  components: { Navbar }
-}
+  export default {
+    name: 'app',
+    components: { Navbar }
+  }
 </script>
 
 <style lang="scss">
-  @import "assets/fonts/fonts";
-  @import "assets/colors";
   body {
     background: #f2f3f7;
     font-family: "Moderat";
