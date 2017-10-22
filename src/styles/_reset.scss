@@ -1,0 +1,13 @@
+// Contains all GLOBAL normalizations, resets, variables, and font face declarations.
+
+@import "~normalize.css/normalize";
+@import "./vars";
+@import "./fonts";
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
