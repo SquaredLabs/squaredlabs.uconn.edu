@@ -1,9 +1,7 @@
 <template>
   <div class="navbar">
-        <router-link class="link" to="/foo">FOO</router-link>
-        <router-link class="link" to="/bar">BAR</router-link>
-        <a class="link" href="#">home</a>
-        <a class="link" href="#">projects</a>
+        <router-link class="link" to="/">home</router-link>
+        <router-link class="link" to="/projects">projects</router-link>
         <a class="link" href="#">people</a>
         <a class="link" href="#">workshops</a>
         <a class="link" href="#">the lab</a>
