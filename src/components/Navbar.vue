@@ -1,5 +1,7 @@
 <template>
   <div class="navbar">
+        <router-link class="link" to="/foo">FOO</router-link>
+        <router-link class="link" to="/bar">BAR</router-link>
         <a class="link" href="#">home</a>
         <a class="link" href="#">projects</a>
         <a class="link" href="#">people</a>
