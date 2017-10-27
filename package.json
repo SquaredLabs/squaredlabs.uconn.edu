@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "webpack-dev-server --config webpack.dev.js",
-    "start": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
