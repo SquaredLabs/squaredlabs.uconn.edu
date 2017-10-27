@@ -8,7 +8,7 @@ module.exports = merge(common, {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-              NODE_ENV: '"production"'
+              NODE_ENV: '"production"' // Why double quotes? https://github.com/thgh/vuejs-templates-rollup/issues/1#issuecomment-255096585
             }
         }),
         new MinifyPlugin({}, 
