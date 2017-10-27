@@ -6,7 +6,10 @@
   "private": true,
   "scripts": {
     "test": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "clean": "rm logs/*; rm -rf dist/",
+    "start": "forever start -a -l webhook.log server.js",
+    "stop": "forever stop server.js"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -34,7 +37,6 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "express": "^4.16.2",
-    "forever-monitor": "^1.7.1",
     "normalize.css": "^7.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
