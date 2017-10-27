@@ -1,6 +1,5 @@
 # Project build files
-index.html
-/build
+dist/
 
 # Logs
 logs
