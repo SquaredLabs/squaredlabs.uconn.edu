@@ -2,8 +2,8 @@
   <div class="navbar">
         <router-link class="link" to="/">home</router-link>
         <router-link class="link" to="/projects">projects</router-link>
-        <a class="link" href="#">people</a>
-        <a class="link" href="#">workshops</a>
+        <router-link class="link" to="/people">people</router-link>
+        <router-link class="link" to="/workshops">workshops</router-link>
         <a class="link" href="#">the lab</a>
         <a class="link" href="#">connect</a>
     </div>
@@ -13,7 +13,12 @@
 @import "../styles/vars";
 
 .navbar {
+    justify-content: center;
     text-align: center;
+    display: grid;
+    grid-gap: 20px;
+    column-count: 8;
+    grid-template-columns: 12% 12% 12% 12% 12% 12%;
 }
 
 .navbar > .link {
@@ -53,6 +58,12 @@ a.mobile-navbar {
     text-decoration: none;
     width: 500px;
     background-color: $dodger-blue-50;
+}
+
+@media (max-width: 1100px) {
+    .navbar {
+        grid-template-columns: 14% 14% 14% 14% 14% 14%;
+    }
 }
 
 @media (max-width: 650px) {
