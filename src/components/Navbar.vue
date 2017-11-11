@@ -1,33 +1,59 @@
 <template>
-  <div class="navbar">
-        <router-link class="link" to="/">home</router-link>
-        <router-link class="link" to="/projects">projects</router-link>
-        <router-link class="link" to="/people">people</router-link>
-        <router-link class="link" to="/workshops">workshops</router-link>
-        <a class="link" href="#">the lab</a>
-        <a class="link" href="#">connect</a>
-    </div>
+<div class="navbar grid">
+    <!-- <img src="images/wordmark.png" class="column" /> -->
+    <router-link class="link column" to="/">home</router-link>
+    <router-link class="link column" to="/projects">projects</router-link>
+    <router-link class="link column" to="/people">people</router-link>
+    <router-link class="link column" to="/workshops">workshops</router-link>
+    <a class="link column" href="#">the lab</a>
+    <a class="link column" href="#">connect</a>
+</div>
 </template>
 
-<style lang="scss">
+<script>
+import Wordmark from "../images/wordmark.png";
+
+export default {}
+</script>
+
+<style scoped lang="scss">
 @import "../styles/vars";
 
-.navbar {
-    justify-content: center;
-    text-align: center;
-    display: grid;
-    grid-gap: 20px;
-    column-count: 8;
-    grid-template-columns: 12% 12% 12% 12% 12% 12%;
+.grid {
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.column {
+    flex-basis: 12.5%;
+    margin-right: 20px;
+    // margin-left: 20px;
+}
+
+// @media (min-width: $tablet) {
+//     .column {
+//         flex-basis: 20%;
+//     }
+// }
+
+// @media (min-width: $desktop) {
+//     .column {
+//         flex-basis: 8.333%;
+//     }
+// }
+
+.navbar {
+    text-align: center;
+}
+
+// .navbar > * {
+//     grid-column: col-start / span 8;
+// }
 
 .navbar > .link {
     position: relative;
     color: $onyx;
     font-family: SpaceMono;
-    margin-right: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
     transition: all .15s ease;
     text-decoration: none;
 }
@@ -52,27 +78,5 @@
 .navbar .link:hover:before {
     background-color: $dodger-blue;
     top: -2px;
-}
-
-a.mobile-navbar {
-    text-decoration: none;
-    width: 500px;
-    background-color: $dodger-blue-50;
-}
-
-@media (max-width: 1100px) {
-    .navbar {
-        grid-template-columns: 14% 14% 14% 14% 14% 14%;
-    }
-}
-
-@media (max-width: 650px) {
-    .navbar {
-        display: none;
-    }
-
-    .mobile-navbar {
-        display: block;
-    }
 }
 </style>
