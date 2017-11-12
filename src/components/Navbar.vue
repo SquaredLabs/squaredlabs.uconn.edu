@@ -1,82 +1,95 @@
 <template>
-<div class="navbar grid">
-    <!-- <img src="images/wordmark.png" class="column" /> -->
-    <router-link class="link column" to="/">home</router-link>
-    <router-link class="link column" to="/projects">projects</router-link>
-    <router-link class="link column" to="/people">people</router-link>
-    <router-link class="link column" to="/workshops">workshops</router-link>
-    <a class="link column" href="#">the lab</a>
-    <a class="link column" href="#">connect</a>
+<div class="navbar">
+    <figure class="brand">
+        <img src="../images/wordmark.png" /> 
+    </figure>
+    <router-link class="link" to="/">home</router-link>
+    <router-link class="link" to="/projects">projects</router-link>
+    <router-link class="link" to="/people">people</router-link>
+    <router-link class="link" to="/workshops">workshops</router-link>
+    <a class="link" href="#">the lab</a>
+    <a class="link" href="#">connect</a>
+
 </div>
 </template>
 
-<script>
-import Wordmark from "../images/wordmark.png";
-
-export default {}
-</script>
-
 <style scoped lang="scss">
-@import "../styles/vars";
+    @import "../styles/vars";
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-}
+    .navbar {
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
 
-.column {
-    flex-basis: 12.5%;
-    margin-right: 20px;
-    // margin-left: 20px;
-}
+    .brand {
+        flex-basis: calc(100% / 8 * 2);
+        flex-grow: 0;
+        min-width: 0;
+        margin: 0;
+    }
 
-// @media (min-width: $tablet) {
-//     .column {
-//         flex-basis: 20%;
-//     }
-// }
+    .brand > img {
+        max-width: 100%;
+    }
 
-// @media (min-width: $desktop) {
-//     .column {
-//         flex-basis: 8.333%;
-//     }
-// }
+    .link {
+        flex-basis: calc(100% / 8);
+        align-self: flex-end;
+        position: relative;
+        color: $onyx;
+        font-family: SpaceMono;
+        transition: all .15s ease;
+        text-decoration: none;
+    }
 
-.navbar {
-    text-align: center;
-}
+    .link:before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 1em;
+        left: 20px;
+        right: 20px;
+        background-color: $dodger-blue-50;
+        transition: background-color .3s ease;
+        z-index: -1;
+    }
 
-// .navbar > * {
-//     grid-column: col-start / span 8;
-// }
+    .link:hover {
+        bottom: -2px;
+    }
 
-.navbar > .link {
-    position: relative;
-    color: $onyx;
-    font-family: SpaceMono;
-    transition: all .15s ease;
-    text-decoration: none;
-}
+    .link:hover:before {
+        background-color: $dodger-blue;
+        top: -2px;
+    }
 
-.navbar > .link:before {
-    content: '';
-    position: absolute;
-    display: block;
-    height: 1em;
-    width: 100%;
-    top: 2px;
-    left: 0;
-    background-color: $dodger-blue-50;
-    transition: background-color .3s ease;
-    z-index: -1;
-}
+    @media only screen and (min-width: $tablet) and (max-width: $desktop) {
+        .brand {
+            flex-basis: 100%;
+            padding-bottom: 20px;
+        }
 
-.navbar > .link:hover {
-    bottom: -2px;
-}
+        .brand > img {
+            max-width: 50%;
+        }
 
-.navbar .link:hover:before {
-    background-color: $dodger-blue;
-    top: -2px;
-}
+        .link {
+            flex-basis: calc(100% / 6);
+        }
+
+        .link:before {
+            left: 10px;
+            right: 10px;
+        }
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: $tablet) {
+        .navbar {
+            display: none;
+        }
+    }
 </style>
