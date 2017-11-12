@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar/>
     <transition name="fade">
-      <router-view></router-view>
+      <router-view class="page"></router-view>
     </transition>
   </div>
 </template>
@@ -22,9 +22,12 @@
     font-family: "Moderat";
     font-size: 16px;
     line-height: 20px;
-    padding: 20px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    padding: 20px;
   }
 
   .fade-enter-active, .fade-leave-active {
