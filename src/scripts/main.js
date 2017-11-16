@@ -1,5 +1,3 @@
-import "../styles/_reset.scss";
-
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../pages/Home.vue";
