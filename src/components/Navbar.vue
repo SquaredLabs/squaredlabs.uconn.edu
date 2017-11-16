@@ -1,16 +1,20 @@
 <template>
-<div class="navbar">
-    <figure class="brand">
-        <img src="../images/wordmark.png" /> 
-    </figure>
-    <router-link class="link" to="/">home</router-link>
-    <router-link class="link" to="/projects">projects</router-link>
-    <router-link class="link" to="/people">people</router-link>
-    <router-link class="link" to="/workshops">workshops</router-link>
-    <a class="link" href="#">the lab</a>
-    <a class="link" href="#">connect</a>
-
-</div>
+    <div class="navbar">
+        <div class="mobile">
+            [menu ↑]
+        </div> 
+        <figure class="brand">
+            <img src="../images/wordmark.png" /> 
+        </figure>
+        <!-- <div class="links"> -->
+            <router-link class="link" to="/">home</router-link>
+            <router-link class="link" to="/projects">projects</router-link>
+            <router-link class="link" to="/people">people</router-link>
+            <router-link class="link" to="/workshops">workshops</router-link>
+            <a class="link" href="#">the lab</a>
+            <a class="link" href="#">connect</a>
+        <!-- </div> -->
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -67,7 +71,12 @@
         top: -2px;
     }
 
-    @media only screen and (min-width: $tablet) and (max-width: $desktop) {
+    .mobile {
+        display: none;
+    }
+
+    // Tablet
+    @media (min-width: $tablet) and (max-width: $desktop) {
         .brand {
             flex-basis: 100%;
             padding-bottom: 20px;
@@ -87,9 +96,42 @@
         }
     }
 
-    @media only screen and (min-width: 0px) and (max-width: $tablet) {
-        .navbar {
+    // Mobile
+    @media (min-width: 0px) and (max-width: $tablet) {
+        .brand {
+            padding-top: 160px;
+            flex-basis: 100%;
+        }
+
+        .link {
             display: none;
+            position: absolute;
+            bottom: 200px;
+            right: 25px;
+        }
+
+        .mobile {
+            display: block;
+            position: fixed;
+            font-family: SpaceMono;
+            padding-left: 16px;
+            padding-right: 16px;
+            bottom: 25px;
+            right: 25px;
+        }
+
+        .mobile:before {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 1em;
+            top: -4px;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-color: $dodger-blue-50;
+            transition: background-color .3s ease;
+            z-index: -1;
         }
     }
 </style>
