@@ -22,8 +22,10 @@ export default {
 
 
 body {
-  background: #f2f3f7;
+  background: $pale-grey;
   font-family: "Moderat";
+  margin: 0;
+  padding: 0;
   font-size: 16px;
   line-height: 20px;
   -moz-osx-font-smoothing: grayscale;
