@@ -7,15 +7,23 @@
             <div class="col" style="position: relative; top: -80px">
                 <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best students, we build cutting-edge websites that support UConn’s world-class research infrastructure. View our history, purpose, and space on the lab page.</p>
             </div>
-            <div class="col project" style="background: url('../images/ip.png') center/120% no-repeat">
+            <div class="col project" style="background: url('../images/ip.png') center/150% no-repeat">
                 <h3>Innovation Portal</h3>
             </div>
-            <div class="col project" style="background: url('../images/lincus.png') center/120% no-repeat">
+            <div class="col project" style="background: url('../images/lincus.png') center/150% no-repeat">
                 <h3>Lincus</h3>
             </div>
-            <div class="col project" style="background: url('../images/huskytrails.png') center/120% no-repeat">
+            <div class="col project" style="background: url('../images/huskytrails.png') center/150% no-repeat">
                 <h3>GrantTrails</h3>
             </div>
+        </section>
+        <section class="four-cols">
+          <div class="three-col workshop">
+            <p>???</p>
+          </div>
+          <div class="col">
+            <p>Learning from others and sharing what we know is central to the ⬚² labs philosophy.  We see workshops as an opportunity to do both (in addition to getting to know the UConn web development community). Our workshops are open to all members of the UConn community, for free. </p>
+          </div>
         </section>
     </div>
 </template>
@@ -30,6 +38,10 @@ export default {};
 
 <style scoped lang="scss">
 @import "../styles/vars";
+
+section {
+  margin-bottom: 80px;
+}
 
 .jumbotron {
   display: flex;
@@ -53,7 +65,7 @@ export default {};
 
 .project {
   background-color: orange;
-  height: 220px;
+  height: 20vw;
   position: relative;
 }
 
@@ -80,6 +92,16 @@ export default {};
   max-width: 55%;
   padding: 10px;
   transition: color 0.3s ease;
+}
+
+.three-col {
+  flex-basis: 75%;
+}
+
+.workshop {
+  position: relative;
+  left: -20px;
+  background: $solid-blue;
 }
 
 // Mobile & Tablet

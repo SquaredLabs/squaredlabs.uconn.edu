@@ -61,11 +61,11 @@
   z-index: -1;
 }
 
-.link:hover {
+.link:hover, .router-link-exact-active {
   bottom: -2px;
 }
 
-.link:hover:before {
+.link:hover:before, .router-link-exact-active:before {
   background-color: $dodger-blue;
   top: -2px;
 }
