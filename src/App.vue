@@ -9,10 +9,13 @@
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import QuadLayout from "./components/QuadLayout.vue";
 
 export default {
   name: "app",
-  components: { Navbar }
+  components: { 
+    Navbar
+  }
 };
 </script>
 
