@@ -1,6 +1,6 @@
 <template>
     <div class="construction-zone" :style="`height: ${height}`">
-        <span>{{ msg }}</span>
+        <div style="padding: 20px">{{ msg }}</div>
     </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
 .construction-zone {
   display: flex;
   font-size: 2em;
+  line-height: 1.25;
   align-items: center;
   justify-content: center;
   border: 1px black dashed;

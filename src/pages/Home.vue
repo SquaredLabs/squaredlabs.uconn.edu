@@ -36,6 +36,15 @@
         <section>
           <construction msg="Not sure what we're doing with the blog yet!" height="40vh" />
         </section>
+         <section>
+          <construction msg="People Component" height="40vh" />
+        </section>
+         <section>
+          <construction msg="Connect Component" height="40vh" />
+        </section>
+        <section>
+          <construction msg="Footer Component" height="40px" />
+        </section>
     </div>
 </template>
 
