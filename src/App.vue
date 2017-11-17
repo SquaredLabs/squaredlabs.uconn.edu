@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar/>
-    <transition name="fade">
+    <transition name="slide" mode="out-in">
       <router-view class="page"></router-view>
     </transition>
   </div>
@@ -39,13 +39,21 @@ body {
   padding: 20px;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: opacity 0.5s;
+// }
+// .fade-enter,
+// .fade-leave-to {
+//   opacity: 0;
+//   position: absolute; /* If this page doesn't keep its place, the new one will appear below it before it's fully faded out */
+// }
+
+.slide-enter-active, .slide-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
 }
-.fade-enter,
-.fade-leave-to {
+.slide-enter, .slide-leave-to {
   opacity: 0;
-  position: absolute; /* If this page doesn't keep its place, the new one will appear below it before it's fully faded out */
+  transform: translateX(-30%);
 }
 </style>
