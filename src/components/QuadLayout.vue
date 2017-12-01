@@ -30,6 +30,7 @@
 
   .quad__col, .quad__triple_col {
     flex-basis: 100%;
+    width: 100%;
   }
 }
 </style>
