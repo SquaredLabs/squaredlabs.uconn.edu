@@ -1,7 +1,6 @@
 <template>
     <div class="quad">
         <slot></slot>
-        <p v-if="text" class="quad__bg-text" :style="{'padding-top': paddingTop}">{{ text }}</p>
     </div>
 </template>
 
@@ -45,9 +44,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  props: ["text", "paddingTop"]
-}
-</script>
