@@ -16,7 +16,7 @@
         <section>
           <quad-layout>
             <div class="quad__triple_col">
-              <workshop-card 
+              <workshop-card
                 name="Workshop Name"
                 time="13:00-17:00" 
                 date="Jan 1, 2018" 

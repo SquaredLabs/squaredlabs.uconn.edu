@@ -51,6 +51,14 @@ export default {
     padding: 20px;
 }
 
+// Mobile & Tablet
+@media (max-width: $desktop) {
+  .workshop {
+      flex-basis: 100%;
+      width: 100%;
+  }
+}
+
 .workshop__details {
     font-family: "SpaceMono";
 }
