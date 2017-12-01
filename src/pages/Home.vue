@@ -4,17 +4,21 @@
             <construction msg="This space will have something really cool here eventually!" height="80vh" />
         </section>
         <section>
-          <quad-layout style="margin-top:80px">
+          <quad-layout style="margin-top:80px" text="projects" padding-top="110px">
               <div class="quad__col" style="position: relative; top: -80px">
-                  <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best students, we build cutting-edge websites that support UConn’s world-class research infrastructure. View our history, purpose, and space on the lab page.</p>
+                  <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best <router-link class="link--highlighted" to="/people" >students</router-link>, we build cutting-edge <router-link class="link--highlighted" to="/projects" >websites</router-link> that support UConn’s world-class research infrastructure.</p>
+                  <p>View our history, purpose, and space on the <router-link class="link--highlighted" to="/lab" >lab page</router-link>.</p>
               </div>
               <project-card class="quad__col" name="Innovation Portal" background="../images/ip.png" />
               <project-card class="quad__col" name="Lincus" background="../images/lincus.png" />
               <project-card class="quad__col" name="GrantTrails" background="../images/huskytrails.png" />
           </quad-layout>
+          <div class="flex-layout">
+            <router-link class="link--highlighted link--pulled-right" to="/projects">See all our projects →</router-link>
+          </div>
         </section>
         <section>
-          <quad-layout>
+          <quad-layout text="workshops" padding-top="310px">
             <div class="quad__triple_col">
               <workshop-card
                 name="Workshop Name"
@@ -30,6 +34,7 @@
             <div class="quad__col" style="margin-top: 80px">
               <p>Learning from others and sharing what we know is central to the ⬚² labs philosophy.  We see workshops as an opportunity to do both (in addition to getting to know the UConn web development community).</p>
               <p>Our workshops are open to all members of the UConn community, for free.</p>
+              <router-link class="link--highlighted" to="/workshops">View all workshops →</router-link>
             </div>
           </quad-layout>
         </section>
@@ -73,4 +78,11 @@ export default {
 section {
   margin-bottom: 80px;
 }
+
+
+.link--pulled-right {
+  margin: 20px;
+  margin-left: auto;
+}
+
 </style>

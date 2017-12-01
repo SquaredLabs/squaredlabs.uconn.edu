@@ -39,6 +39,29 @@ body {
   padding: 20px;
 }
 
+.link--highlighted {
+  background-color: $dodger-blue-50;
+  display: inline-block;
+  box-sizing: border-box;
+  height: calc(1em + 1px);
+  vertical-align: text-top;
+  color: $onyx;
+  padding-left: 2px;
+  padding-right: 2px;
+  transition-property: background, padding;
+  transition-duration: 0.15s, 0.05s;
+  text-decoration: none;
+}
+
+.link--highlighted:hover {
+  background-color: $dodger-blue;
+  padding-top: 2px;
+}
+
+.flex-layout {
+  display: flex;
+}
+
 // .fade-enter-active,
 // .fade-leave-active {
 //   transition: opacity 0.5s;
