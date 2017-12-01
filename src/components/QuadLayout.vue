@@ -1,6 +1,7 @@
 <template>
     <div class="quad">
         <slot></slot>
+        <p v-if="text" class="quad__bg-text" :style="{'padding-top': paddingTop}">{{ text }}</p>
     </div>
 </template>
 
@@ -22,6 +23,16 @@
   flex-basis: 75%;
 }
 
+.quad__bg-text {
+  font-size: 149px;
+  font-family: SpaceMono;
+  font-weight: normal;
+  position: absolute;
+  right: 20px;
+  color: white;
+  z-index: -1;
+}
+
 // Mobile & Tablet
 @media (max-width: $desktop) {
   .quad {
@@ -34,3 +45,9 @@
   }
 }
 </style>
+
+<script>
+export default {
+  props: ["text", "paddingTop"]
+}
+</script>
