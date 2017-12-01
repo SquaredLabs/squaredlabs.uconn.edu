@@ -12,13 +12,14 @@
               <project-card class="quad__col" name="Innovation Portal" background="../images/ip.png" />
               <project-card class="quad__col" name="Lincus" background="../images/lincus.png" />
               <project-card class="quad__col" name="GrantTrails" background="../images/huskytrails.png" />
+              <p class="quad__bg-text" style="padding-top: 110px">projects</p>
           </quad-layout>
           <div class="flex-layout">
             <router-link class="link--highlighted link--pulled-right" to="/projects">See all our projects →</router-link>
           </div>
         </section>
         <section>
-          <quad-layout text="workshops" padding-top="310px">
+          <quad-layout text="workshops">
             <div class="quad__triple_col">
               <workshop-card
                 name="Workshop Name"
@@ -36,16 +37,38 @@
               <p>Our workshops are open to all members of the UConn community, for free.</p>
               <router-link class="link--highlighted" to="/workshops">View all workshops →</router-link>
             </div>
+            <p class="quad__bg-text" style="padding-top: 310px">workshops</p>
           </quad-layout>
         </section>
         <section>
-          <construction msg="Not sure what we're doing with the blog yet!" height="40vh" />
+          <construction msg="Not sure what we're doing with the blog yet!" height="40vh" style="margin-top: 160px" />
         </section>
          <section>
-          <construction msg="People Component" height="40vh" />
+          <div class="flex-layout">
+              <router-link class="link--highlighted link--pulled-right" to="/people">Meet the team →</router-link>
+          </div>
+          <quad-layout>
+              <div class="quad__col" style="position: relative; top: -80px">
+                  <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
+                  <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you, <router-link class="link--highlighted" to="/connect">get in touch!</router-link></p>
+              </div>
+              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg" />
+              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg" />
+              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg" />
+              <p class="quad__bg-text" style="margin-top: -20px">people</p>
+          </quad-layout>
         </section>
          <section>
-          <construction msg="Connect Component" height="40vh" />
+          <quad-layout style="margin-top: 260px">
+              <connect-card class="quad__col" link="https://gitlab.com/squared-labs" background="../images/gitlab.svg" />
+              <connect-card class="quad__col" background="../images/mail.svg" />
+              <connect-card class="quad__col" link="http://www.foundation.uconn.edu/send-your-gift/" background="../images/btc.svg" />
+               <div class="quad__col" style="position: relative; top: -80px">
+                  <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
+                  <router-link class="link--highlighted" to="/connect">Connect with us →</router-link>
+              </div>
+              <p class="quad__bg-text" style="margin-top: -20px">connect</p>
+          </quad-layout>
         </section>
         <section>
           <construction msg="Footer Component" height="40px" />
@@ -57,17 +80,25 @@
 import IP from "../images/projects/ip.png";
 import Lincus from "../images/projects/lincus.png";
 import GrantTrails from "../images/projects/huskytrails.png";
+import Dan from "../images/people/dan.jpg";
+import Gitlab from "../images/connect/gitlab.svg";
+import Mail from "../images/connect/mail.svg";
+import BTC from "../images/connect/btc.svg";
 import Construction from "../components/Construction.vue";
 import QuadLayout from "../components/QuadLayout.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 import WorkshopCard from "../components/WorkshopCard.vue";
+import PersonCard from "../components/PersonCard.vue";
+import ConnectCard from "../components/ConnectCard.vue";
 
 export default {
   components: {
     QuadLayout,
-    ProjectCard,
     Construction,
-    WorkshopCard
+    ProjectCard,
+    WorkshopCard,
+    ConnectCard,
+    PersonCard
   }
 };
 </script>
@@ -79,10 +110,8 @@ section {
   margin-bottom: 80px;
 }
 
-
 .link--pulled-right {
   margin: 20px;
   margin-left: auto;
 }
-
 </style>
