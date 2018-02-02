@@ -61,7 +61,7 @@
          <section>
           <quad-layout style="margin-top: 260px">
               <connect-card class="quad__col" link="https://gitlab.com/squared-labs" background="../images/gitlab.svg" />
-              <connect-card class="quad__col" background="../images/mail.svg" />
+              <connect-card class="quad__col" background="../images/mail.svg" hidden-image="../images/contact.png" />
               <connect-card class="quad__col" link="http://www.foundation.uconn.edu/send-your-gift/" background="../images/btc.svg" />
                <div class="quad__col" style="position: relative; top: -80px">
                   <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
@@ -84,6 +84,7 @@ import Dan from "../images/people/dan.jpg";
 import Gitlab from "../images/connect/gitlab.svg";
 import Mail from "../images/connect/mail.svg";
 import BTC from "../images/connect/btc.svg";
+import Contact from "../images/connect/contact.png";
 import Construction from "../components/Construction.vue";
 import QuadLayout from "../components/QuadLayout.vue";
 import ProjectCard from "../components/ProjectCard.vue";
