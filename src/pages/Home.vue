@@ -40,9 +40,9 @@
             <p class="quad__bg-text" style="padding-top: 310px">workshops</p>
           </quad-layout>
         </section>
-        <section>
+        <!-- <section>
           <construction msg="Not sure what we're doing with the blog yet!" height="40vh" style="margin-top: 160px" />
-        </section>
+        </section> -->
          <section>
           <div class="flex-layout">
               <router-link class="link--highlighted link--pulled-right" to="/people">Meet the team →</router-link>
