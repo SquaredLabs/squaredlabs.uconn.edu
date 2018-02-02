@@ -17,9 +17,9 @@ export default {
   background-color: orange;
   height: 20vw;
   position: relative;
-  transition: all 0.3s;
 }
 
+/* Darken the background so the text pops */
 .project:before {
   background-color: black;
   height: 100%;
@@ -32,21 +32,25 @@ export default {
 }
 
 .project__content {
+  box-sizing: border-box;
   background: white;
-  max-width: 55%;
+  max-width: 80%;
+  // width: 100%;
   padding: 10px;
+  height: 3em;
   margin: 0;
   position: absolute;
   bottom: 10px;
   left: 10px;
   z-index: 2;
+  transition: all 0.4s ease;
 }
 
 .project:hover > .project__content {
-  min-width: 100%;
+  max-width: 100%;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
   left: 10px;
-  right: 10px;
-  top: 10px;
   bottom: 10px;
 }
 
