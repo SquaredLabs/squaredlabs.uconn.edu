@@ -1,12 +1,14 @@
 <template>
     <a class="link" :href="link" target="_blank">
         <div class="link__image" :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
+        <img v-if="hiddenImage" class="link__hidden" :src="hiddenImage" />
+
     </a>
 </template>
 
 <script>
 export default {
-  props: ["link", "background"]
+  props: ["link", "background", "hidden-image"]
 };
 </script>
 
@@ -16,10 +18,28 @@ export default {
 .link {
     height: 100px;
     background-color: #ffffff;
+    overflow: hidden;
+}
+
+.link__image, .link__hidden {
+    transform: translateY(0);
+    transition-duration: 0.2s;
 }
 
 .link__image {
     height: 100%;
+}
+
+.link__hidden { 
+    max-width: 100%;
+}
+
+.link:hover .link__image {
+    transform: translateY(-20px);
+}
+
+.link:hover .link__hidden {
+    transform: translateY(-50px);
 }
 
 
