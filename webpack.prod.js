@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const common = require("./webpack.common.js");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
     devtool: "source-map",
@@ -14,6 +15,10 @@ module.exports = merge(common, {
         new MinifyPlugin({}, 
         {
             comments: false
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/images/favicon/favicon.ico",
+            filename: "favicon.ico"
         })
     ]
 });
