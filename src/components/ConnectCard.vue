@@ -1,6 +1,6 @@
 <template>
     <a class="link" :href="link" target="_blank">
-        <div class="link__image" :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
+        <div :class="{ 'link__image-animated': hiddenImage, 'link__image': !hiddenImage}" :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
         <img v-if="hiddenImage" class="link__hidden" :src="hiddenImage" />
 
     </a>
@@ -21,12 +21,12 @@ export default {
     overflow: hidden;
 }
 
-.link__image, .link__hidden {
+.link__image-animated, .link__hidden {
     transform: translateY(0);
     transition-duration: 0.2s;
 }
 
-.link__image {
+.link__image, .link__image-animated {
     height: 100%;
 }
 
@@ -34,7 +34,7 @@ export default {
     max-width: 100%;
 }
 
-.link:hover .link__image {
+.link:hover .link__image-animated {
     transform: translateY(-20px);
 }
 
