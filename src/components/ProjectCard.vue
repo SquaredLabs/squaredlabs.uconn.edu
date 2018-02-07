@@ -1,65 +1,109 @@
 <template>
     <div class="project" :style="`background: url('${background}') center/150% no-repeat`">
-      <div class="project__content">
+      <div class="project__content" ref="title">
         <p class="project__title">{{ name }}</p>
+        <div class="project__description">
+            <p>stuff</p>
+          <p>stuff</p>
+          <p>stuff</p>
+          <p>stuff</p>
+          <p>stuff</p>
+          <p>stuff</p>
+          <p>stuff</p>
+          <p>stuff</p>
+          <p>stuff</p>
+
+        </div>
       </div>
     </div>
 </template>
 
 <script>
 export default {
-  props: ["name", "background"]
+    props: ["name", "background"]
 };
 </script>
 
 <style lang="scss" scoped>
-.project {
-  background-color: orange;
-  height: 20vw;
-  position: relative;
-}
+$inner-box: calc(100% - 20px);
 
-/* Darken the background so the text pops */
-.project:before {
-  background-color: black;
-  height: 100%;
-  width: 100%;
-  content: "";
-  opacity: 0.2;
-  position: absolute;
-  display: block;
-  transition: opacity 0.3s ease;
+.project {
+    position: relative;
+
+    padding: 10px;
+    height: 20vw;
+
+    &:hover .project__content {
+        transition: .25s all ease;
+        min-width: $inner-box;
+        min-height: $inner-box;
+    }
+
+    &:hover .project__title {
+        transition: .25s opacity, height;
+        opacity: 0;
+        height: 0;
+    }
+
+    &:hover .project__description {
+        transition: .1s opacity ease .15s;
+        opacity: 1;
+    }
+
+    &::before {
+        content: "";
+        
+        transition: opacity 0.25s ease;
+
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        
+        opacity: 0.2;
+    }
 }
 
 .project__content {
-  box-sizing: border-box;
-  background: white;
-  max-width: 80%;
-  // width: 100%;
-  padding: 10px;
-  height: 3em;
-  margin: 0;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  z-index: 2;
-  transition: all 0.4s ease;
+    transition: .25s all ease;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    left: 10px;
+
+    box-sizing: border-box;
+    
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    padding: .5em .25em;
+    background-color: white;
 }
 
-.project:hover > .project__content {
-  max-width: 100%;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
-  left: 10px;
-  bottom: 10px;
+.project__title, .project__description {
+    margin: 0;
 }
 
 .project__title {
-  margin: 0;
-  color: #0c120c;
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 1.24;
-  transition: color 0.3s ease;
+    transition: .1s opacity;
+
+    line-height: 1.24;
+    font-size: 25px;
+    font-weight: bold;
+    color: #0c120c;
+}
+
+.project__description {
+    position: absolute;
+
+    width: $inner-box;
+    height: $inner-box;
+
+    opacity: 0;
 }
 </style>
