@@ -9,9 +9,11 @@
                   <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best <router-link class="link--highlighted" to="/people" >students</router-link>, we build cutting-edge <router-link class="link--highlighted" to="/projects" >websites</router-link> that support UConn’s world-class research infrastructure.</p>
                   <p>View our history, purpose, and space on the <router-link class="link--highlighted" to="/lab" >lab page</router-link>.</p>
               </div>
-              <project-card class="quad__col" name="Innovation Portal" background="../images/ip.png" />
-              <project-card class="quad__col" name="Lincus" background="../images/lincus.png" />
-              <project-card class="quad__col" name="GrantTrails" background="../images/huskytrails.png" />
+              <project-card class="quad__col" name="Innovation Portal" background="../images/ip.png" link="/projects">
+                <p>A short, fun description.</p>
+              </project-card>
+              <project-card class="quad__col" name="Lincus" background="../images/lincus.png" link="/projects" />
+              <project-card class="quad__col" name="GrantTrails" background="../images/huskytrails.png" link="/projects" />
               <p class="quad__bg-text" style="padding-top: 110px">projects</p>
           </quad-layout>
           <div class="flex-layout">
