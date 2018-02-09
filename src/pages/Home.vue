@@ -43,7 +43,7 @@
         <!-- <section>
           <construction msg="Not sure what we're doing with the blog yet!" height="40vh" style="margin-top: 160px" />
         </section> -->
-         <section>
+         <section style="padding-top: 6em">
           <div class="flex-layout">
               <router-link class="link--highlighted link--pulled-right" to="/people">Meet the team →</router-link>
           </div>
@@ -52,9 +52,15 @@
                   <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
                   <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you, <router-link class="link--highlighted" to="/connect">get in touch!</router-link></p>
               </div>
-              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg" />
-              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg" />
-              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg" />
+              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
+                <p>“Take life (and everything) with a grain of salt.”</p>
+              </person-card>
+              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
+                <p>“Take life (and everything) with a grain of salt.”</p>
+              </person-card>
+              <person-card class="quad__col" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
+                <p>“Take life (and everything) with a grain of salt.”</p>
+              </person-card>
               <p class="quad__bg-text" style="margin-top: -20px">people</p>
           </quad-layout>
         </section>
