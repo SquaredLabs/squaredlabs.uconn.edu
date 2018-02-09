@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <Navbar/>
+    <Navbar />
     <transition name="slide" mode="out-in">
       <router-view class="page"></router-view>
     </transition>
+    <Footbar />
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import Footbar from "./components/Footbar.vue";
 import QuadLayout from "./components/QuadLayout.vue";
 
 export default {
   name: "app",
   components: { 
-    Navbar
+    Navbar,
+    Footbar
   }
 };
 </script>

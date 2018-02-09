@@ -78,9 +78,6 @@
               <p class="quad__bg-text" style="margin-top: -20px">connect</p>
           </quad-layout>
         </section>
-        <section>
-          <construction msg="Footer Component" height="40px" />
-        </section>
     </div>
 </template>
 
