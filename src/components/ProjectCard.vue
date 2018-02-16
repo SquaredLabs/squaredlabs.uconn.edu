@@ -1,5 +1,5 @@
 <template>
-    <div class="project" :style="`background: url('${background}') center/150% no-repeat`">
+    <div class="project" :style="`background: url('${background}') center / cover no-repeat`">
       <div class="project__content" ref="title">
         <p class="project__title">{{ name }}</p>
         <div class="project__description">
