@@ -1,0 +1,22 @@
+pipeline:
+
+  frontend:
+    image: node:9
+    commands:
+      - npm install
+      - npm run build
+
+  deploy:
+    image: drillster/drone-rsync
+    secrets: [ rsync_key, rsync_user ]
+    hosts:
+      - ci.core.uconn.edu
+    source: ./dist/*
+    target: ~/squaredlabs-${DRONE_BUILD_NUMBER}
+    delete: true
+    script:
+      - TARGET_PATH=~/squaredlabs-${DRONE_BUILD_NUMBER}
+      - DEPLOY_PATH=/srv/nginx/pages/ci/squaredlabs/${DRONE_BRANCH}/public
+      - mkdir -p $DEPLOY_PATH
+      - rsync -az --delete $TARGET_PATH/* $DEPLOY_PATH
+      - rm -rf $TARGET_PATH
