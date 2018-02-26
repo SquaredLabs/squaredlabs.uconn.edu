@@ -88,9 +88,9 @@ $inner-box: calc(100% - 20px);
 }
 
 .project__title-expanded {
-    margin: 0;
-    font-size: 25px;
-    color: $dodger-blue;
+  margin: 0;
+  font-size: 25px;
+  color: $dodger-blue;
 }
 
 .project__link {
