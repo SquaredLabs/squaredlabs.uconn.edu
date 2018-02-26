@@ -6,15 +6,15 @@
   "private": true,
   "scripts": {
     "test": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js -p",
     "clean": "rm logs/*; rm -rf dist/",
     "start": "forever start -a -l webhook.log server.js",
     "stop": "forever stop server.js"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
