@@ -28,7 +28,26 @@
           </triple-layout>
         </div>  
       </quad-layout>
-      </section>
+    </section>
+    <section style="padding-top: 100px">
+      <quad-layout>
+        <div class="quad__col">
+          <h1 class="number">01</h1>
+          <!-- <h1 class="design">design</h1> -->
+        </div>
+        <div class="quad__triple_col">
+          <quad-layout>
+              <div class="quad__col">
+                <p>hi</p>
+              </div>
+              <div class="quad__col">
+                <p>hello</p>
+              </div>
+              <p class="quad__bg-text" style="margin-top: -20px">question</p>
+          </quad-layout>
+        </div>
+      </quad-layout>
+    </section>
   </div>
 </template>
 
@@ -49,3 +68,28 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+@import "../styles/vars";
+
+.number {
+  font-family: SpaceMono;
+  font-size: 143px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: $rouge-40;
+}
+
+.design {
+  transform: rotate(-90deg);
+  font-family: SpaceMono;
+  font-size: 205px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: right;
+  color: $dodger-blue;
+  margin: 0;
+}
+</style>
