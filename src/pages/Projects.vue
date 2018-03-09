@@ -30,21 +30,43 @@
       </quad-layout>
     </section>
     <section style="padding-top: 100px">
+      <layout>
+        <div class="layout__col--quarter">
+          <h1 class="number">01</h1>
+        </div>
+        <div class="layout__col--triple">
+          <layout>
+            <div class="layout__col--half">
+              <p>You wouldn’t build a building without architectural drawings.  We don’t build websites without spending a considerable amount of time on design, ensuring that every choice contributes to crafting the most effective solution.</p>
+            </div>
+            <div class="layout__col--half">
+              <img src="https://picsum.photos/360/100" style="padding-bottom: 20px;" />
+              <img src="https://picsum.photos/360/100" />
+            </div>
+          </layout>
+        </div>
+      </layout>
+      <br />
       <quad-layout>
         <div class="quad__col">
           <h1 class="number">01</h1>
           <!-- <h1 class="design">design</h1> -->
         </div>
         <div class="quad__triple_col">
-          <quad-layout>
-              <div class="quad__col">
-                <p>hi</p>
+          <dual-layout>
+              <div class="dual__col">
+                <p>You wouldn’t build a building without architectural drawings.  We don’t build websites without spending a considerable amount of time on design, ensuring that every choice contributes to crafting the most effective solution.</p>
               </div>
-              <div class="quad__col">
-                <p>hello</p>
+              <div class="dual__col">
+                <img src="https://picsum.photos/360/100" style="padding-bottom: 20px;" />
+                <img src="https://picsum.photos/360/100" />
               </div>
-              <p class="quad__bg-text" style="margin-top: -20px">question</p>
-          </quad-layout>
+              <p class="dual__bg-text" style="margin-top: -20px; padding-right: calc(30%);">assess</p>
+          </dual-layout>
+          <!-- <div style="width: 360px; margin: 20px;">
+            <p>We believe that thoughtfully discussing, debating, and documenting all decisions (sometimes quite heatedly!) early on pays dividends later.</p>
+            <p class="quad__bg-text" style="margin-top: -20px; padding-right: calc(30%);">question</p>
+          </div> -->
         </div>
       </quad-layout>
     </section>
@@ -55,6 +77,8 @@
 import Construction from "../components/Construction.vue";
 import QuadLayout from "../components/QuadLayout.vue";
 import TripleLayout from "../components/TripleLayout.vue";
+import DualLayout from "../components/DualLayout.vue";
+import Layout from "../components/Layout.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 import MiniPersonCard from "../components/MiniPersonCard.vue";
 
@@ -63,6 +87,8 @@ export default {
     Construction,
     QuadLayout,
     TripleLayout,
+    DualLayout,
+    Layout,
     ProjectCard,
     MiniPersonCard
   }
@@ -73,11 +99,13 @@ export default {
 @import "../styles/vars";
 
 .number {
+  height: 93px;
   font-family: SpaceMono;
   font-size: 143px;
   font-weight: normal;
   margin: 0;
   padding: 0;
+  padding-top: 40px;
   text-decoration: underline;
   text-decoration-color: $rouge-40;
 }
