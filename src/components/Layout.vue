@@ -1,5 +1,8 @@
 <template>
-    <div class="layout">
+    <div v-if="!vertical" class="layout">
+        <slot></slot>
+    </div>
+    <div v-else>
         <slot></slot>
     </div>
 </template>
@@ -9,6 +12,11 @@
 
 .layout {
   display: flex;
+}
+
+.layout--vertical {
+    display: flex;
+    flex-direction: column;
 }
 
 %col {
@@ -37,30 +45,14 @@
     flex-basis: 75%;
 }
 
-.layout__col--full {
+.layout__col--whole {
     @extend %col;
     flex-basis: 100%;
 }
-
-// .quad__bg-text {
-//   font-size: 149px;
-//   font-family: SpaceMono;
-//   font-weight: normal;
-//   position: absolute;
-//   right: 20px;
-//   color: white;
-//   z-index: -1;
-// }
-
-// // Mobile & Tablet
-// @media (max-width: $desktop) {
-//   .quad {
-//     flex-wrap: wrap;
-//   }
-
-//   .quad__col, .quad__triple_col {
-//     flex-basis: 100%;
-//     width: 100%;
-//   }
-// }
 </style>
+
+<script>
+export default {
+    props: ["vertical"]
+}
+</script>
