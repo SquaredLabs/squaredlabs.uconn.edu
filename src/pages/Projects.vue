@@ -1,6 +1,37 @@
 <template>
   <div>
-    <section>
+    <section id="jumbotron">
+      <img src="https://picsum.photos/1920/445" style="height:440px" />
+      <layout style="margin-top: -300px">
+        <div class="layout__col--quarter">
+          <div style="background: white; padding: 20px; margin-top: -80px" id="white-box">
+            <p>We build websites that support UConn research.  All of our projects are presently conceived of internally.  Eventually we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
+          </div>
+          <div style="margin-top: 200px" id="project-details">
+            <b>Hovered Project Name</b>
+            <p>Client Name</p>
+            <p>January - August 2017</p>
+            <mini-person-card v-for="x in 5" :key="x" name="Raymond Baldwin" icon="https://picsum.photos/80/80" position="Project Manager" />
+          </div>
+        </div>
+        <div class="layout__col--triple">
+          <layout v-for="x in 3" :key="x" style="padding-bottom: 20px">
+            <project-card class="layout__col--third" name="Innovation Portal" background="../images/ip.png" link="/projects">
+              <p>A short, fun description.</p>
+            </project-card>
+            <project-card class="layout__col--third" name="Innovation Portal" background="../images/ip.png" link="/projects">
+              <p>A short, fun description.</p>
+            </project-card>
+            <project-card class="layout__col--third" name="Innovation Portal" background="../images/ip.png" link="/projects">
+              <p>A short, fun description.</p>
+            </project-card>
+          </layout>
+        </div>
+      </layout>
+    </section>
+
+
+    <!-- <section>
       <img src="https://picsum.photos/1920/445" style="width: 100%; height:440px;" />
       <quad-layout text="projects" style="margin-top: -300px">
         <div class="quad__col">
@@ -28,7 +59,7 @@
           </triple-layout>
         </div>  
       </quad-layout>
-    </section>
+    </section> -->
     <section style="padding-top: 100px">
       <layout>
         <div class="layout__col--quarter">
@@ -69,7 +100,7 @@
       </layout>
     </section>
     <section>
-      <layout style="width: 100%;">
+      <layout style="width: 100%; background: red;">
         <img src="https://picsum.photos/1024/760" />
       </layout>
     </section>
@@ -78,7 +109,7 @@
          <div class="layout__col--quarter">
           <h1 class="number">02</h1>
         </div>
-        <div class="layout__col--triple">
+        <div class="layout__col--triple" style="margin-right: 0">
           <layout vertical="true" style="margin-bottom: 20px">
             <div class="layout__col--whole" style="width: 100%">
               <layout>
