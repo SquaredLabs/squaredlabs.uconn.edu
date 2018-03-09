@@ -38,10 +38,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.page {
-  padding: 20px;
-}
-
 .link--highlighted {
   background-color: $dodger-blue-50;
   display: inline-block;
