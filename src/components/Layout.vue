@@ -20,8 +20,6 @@
 }
 
 %col {
-    margin-left: 20px;
-    margin-right: 20px;
     flex-grow: 0;
 }
 
@@ -40,7 +38,7 @@
     flex-basis: 50%;
 }
 
-.layout__col--triple {
+.layout__col--pacman {
     @extend %col;
     flex-basis: 75%;
 }
@@ -48,6 +46,20 @@
 .layout__col--whole {
     @extend %col;
     flex-basis: 100%;
+}
+
+.marginned--horizontally {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.marginned--vertically {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.padded {
+    padding: 20px;
 }
 </style>
 
