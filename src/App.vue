@@ -11,7 +11,6 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Footbar from "./components/Footbar.vue";
-import QuadLayout from "./components/QuadLayout.vue";
 
 export default {
   name: "app",
@@ -56,11 +55,6 @@ body {
   background-color: $dodger-blue;
   padding-top: 2px;
 }
-
-.flex-layout {
-  display: flex;
-}
-
 // .fade-enter-active,
 // .fade-leave-active {
 //   transition: opacity 0.5s;

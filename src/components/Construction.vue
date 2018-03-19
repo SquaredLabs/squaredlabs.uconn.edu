@@ -6,8 +6,8 @@
 
 <script>
 export default {
-    props: ["msg", "height"]
-}
+  props: ["msg", "height"]
+};
 </script>
 
 <style lang="scss" scoped>

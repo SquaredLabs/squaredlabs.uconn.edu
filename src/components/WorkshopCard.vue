@@ -30,12 +30,10 @@
 </template>
 
 <script>
-import QuadLayout from "./QuadLayout.vue";
 
 export default {
   props: ["name", "time", "date", "addressTop", "addressBottom", "description", "technologies", "registrationLink"],
   components: {
-    QuadLayout
   }
 };
 </script>
