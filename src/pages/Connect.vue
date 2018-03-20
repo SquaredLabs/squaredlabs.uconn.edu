@@ -11,20 +11,23 @@
             <br/>
             If you’re a…
         </p>
+        <BackButton x="20px" y="50%" direction="back"/>
     </div>
     <ConnectSelect/>
   </section>
 </template>
 
 <script>
-import Construction from "../components/Construction.vue";
-import ConnectSelect from "../components/ConnectSelect.vue";
-
-export default {
-  components: {
-    ConnectSelect
-  }
-}
+    import Construction from "../components/Construction.vue";
+    import ConnectSelect from "../components/ConnectSelect.vue";
+    import BackButton from "../components/BackButton.vue";
+    console.log(window.history.length)
+    export default {
+    components: {
+        ConnectSelect,
+        BackButton
+    }
+    }
 </script>
 <style scoped lang="scss">
 @import "../styles/vars";
@@ -52,8 +55,15 @@ export default {
         padding-left: 10vw;
         font-family: "Moderat";
     }
+    #back{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        width:10px;
+        height: 10px;
+        background-color: $dodger-blue;
+    }
     @media only screen and (max-width: 750px) {
-
         #Header-1{
             font-size: 35px;
         }
