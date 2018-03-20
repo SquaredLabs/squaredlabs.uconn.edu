@@ -28,47 +28,40 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "../styles/vars";
-.header {
-  font-family: "SpaceMono";
-}
-#Header-1 {
-  font-size: 76px;
-  text-align: center;
-  color: #6aa1f4;
-  color: $dodger-blue;
-  margin-top: 5vh;
-}
+    .header{
+        font-family: "SpaceMono";
+    }
+    #Header-1{
+        font-size: 76px;
+        text-align: center;
+        color: #6aa1f4;
+        color: $dodger-blue;
+        margin-top:5vh;
+    }
+    
+    #graphics{
+        display:flex;
+        height: 30vh;
+    }
+    #Header-2{
+        font-size: 50px;
+        padding-left: 10vw;
+    }
+    #SubHeader{
+        font-size: 20px;
+        padding-left: 10vw;
+        font-family: "Moderat";
+    }
+    @media only screen and (max-width: 750px) {
 
-#graphics {
-  display: flex;
-  height: 30vh;
-}
-#Header-2 {
-  font-size: 50px;
-  padding-left: 10vw;
-}
-#SubHeader {
-  font-size: 20px;
-  padding-left: 10vw;
-  font-family: "Moderat";
-}
-#back {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  background-color: $dodger-blue;
-}
-@media only screen and (max-width: 750px) {
-  #Header-1 {
-    font-size: 35px;
-  }
-  #Header-2 {
-    font-size: 25px;
-  }
-  #SubHeader {
-    font-size: 20px;
-  }
-}
+        #Header-1{
+            font-size: 35px;
+        }
+        #Header-2{
+            font-size: 25px;
+        }
+        #SubHeader{
+            font-size: 20px;
+        }
+    }
 </style>
