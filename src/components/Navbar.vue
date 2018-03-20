@@ -12,7 +12,7 @@
             <router-link class="link" to="/people">people</router-link>
             <router-link class="link" to="/workshops">workshops</router-link>
             <a class="link" href="#">the lab</a>
-            <a class="link" href="#">connect</a>
+            <router-link class="link" to="/connect">connect</router-link>
         <!-- </div> -->
     </div>
 </template>
