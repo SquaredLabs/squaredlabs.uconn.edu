@@ -29,13 +29,8 @@
     }
 
 </script>
-
 <style scoped lang="scss">
-    @import "../styles/vars";
-    .container-header{
-          background: $pale-grey;
-          z-index: 11;
-    }
+@import "../styles/vars";
     .header{
         font-family: "SpaceMono";
     }
@@ -46,6 +41,7 @@
         color: $dodger-blue;
         margin-top:5vh;
     }
+    
     #graphics{
         display:flex;
         height: 30vh;
@@ -57,19 +53,10 @@
     #SubHeader{
         font-size: 20px;
         padding-left: 10vw;
-        padding-bottom: 30px;
         font-family: "Moderat";
-        margin: 0;
-    }
-    #back{
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        width:10px;
-        height: 10px;
-        background-color: $dodger-blue;
     }
     @media only screen and (max-width: 750px) {
+
         #Header-1{
             font-size: 35px;
         }
