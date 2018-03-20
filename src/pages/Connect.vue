@@ -55,8 +55,15 @@
         padding-left: 10vw;
         font-family: "Moderat";
     }
+    #back{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        width:10px;
+        height: 10px;
+        background-color: $dodger-blue;
+    }
     @media only screen and (max-width: 750px) {
-
         #Header-1{
             font-size: 35px;
         }
