@@ -38,6 +38,7 @@ export default {
         color: $dodger-blue;
         margin-top:5vh;
     }
+    
     #graphics{
         display:flex;
         height: 30vh;
@@ -50,5 +51,17 @@ export default {
         font-size: 20px;
         padding-left: 10vw;
         font-family: "Moderat";
+    }
+    @media only screen and (max-width: 750px) {
+
+        #Header-1{
+            font-size: 35px;
+        }
+        #Header-2{
+            font-size: 25px;
+        }
+        #SubHeader{
+            font-size: 20px;
+        }
     }
 </style>
