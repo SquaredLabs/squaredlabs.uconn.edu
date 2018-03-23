@@ -5,17 +5,19 @@
 </template>
 
 <script>
-export default {
-    props: ["x", "y","direction"],
-    data:function(){
-        return{arrow:(this.direction=="forward"?'→':'←')}
-    },
-    methods:{
-        nav(){
-            this.$router.go(this.direction=="forward"? 1 : -1)
-        }
-    },
-};
+    export default {
+        props: ["x", "y", "direction"],
+        data: function(){
+            return{
+                arrow: (this.direction == "forward" ? '→' : '←'),
+            }
+        },
+        methods: {
+            nav(){
+                this.$router.go(this.direction == "forward" ? 1 : -1);
+            }
+        },
+    };
 </script>
 
 <style lang="scss" scoped>
