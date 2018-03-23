@@ -2,7 +2,9 @@
     <section>
         <div class="container-header">
             <p class="header" id="Header-1">Like what we do?</p>
-            <div id="graphics">Placeholder</div>
+            <div id="graphics">
+                Placeholder
+            </div>
             <p class="header" id="Header-2">So do we.</p>
             <p class="header" id="SubHeader">
                 We’ve got a good thing going here, and we’d like to keep it going.
@@ -18,8 +20,8 @@
 </template>
 
 <script>
-    import ConnectSelect from "../components/ConnectSelect.vue";
-    import BackButton from "../components/BackButton.vue";
+    import ConnectSelect from "../components/connect/ConnectSelect.vue";
+    import BackButton from "../components/connect/BackButton.vue";
 
     export default {
         components: {
