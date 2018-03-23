@@ -7,7 +7,6 @@ import Workshops from "../pages/Workshops.vue";
 import Connect from "../pages/Connect.vue";
 import App from "../App.vue";
 
-
 Vue.use(VueRouter);
 
 const routes = [
