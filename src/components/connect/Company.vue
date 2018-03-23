@@ -1,6 +1,5 @@
 <template>
     <div id="container">
-<<<<<<< fcac807601d87d3b1fbe2aa2004a69f2aaac0ffe
         <div id="content">
            <p>
                If you’re part of a company and you would like to connect with our team, the best way to do 
@@ -26,29 +25,17 @@
         </div>
         
         <div v-on:click="back" id="back">Return to selection</div>
-=======
-        Company Placeholder
-        <div v-on:click="back">Back</div>
->>>>>>> Create selector
     </div>
 </template>
 
 <script>
     export default {
         props: ["back_to_select"],
-<<<<<<< fcac807601d87d3b1fbe2aa2004a69f2aaac0ffe
-=======
-        data:function(){
-            return{
-            }
-        },
->>>>>>> Create selector
         methods:{
             back(){
                 this.back_to_select();
             }
         }
-<<<<<<< fcac807601d87d3b1fbe2aa2004a69f2aaac0ffe
     };
 </script>
 
@@ -122,13 +109,4 @@
         transform: translateX(-50%);
         bottom: 40px;
     }
-=======
-  };
-</script>
-
-<style lang="scss" scoped>
-  #container{
-
-  }
->>>>>>> Create selector
 </style>
