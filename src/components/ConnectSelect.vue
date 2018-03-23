@@ -1,7 +1,7 @@
 <template>
-    <div class="container-connect">
-        <div style="padding: 20px"></div>
-    </div>
+  <div class="container-connect">
+    <div style="padding: 20px"></div>
+  </div>
 </template>
 
 <script>

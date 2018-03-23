@@ -1,7 +1,7 @@
 <template>
-    <div class="construction-zone" :style="`height: ${height}`">
-        <div style="padding: 20px">{{ msg }}</div>
-    </div>
+  <div class="construction-zone" :style="`height: ${height}`">
+    <div style="padding: 20px">{{ msg }}</div>
+  </div>
 </template>
 
 <script>
