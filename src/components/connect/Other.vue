@@ -21,6 +21,7 @@
 </script>
 
 <style lang="scss" scoped>
+<<<<<<< fcac807601d87d3b1fbe2aa2004a69f2aaac0ffe
     @import "../../styles/vars";
     #container{
         position: relative;
@@ -28,4 +29,9 @@
         padding-top:50px;
         background-color: $dodger-blue;
     }
+=======
+  #container{
+
+  }
+>>>>>>> Create selector
 </style>
