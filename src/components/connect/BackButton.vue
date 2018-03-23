@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../styles/vars";
+    @import "../../styles/vars";
     .back-button{
         width:45px;
         height: 20px;
