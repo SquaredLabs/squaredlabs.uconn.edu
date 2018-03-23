@@ -21,7 +21,11 @@
 </script>
 
 <style lang="scss" scoped>
-  #container{
-
-  }
+    @import "../../styles/vars";
+    #container{
+        position: relative;
+        top:-50px;
+        padding-top:50px;
+        background-color: $dodger-blue;
+    }
 </style>
