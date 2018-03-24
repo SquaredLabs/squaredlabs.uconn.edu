@@ -48,6 +48,11 @@
     flex-basis: 100%;
 }
 
+.layout--centered-children {
+    display: flex;
+    justify-content: center;
+}
+
 .marginned--horizontally {
     margin-left: 20px;
     margin-right: 20px;
