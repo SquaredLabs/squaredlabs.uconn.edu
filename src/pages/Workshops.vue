@@ -58,9 +58,9 @@
             </div>
           </layout>
         </layout>
-        <div class="workshop__previous">
-          <layout vertical="true">
-            <div class="layout__col">
+        <layout class="layout---spaced-between-children">
+          <layout class="workshop__previous" vertical="true" style="color: black; background: #00dbff;">
+            <div class="layout__col" style="width: 50%">
               <h1>Workshop Name</h1>
             </div>
             <div class="layout__col">
@@ -70,7 +70,18 @@
               <img class="workshop__technology" src="http://ryanchristiani.com/wp-content/uploads/2015/06/js-logo.png" />
             </div>
           </layout>
-        </div>
+          <layout class="workshop__next" vertical="true" style="color: white; background: #ff5a5c;">
+            <div class="layout__col" style="width: 50%">
+              <h1>Workshop Name</h1>
+            </div>
+            <div class="layout__col">
+              <p class="workshop__metadata">Monday 1/1/2018</p>
+            </div>
+            <div class="layout__col">
+              <img class="workshop__technology" src="http://ryanchristiani.com/wp-content/uploads/2015/06/js-logo.png" />
+            </div>
+          </layout>
+        </layout>
       </div>
     </section>
   </div>
@@ -79,20 +90,32 @@
 <style lang="scss">
 @import "../styles/vars";
 //TODO: Revisit margins and paddings for workshop items
+//TODO: Make next/previous workshop cards a component
+//TODO: Reuse workshop card? Maybe add full vs widget mode to props so same component can be used on home and workshops page?
 
-.workshop__previous {
+%workshop--mini-card {
+  display: inline-block;
   padding: 10px;
   position: relative;
-  left: 0;
-  top: -20px;
-  width: 25vw;
-  background: $sky-blue;
+  top: 40px;
+  width: 20vw;
+}
+
+.workshop__previous {
+  @extend %workshop--mini-card;
+  left: 20px;
+}
+
+.workshop__next {
+  @extend %workshop--mini-card;
+  right: 20px;
 }
 
 .workshop {
   background-color: #323330;
   color: $yellow;
   position: relative;
+  margin-bottom: 90px;
 }
 
 .workshop__details {
