@@ -6,29 +6,31 @@
             2) contact us about presenting a  <span class="content-style-emphasis">workshop</span> in 
             an area of your expertise, and/or 
             3) make a monetary contribution to the lab.
+            <div id="icons">
+                <div class="icon"><img alt="Gitlab" src="../../images/connect/gitlab.svg" /></div>
+                <div class="icon"><img alt="Mail" src="../../images/connect/mail.svg" /></div>
+                <div class="icon"><img alt="Bitcoin" src="../../images/connect/btc.svg"/></div>
+            </div>
         </div>
-        <div id="icons">
-            <div class="icon">Gitlab</div>
-            <div class="icon">Mail</div>
-            <div class="icon">Bitcoin</div>
-        </div>
+        
         <div v-on:click="back" id="back">Return to selection</div>
     </div>
 </template>
 
 <script>
-  export default {
-    props: ["back_to_select"],
-    data:function(){
-      return{
-      }
-    },
-    methods:{
-        back(){
-            this.back_to_select();
+    export default {
+        props: ["back_to_select"],
+        data:function(){
+            return{
+
+            }
+        },
+        methods:{
+            back(){
+                this.back_to_select();
+            }
         }
-    }
-  };
+    };
 </script>
 
 <style lang="scss" scoped>
@@ -63,12 +65,28 @@
     }
     #icons{
         display: flex;
-        width: 100%;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding-top: 40px;
+        color: black;
     }
+    @media only screen and (max-device-width: 949px){
+        #icons{
+            justify-content: space-around;
+        }
+    }
+    
     .icon{
-        width: 20%;
+        width: 200px;
+        height:100px;
+        background-color: white;
+        margin:10px;
+    }
+    .icon img{
+        height: 45px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 28px;
     }
     #back{
         background-color: rgba(255, 255, 255, 0.5);
