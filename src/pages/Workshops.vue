@@ -83,9 +83,10 @@
           </layout>
         </layout>
       </div>
-      <div>
+      <layout class="layout--centered-children">
         <ArrowButton direction="back" />
-      </div>
+        <ArrowButton direction="forward" />
+      </layout>
     </section>
   </div>
 </template>
@@ -118,7 +119,7 @@
   background-color: #323330;
   color: $yellow;
   position: relative;
-  margin-bottom: 90px;
+  margin-bottom: 40px;
 }
 
 .workshop__details {
