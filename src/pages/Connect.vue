@@ -31,6 +31,10 @@ export default {
 
 <style scoped lang="scss">
     @import "../styles/vars";
+    .container-header{
+          background: $pale-grey;
+          z-index: 11;
+    }
     .header{
         font-family: "SpaceMono";
     }
@@ -52,7 +56,9 @@ export default {
     #SubHeader{
         font-size: 20px;
         padding-left: 10vw;
+        padding-bottom: 30px;
         font-family: "Moderat";
+        margin: 0;
     }
     #back{
         position: absolute;
