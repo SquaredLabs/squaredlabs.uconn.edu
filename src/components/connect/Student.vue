@@ -40,16 +40,18 @@
     @import "../../styles/vars";
     #container{
         position: relative;
-        top:-50px;
-        padding-top:30px;
+        top:-70px;
         background-color: $dodger-blue;
-        display:flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+        height:700px;
     }
     #content{
-        padding:15vw;
+        position: relative;
+        padding-left:145px;
+        padding-right:145px;
         color:white;
+        position: relative;
+        top:50%;
+        transform: translateY(-50%);
     }
     .content-style-emphasis{
         background:linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5)) ;
