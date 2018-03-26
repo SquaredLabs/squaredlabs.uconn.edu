@@ -33,7 +33,7 @@
 
 <style lang="scss" scoped>
     @import "../../styles/vars";
-        #container{
+    #container{
         position: relative;
         top:-70px;
         background-color: $dodger-blue;
@@ -60,6 +60,15 @@
         background:linear-gradient(left, rgba(255,255,255,0.2),rgba(255,255,255,0.2)) ;
         background-position: 50% calc(50% - 2px) ;
         cursor: pointer;
+    }
+    #icons{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .icon{
+        width: 20%;
     }
     #back{
         background-color: rgba(255, 255, 255, 0.5);
