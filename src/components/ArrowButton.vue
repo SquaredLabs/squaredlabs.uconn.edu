@@ -1,12 +1,12 @@
 <template>
-    <div class="back-button" :style="`left:${x}; top:${y};`" v-on:click="nav">
-        <span id="arrow">{{arrow}}</span>
-    </div>
+  <div class="arrow-button" v-on:click="nav">
+    <span class="arrow-button__arrow">{{arrow}}</span>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ["x", "y", "direction"],
+  props: ["direction"],
   data: function() {
     return { arrow: this.direction == "forward" ? "→" : "←" };
   },
@@ -20,28 +20,32 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/vars";
-.back-button {
+
+.arrow-button {
   width: 45px;
   height: 20px;
-  position: absolute;
-  background-color: $dodger-blue-50;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  background-color: $dodger-blue-50;
   color: $onyx;
-  margin-top: 5px;
+  margin: 5px;
 }
-.back-button:hover {
+
+.arrow-button:hover {
   background-color: $dodger-blue;
 }
-#arrow {
-  top: 8px;
-  left: 5px;
-  position: relative;
+
+.arrow-button__arrow {
   font-family: "SpaceMono";
   font-size: 45px;
   transition: top 0.3s ease;
+  position: relative;
+  top: 9px;
 }
-#arrow:hover {
-  top: 12px;
+
+.arrow-button__arrow:hover {
+  top: 11px;
 }
 </style>
