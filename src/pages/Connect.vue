@@ -9,7 +9,7 @@
                 <br/>
                 <br/> If you’re a…
             </p>
-            <BackButton x="20px" y="50%" direction="back" />
+            <ArrowButton direction="back" />
         </div>
         <ConnectSelect/>
     </section>
@@ -18,11 +18,11 @@
 <script>
 import Construction from "../components/Construction.vue";
 import ConnectSelect from "../components/ConnectSelect.vue";
-import BackButton from "../components/BackButton.vue";
+import ArrowButton from "../components/ArrowButton.vue";
 export default {
   components: {
     ConnectSelect,
-    BackButton
+    ArrowButton
   }
 };
 </script>

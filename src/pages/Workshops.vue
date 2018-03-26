@@ -83,6 +83,9 @@
           </layout>
         </layout>
       </div>
+      <div>
+        <ArrowButton direction="back" />
+      </div>
     </section>
   </div>
 </template>
@@ -190,11 +193,13 @@
 <script>
 import Layout from "../components/Layout.vue";
 import WorkshopCard from "../components/WorkshopCard.vue";
+import ArrowButton from "../components/ArrowButton.vue";
 
 export default {
   components: {
     Layout,
-    WorkshopCard
+    WorkshopCard,
+    ArrowButton
   }
 };
-</script>
+</script> 
