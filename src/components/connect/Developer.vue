@@ -34,8 +34,7 @@
                 this.back_to_select();
             }
         }
-    }
-  };
+    };
 </script>
 
 <style lang="scss" scoped>
@@ -107,9 +106,26 @@
         width: 100%;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding-top: 40px;
+        color: black;
     }
+    @media only screen and (max-device-width: 949px){
+        #icons{
+            justify-content: space-around;
+        }
+    }
+    
     .icon{
-        width: 20%;
+        width: 200px;
+        height:100px;
+        background-color: white;
+        margin:10px;
+    }
+    .icon img{
+        height: 45px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 28px;
     }
     #back{
         background-color: rgba(255, 255, 255, 0.5);
