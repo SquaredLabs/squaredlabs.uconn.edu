@@ -34,7 +34,8 @@
                 this.back_to_select();
             }
         }
-    };
+    }
+  };
 </script>
 
 <style lang="scss" scoped>
