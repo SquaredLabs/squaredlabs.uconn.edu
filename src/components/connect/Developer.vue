@@ -33,22 +33,20 @@
 
 <style lang="scss" scoped>
     @import "../../styles/vars";
-    #container{
+        #container{
         position: relative;
         top:-70px;
-        display:table-cell;
         background-color: $dodger-blue;
-        display:flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding-bottom: 20px;
-        height:708px;
+        height:700px;
     }
     #content{
-        display: inline-block;
+        position: relative;
         padding-left:145px;
         padding-right:145px;
         color:white;
+        position: relative;
+        top:50%;
+        transform: translateY(-50%);
     }
     .content-style-emphasis{
         background:linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5)) ;
@@ -63,16 +61,12 @@
         background-position: 50% calc(50% - 2px) ;
         cursor: pointer;
     }
-    #icons{
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .icon{
-        width: 20%;
-    }
     #back{
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        display: inline;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
     }
 </style>
