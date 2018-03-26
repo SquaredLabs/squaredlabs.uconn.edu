@@ -48,6 +48,16 @@
     flex-basis: 100%;
 }
 
+.layout--centered-children {
+    display: flex;
+    justify-content: center;
+}
+
+.layout---spaced-between-children {
+    display: flex;
+    justify-content: space-between;
+}
+
 .marginned--horizontally {
     margin-left: 20px;
     margin-right: 20px;

@@ -2,18 +2,14 @@
     <section>
         <div class="container-header">
             <p class="header" id="Header-1">Like what we do?</p>
-            <div id="graphics">
-                Placeholder
-            </div>
+            <div id="graphics"></div>
             <p class="header" id="Header-2">So do we.</p>
             <p class="header" id="SubHeader">
-                We’ve got a good thing going here, and we’d like to keep it going.
-                Here’s how you can help.
+                We’ve got a good thing going here, and we’d like to keep it going. Here’s how you can help.
                 <br/>
-                <br/>
-                If you’re a…
+                <br/> If you’re a…
             </p>
-            <BackButton x="20px" y="50%" direction="back"/>
+            <ArrowButton direction="back" />
         </div>
         <ConnectSelect/>
     </section>
