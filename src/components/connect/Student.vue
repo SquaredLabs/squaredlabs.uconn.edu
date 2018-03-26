@@ -1,15 +1,18 @@
 <template>
     <div id="container">
         <div id="content">
+            <p>
             Students who work in ⬚² labs are 10 times more likely to get an awesome job when they graduate. 
              Ok, that’s probably a slight exaggeration, but they’ll definitely have an awesome job while 
              they’re at UConn. 
-             <br/> <br/>
+             </p>
+             <p>
              We are always looking for talented and hard-working students to join our team. 
              Our interview process is rigorous and our bar is set high.  We look for students that already have 
              a track record of building cool stuff in their spare time (which usually starts in high school or 
-             earlier) and some demonstrated experience working with the web. 
-             <br/> <br/> 
+             earlier) and some demonstrated experience working with the web.
+             </p> 
+             <p>
              The earlier you are in your college career the better (while we don’t typically hire seniors, 
              exceptions have been made). If you’ve read through this website and think you’d be a good fit, 
              you can apply for a <span class="content-style-emphasis">web development</span> 
