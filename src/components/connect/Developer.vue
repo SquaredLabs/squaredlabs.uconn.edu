@@ -20,11 +20,6 @@
 <script>
     export default {
         props: ["back_to_select"],
-        data:function(){
-            return{
-
-            }
-        },
         methods:{
             back(){
                 this.back_to_select();
