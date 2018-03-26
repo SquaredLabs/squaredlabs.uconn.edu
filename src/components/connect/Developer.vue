@@ -40,7 +40,7 @@
 
 <style lang="scss" scoped>
     @import "../../styles/vars";
-        #container{
+    #container{
         position: relative;
         top:-70px;
         background-color: $dodger-blue;
@@ -104,6 +104,12 @@
     .icon:hover img{
         height:50px;
         margin-top: 26px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .icon{
+        width: 20%;
     }
     #back{
         background-color: rgba(255, 255, 255, 0.5);
