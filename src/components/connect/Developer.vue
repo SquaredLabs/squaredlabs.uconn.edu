@@ -40,7 +40,7 @@
 
 <style lang="scss" scoped>
     @import "../../styles/vars";
-    #container{
+        #container{
         position: relative;
         top:-70px;
         background-color: $dodger-blue;
