@@ -1,13 +1,12 @@
 <template>
     <div id="container-connect">
-      
         <transition-group name="animateSelect" id="selector">
             <div v-for="(value, key) in views" v-bind:key="key" class="select" v-on:click="select(key)">
               {{key}}
             </div>
         </transition-group>
         <transition name="slide_up">
-        <component v-if="selected" :is="selected_view[Object.keys(selected_view)[0]]" :back_to_select="back_to_select"/>
+          <component v-if="selected" :is="selected_view[Object.keys(selected_view)[0]]" :back_to_select="back_to_select"/>
         </transition>
     </div>
 </template>
@@ -44,7 +43,11 @@
         this.views=this.selected_view;
       },
       back_to_select(){
-        console.log(views)
+        window.scroll({
+          top: 100, 
+          left: 0, 
+          behavior: 'smooth' 
+        });
         this.selected_view={};
         this.selected=false;
         this.views=Object.assign({}, views);
@@ -61,6 +64,8 @@
   #selector{
     display: flex;
     justify-content: space-around;
+    z-index: 11;
+    background: $pale-grey;
   }
   .select{
     width:230px;
@@ -72,10 +77,10 @@
     font-size:25px;
     font-family: "Moderat";
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 11;
+    z-index: 12;
   }
   .animateSelect-enter, .animateSelect-leave-to
-  /* .list-complete-leave-active below version 2.1.8 */ {
+  {
     opacity: 0;
   }
   .animateSelect-leave-active {
@@ -87,9 +92,14 @@
   .slide_up-leave-active {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
+    z-index: -1;
   }
-  .slide_up-enter, .slide_up-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
-    transform: translateY(50px);
+  .slide_up-enter, 
+  {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  .slide_up-leave-to{
+    transform: translateY(-100%);
   }
 </style>
