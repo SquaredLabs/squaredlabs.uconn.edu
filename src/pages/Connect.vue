@@ -17,12 +17,12 @@
 
 <script>
     import ConnectSelect from "../components/connect/ConnectSelect.vue";
-    import BackButton from "../components/connect/BackButton.vue";
+    import ArrowButton from "../components/ArrowButton.vue";
 
     export default {
         components: {
             ConnectSelect,
-            BackButton
+            ArrowButton
         }
     }
 
