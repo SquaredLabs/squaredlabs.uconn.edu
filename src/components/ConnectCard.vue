@@ -16,31 +16,31 @@ export default {
 @import "../styles/vars";
 
 .link {
-    height: 100px;
-    background-color: #ffffff;
-    overflow: hidden;
+  height: 100px;
+  background-color: #ffffff;
+  overflow: hidden;
 }
 
-.link__image-animated, .link__hidden {
-    transform: translateY(0);
-    transition-duration: 0.2s;
+.link__image-animated,
+.link__hidden {
+  transform: translateY(0);
+  transition-duration: 0.2s;
 }
 
-.link__image, .link__image-animated {
-    height: 100%;
+.link__image,
+.link__image-animated {
+  height: 100%;
 }
 
-.link__hidden { 
-    max-width: 100%;
+.link__hidden {
+  max-width: 100%;
 }
 
 .link:hover .link__image-animated {
-    transform: translateY(-20px);
+  transform: translateY(-20px);
 }
 
 .link:hover .link__hidden {
-    transform: translateY(-50px);
+  transform: translateY(-50px);
 }
-
-
 </style>

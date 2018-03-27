@@ -1,6 +1,6 @@
 <template>
-  <div class="construction-zone" :style="`height: ${height}`">
-    <div style="padding: 20px">{{ msg }}</div>
+  <div class="container-connect">
+    <div style="padding: 20px"></div>
   </div>
 </template>
 
