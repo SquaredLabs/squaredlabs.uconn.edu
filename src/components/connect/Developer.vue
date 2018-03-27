@@ -126,6 +126,11 @@
         margin: 0 auto;
         display: block;
         margin-top: 28px;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .icon:hover img{
+        height:50px;
+        margin-top: 26px;
     }
     #back{
         background-color: rgba(255, 255, 255, 0.5);
