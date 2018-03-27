@@ -1,7 +1,7 @@
 <template>
     <div id="container-connect">
         <transition-group name="animateSelect" id="selector">
-            <div v-for="(value, key) in views" v-bind:key="key" class="select" v-on:click="select(key)">
+            <div v-for="(value, key) in views" v-bind:key="key" class="select" v-bind:class="{selected:selected}" v-on:click="select(key)">
               {{key}}
             </div>
         </transition-group>
@@ -79,8 +79,16 @@
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 12;
   }
-  .animateSelect-enter, .animateSelect-leave-to
-  {
+  /*Class toggled by vue*/
+  .select:hover{
+    cursor: pointer;
+    background-color: rgb(230,230,230);
+  }
+  .selected:hover{
+    cursor: default !important;
+    background-color: rgb(255,255,255) !important;
+  }
+  .animateSelect-enter, .animateSelect-leave-to{
     opacity: 0;
   }
   .animateSelect-leave-active {
@@ -94,8 +102,7 @@
     position: absolute;
     z-index: -1;
   }
-  .slide_up-enter, 
-  {
+  .slide_up-enter, {
     transform: translateY(300px);
     opacity: 0;
   }

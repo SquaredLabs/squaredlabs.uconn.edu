@@ -2,10 +2,19 @@
     <div id="container">
         <div id="content">
             If you’re a UConn or non-UConn developer but want to get involved with ⬚² labs you can: 
-            1) contribute to any of our open source  <span class="content-style-emphasis">projects</span>, 
-            2) contact us about presenting a  <span class="content-style-emphasis">workshop</span> in 
-            an area of your expertise, and/or 
-            3) make a monetary contribution to the lab.
+
+                <p><span class="content-style-list">
+                    1) Contribute to any of our open source  
+                    <span class="content-style-emphasis">projects</span>,
+                </span>
+                <span class="content-style-list">
+                    2) contact us about presenting a  <span class="content-style-emphasis">workshop</span> 
+                    in an area of your expertise, and/or
+                </span>
+                <span class="content-style-list">
+                    3) make a monetary contribution to the lab.
+                </span></p>
+            
             <div id="icons">
                 <div class="icon"><img alt="Gitlab" src="../../images/connect/gitlab.svg" /></div>
                 <div class="icon"><img alt="Mail" src="../../images/connect/mail.svg" /></div>
@@ -45,7 +54,10 @@
         top:50%;
         transform: translateY(-50%);
     }
-    .content-style-emphasis{
+    #content .content-style-list{
+        color:$onyx;
+    }
+    #content .content-style-emphasis{
         background:linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5)) ;
         background-position: 50% calc(50% - 5px) ;
         background-repeat: no-repeat;
@@ -76,12 +88,21 @@
         height:100px;
         background-color: white;
         margin:10px;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .icon:hover{
+        cursor: pointer;
     }
     .icon img{
         height: 45px;
         margin: 0 auto;
         display: block;
         margin-top: 28px;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .icon:hover img{
+        height:50px;
+        margin-top: 26px;
     }
     #back{
         background-color: rgba(255, 255, 255, 0.5);
