@@ -14,8 +14,10 @@
 <script>
 
   import Developer from './Developer.vue';
+  import Student from './Student.vue';
 
   const views={
+    "Student":Student,
     "Developer":Developer,
   }
 
