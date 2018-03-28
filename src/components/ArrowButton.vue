@@ -30,7 +30,9 @@ export default {
   transition: background-color 0.3s ease;
   background-color: $dodger-blue-50;
   color: $onyx;
-  margin: 5px;
+  margin-left: 10px;
+  position: absolute;
+  top: 60vh;
 }
 
 .arrow-button:hover {

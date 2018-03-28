@@ -59,7 +59,7 @@
 <style lang="scss" scoped>
   @import "../../styles/vars";
   #container-connect{
-
+    margin: 0 10px 0 10px;
   }
   #selector{
     display: flex;
