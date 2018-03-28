@@ -5,7 +5,7 @@
   "author": "Andi Andreas <nexuister@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "webpack-dev-server --config webpack.dev.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js -p",
     "clean": "rm logs/*; rm -rf dist/",
     "start": "forever start -a -l webhook.log server.js",
