@@ -16,15 +16,15 @@
 </template>
 
 <script>
-import Construction from "../components/Construction.vue";
-import ConnectSelect from "../components/ConnectSelect.vue";
-import ArrowButton from "../components/ArrowButton.vue";
-export default {
-  components: {
-    ConnectSelect,
-    ArrowButton
-  }
-};
+
+  import ConnectSelect from "../components/connect/ConnectSelect.vue";
+  import ArrowButton from "../components/ArrowButton.vue";
+  export default {
+    components: {
+      ConnectSelect,
+      ArrowButton
+    }
+  };
 </script>
 <style scoped lang="scss">
 @import "../styles/vars";
