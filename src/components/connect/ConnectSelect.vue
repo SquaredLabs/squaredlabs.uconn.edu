@@ -15,10 +15,12 @@
 
   import Developer from './Developer.vue';
   import Student from './Student.vue';
+  import Company from './Company.vue';
 
   const views={
     "Student":Student,
     "Developer":Developer,
+    "Company":Company,
   }
 
   export default {
