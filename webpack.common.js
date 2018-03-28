@@ -1,6 +1,7 @@
 const path = require("path"),
 CleanWebpackPlugin = require("clean-webpack-plugin"),
 ExtractTextPlugin = require("extract-text-webpack-plugin"),
+MiniCssExtractPlugin = require("mini-css-extract-plugin"),
 HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const extractConfig = ExtractTextPlugin.extract({
@@ -99,6 +100,6 @@ module.exports = {
 			template: "src/index.html",
 			filename: "index.html"
 		}),
-		new ExtractTextPlugin("styles/[name].bundle.css")
+		new MiniCssExtractPlugin("styles/[name].bundle.css")
 	]
 };
