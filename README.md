@@ -1,5 +1,7 @@
 # squaredlabs
 
+![](https://drone.core.uconn.edu/api/badges/SquaredLabs/squaredlabs.uconn.edu/status.svg?branch=develop)
+
 > A Vue.js project
 
 ## Build Setup
