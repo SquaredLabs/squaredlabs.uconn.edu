@@ -66,6 +66,7 @@
     justify-content: space-around;
     z-index: 11;
     background: $pale-grey;
+    padding-top: 10px;
   }
   .select{
     width:230px;
