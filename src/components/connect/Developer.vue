@@ -46,7 +46,6 @@
         height:700px;
     }
     #content{
-        position: relative;
         padding-left:145px;
         padding-right:145px;
         color:white;
@@ -103,32 +102,11 @@
     .icon:hover img{
         height:50px;
         margin-top: 26px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        color: black;
     }
     @media only screen and (max-device-width: 949px){
         #icons{
             justify-content: space-around;
         }
-    }
-    
-    .icon{
-        width: 200px;
-        height:100px;
-        background-color: white;
-        margin:10px;
-    }
-    .icon img{
-        height: 45px;
-        margin: 0 auto;
-        display: block;
-        margin-top: 28px;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .icon:hover img{
-        height:50px;
-        margin-top: 26px;
     }
     #back{
         background-color: rgba(255, 255, 255, 0.5);

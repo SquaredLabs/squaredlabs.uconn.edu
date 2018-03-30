@@ -55,6 +55,7 @@
     font-size: 20px;
     padding-left: 10vw;
     font-family: "Moderat";
+    margin: 0;
   }
   #back {
     position: absolute;
