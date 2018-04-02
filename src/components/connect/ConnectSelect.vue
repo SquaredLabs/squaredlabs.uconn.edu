@@ -1,8 +1,12 @@
 <template>
     <div id="container-connect">
         <transition-group name="animateSelect" id="selector">
-            <div v-for="(value, key) in views" v-bind:key="key" class="select" v-bind:class="{selected:selected}" v-on:click="select(key)">
-              {{key}}
+            <div v-for="(value, key) in views" v-bind:key="key" class="select"
+             v-on:click="select(key)" v-on:mouseover="hover" v-on:mouseleave="hover_leave">
+              <transition name="fade">
+                <span v-if="!back_shown" class="selectTitle">{{key}}</span>
+              </transition>
+              <span v-if="selected" class="selectBack" v-bind:class="{expanded:back_shown}">Back</span>
             </div>
         </transition-group>
         <transition name="slide_up">
@@ -31,11 +35,14 @@
         views:Object.assign({}, views),
         selected:false,
         selected_view:{},
+        back_shown:false,
       }
     },
     methods:{
       select(key){
-        if(this.selected)return;
+        if(this.selected){
+          return this.back_to_select();
+        };
         this.selected_view={};
         this.selected_view[key]=views[key]
         this.selected=true;
@@ -51,6 +58,15 @@
         this.selected_view={};
         this.selected=false;
         this.views=Object.assign({}, views);
+        this.back_shown=false;
+      },
+      hover(){
+        if(!this.selected)return;
+        this.back_shown=true;
+      },
+      hover_leave(){
+        if(!this.selected)return;
+        this.back_shown=false;
       }
     }
   };
@@ -66,7 +82,6 @@
     justify-content: space-around;
     z-index: 11;
     background: $pale-grey;
-    padding-top: 10px;
   }
   .select{
     width:230px;
@@ -80,7 +95,6 @@
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 12;
   }
-  /*Class toggled by vue*/
   .select:hover{
     cursor: pointer;
     background-color: rgb(230,230,230);
@@ -88,6 +102,24 @@
   .selected:hover{
     cursor: default !important;
     background-color: rgb(255,255,255) !important;
+  }
+  .selectBack{
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.6em;
+    opacity: 0.3;
+    position: relative;
+    padding-left:4px; 
+  }
+  /*Class toggled by vue when back is hovered*/
+  .expanded{
+    font-size: 1em;
+    opacity: 1;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    font-size:0px;
   }
   .animateSelect-enter, .animateSelect-leave-to{
     opacity: 0;
