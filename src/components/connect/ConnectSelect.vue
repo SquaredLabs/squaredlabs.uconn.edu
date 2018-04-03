@@ -4,9 +4,9 @@
             <div v-for="(value, key) in views" v-bind:key="key" class="select"
              v-on:click="select(key)" v-on:mouseover="hover" v-on:mouseleave="hover_leave">
               <transition name="fade">
-                <span v-if="!back_shown" class="selectTitle">{{key}}</span>
+                <p class="selectTitle" v-bind:class="{expanded_title:back_shown}">{{key}}</p>
               </transition>
-              <span v-if="selected" class="selectBack" v-bind:class="{expanded:back_shown}">Back</span>
+              <p v-show="selected" class="selectBack" v-bind:class="{expanded_back:back_shown}">Back</p>
             </div>
         </transition-group>
         <transition name="slide_up">
@@ -87,9 +87,11 @@
     width:230px;
     background-color: white;
     height:100px;
-    display: flex;
+    /*display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;*/
+    text-align: center;
     font-size:25px;
     font-family: "Moderat";
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -99,27 +101,35 @@
     cursor: pointer;
     background-color: rgb(230,230,230);
   }
-  .selected:hover{
-    cursor: default !important;
-    background-color: rgb(255,255,255) !important;
+  .selectTitle{
+    position: relative;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+  .select:hover .expanded_title{
+    font-size: 0;
+    /*transform:scale(0);*/
   }
   .selectBack{
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 0.6em;
     opacity: 0.3;
     position: relative;
+    top: 30px;
     padding-left:4px; 
+    line-height: 1.75em;
   }
-  /*Class toggled by vue when back is hovered*/
-  .expanded{
+  .select:hover .selectBack{
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1em;
     font-size: 1em;
     opacity: 1;
+    transform: translateY(-35px);
   }
-  .fade-enter-active, .fade-leave-active {
+  /*Class toggled by vue when back is hovered*/
+  .expanded_title{
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    font-size:0px;
   }
   .animateSelect-enter, .animateSelect-leave-to{
     opacity: 0;
