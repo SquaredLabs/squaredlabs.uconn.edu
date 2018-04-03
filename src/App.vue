@@ -68,8 +68,12 @@ body {
 .slide-enter-active, .slide-leave-active {
   transition: opacity 0.3s, transform 0.3s;
 }
-.slide-enter, .slide-leave-to {
+.slide-enter {
   opacity: 0;
   transform: translateX(-30%);
+}
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(30%);
 }
 </style>

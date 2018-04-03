@@ -2,15 +2,15 @@
     <div id="container-connect">
         <transition-group name="animateSelect" id="selector">
             <div v-for="(value, key) in views" v-bind:key="key" class="select"
-             v-on:click="select(key)" v-on:mouseover="hover" v-on:mouseleave="hover_leave">
+             v-on:click="select(key)" v-on:mouseover="hover" v-on:mouseleave="hoverLeave">
               <transition name="fade">
-                <p class="selectTitle" v-bind:class="{expanded_title:back_shown}">{{key}}</p>
+                <p class="selectTitle" v-bind:class="{expandedTitle:back_shown}">{{key}}</p>
               </transition>
               <p v-show="selected" class="selectBack" v-bind:class="{expanded_back:back_shown}">Back</p>
             </div>
         </transition-group>
-        <transition name="slide_up">
-          <component v-if="selected" :is="selected_view[Object.keys(selected_view)[0]]" :back_to_select="back_to_select"/>
+        <transition name="slideUp">
+          <component v-if="selected" :is="selected_view[Object.keys(selected_view)[0]]" :backToSelect="backToSelect"/>
         </transition>
     </div>
 </template>
@@ -41,7 +41,7 @@
     methods:{
       select(key){
         if(this.selected){
-          return this.back_to_select();
+          return this.backToSelect();
         };
         this.selected_view={};
         this.selected_view[key]=views[key]
@@ -49,7 +49,7 @@
         for (let element in this.views) delete this.views[element];
         this.views=this.selected_view;
       },
-      back_to_select(){
+      backToSelect(){
         window.scroll({
           top: 100, 
           left: 0, 
@@ -64,7 +64,7 @@
         if(!this.selected)return;
         this.back_shown=true;
       },
-      hover_leave(){
+      hoverLeave(){
         if(!this.selected)return;
         this.back_shown=false;
       }
@@ -107,7 +107,7 @@
     margin: 0;
     transform: translateY(-50%);
   }
-  .select:hover .expanded_title{
+  .select:hover .expandedTitle{
     font-size: 0;
     /*transform:scale(0);*/
   }
@@ -128,7 +128,7 @@
     transform: translateY(-35px);
   }
   /*Class toggled by vue when back is hovered*/
-  .expanded_title{
+  .expandedTitle{
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .animateSelect-enter, .animateSelect-leave-to{
@@ -137,19 +137,21 @@
   .animateSelect-leave-active {
     position: absolute;
   }
-  .slide_up-enter-active {
+  .slideUp-enter-active {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .slide_up-leave-active {
+  .slideUp-leave-active {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
     z-index: -1;
+    overflow: hidden;
   }
-  .slide_up-enter, {
+  .slideUp-enter, {
     transform: translateY(300px);
     opacity: 0;
   }
-  .slide_up-leave-to{
+  .slideUp-leave-to{
     transform: translateY(-100%);
+    height: 0;
   }
 </style>

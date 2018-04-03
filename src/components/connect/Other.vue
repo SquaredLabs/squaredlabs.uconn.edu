@@ -37,10 +37,10 @@
 
 <script>
     export default {
-        props: ["back_to_select"],
+        props: ["backToSelect"],
         methods:{
             back(){
-                this.back_to_select();
+                this.backToSelect();
             }
         }
   };
