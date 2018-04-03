@@ -30,10 +30,10 @@
 
 <script>
     export default {
-        props: ["back_to_select"],
+        props: ["backToSelect"],
         methods:{
             back(){
-                this.back_to_select();
+                this.backToSelect();
             }
         }
     };
@@ -56,14 +56,14 @@
         top:50%;
         transform: translateY(-50%);
     }
-    .content-style-emphasis{
+    .contentStyleEmphasis{
         background:linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5)) ;
         background-position: 50% calc(50% - 5px) ;
         background-repeat: no-repeat;
         color: $onyx;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .content-style-emphasis:hover{
+    .contentStyleEmphasis:hover{
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         background:linear-gradient(left, rgba(255,255,255,0.2),rgba(255,255,255,0.2)) ;
         background-position: 50% calc(50% - 2px) ;
