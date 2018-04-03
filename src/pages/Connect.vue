@@ -1,10 +1,10 @@
 <template>
     <section>
         <div class="container-header">
-            <p class="header" id="Header-1">Like what we do?</p>
+            <p class="header" id="header-1">Like what we do?</p>
             <div id="graphics"></div>
-            <p class="header" id="Header-2">So do we.</p>
-            <p class="header" id="SubHeader">
+            <p class="header" id="header-2">So do we.</p>
+            <p class="header" id="subHeader">
                 We’ve got a good thing going here, and we’d like to keep it going. Here’s how you can help.
                 <br/>
                 <br/> If you’re a…
@@ -47,11 +47,11 @@
     display: flex;
     height: 30vh;
   }
-  #Header-2 {
+  #header-2 {
     font-size: 50px;
     padding-left: 10vw;
   }
-  #SubHeader {
+  #subHeader {
     font-size: 20px;
     padding-left: 10vw;
     font-family: "Moderat";
@@ -66,13 +66,13 @@
     background-color: $dodger-blue;
   }
   @media only screen and (max-width: 750px) {
-    #Header-1 {
+    #header-1 {
       font-size: 35px;
     }
-    #Header-2 {
+    #header-2 {
       font-size: 25px;
     }
-    #SubHeader {
+    #subHeader {
       font-size: 20px;
     }
   }
