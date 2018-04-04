@@ -74,28 +74,30 @@
 
 <style lang="scss" scoped>
   @import "../../styles/vars";
+  
   #container-connect{
     margin: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
   #selector{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     z-index: 11;
-    background: $pale-grey;
+    width: 85%;
   }
   .select{
-    width:230px;
+    width:24%;
     background-color: white;
     height:100px;
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;*/
     text-align: center;
     font-size:25px;
     font-family: "Moderat";
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 12;
+    margin-top: 10px; 
   }
   .select:hover{
     cursor: pointer;
@@ -136,6 +138,7 @@
   }
   .animateSelect-leave-active {
     position: absolute;
+    z-index: 11;
   }
   .slideUp-enter-active {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -151,7 +154,20 @@
     opacity: 0;
   }
   .slideUp-leave-to{
-    transform: translateY(-100%);
-    height: 0;
+    /*transform: translateY(-100%);*/
+    transform: scaleY(0);
+  }
+  @media screen and (max-width: 1150px) { /*Tablet View*/
+    #selector{
+      width: 510px;
+    }
+    .select{
+      width :35%;
+    }
+  }
+  @media screen and (max-width: $tablet) {/*Mobile view*/
+    body {
+        background-color: lightgreen;
+    }
   }
 </style>
