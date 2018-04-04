@@ -165,9 +165,4 @@
       width :35%;
     }
   }
-  @media screen and (max-width: $tablet) {/*Mobile view*/
-    body {
-        background-color: lightgreen;
-    }
-  }
 </style>
