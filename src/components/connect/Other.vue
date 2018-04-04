@@ -103,4 +103,9 @@
         transform: translateX(-50%);
         bottom: 40px;
     }
+    @media screen and (max-width: $desktop) { /*Tablet View*/
+        #content{
+            padding: 5px;
+        }
+    }
 </style>
