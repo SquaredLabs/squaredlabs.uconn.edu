@@ -73,14 +73,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding-top: 40px;
         color: black;
     }
     
     .icon{
-        width: 300px;
-        height:300px;
-        margin:10px;
         text-align: center;
     }
     .subHeader{
@@ -96,7 +92,7 @@
         margin:0;
     }
     .icon img{
-        height: 200px;
+        height: 10em;
         margin: 0 auto;
         display: block;
         margin-top: 28px;
@@ -108,5 +104,10 @@
         left: 50%;
         transform: translateX(-50%);
         bottom: 40px;
+    }
+    @media screen and (max-width: $desktop) { /*Tablet View*/
+        #content{
+            padding: 5px;
+        }
     }
 </style>
