@@ -3,6 +3,7 @@ CleanWebpackPlugin = require("clean-webpack-plugin"),
 ExtractTextPlugin = require("extract-text-webpack-plugin"),
 MiniCssExtractPlugin = require("mini-css-extract-plugin"),
 HtmlWebpackPlugin = require("html-webpack-plugin");
+HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 const extractConfig = ExtractTextPlugin.extract({
 	use: [
@@ -100,6 +101,11 @@ module.exports = {
 			template: "src/index.html",
 			filename: "index.html"
 		}),
-		new MiniCssExtractPlugin("styles/[name].bundle.css")
-	]
+		new MiniCssExtractPlugin("styles/[name].bundle.css"),
+		new HardSourceWebpackPlugin(),
+	],
+	performance: {
+		maxEntrypointSize: 2500000,
+		maxAssetSize: 5000000
+	}
 };

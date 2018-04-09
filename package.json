@@ -5,8 +5,8 @@
   "author": "Andi Andreas <nexuister@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js -p",
+    "dev": "webpack-dev-server --config webpack.dev.js --mode development",
+    "build": "webpack --config webpack.prod.js -p --mode production",
     "clean": "rm logs/*; rm -rf dist/",
     "start": "forever start -a -l webhook.log server.js",
     "stop": "forever stop server.js"
@@ -39,6 +39,7 @@
     "babel-runtime": "^6.26.0",
     "express": "^4.16.2",
     "flexboxgrid": "^6.3.1",
+    "hard-source-webpack-plugin": "^0.6.4",
     "normalize.css": "^7.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
