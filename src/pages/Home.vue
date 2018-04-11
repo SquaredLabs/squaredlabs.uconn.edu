@@ -9,10 +9,10 @@
       <layout style="margin-top:80px" text="projects" padding-top="110px">
         <div class="layout__col--quarter marginned--horizontally" style="position: relative; top: -80px">
           <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best
-            <router-link class="link--highlighted" to="/people">students</router-link>, we build cutting-edge
-            <router-link class="link--highlighted" to="/projects">websites</router-link> that support UConn’s world-class research infrastructure.</p>
+            <SLink text="students" fontSize="16" link_ref="/people"/>, we build cutting-edge
+            <SLink text="websites" fontSize="16" link_ref="/projects"/> that support UConn’s world-class research infrastructure.</p>
           <p>View our history, purpose, and space on the
-            <router-link class="link--highlighted" to="/lab">lab page</router-link>.</p>
+            <SLink text="lab page" fontSize="16" link_ref="/lab"/>.</p>
         </div>
         <project-card class="layout__col--quarter marginned--horizontally" name="Innovation Portal" background="../images/ip.png" link="/projects">
           <p>A short, fun description.</p>
@@ -21,7 +21,7 @@
         <project-card class="layout__col--quarter marginned--horizontally" name="GrantTrails" background="../images/huskytrails.png" link="/projects" />
       </layout>
       <layout>
-        <router-link class="link--highlighted link--pulled-right" to="/projects">See all our projects →</router-link>
+        <SLink class="link--pulled-right" text="See all our projects" fontSize="16" link_ref="/projects"/>
       </layout>
     </section>
     <section>
@@ -32,19 +32,19 @@
         <div class="layout__col--quarter padded" style="margin-top: 80px">
           <p>Learning from others and sharing what we know is central to the ⬚² labs philosophy. We see workshops as an opportunity to do both (in addition to getting to know the UConn web development community).</p>
           <p>Our workshops are open to all members of the UConn community, for free.</p>
-          <router-link class="link--highlighted" to="/workshops">View all workshops →</router-link>
+          <SLink text="View all workshops" fontSize="16" link_ref="/workshops"/>
         </div>
       </layout>
     </section>
     <section style="padding-top: 6em">
       <layout>
-        <router-link class="link--highlighted link--pulled-right" to="/people">Meet the team →</router-link>
+       <SLink class="link--pulled-right" text="Meet the team" fontSize="16" link_ref="/people"/>
       </layout>
       <layout>
         <div class="layout__col--quarter marginned--horizontally" style="position: relative; top: -80px">
           <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
           <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you,
-            <router-link class="link--highlighted" to="/connect">get in touch!</router-link>
+            <SLink text="get in touch!" fontSize="16" link_ref="/connect"/>
           </p>
         </div>
         <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
@@ -65,7 +65,7 @@
         <connect-card class="layout__col--quarter marginned--horizontally" link="http://www.foundation.uconn.edu/send-your-gift/" background="../images/btc.svg" />
         <div class="layout__col--quarter marginned--horizontally" style="position: relative; top: -80px">
           <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
-          <router-link class="link--highlighted" to="/connect">Connect with us →</router-link>
+         <SLink text="Connect with us" fontSize="16" link_ref="/connect"/>
         </div>
       </layout>
     </section>
@@ -87,6 +87,7 @@ import ProjectCard from "../components/ProjectCard.vue";
 import WorkshopCard from "../components/WorkshopCard.vue";
 import PersonCard from "../components/PersonCard.vue";
 import ConnectCard from "../components/ConnectCard.vue";
+import SLink from "../components/Link.vue";
 
 export default {
   components: {
@@ -95,7 +96,8 @@ export default {
     ProjectCard,
     WorkshopCard,
     ConnectCard,
-    PersonCard
+    PersonCard,
+    SLink
   }
 };
 </script>

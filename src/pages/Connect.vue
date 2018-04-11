@@ -9,7 +9,7 @@
                 <br/>
                 <br/> If you’re a…
             </p>
-            <Link text="Back" link_ref="-1" fontSize="40" />
+            <Link text="←" link_ref="-1" fontSize="40" />
         </div>
         <ConnectSelect/>
     </section>
@@ -18,12 +18,10 @@
 <script>
 
   import ConnectSelect from "../components/connect/ConnectSelect.vue";
-  import ArrowButton from "../components/ArrowButton.vue";
   import Link from "../components/Link.vue";
   export default {
     components: {
       ConnectSelect,
-      ArrowButton,
       Link
     }
   };
