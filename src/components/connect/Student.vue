@@ -15,11 +15,11 @@
              <p>
              The earlier you are in your college career the better (while we don’t typically hire seniors, 
              exceptions have been made). If you’ve read through this website and think you’d be a good fit, 
-             you can apply for a <span class="content-style-emphasis">web development</span> 
-             or <span class="content-style-emphasis">design</span> position.
+             you can apply for a <SLink text="web development" fontSize="16" link_ref=""/>
+             or <SLink text="design" fontSize="16" link_ref=""/> position.
              <p>
              The other way to get involved with us as a student is 
-             to attend our <span class="content-style-emphasis">workshops</span> which cover a 
+             to attend our <SLink text="workshops" fontSize="16" link_ref="/workshops"/> which cover a 
              variety of topics relevant to our projects (from coding to design to data visualization).
              Here are some of the companies and organizations that our alumni have gone on to work with:
              </p>
@@ -29,14 +29,18 @@
 </template>
 
 <script>
-  export default {
-    props: ["backToSelect"],
-    methods:{
-        back(){
-            this.backToSelect();
+    import SLink from '../Link.vue';
+    export default {
+        components: {
+            SLink
+        },
+        props: ["backToSelect"],
+        methods:{
+            back(){
+                this.backToSelect();
+            }
         }
-    }
-  };
+    };
 </script>
 
 <style lang="scss" scoped>

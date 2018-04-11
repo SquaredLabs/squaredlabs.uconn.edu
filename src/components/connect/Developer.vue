@@ -5,10 +5,11 @@
 
                 <p><span class="contentStyleList">
                     1) Contribute to any of our open source  
-                    <span class="contentStyleEmphasis">projects</span>,
+                    <SLink text="projects" fontSize="16" link_ref="/projects"/>,
                 </span>
                 <span class="contentStyleList">
-                    2) contact us about presenting a  <span class="contentStyleEmphasis">workshop</span> 
+                    2) contact us about presenting a  
+                    <SLink text="workshop" fontSize="16" link_ref="/workshops"/> 
                     in an area of your expertise, and/or
                 </span>
                 <span class="contentStyleList">
@@ -27,7 +28,11 @@
 </template>
 
 <script>
+    import SLink from '../Link.vue'
     export default {
+        components:{
+            SLink
+        },
         props: ["backToSelect"],
         methods:{
             back(){

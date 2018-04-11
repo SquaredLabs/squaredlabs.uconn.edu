@@ -1,7 +1,7 @@
 <template>
-  <div class="button" v-bind:style="{fontSize: fontSize + 'px' }">
-    <a class="buttonText" v-on:click="click" :href="ref">{{text}} </a>
-  </div>
+  <span class="button" v-bind:style="{fontSize: fontSize + 'px' }">
+    <a class="buttonText" v-on:click="click">{{text}} </a>
+  </span>
 </template>
 
 <script>
@@ -9,15 +9,22 @@
         props: ["text","link_ref","fontSize"],
         data: function() {
             //If ref is a number, it is interpreted as a vue route
-            if(!isNaN(this.link_ref)  ){
+            console.log(/^\/\.*/.test(this.link_ref))
+            if(!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref) ){
                 return { ref:""};
             }
             return {ref:this.link_ref};
         },
         methods:{
             click(){
-                if(!isNaN(this.link_ref) ){
+                if(!isNaN(this.link_ref) ){//If number, go that many pages (back if <0)
                     this.$router.go(parseInt(this.link_ref));
+                }
+                else if(/^\/\.*/.test(this.link_ref)){//If local url
+                    this.$router.push(this.link_ref.slice(1))
+                }
+                else{//If external URL
+                    window.location.href=(this.link_ref);
                 }
             },
         }
@@ -29,24 +36,20 @@
     .button {
         cursor: pointer;
         transition: background-color 0.3s ease;
-        background-color: $dodger-blue-50;
+        background:linear-gradient(left, #adcaf5,#adcaf5) ;
+        background-repeat: no-repeat;
         color: $onyx;
-        margin-left: 10px;
-        position: absolute;
-        top: 60vh;
-        padding-top: 0.4em;
     }
     .button:hover {
         background-color: $dodger-blue;
     }
     .buttonText {
         text-decoration: none;
-        font-family: "SpaceMono";
         transition: top 0.3s ease;
         position: relative;
-        top: 0.1em;
+        top: 0.2em;
     }
     .button:hover .buttonText {
-        top: 0.3em;
+        top: 0.4em;
     }
 </style>
