@@ -84,8 +84,8 @@
         </layout>
       </div>
       <layout class="layout--centered-children">
-        <ArrowButton direction="back" />
-        <ArrowButton direction="forward" />
+        <SLink text="←" fontSize="40" link_ref="-1"/>
+        <SLink text="→" fontSize="40" link_ref="1"/>
       </layout>
     </section>
   </div>
@@ -194,13 +194,13 @@
 <script>
 import Layout from "../components/Layout.vue";
 import WorkshopCard from "../components/WorkshopCard.vue";
-import ArrowButton from "../components/ArrowButton.vue";
+import SLink from "../components/Link.vue";
 
 export default {
   components: {
     Layout,
     WorkshopCard,
-    ArrowButton
+    SLink
   }
 };
 </script> 
