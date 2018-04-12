@@ -2,7 +2,7 @@
     <div v-if="!vertical" class="layout">
         <slot></slot>
     </div>
-    <div v-else>
+    <div v-else class="layout--vertical">
         <slot></slot>
     </div>
 </template>
@@ -67,14 +67,15 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
-.padded {
-    padding: 20px;
-}
 </style>
 
 <script>
 export default {
-    props: ["vertical"]
+    props: ["vertical"],
+    components: {
+        "test": {
+            template: `<p>test</p>`
+        }
+    }
 }
 </script>

@@ -76,4 +76,8 @@ body {
   opacity: 0;
   transform: translateX(30%);
 }
+
+.padded {
+  padding: 20px;
+}
 </style>
