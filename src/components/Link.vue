@@ -62,6 +62,4 @@
     .buttonText {
         text-decoration: none;
     }
-    .button:hover .buttonText {
-    }
 </style>
