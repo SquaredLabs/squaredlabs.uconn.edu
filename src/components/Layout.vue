@@ -57,16 +57,6 @@
     display: flex;
     justify-content: space-between;
 }
-
-.marginned--horizontally {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.marginned--vertically {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 </style>
 
 <script>

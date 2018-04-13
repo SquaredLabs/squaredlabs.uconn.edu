@@ -2,7 +2,7 @@
   <div>
     <section id="jumbotron" style="margin-bottom: 100px">
       <img class="img--fill-container" src="https://picsum.photos/1920/445" style="height:440px" />
-      <layout style="margin-top: -300px;">
+      <layout style="margin-top: -300px">
         <layout-col m="horizontal">
           <div style="background: white; margin-top: -80px" class="padded" id="white-box">
             <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
