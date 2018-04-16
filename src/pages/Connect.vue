@@ -144,9 +144,9 @@
     align-items: flex-end;
   }
   .graphicIcon{
-    flex: 0 0 95px;
-    height: 95px;
-    margin:0px 0px 0px 10px;
+    flex: 0 0 40%;
+    height: 40%;
+    margin-right: 10%;
     background-color: white;
     display: flex;
     justify-content: center;
