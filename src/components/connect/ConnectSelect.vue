@@ -1,12 +1,14 @@
 <template>
     <div id="container-connect">
-        <transition-group name="animateSelect" id="selector">
+        <transition-group name="animateSelect" id="selector" 
+        v-on:after-leave="readyForBack"
+        v-on:before-leave="disableBack">
             <div v-for="(value, key) in views" v-bind:key="key" class="select"
              v-on:click="select(key)" v-on:mouseover="hover" v-on:mouseleave="hoverLeave">
               <transition name="fade">
                 <p class="selectTitle" v-bind:class="{expandedTitle:back_shown}">{{key}}</p>
               </transition>
-              <p v-show="selected" class="selectBack" v-bind:class="{expanded_back:back_shown}">Back</p>
+              <p v-show="selected && hoverable" class="selectBack">Back</p>
             </div>
         </transition-group>
         <transition name="slideUp">
@@ -36,6 +38,7 @@
         selected:false,
         selected_view:{},
         back_shown:false,
+        hoverable:false
       }
     },
     methods:{
@@ -62,11 +65,17 @@
       },
       hover(){
         if(!this.selected)return;
-        this.back_shown=true;
+        this.back_shown=this.hoverable;
       },
       hoverLeave(){
         if(!this.selected)return;
         this.back_shown=false;
+      },
+      readyForBack(){
+        this.hoverable=true;
+      },
+      disableBack(){
+        this.hoverable=false;
       }
     }
   };
