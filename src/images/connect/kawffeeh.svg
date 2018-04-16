@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="130px" viewBox="0 0 68 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>kawffeeh</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Connect" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Connect-Desktop-(Other)" transform="translate(-478.000000, -310.000000)">
+            <g id="Landing-section" transform="translate(20.000000, 140.000000)">
+                <g id="Stats" transform="translate(0.000000, 130.000000)">
+                    <g id="cups-of-coffee" transform="translate(376.000000, 0.000000)">
+                        <g id="kawffeeh" transform="translate(86.000000, 43.000000)">
+                            <polyline id="Path-3" fill="#F3F3ED" points="7.37614774 93.4045306 9 123 51.5168046 123 56 50 5 50 5.98941109 66.0329832"></polyline>
+                            <polygon id="Path-3" fill="#DDDDD6" points="7 80 56 50 5 50"></polygon>
+                            <polyline id="Path-6" stroke="#FFFFFF" stroke-width="8" points="11 119 48 119 52 54"></polyline>
+                            <polyline id="Path-3" stroke="#0C120C" stroke-width="8" stroke-linecap="round" points="7.37614774 93.4045306 9 123 51.5168046 123 56 50 5 50 6.6000061 77"></polyline>
+                            <polyline id="Path-5" stroke="#0C120C" stroke-width="6" fill="#F6F6E7" stroke-linecap="round" points="4 43 6 34 55 36 57 43.0012621"></polyline>
+                            <polyline id="Path-4" stroke="#0C120C" stroke-width="6" fill="#F6F6E7" stroke-linecap="round" points="30 43 1 43 0 51.060306 60.1633091 51.060306 59.1633091 43 54 43"></polyline>
+                            <path d="M41,43 L43,43" id="Line-2" stroke="#0C120C" stroke-width="6" stroke-linecap="round"></path>
+                            <circle id="Oval" fill="#655014" cx="28" cy="79" r="15"></circle>
+                            <path d="M18,27 C16.6666667,25.6401938 16,24.0340983 16,22.1817135 C16,19.4031363 18,18.7909442 18,16.0262064 C18,14.1830479 17.3333333,12.5076458 16,11" id="Line-3" stroke="#F2F3F7" stroke-width="3" stroke-linecap="square"></path>
+                            <path d="M12,16 C10.6666667,14.6401938 10,13.0340983 10,11.1817135 C10,8.40313634 12,7.79094421 12,5.02620643 C12,3.18304791 11.3333333,1.50764577 10,0" id="Line-3" stroke="#F2F3F7" stroke-width="3" stroke-linecap="square"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

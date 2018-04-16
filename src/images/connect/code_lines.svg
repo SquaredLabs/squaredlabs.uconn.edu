@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="78px" viewBox="0 0 75 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>code_lines</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Connect" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Connect-Desktop-(Other)" transform="translate(-668.000000, -418.000000)">
+            <g id="Landing-section" transform="translate(20.000000, 140.000000)">
+                <g id="Stats" transform="translate(0.000000, 130.000000)">
+                    <g id="lines-of-code" transform="translate(627.000000, 126.000000)">
+                        <g id="code_lines" transform="translate(21.200000, 13.780000)">
+                            <rect id="Rectangle-7" fill="#404044" x="0" y="64.66" width="74.2" height="21.2"></rect>
+                            <rect id="Rectangle-7" fill="#404044" x="0" y="22.26" width="74.2" height="21.2"></rect>
+                            <text id="1-2-3-4" font-family="SpaceMono-Regular, Space Mono" font-size="16" font-weight="normal" line-spacing="20">
+                                <tspan x="6.764" y="18.9600586" fill="#404044">1</tspan>
+                                <tspan x="16.556" y="20.4" fill="#EEEEEE"></tspan>
+                                <tspan x="6.764" y="38.9600586" fill="#FFFFFF">2</tspan>
+                                <tspan x="16.556" y="40.4" fill="#D6D8DE"></tspan>
+                                <tspan x="6.764" y="58.9600586" fill="#404044">3</tspan>
+                                <tspan x="16.556" y="60.4" fill="#EEEEEE"></tspan>
+                                <tspan x="6.764" y="78.9600586" fill="#FFFFFF">4</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
