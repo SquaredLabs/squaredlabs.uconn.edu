@@ -16,7 +16,7 @@
             </p>
             <div id="icons">
                 <div class="icon">
-                    <img alt="Gitlab" src="../../images/connect/gitlab.svg" />
+                    <img alt="Gitlab" src="../../images/connect/stage_lg.svg" />
                     <div class="subHeader">No one's taken the spotlight yet. 
                         <p>(We're still casting.)</p>
                     </div>
@@ -75,7 +75,6 @@
         justify-content: space-around;
         color: black;
     }
-    
     .icon{
         text-align: center;
     }
