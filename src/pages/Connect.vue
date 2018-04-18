@@ -5,31 +5,51 @@
           
           <p class="header" id="header-1">Like what we do?</p>
           <div id="graphics">
-            <div class="graphic" id="pixelsPerDay" background="../images/square.png">
-              <img src="../images/connect/pixels.svg"/>
-              <p id="ppdText">{{pixelsPerDay}}m</p>
-              <p id="ppdSubText">pixels per day</p>
-            </div>
-            <div class="graphic" id="covfefe">
-              <img src="../images/connect/kawffeeh.svg"/>
-            </div>
-            <div class="graphic" id="icons">
-              <div class="graphicIcon">
-                <svg width="64" height="64" class="octicon octicon-git-branch" viewBox="0 0 10 16" version="1.1" aria-hidden="true">
-                  <path fill-rule="evenodd" 
-                  d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path>
-                </svg>
+            <div class="graphic" v-on:mouseover="count_start" 
+            v-on:mouseleave="count_reset" background="../images/square.png">
+              <div class="graphicInner" id="pixelsPerDay">
+                <img src="../images/connect/pixels.svg"/>
+                <p id="ppdText">{{pixelsPerDay}}m</p>
+                <p id="ppdSubText">pixels per day</p>
               </div>
-              <div class="graphicIcon">
-                <img id="gitlabBlack" src="../images/connect/gitlab.svg"/>
-              </div>
-              <div class="graphicIcon">
-                <img src="../images/connect/code_lines.svg"/>
-              </div>
-              <div class="graphicIcon">d</div>
             </div>
+            <div class="graphic">
+              <div class="graphicInner" id="covfefe">
+                <img src="../images/connect/kawffeeh.svg"/>
+              </div>
+            </div>
+            <div class="graphic" >
+              <div class="graphicInnerI" id="icons">
+                <div class="graphicIcon">
+                  <div class="graphicIconI" id="icon1">
+                    <svg width="64" height="64" class="octicon octicon-git-branch" viewBox="0 0 10 16" version="1.1" aria-hidden="true">
+                      <path fill-rule="evenodd" 
+                      d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="graphicIcon">
+                  <div class="graphicIconI" id="icon2">
+                    <img id="gitlabBlack" src="../images/connect/gitlab.svg"/>
+                  </div>
+                </div>
+                <div class="graphicIcon">
+                  <div class="graphicIconI" id="icon3">
+                    <img src="../images/connect/code_lines.svg"/>
+                  </div>
+                </div>
+                  <div class="graphicIcon">
+                    <div class="graphicIconI" id="icon4">
+                    d
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
             <div class="graphic" id="moreStuff">
-              More stuff here.
+              <div class="graphicInner">
+                More stuff here.
+              </div>
             </div>
           </div>
           <p class="header" id="header-2">So do we.</p>
@@ -55,13 +75,24 @@
   import background from "../images/square.png"
   export default {
     data(){
-      let max=40;
-      this.counter=setInterval(()=>{
-        //Condition here is a check if property exists
-        if(this.pixelsPerDay>=0)this.pixelsPerDay+=1;
-        if(this.pixelsPerDay>=max)clearInterval(this.counter);
-      }, 20);
       return{pixelsPerDay:0}
+    },
+    methods:{
+      count_start(){
+        let max=40;
+        let counter=setInterval(()=>{
+          //Condition here is a check if property exists
+          if(this.pixelsPerDay>=max)return clearInterval(counter);
+          if(this.pixelsPerDay>=0)this.pixelsPerDay+=1;
+          
+        }, 30);
+      },
+      count_reset(){
+        console.log('Reset')
+        clearInterval(this.counter);
+        this.pixelsPerDay=0;
+      }
+
     },
     components: {
       ConnectSelect,
@@ -100,17 +131,30 @@
     color: $dodger-blue;
     margin-top: 5vh;
   }
-
   #graphics {
     display: flex;
     justify-content: flex-start;
-    height: 300px;
-    overflow:auto;
+    align-items: flex-end;
+    height: 400px;
+    overflow-x:auto;
+    overflow-y:hidden;
   }
   .graphic{
+    flex: 0 0 300px;
+    height: 300px;
+    margin: 10px;
+    position: relative;
+  }
+  .graphicInner{
     display: flex;
-    flex: 0 0 30%;
-    margin: 20px;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  }
+  .graphicInner:hover{
+    width: 100%;
+    height: 100%;
   }
   #pixelsPerDay{
     font-family: "SpaceMono";
@@ -119,24 +163,42 @@
     background-color:white; 
   }
   #pixelsPerDay img{
+    transform: translateY(50%);
+    transition: 0.3s ease-in-out;
+    margin :0;
     padding:2em;
   }
   #ppdText{
+    transform: translateY(300px);
+    transition: 0.3s ease-in-out;
+    margin: 0;
     color:$rouge-40;
     font-size:4em;
-    margin: 0;
     font-weight: bold;
   }
   #ppdSubText{
+    transform: translateY(300px);
+    transition: 0.3s ease-in-out;
     font-size:1.5em;
     color:$onyx;
   }
+  #pixelsPerDay:hover * {
+    transform: none;
+  }
+
+
+
   #covfefe{
-    flex:0 0 212px;
-    height: 212px;
-    align-self: flex-end;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     justify-content: center;
     background-color:white; 
+  }
+  .graphicInnerI{
+    width: 100%;
+    height: 100%;
+    display: flex;
   }
   #icons{
     flex-wrap: wrap;
@@ -144,13 +206,43 @@
     align-items: flex-end;
   }
   .graphicIcon{
-    flex: 0 0 40%;
-    height: 40%;
-    margin-right: 10%;
-    background-color: white;
+    flex: 0 0 50%;
+    height: 50%;
+    position: relative;
+  }
+  .graphicIconI{
     display: flex;
+    position: absolute;
     justify-content: center;
     align-items: center;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  }
+  #icon1{
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+  }
+  #icon2{
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+  }
+  #icon3{
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+  }
+  #icon4{
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+  }
+  .graphicIcon:hover .graphicIconI{
+    width: 100%;
+    height: 100%;
   }
   .graphicIcon fill{
     color: black;
