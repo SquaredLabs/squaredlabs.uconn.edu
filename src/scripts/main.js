@@ -1,5 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import VueResource from "vue-resource";
+
 import Home from "../pages/Home.vue";
 import Projects from "../pages/Projects.vue";
 import People from "../pages/People.vue";
@@ -9,6 +11,7 @@ import App from "../App.vue";
 
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
 
 const routes = [
   { path: '/', component: Home },
