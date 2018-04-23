@@ -1,10 +1,11 @@
 <template>
     <div class="footbar">    
-      <a class="footbar__link" href="https://uconn.edu" target="_blank">©2018 UConn</a>
-      <a class="footbar__link" href="https://core.uconn.edu" target="_blank">UConn COR²E</a>
-      <a class="footbar__link" onclick="alert('CONTACT!');">UConn COR²E</a>
-      <a class="footbar__link">Link 1</a>
-      <a class="footbar__link">Link 2</a>
+      
+      <SLink class="footbar__link" text="©2018 UConn" fontSize="1em" link_ref="https://uconn.edu"/>
+      <SLink class="footbar__link" text="UConn COR²E" fontSize="0.8em" link_ref="https://core.uconn.edu"/>
+      <SLink class="footbar__link" text="UConn COR²E" fontSize="0.8em" link_ref="alert('CONTACT')"/>
+      <SLink class="footbar__link" text="Link 1" fontSize="1em"/>
+      <SLink class="footbar__link" text="Link 2" fontSize="1em"/>
       <figure class="footbar__brand">
         <img src="../images/wordmark.png" /> 
       </figure>
@@ -17,6 +18,14 @@
       </span>
     </div>
 </template>
+<script>
+  import SLink from './Link.vue'
+  export default{
+    components:{
+      SLink
+    }
+  }
+</script>
 <style scoped lang="scss">
 @import "../styles/vars";
 
@@ -27,6 +36,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  justify-content: space-around;
 }
 
 .footbar__brand {
@@ -42,34 +52,6 @@
 
 .footbar__link {
   flex-basis: calc(100% / 8);
-  position: relative;
-  color: $onyx;
-  font-family: SpaceMono;
-  transition: all 0.15s ease;
-  text-decoration: none;
-
-  &:before {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 1em;
-    left: 20px;
-    right: 20px;
-    background-color: $dodger-blue-50;
-    transition: background-color 0.3s ease;
-    z-index: -1;
-  }
-
-  &:hover,
-  .router-link-exact-active {
-    bottom: -2px;
-  }
-
-  &:hover:before,
-  .router-link-exact-active:before {
-    background-color: $dodger-blue;
-    top: -2px;
-  }
 }
 
 .footbar__signature {
