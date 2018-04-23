@@ -20,11 +20,15 @@
         },
         methods:{
             click(){
+
                 if(!isNaN(this.link_ref) ){//If number, go that many pages (back if <0)
                     this.$router.go(parseInt(this.link_ref));
                 }
                 else if(/^\/\.*/.test(this.link_ref)){//If local url
                     this.$router.push(this.link_ref.slice(1))
+                }
+                else if(!/http/.test(this.link_ref)){//If not external url
+                    this.link_ref()
                 }
                 else{//If external URL
                     window.location.href=(this.link_ref);
