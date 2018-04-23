@@ -58,7 +58,7 @@
               <br/>
               <br/> If you’re a…
           </p>
-          <Link text="←" link_ref="-1" fontSize="40" />
+          <Link text="←" link_ref="-1" fontSize="40px" />
         </div>
         <div class="connectBackground">
             <p>con</p>
