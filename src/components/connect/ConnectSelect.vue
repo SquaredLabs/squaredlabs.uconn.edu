@@ -1,9 +1,9 @@
 <template>
     <div id="container-connect">
-        <transition-group name="animateSelect" id="selector" 
+        <transition-group name="animateSelect" id="selector"
         v-on:after-leave="readyForBack"
         v-on:before-leave="disableBack">
-            <div v-for="(value, key) in views" v-bind:key="key" class="select"
+            <div v-for="(value, key) in views" :key="key" class="select"
              v-on:click="select(key)" v-on:mouseover="hover" v-on:mouseleave="hoverLeave">
               <transition name="fade">
                 <p class="selectTitle" v-bind:class="{expandedTitle:back_shown}">{{key}}</p>
@@ -48,9 +48,10 @@
         };
         this.selected_view={};
         this.selected_view[key]=views[key]
-        this.selected=true;
+        
         for (let element in this.views) delete this.views[element];
         this.views=this.selected_view;
+        this.selected=true;
       },
       backToSelect(){
         window.scroll({
@@ -62,6 +63,7 @@
         this.selected=false;
         this.views=Object.assign({}, views);
         this.back_shown=false;
+        this.hoverable=false;
       },
       hover(){
         if(!this.selected)return;
@@ -96,6 +98,7 @@
     flex-wrap: wrap;
     z-index: 11;
     width: 85%;
+    transition: all 0.3s;
   }
   .select{
     width:24%;
@@ -104,7 +107,7 @@
     text-align: center;
     font-size:25px;
     font-family: "Moderat";
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 12;
     margin-top: 10px; 
   }
@@ -142,12 +145,13 @@
   .expandedTitle{
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .animateSelect-enter, .animateSelect-leave-to{
-    opacity: 0;
-  }
-  .animateSelect-leave-active {
+  
+  .animateSelect-leave-active{
     position: absolute;
-    z-index: 11;
+  }
+  .animateSelect-enter, .animateSelect-leave-to{
+    transform: translateY(-35px);
+    opacity: 0;
   }
   .slideUp-enter-active {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
