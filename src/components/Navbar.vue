@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar">
+    <div class="navbar" v-bind:class="{blueTheme:theme=='blue'}">
         <div class="mobile">
             [menu ↑]
         </div> 
@@ -7,12 +7,18 @@
             <img src="../images/wordmark.png" /> 
         </figure>
         <!-- <div class="links"> -->
-            <SLink class="link" text="home" fontSize="16px" link_ref="/home"/>
-            <SLink class="link" text="projects" fontSize="16px" link_ref="/projects"/>
-            <SLink class="link" text="people" fontSize="16px" link_ref="/people"/>
-            <SLink class="link" text="workshops" fontSize="16px" link_ref="/workshops"/>
-            <SLink class="link" text="the lab" fontSize="16px" link_ref="/home"/>
-            <SLink class="link" text="connect" fontSize="16px" link_ref="/connect"/>
+            <SLink class="link" text="home" fontSize="16px" link_ref="/home"
+             :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="projects" fontSize="16px" link_ref="/projects"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="people" fontSize="16px" link_ref="/people"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="workshops" fontSize="16px" link_ref="/workshops"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="the lab" fontSize="16px" link_ref="/labs"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="connect" fontSize="16px" link_ref="/connect"
+            :color="theme=='blue'?'white':''"/>
         <!-- </div> -->
     </div>
 </template>
@@ -22,12 +28,17 @@
   export default {
     components: {
       SLink
-    }
+    },
+    props:['theme']
   };
 </script>
 
 <style scoped lang="scss">
 @import "../styles/vars";
+.blueTheme .brand img{
+  filter: invert(100%);
+}
+
 
 .navbar {
   padding: 20px;

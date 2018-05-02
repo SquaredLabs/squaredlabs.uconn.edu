@@ -1,5 +1,5 @@
 <template>
-    <a class="button" v-on:click="click" v-bind:style="{fontSize: fontSize}" v-bind:class="{ white: isWhite }">
+    <a class="button" v-on:click="click" v-bind:style="{fontSize: fontSize}" v-bind:class="{ white: color=='white' }">
         <span class="buttonText" >{{text}} </span>
     </a>
 </template>
@@ -9,7 +9,6 @@
         props: ["text","link_ref","fontSize","color"],
         data: function() {
             let data={}
-            data.isWhite=this.color=="white"
             //If ref is a number, it is interpreted as a vue route
             if(!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref) ){
                 data.ref="";
