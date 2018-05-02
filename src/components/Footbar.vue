@@ -1,11 +1,16 @@
 <template>
-    <div class="footbar">    
+    <div class="footbar" v-bind:class="{blueTheme:theme=='blue'}">    
       
-      <SLink class="footbar__link" text="©2018 UConn" fontSize="1em" link_ref="https://uconn.edu"/>
-      <SLink class="footbar__link" text="UConn COR²E" fontSize="0.8em" link_ref="https://core.uconn.edu"/>
-      <SLink class="footbar__link" text="UConn COR²E" fontSize="0.8em" link_ref="alert('CONTACT')"/>
-      <SLink class="footbar__link" text="Link 1" fontSize="1em"/>
-      <SLink class="footbar__link" text="Link 2" fontSize="1em"/>
+      <SLink class="footbar__link" text="©2018 UConn" fontSize="1em" link_ref="https://uconn.edu"
+      :color="theme=='blue'?'white':''"/>
+      <SLink class="footbar__link" text="UConn COR²E" fontSize="0.8em" link_ref="https://core.uconn.edu"
+      :color="theme=='blue'?'white':''"/>
+      <SLink class="footbar__link" text="UConn COR²E" fontSize="0.8em" link_ref="alert('CONTACT')"
+      :color="theme=='blue'?'white':''"/>
+      <SLink class="footbar__link" text="Link 1" fontSize="1em"
+      :color="theme=='blue'?'white':''"/>
+      <SLink class="footbar__link" text="Link 2" fontSize="1em"
+      :color="theme=='blue'?'white':''"/>
       <figure class="footbar__brand">
         <img src="../images/wordmark.png" /> 
       </figure>
@@ -21,6 +26,7 @@
 <script>
   import SLink from './Link.vue'
   export default{
+    props:['theme'],
     components:{
       SLink
     }
@@ -29,6 +35,9 @@
 <style scoped lang="scss">
 @import "../styles/vars";
 
+.blueTheme figure img{
+  filter:invert(100%);
+}
 .footbar {
   padding: 20px;
   text-align: center;
