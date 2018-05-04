@@ -169,7 +169,7 @@ export default {
 </script> 
 
 <style lang="scss">
-@import "../styles/vars";
+
 #titleTextContainer{
   display: flex;
   align-items: center;
@@ -193,7 +193,7 @@ export default {
 .titleTextLine{
   color: white;
   font-size: 15.5em;
-  font-family:'Space Mono';
+  font-family:'SpaceMono';
   margin-top: 0.5em;
 }
 #aims{
@@ -211,7 +211,7 @@ export default {
   padding: 0 2em 4em 2em;
 }
 .weAre{
-  font-family: "Space Mono";
+  font-family: "SpaceMono";
   font-variant: small-caps;
 }
 #aims #rightContent{
@@ -223,7 +223,7 @@ export default {
   font-size: 3em;
   text-align: center;
   color: white;
-  font-family: "Space Mono";
+  font-family: "SpaceMono";
   margin-top: 0;
   font-weight: 500;
 }
@@ -281,7 +281,7 @@ export default {
 .aboutTitle{
   font-size: 4em;
   font-weight: 500;
-  font-family: "Space Mono";
+  font-family: "SpaceMono";
   
 }
 .aboutText{
