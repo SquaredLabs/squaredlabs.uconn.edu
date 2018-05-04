@@ -65,6 +65,8 @@
                 More stuff here.
               </div>
             </div>
+            <Link id="graphicLeft" text="←" :link_ref="graphicLeft" fontSize="40px" />
+            <Link id="graphicRight" text="→" :link_ref="graphicRight" fontSize="40px" />
           </div>
           <p class="header" id="header-2">So do we.</p>
           <p class="header" id="subHeader">
@@ -72,7 +74,7 @@
               <br/>
               <br/> If you’re a…
           </p>
-          <Link text="←" link_ref="-1" fontSize="40" />
+          <Link text="←" link_ref="-1" fontSize="40px" />
         </div>
         <div class="connectBackground">
             <p>con</p>
@@ -142,6 +144,17 @@
             this.repos=5;
             console.error(`Could not load https://api.github.com/orgs/squaredlabs/repos: ${JSON.stringify(response)}`);
         });
+      },
+      count_reset(){
+        console.log('Reset')
+        clearInterval(this.counter);
+        this.pixelsPerDay=0;
+      },
+      graphicLeft(){
+        console.log('left')
+      },
+      graphicRight(){
+        console.log('right')
       }
     },
     components: {
@@ -150,6 +163,7 @@
     }
   };
 </script>
+<!--Graphics Style!-->
 <style scoped lang="scss">
   @import "../styles/vars";
   /*Header*/
@@ -182,7 +196,6 @@
     margin-top: 5vh;
   }
 
-  /*Graphics*/
   #graphics {
     display: flex;
     justify-content: flex-start;
@@ -190,6 +203,16 @@
     height: 400px;
     overflow-x:auto;
     overflow-y:hidden;
+  }
+  #graphicLeft{
+    position: absolute;
+    top: 60%;
+    left: 10px;
+  }
+  #graphicRight{
+    position: absolute;
+    top: 60%;
+    right: 10px;
   }
   .graphic{
     flex: 0 0 300px;
@@ -333,7 +356,40 @@
   #gitlabBlack{
     filter: grayscale(100%);
   }
-  /*Remainder of page*/
+</style>
+
+/*Remainder of page*/
+<style scoped lang="scss">
+  @import "../styles/vars";
+  .connectBackground{
+    font-size: 291px;
+    position: fixed;
+    top: 140px;
+    left: 20px;
+    color:white;
+    z-index: -1;
+    line-height: 1;
+  }
+  .connectBackground p{
+    margin: 0;
+    padding: 0;
+  }
+  .container-header{
+    /*background: $pale-grey;*/
+    z-index: 11;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+  }
+  .header {
+    font-family: "SpaceMono";
+  }
+  #header-1 {
+    font-size: 71px;
+    text-align: left;
+    color: #6aa1f4;
+    color: $dodger-blue;
+    margin-top: 5vh;
+  }
   #header-2 {
     font-size: 50px;
   }

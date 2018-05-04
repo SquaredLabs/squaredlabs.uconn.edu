@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
-    <Navbar />
+  <div id="app" class= "app" v-bind:class="{blueTheme:theme=='blue'}">
+    <Navbar :theme="theme"/>
     <transition name="slide" mode="out-in">
       <router-view class="page"></router-view>
     </transition>
-    <Footbar />
+    <Footbar :theme="theme" />
   </div>
 </template>
 
@@ -14,6 +14,7 @@ import Footbar from "./components/Footbar.vue";
 
 export default {
   name: "app",
+  props:["theme"],
   components: { 
     Navbar,
     Footbar
@@ -27,7 +28,7 @@ export default {
 
 
 body {
-  background: $pale-grey;
+  
   font-family: "Moderat";
   margin: 0;
   padding: 0;
@@ -35,6 +36,16 @@ body {
   line-height: 20px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  
+}
+#app{
+  transition: ease-in-out 0.3s all;
+}
+.app{
+  background-color: $pale-grey;
+}
+.blueTheme{
+  background: $dodger-blue;
 }
 
 .link--highlighted {

@@ -1,0 +1,338 @@
+<template>
+  <div>
+    <div id="titleTextContainer">
+      <div id="titleText">
+        <p class="titleTextLine">design</p>
+        <p class="titleTextLine">develop</p>
+        <p class="titleTextLine">create.</p>
+      </div>
+    </div>
+    <div id="plusIcons">
+        <p class="plus">+</p>
+        <p class="plus">+</p>
+    </div>
+    <div id="aims">
+      <div id="leftContent">
+        <div id="text">
+          <p>
+            <span class="weAre">WE ARE SQUARED LABS:</span>
+            a group of undergratuate students 
+          at the University of Connecticut. We support research at 
+          the University and bring the sciences and arts closer 
+          together.</p>
+          <p>
+            <span class="weAre">WE ARE COLLABORATORS:</span>
+            programmers, designers, illustrators, 
+          photographers, journalists, and scientists. </p>
+          <p>
+            <span class="weAre">WE CREATE AND BUILD:</span>
+            tools, websites, identities, art, 
+          and more. Really, the only thing we don’t do is say no.</p>
+        </div>
+        <div class="aimL">
+          <div class="aimI5">
+            To leave UConn better than we found it.
+          </div>
+        </div>
+      </div>
+      <div id="rightContent">
+        <h1 id="title">
+          our aims
+        </h1>
+        <div id="aimBoxes">
+          <div class="aim">
+            <div class="aimI aimI1">
+            To give students real-world software development experience.
+            </div>
+          </div>
+          <div class="aim">
+            <div class="aimI aimI2">
+            To provide an unparalleled work and learning environment.
+            </div>
+          </div>
+          <div class="aim">
+            <div class="aimI aimI3">
+            To support different and creative ways of thinking.
+            </div>
+          </div>
+         
+          <div class="aim">
+             <div class="aimI aimI4">
+            To build awesome websites.
+          </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="about" id="philosphy">
+      <h1 class="aboutTitle">our philosphy</h1>
+      <p class="aboutText">
+        <p>
+        Students are the lifeblood of any University.  
+        When they graduate, many will go on to transform the world 
+        — literally. Yet, academia, with its long-standing obsession
+         with status, title, and seniority, too often makes students
+          feel unready or incapable of making a difference until they
+           have a diploma in their hand 
+           (maybe it’s their way of justifying their existence in 
+           the face of people like Steve Jobs, Bill Gates, 
+           Mark Zuckerberg, etc. ;)  
+        </p>
+        <p>
+        Anyway, we believe that’s bogus.
+        </p>
+        <p>
+        At UConn we have some of the brightest, 
+        most motivated, and hard-working students in the country. 
+        At squared labs we believe that students need to be 
+        supported to unleash their creativity 
+        (and paid well to do it).
+        </p>
+      </p>
+    </div>
+    <div class="about" id="who">
+      <h1 class="aboutTitle">who we are</h1>
+      <p class="aboutText">
+        <p>
+        We’re made up mainly of student developers, designers, 
+        and content specialists. For a complete listing of current 
+        (and past) squared labs team members see our people page.</p>
+        <p>If you want to do what we do, then join us!</p>
+      </p>
+    </div>
+    <div class="about" id="what">
+      <h1 class="aboutTitle">what we build</h1>
+      <p class="aboutText">
+        <p>
+        The sites we’ve built range from the purely informational 
+        (e.g., tip.uconn.edu) to the functional (e.g., 
+        lincus.uconn.edu) to a hybrid of the two 
+        (e.g., ip.uconn.edu). They all have a common thread — 
+        our websites support research and researchers at UConn. 
+        </p>
+        <p>
+        If you want to know everything we’ve worked on, and are 
+        working on, check out our [projects] page.
+        </p>
+        
+
+      </p>
+    </div>
+    <div class="about" id="where">
+      <h1 class="aboutTitle">where we live</h1>
+      <p class="aboutText">Organizationally:  
+        <p>
+        We’re a subunit within the Center for Open Research 
+        Resources & Equipment (also known as COR²E), which is a 
+        unit within the Office of the Vice President for Research 
+        (or the OVPR).</p>
+        <p>
+        Physically: We’re in room G01 of the Biology/Physics 
+        building — the mysterious locked room that says 
+        [squared labs] on the front and looks like some sort of 
+        company (we’re not).
+        </p>
+      </p>
+    </div>
+    <div class="about" id="space">
+      <h1 class="aboutTitle"></h1>
+      <p class="aboutText">
+        <p>
+        We take our work environment seriously, because after all, 
+        working somewhere that you don’t like is really not all 
+        that fun.
+        </p>
+
+        The space we’re currently in was formerly an unused 
+        conference room that was being used as an office for one 
+        person and storage for furniture and junk.
+
+        Here’s what we have done to renovate, complete with 
+        associated costs for full transparency 
+        (note: getting the University to allow us to purchase 
+        IKEA furniture was not trivial):
+        <ol>
+        <li>Wall paint: free to us </li>
+        (the University agreed that the puke green walls 
+        were outdated and warranted updating).
+        <li> 6 solid wood built-in bookcases: free 
+        (we repurposed them from a COR²E research facility where 
+        they would have been thrown away, the carpenters were also 
+        nice enough to move our enormous whiteboard from the back 
+        wall to the side wall).</li>
+        <li>Glass tabletop: $75 
+        (we had this custom ordered by the UConn glass shop to 
+        create a workspace between two of the bookcases).
+        </li>
+        <li>Gigantic COR²E logo wall decal: $330 
+        (we cannot say enough good things about the folks in the 
+        sign shop).
+        </li>
+        <li> Gigantic ⬚² labs logo wall decal: $225 
+        (this one was less labor to install).</li>
+        <li> 4 electrical sit/stand desks (IKEA Bekant): $1857</li>
+        <li> 2 couches (IKEA Klippan): $798</li>
+        <li> 2 laptop stands (IKEA Vittsjo): $59.98</li>
+        <li> 3 side tables (IKEA Lack): $41.97</li>
+        <li> 3 office chairs (IKEA Markus): $537</li>
+        <li> 4 active seating stools (IKEA Nilserik): $199.96</li>
+        <li> 1 conference table (IKEA Bekant): $421</li>
+        <li> Carpet: free to us (this one was a bonus, an 
+        electrical fire  burned our carpet so the University 
+        agreed to replace it).
+        </li>
+        </ol>
+        Total: $4544.91
+
+        Good luck finding much more than 1 table, 1 chair, and 1 
+        bookcase for less than that price from a University 
+        contracted vendor. 
+      </p>
+    </div>
+  </div>
+</template>
+
+<script>
+import SLink from "../components/Link.vue";
+
+export default {
+  components: {
+    SLink
+  }
+};
+</script> 
+
+<style lang="scss">
+@import "../styles/vars";
+#titleTextContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#titleText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#plusIcons{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-size: 15.5em;
+  top: 0.5em;
+  right: 5%;
+  color: white;
+}
+.titleTextLine{
+  color: white;
+  font-size: 15.5em;
+  font-family:'Space Mono';
+  margin-top: 0.5em;
+}
+#aims{
+  display: flex;
+  justify-content: space-between;
+}
+#aims #leftContent{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#text{
+  flex: 0 0 40%;
+  color: white;
+  padding: 0 2em 4em 2em;
+}
+.weAre{
+  font-family: "Space Mono"
+}
+#aims #rightContent{
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+}
+#rightContent #title{
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  font-family: "Space Mono";
+  margin-top: 0;
+  font-weight: 500;
+}
+#rightContent #aimBoxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#aimBoxes .aim{
+  position: relative;
+  flex: 0 0 15em;
+  height: 15em;
+  
+}
+.aim .aimI{
+  background-color: white;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+}
+.aim .aimI1{
+  top: 0;
+
+}
+.aim .aimI2{
+  bottom: 0;
+  
+}
+.aim .aimI3{
+  top:0;
+  right: 0;
+  
+}
+.aim .aimI4{
+  bottom:0;
+  right: 0;
+  
+}
+.aimL{
+  flex: 0 0 15em;
+  width: 15em;
+  right: 0;
+}
+.aimI5{
+  background-color: white;
+  /*position: relative;*/
+  width: 80%;
+  height: 80%;
+}
+.about{
+  width:60%;
+  color:white;
+  padding-left:2em; 
+}
+.aboutTitle{
+  font-size: 4em;
+  font-weight: 500;
+  font-family: "Space Mono";
+  
+}
+.aboutText{
+
+}
+ol {
+    counter-reset: list;
+    margin: 0;
+    padding: 0;
+}
+ol > li {
+    list-style: none;
+}
+ol > li:before {
+    content: counter(list) ") ";
+    counter-increment: list;
+}
+</style>
+

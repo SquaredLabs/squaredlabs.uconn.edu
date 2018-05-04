@@ -1,7 +1,7 @@
 <template>
-  <span class="button" v-bind:style="{fontSize: fontSize + 'px'}" v-bind:class="{ white: isWhite }">
-    <a class="buttonText" v-on:click="click" >{{text}} </a>
-  </span>
+    <a class="button" v-on:click="click" v-bind:style="{fontSize: fontSize}" v-bind:class="{ white: color=='white' }">
+        <span class="buttonText" >{{text}} </span>
+    </a>
 </template>
 
 <script>
@@ -9,7 +9,6 @@
         props: ["text","link_ref","fontSize","color"],
         data: function() {
             let data={}
-            data.isWhite=this.color=="white"
             //If ref is a number, it is interpreted as a vue route
             if(!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref) ){
                 data.ref="";
@@ -20,14 +19,18 @@
         },
         methods:{
             click(){
+                if(!this.link_ref) return
                 if(!isNaN(this.link_ref) ){//If number, go that many pages (back if <0)
                     this.$router.go(parseInt(this.link_ref));
                 }
                 else if(/^\/\.*/.test(this.link_ref)){//If local url
                     this.$router.push(this.link_ref.slice(1))
                 }
+                else if(!/http/.test(this.link_ref)){//If not external url
+                    this.link_ref()
+                }
                 else{//If external URL
-                    window.location.href=(this.link_ref);
+                    window.open(this.link_ref,'_blank');
                 }
             },
         }
