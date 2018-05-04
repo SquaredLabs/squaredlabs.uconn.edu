@@ -7,9 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --mode development",
     "build": "webpack --config webpack.prod.js -p --mode production",
-    "clean": "rm logs/*; rm -rf dist/",
-    "start": "forever start -a -l webhook.log server.js",
-    "stop": "forever stop server.js"
+    "clean": "rm logs/*; rm -rf dist/"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
