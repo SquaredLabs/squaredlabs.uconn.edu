@@ -15,18 +15,18 @@
       <div id="leftContent">
         <div id="text">
           <p>
-            <span class="weAre">WE ARE SQUARED LABS:</span>
-            a group of undergratuate students 
+            <span class="weAre">we are squared</span>
+            labs: a group of undergratuate students 
           at the University of Connecticut. We support research at 
           the University and bring the sciences and arts closer 
           together.</p>
           <p>
-            <span class="weAre">WE ARE COLLABORATORS:</span>
+            <span class="weAre">we are collaborators:</span>
             programmers, designers, illustrators, 
           photographers, journalists, and scientists. </p>
           <p>
-            <span class="weAre">WE CREATE AND BUILD:</span>
-            tools, websites, identities, art, 
+            <span class="weAre">we create and </span>
+            build tools, websites, identities, art, 
           and more. Really, the only thing we don’t do is say no.</p>
         </div>
         <div class="aimL">
@@ -122,14 +122,17 @@
     </div>
     <div class="about" id="where">
       <h1 class="aboutTitle">where we live</h1>
-      <p class="aboutText">Organizationally:  
+      <p class="aboutText">
+        Organizationally:  
         <p>
         We’re a subunit within the Center for Open Research 
         Resources & Equipment (also known as COR²E), which is a 
         unit within the Office of the Vice President for Research 
         (or the OVPR).</p>
+        
+        Physically: 
         <p>
-        Physically: We’re in room G01 of the Biology/Physics 
+        We’re in room G01 of the Biology/Physics 
         building — the mysterious locked room that says 
         [squared labs] on the front and looks like some sort of 
         company (we’re not).
@@ -145,50 +148,11 @@
         that fun.
         </p>
 
+        <p>
         The space we’re currently in was formerly an unused 
         conference room that was being used as an office for one 
         person and storage for furniture and junk.
-
-        Here’s what we have done to renovate, complete with 
-        associated costs for full transparency 
-        (note: getting the University to allow us to purchase 
-        IKEA furniture was not trivial):
-        <ol>
-        <li>Wall paint: free to us </li>
-        (the University agreed that the puke green walls 
-        were outdated and warranted updating).
-        <li> 6 solid wood built-in bookcases: free 
-        (we repurposed them from a COR²E research facility where 
-        they would have been thrown away, the carpenters were also 
-        nice enough to move our enormous whiteboard from the back 
-        wall to the side wall).</li>
-        <li>Glass tabletop: $75 
-        (we had this custom ordered by the UConn glass shop to 
-        create a workspace between two of the bookcases).
-        </li>
-        <li>Gigantic COR²E logo wall decal: $330 
-        (we cannot say enough good things about the folks in the 
-        sign shop).
-        </li>
-        <li> Gigantic ⬚² labs logo wall decal: $225 
-        (this one was less labor to install).</li>
-        <li> 4 electrical sit/stand desks (IKEA Bekant): $1857</li>
-        <li> 2 couches (IKEA Klippan): $798</li>
-        <li> 2 laptop stands (IKEA Vittsjo): $59.98</li>
-        <li> 3 side tables (IKEA Lack): $41.97</li>
-        <li> 3 office chairs (IKEA Markus): $537</li>
-        <li> 4 active seating stools (IKEA Nilserik): $199.96</li>
-        <li> 1 conference table (IKEA Bekant): $421</li>
-        <li> Carpet: free to us (this one was a bonus, an 
-        electrical fire  burned our carpet so the University 
-        agreed to replace it).
-        </li>
-        </ol>
-        Total: $4544.91
-
-        Good luck finding much more than 1 table, 1 chair, and 1 
-        bookcase for less than that price from a University 
-        contracted vendor. 
+        </p>
       </p>
     </div>
   </div>
@@ -247,7 +211,8 @@ export default {
   padding: 0 2em 4em 2em;
 }
 .weAre{
-  font-family: "Space Mono"
+  font-family: "Space Mono";
+  font-variant: small-caps;
 }
 #aims #rightContent{
   flex: 0 0 60%;
