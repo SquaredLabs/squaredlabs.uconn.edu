@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar">
+    <div class="navbar" v-bind:class="{blueTheme:theme=='blue'}">
         <div class="mobile">
             [menu ↑]
         </div> 
@@ -7,18 +7,38 @@
             <img src="../images/wordmark.png" /> 
         </figure>
         <!-- <div class="links"> -->
-            <router-link class="link" to="/">home</router-link>
-            <router-link class="link" to="/projects">projects</router-link>
-            <router-link class="link" to="/people">people</router-link>
-            <router-link class="link" to="/workshops">workshops</router-link>
-            <a class="link" href="#">the lab</a>
-            <router-link class="link" to="/connect">connect</router-link>
+            <SLink class="link" text="home" fontSize="16px" link_ref="/home"
+             :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="projects" fontSize="16px" link_ref="/projects"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="people" fontSize="16px" link_ref="/people"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="workshops" fontSize="16px" link_ref="/workshops"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="the lab" fontSize="16px" link_ref="/labs"
+            :color="theme=='blue'?'white':''"/>
+            <SLink class="link" text="connect" fontSize="16px" link_ref="/connect"
+            :color="theme=='blue'?'white':''"/>
         <!-- </div> -->
     </div>
 </template>
+<script>
+  import SLink from "../components/Link.vue";
+
+  export default {
+    components: {
+      SLink
+    },
+    props:['theme']
+  };
+</script>
 
 <style scoped lang="scss">
 @import "../styles/vars";
+.blueTheme .brand img{
+  filter: brightness(0) invert(1);
+}
+
 
 .navbar {
   padding: 20px;
@@ -26,6 +46,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
+  align-content: center;
+  justify-content: space-between;
 }
 
 .brand {
@@ -40,34 +62,9 @@
 }
 
 .link {
-  flex-basis: calc(100% / 8);
+  flex: 0 0 calc(100% / 10);
   align-self: flex-end;
   position: relative;
-  color: $onyx;
-  font-family: SpaceMono;
-  transition: all 0.15s ease;
-  text-decoration: none;
-}
-
-.link:before {
-  content: "";
-  position: absolute;
-  display: block;
-  height: 1em;
-  left: 20px;
-  right: 20px;
-  background-color: $dodger-blue-50;
-  transition: background-color 0.3s ease;
-  z-index: -1;
-}
-
-.link:hover, .router-link-exact-active {
-  bottom: -2px;
-}
-
-.link:hover:before, .router-link-exact-active:before {
-  background-color: $dodger-blue;
-  top: -2px;
 }
 
 .mobile {
@@ -76,6 +73,9 @@
 
 // Tablet
 @media (min-width: $tablet) and (max-width: $desktop) {
+  .navbar{
+    align-items: flex-start;
+  }
   .brand {
     flex-basis: 100%;
     padding-bottom: 20px;
@@ -86,29 +86,23 @@
   }
 
   .link {
-    flex-basis: calc(100% / 6);
+    flex-basis: calc(100% / 7);
   }
 
-  .link:before {
-    left: 10px;
-    right: 10px;
-  }
 }
 
 // Mobile
 @media (min-width: 0px) and (max-width: $tablet) {
+  
   .brand {
     padding-top: 160px;
     flex-basis: 100%;
   }
 
-  .link {
-    display: none;
-    position: absolute;
-    bottom: 200px;
-    right: 25px;
+  
+  .link{
+    transform: translateY(-200px);
   }
-
   .mobile {
     display: block;
     position: fixed;
