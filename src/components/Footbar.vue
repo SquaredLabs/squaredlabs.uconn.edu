@@ -36,7 +36,7 @@
 @import "../styles/vars";
 
 .blueTheme figure img{
-  filter:invert(100%);
+  filter: brightness(0) invert(1);
 }
 .footbar {
   padding: 20px;

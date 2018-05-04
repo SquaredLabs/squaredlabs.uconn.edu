@@ -36,7 +36,7 @@
 <style scoped lang="scss">
 @import "../styles/vars";
 .blueTheme .brand img{
-  filter: invert(100%);
+  filter: brightness(0) invert(1);
 }
 
 
