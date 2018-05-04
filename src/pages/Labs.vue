@@ -169,6 +169,7 @@ export default {
 </script> 
 
 <style lang="scss">
+@import "../styles/vars";
 
 #titleTextContainer{
   display: flex;
@@ -199,6 +200,7 @@ export default {
 #aims{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 #aims #leftContent{
   display: flex;
@@ -281,23 +283,39 @@ export default {
 .aboutTitle{
   font-size: 4em;
   font-weight: 500;
+  line-height: 1em;
   font-family: "SpaceMono";
   
 }
-.aboutText{
-
+// Tablet
+@media (min-width: $tablet) and (max-width: $desktop) {
+  .titleTextLine{
+    font-size: 10em;
+  }
+  #plusIcons{
+    font-size: 10em;
+    top: 1.5em;
+  }
+  .about{
+    width: calc(100% - 4em);
+    color:white;
+    padding:0 2em 0 2em; 
+  }
 }
-ol {
-    counter-reset: list;
-    margin: 0;
-    padding: 0;
-}
-ol > li {
-    list-style: none;
-}
-ol > li:before {
-    content: counter(list) ") ";
-    counter-increment: list;
+@media (min-width: 0px) and (max-width: $tablet) {
+  .titleTextLine{
+    font-size: 5em;
+  }
+  #plusIcons{
+    font-size: 5em;
+    top: 4em;
+    right: 10%;
+  }
+  .about{
+    width: calc(100% - 4em);
+    color:white;
+    padding:0 2em 0 2em; 
+  }
 }
 </style>
 
