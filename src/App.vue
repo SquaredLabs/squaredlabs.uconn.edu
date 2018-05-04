@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-bind:class="{blueTheme:theme=='blue'}">
+  <div id="app" class= "app" v-bind:class="{blueTheme:theme=='blue'}">
     <Navbar :theme="theme"/>
     <transition name="slide" mode="out-in">
       <router-view class="page"></router-view>
@@ -40,6 +40,9 @@ body {
 }
 #app{
   transition: ease-in-out 0.3s all;
+}
+.app{
+  background-color: $pale-grey;
 }
 .blueTheme{
   background: $dodger-blue;
