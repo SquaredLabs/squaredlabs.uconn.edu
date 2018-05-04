@@ -203,6 +203,7 @@ export default {
   flex-wrap: wrap;
 }
 #aims #leftContent{
+  flex:0 0 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -289,6 +290,13 @@ export default {
 }
 // Tablet
 @media (min-width: $tablet) and (max-width: $desktop) {
+  #aims #leftContent{
+    flex:0 0 100%;
+  }
+  #rightContent{
+    flex:0 0 100%;
+  }
+
   .titleTextLine{
     font-size: 10em;
   }
@@ -303,6 +311,12 @@ export default {
   }
 }
 @media (min-width: 0px) and (max-width: $tablet) {
+  #leftContent{
+    flex:0 0 100%;
+  }
+  #rightContent{
+    flex:0 0 100%;
+  }
   .titleTextLine{
     font-size: 5em;
   }
