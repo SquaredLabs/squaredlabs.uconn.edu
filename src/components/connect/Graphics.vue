@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div ref="view">
         <div id="graphics" ref="graphics"  v-bind:style="{transform:'translateX('+(-scroll)+'px)'}">
             <div class="graphic" v-on:mouseover="startCounter(40)" 
             v-on:mouseleave="endCounter" background="../images/square.png">
@@ -80,7 +80,7 @@ export default {
       return{statCount:0,repos:0,commits:0,size:30,scroll:0,scrollDelta:0}
     },
     mounted(){
-        this.scrollDelta=this.$refs.graphics.clientWidth/4;
+        this.scrollDelta=this.$refs.graphics.clientWidth/2;
     },
     methods:{
         startCounter(max){
@@ -142,7 +142,7 @@ export default {
             this.scroll=this.scroll-this.scrollDelta;
         },
         graphicRight(){
-            let width=this.$refs.graphics.clientWidth;
+            let width=this.$refs.graphics.scrollWidth;
             if(this.scroll>width-width/2)return
             this.scroll=this.scroll+this.scrollDelta;
         },

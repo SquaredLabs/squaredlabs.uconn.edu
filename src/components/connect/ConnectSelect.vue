@@ -174,10 +174,13 @@
   }
   @media screen and (max-width: 1150px) { /*Tablet View*/
     #selector{
-      width: 510px;
+      max-width: 510px;
+      width: 100%;
     }
     .select{
       width :35%;
+      max-width: 200px;
+      min-width: 130px;
     }
   }
 </style>
