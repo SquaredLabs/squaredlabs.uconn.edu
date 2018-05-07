@@ -38,9 +38,6 @@
   html,body{
     background-color: $pale-grey;
   }
-  #app{
-    background-color:rgba(0,0,0,0);
-  }
 </style>
 
 <!--Graphics Style!-->

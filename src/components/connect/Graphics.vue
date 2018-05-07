@@ -193,6 +193,7 @@ export default {
     box-sizing: border-box;
     width: calc(100% - 20px);
     height: calc(100% - 20px);
+    overflow-y: hidden;
   }
   .graphicInner:hover{
     width: 100%;
@@ -274,6 +275,7 @@ export default {
     background-color: white;
     width: calc(100% - 10px);
     height: calc(100% - 10px);
+    overflow-y:hidden;
   }
   .graphicIconI svg,img{
     transform: translateY(30%);
