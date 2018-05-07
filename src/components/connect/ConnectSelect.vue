@@ -91,6 +91,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
   }
   #selector{
     display: flex;
