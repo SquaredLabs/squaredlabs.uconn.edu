@@ -26,7 +26,9 @@ export default {
 @import "styles/vars";
 @import "styles/fonts";
 
-
+html{
+  overflow-x:hidden;
+}
 body {
   
   font-family: "Moderat";
