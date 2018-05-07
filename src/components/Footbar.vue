@@ -46,6 +46,8 @@
   align-items: center;
   justify-content: center;
   justify-content: space-around;
+  position: relative;
+  z-index: 2;
 }
 
 .footbar__brand {
