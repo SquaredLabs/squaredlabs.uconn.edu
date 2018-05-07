@@ -229,6 +229,7 @@ export default {
   font-family: "SpaceMono";
   margin-top: 0;
   font-weight: 500;
+  line-height: 1em;
 }
 #rightContent #aimBoxes{
   display: flex;
