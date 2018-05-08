@@ -48,17 +48,11 @@
         };
         this.selected_view={};
         this.selected_view[key]=views[key]
-        
         for (let element in this.views) delete this.views[element];
         this.views=this.selected_view;
         this.selected=true;
       },
       backToSelect(){
-        window.scroll({
-          top: 100, 
-          left: 0, 
-          behavior: 'smooth' 
-        });
         this.selected_view={};
         this.selected=false;
         this.views=Object.assign({}, views);

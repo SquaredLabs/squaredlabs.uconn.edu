@@ -4,7 +4,7 @@
             If you’re a UConn or non-UConn developer but want to get involved with ⬚² labs you can: 
 
                 <p><span class="contentStyleList">
-                    1) Contribute to any of our open source  
+                    1) Contribute to any of our open source
                     <SLink text="projects" fontSize="16" link_ref="/projects"/>,
                 </span>
                 <span class="contentStyleList">
