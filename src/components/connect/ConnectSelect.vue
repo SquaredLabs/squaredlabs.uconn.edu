@@ -6,7 +6,7 @@
             <div v-for="(value, key) in views" :key="key" class="select"
              v-on:click="select(key)" v-on:mouseover="hover" v-on:mouseleave="hoverLeave">
               <transition name="fade">
-                <p class="selectTitle" v-bind:class="{expandedTitle:back_shown}">{{key}}</p>
+                <p class="selectTitle" v-bind:class="{expandedTitle:(selected && hoverable)}">{{key}}</p>
               </transition>
               <p v-show="selected && hoverable" class="selectBack">Back</p>
             </div>
@@ -127,6 +127,7 @@
     font-size: 0;
     /*transform:scale(0);*/
   }
+
   .selectBack{
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 0.6em;
@@ -146,7 +147,6 @@
   /*Class toggled by vue when back is hovered*/
   .expandedTitle{
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
   }
   
   .animateSelect-leave-active{
