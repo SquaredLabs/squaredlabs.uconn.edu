@@ -146,6 +146,7 @@
   /*Class toggled by vue when back is hovered*/
   .expandedTitle{
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
   }
   
   .animateSelect-leave-active{
