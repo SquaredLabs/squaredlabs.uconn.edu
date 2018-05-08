@@ -39,7 +39,7 @@ export default {
 </script>
 
 <<style lang="scss" scoped>
-@import "../styles/vars";
+@import "~assets/styles/vars";
 
 .workshop {
     position: relative;
@@ -71,7 +71,7 @@ export default {
 }
 
 .workshop__technology {
-    background: url("../images/square-white.png") center/100% no-repeat;
+    background: url("/square-white.png") center/100% no-repeat;
     width: 40px;
     height: 40px;
     padding: 10px;

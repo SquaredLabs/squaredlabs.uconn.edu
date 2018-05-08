@@ -17,9 +17,9 @@
                 </span></p>
             
             <div id="icons">
-                <div class="icon"><img alt="Gitlab" src="../../images/connect/gitlab.svg" /></div>
-                <div class="icon"><img alt="Mail" src="../../images/connect/mail.svg" /></div>
-                <div class="icon"><img alt="Bitcoin" src="../../images/connect/btc.svg"/></div>
+                <div class="icon"><img alt="Gitlab" src="~/assets/images/connect/gitlab.svg" /></div>
+                <div class="icon"><img alt="Mail" src="~/assets/images/connect/mail.svg" /></div>
+                <div class="icon"><img alt="Bitcoin" src="~/assets/images/connect/btc.svg"/></div>
             </div>
         </div>
         
@@ -43,7 +43,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/vars";
+    @import "~assets/styles/vars";
     #container{
         position: relative;
         top:-70px;

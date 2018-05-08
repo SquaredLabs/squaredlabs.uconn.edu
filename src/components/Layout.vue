@@ -8,7 +8,7 @@
 </template>
 
 <style scoped lang="scss">
-@import "../styles/vars";
+@import "~assets/styles/vars";
 
 .layout {
   display: flex;

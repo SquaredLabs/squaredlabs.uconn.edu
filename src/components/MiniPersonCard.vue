@@ -16,7 +16,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "../styles/vars";
+@import "~assets/styles/vars";
 
 .mini__icon {
     width: 80px;

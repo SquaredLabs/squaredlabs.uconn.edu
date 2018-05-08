@@ -44,7 +44,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/vars";
+    @import "~assets/styles/vars";
     #container{
         position: relative;
         top:-70px;

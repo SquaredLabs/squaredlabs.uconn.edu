@@ -23,7 +23,7 @@
 <script>
   import ConnectSelect from "../components/connect/ConnectSelect.vue";
   import Link from "../components/Link.vue";
-  import background from "../images/square.png"
+  import background from "~/assets/images/square.png"
   import Graphics from "../components/connect/Graphics.vue"
   export default {
     components: {
@@ -34,7 +34,7 @@
   };
 </script>
 <style lang="scss">
-  @import "../styles/vars";
+  @import "~assets/styles/vars";
   html,body{
     background-color: $pale-grey;
   }
@@ -42,7 +42,7 @@
 
 <!--Graphics Style!-->
 <style scoped lang="scss">
-  @import "../styles/vars";
+  @import "~assets/styles/vars";
   /*Header*/
   .connectBackground{
     font-size: 17em;
@@ -78,7 +78,7 @@
 
 /*Remainder of page*/
 <style scoped lang="scss">
-  @import "../styles/vars";
+  @import "~assets/styles/vars";
   #header-2 {
     font-size: 4em;
     margin-top:2em;
