@@ -55,6 +55,7 @@
         position: relative;
         top:50%;
         transform: translateY(-50%);
+        
     }
     .contentStyleEmphasis{
         background:linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5)) ;
@@ -107,6 +108,13 @@
     @media screen and (max-width: $desktop) { /*Tablet View*/
         #content{
             padding: 5px;
+            transition:all 0.3s ease;
+        }
+    }
+    @media screen and (max-width: $tablet){ /*Mobile View*/
+        #content{
+            top:10%;
+            transform: none;
         }
     }
 </style>

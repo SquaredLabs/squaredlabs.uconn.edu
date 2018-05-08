@@ -116,7 +116,9 @@
     flex-basis: 100%;
   }
 
-  
+  .links{
+    width: 100%;
+  }
   .links .link{
     transform: translateY(-200px);
   }
