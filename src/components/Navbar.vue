@@ -1,12 +1,13 @@
 <template>
     <div class="navbar" v-bind:class="{blueTheme:theme=='blue'}">
         <div class="mobile">
-            [menu ↑]
+            <SLink class="link" text="[menu ↑]" fontSize="16px" :link_ref="top"
+             :color="theme=='blue'?'white':''"/>
         </div> 
         <figure class="brand">
             <img src="../images/wordmark.png" /> 
         </figure>
-        <!-- <div class="links"> -->
+        <div class="links">
             <SLink class="link" text="home" fontSize="16px" link_ref="/home"
              :color="theme=='blue'?'white':''"/>
             <SLink class="link" text="projects" fontSize="16px" link_ref="/projects"
@@ -15,11 +16,11 @@
             :color="theme=='blue'?'white':''"/>
             <SLink class="link" text="workshops" fontSize="16px" link_ref="/workshops"
             :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="the lab" fontSize="16px" link_ref="/labs"
+            <SLink class="link lab" text="the lab" fontSize="16px" link_ref="/labs"
             :color="theme=='blue'?'white':''"/>
             <SLink class="link" text="connect" fontSize="16px" link_ref="/connect"
             :color="theme=='blue'?'white':''"/>
-        <!-- </div> -->
+        </div>
     </div>
 </template>
 <script>
@@ -29,7 +30,12 @@
     components: {
       SLink
     },
-    props:['theme']
+    props:['theme'],
+    methods:{
+      top(){
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+    }
   };
 </script>
 
@@ -38,11 +44,12 @@
 .blueTheme .brand img{
   filter: brightness(0) invert(1);
 }
-
-
 .navbar {
   padding: 20px;
   text-align: center;
+  
+}
+.links{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -55,6 +62,8 @@
   flex-grow: 0;
   min-width: 0;
   margin: 0;
+  z-index: 2;
+  position: relative;
 }
 
 .brand > img {
@@ -62,6 +71,7 @@
 }
 
 .link {
+  margin-top:5px;
   flex: 0 0 calc(100% / 10);
   align-self: flex-end;
   position: relative;
@@ -69,6 +79,7 @@
 
 .mobile {
   display: none;
+  
 }
 
 // Tablet
@@ -100,31 +111,17 @@
   }
 
   
-  .link{
+  .links .link{
     transform: translateY(-200px);
   }
   .mobile {
     display: block;
     position: fixed;
     font-family: SpaceMono;
-    padding-left: 16px;
-    padding-right: 16px;
     bottom: 25px;
     right: 25px;
-    z-index: 1;
-  }
-
-  .mobile:after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 1em;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color: $dodger-blue-50;
-    transition: background-color 0.3s ease;
+    z-index:12;
+    transition: all 0.3s ease;
   }
 }
 </style>

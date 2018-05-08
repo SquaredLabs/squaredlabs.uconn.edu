@@ -1,5 +1,7 @@
 <template>
-    <a class="button" v-on:click="click" v-bind:style="{fontSize: fontSize}" v-bind:class="{ white: color=='white' }">
+    <a class="button" v-on:click="click" 
+    v-bind:style="{fontSize: fontSize, minWidth:minWidth+'em'}" 
+    v-bind:class="{ white: color=='white' }">
         <span class="buttonText" >{{text}} </span>
     </a>
 </template>
@@ -8,7 +10,7 @@
     export default {
         props: ["text","link_ref","fontSize","color"],
         data: function() {
-            let data={}
+            let data={minWidth:this.text.length*.75}
             //If ref is a number, it is interpreted as a vue route
             if(!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref) ){
                 data.ref="";
