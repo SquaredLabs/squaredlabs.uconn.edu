@@ -40,7 +40,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../styles/vars";
+    @import "~assets/styles/vars";
     .button {
         cursor: pointer;    
         background-color: rgba(106, 161, 244, .5);

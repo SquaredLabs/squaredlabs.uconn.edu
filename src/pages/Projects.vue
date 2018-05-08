@@ -179,7 +179,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../styles/vars";
+@import "~assets/styles/vars";
 
 .number {
   height: 93px;

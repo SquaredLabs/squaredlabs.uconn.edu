@@ -2,9 +2,9 @@
     <div ref="view">
         <div id="graphics" ref="graphics"  v-bind:style="{transform:'translateX('+(-scroll)+'px)'}">
             <div class="graphic" v-on:mouseover="startCounter(40)" 
-            v-on:mouseleave="endCounter" background="../images/square.png">
+            v-on:mouseleave="endCounter" background="~/assets/images/square.png">
               <div class="graphicInner" id="pixelsPerDay">
-                <img src="../../images/connect/pixels.svg"/>
+                <img src="~/assets/images/connect/pixels.svg"/>
                 <p class="statisticText">{{statCount}}m</p>
                 <p class="statisticSubText">pixels per day</p>
               </div>
@@ -12,7 +12,7 @@
             <div class="graphic" v-on:mouseover="startCounter(10)" 
             v-on:mouseleave="endCounter">
               <div class="graphicInner" id="covfefe">
-                <img src="../../images/connect/kawffeeh.svg"/>
+                <img src="~/assets/images/connect/kawffeeh.svg"/>
                 <p class="statisticText">{{statCount}}</p>
                 <p class="statisticSubText">coffees per day</p>
               </div>
@@ -35,7 +35,7 @@
                   <div class="graphicIconI" id="icon2" 
                   v-on:mouseover="startCounter(repos)" 
                   v-on:mouseleave="endCounter">
-                    <img id="gitlabBlack" src="../../images/connect/gitlab.svg"/>
+                    <img id="gitlabBlack" src="~/assets/images/connect/gitlab.svg"/>
                     <p class="statisticTextS">{{statCount}}</p>
                     <p class="statisticSubTextS">repos</p>
                   </div>
@@ -44,7 +44,7 @@
                   <div class="graphicIconI" id="icon3"
                   v-on:mouseover="startCounter(size)" 
                   v-on:mouseleave="endCounter">
-                    <img src="../../images/connect/code_lines.svg"/>
+                    <img src="~/assets/images/connect/code_lines.svg"/>
                     <p class="statisticTextS">{{statCount}}mb</p>
                     <p class="statisticSubTextS">in our codebase</p>
                   </div>
@@ -162,7 +162,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "../../styles/vars";
+@import "~assets/styles/vars";
 #graphics {
     display: flex;
     justify-content: flex-start;

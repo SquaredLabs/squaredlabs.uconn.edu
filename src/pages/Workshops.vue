@@ -92,7 +92,7 @@
 </template>
 
 <style lang="scss">
-@import "../styles/vars";
+@import "~assets/styles/vars";
 //TODO: Revisit margins and paddings for workshop items
 //TODO: Make next/previous workshop cards a component
 //TODO: Reuse workshop card? Maybe add full vs widget mode to props so same component can be used on home and workshops page?
@@ -141,7 +141,7 @@
 }
 
 .workshop__technology {
-  background: url("../images/square-white.png") center/100% no-repeat;
+  background: url("~/assets/images/square-white.png") center/100% no-repeat;
   width: 40px;
   height: 40px;
   padding: 10px;

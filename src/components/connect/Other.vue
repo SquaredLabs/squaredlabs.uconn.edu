@@ -26,7 +26,7 @@
             (from white board markers to computer monitors).  Any and all contributions are extremely appreciated 😁.</p>
             <div id="icons">
                 <div class="icon">
-                    <img alt="Donate Bitcoin" src="../../images/connect/btc.svg" />
+                    <img alt="Donate Bitcoin" src="~/assets/images/connect/btc.svg" />
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/vars";
+    @import "~assets/styles/vars";
     #container{
         position: relative;
         top:-50px;

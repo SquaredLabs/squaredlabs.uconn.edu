@@ -12,7 +12,7 @@
       <SLink class="footbar__link" text="Link 2" fontSize="1em"
       :color="theme=='blue'?'white':''"/>
       <figure class="footbar__brand">
-        <img src="../images/wordmark.png" /> 
+        <img src="/wordmark.png" /> 
       </figure>
       <span class="footbar__signature">
         Designed & developed by
@@ -33,7 +33,7 @@
   }
 </script>
 <style scoped lang="scss">
-@import "../styles/vars";
+@import "~assets/styles/vars";
 
 .blueTheme figure img{
   filter: brightness(0) invert(1);

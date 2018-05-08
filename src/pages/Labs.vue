@@ -169,7 +169,7 @@ export default {
 </script> 
 
 <style lang="scss">
-@import "../styles/vars";
+@import "~assets/styles/vars";
 
 #titleTextContainer{
   display: flex;

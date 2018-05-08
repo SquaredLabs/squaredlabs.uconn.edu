@@ -14,11 +14,11 @@
           <p>View our history, purpose, and space on the
             <SLink text="lab page" fontSize="16px" link_ref="/lab"/>.</p>
         </div>
-        <project-card class="layout__col--quarter marginned--horizontally" name="Innovation Portal" background="../images/ip.png" link="/projects">
+        <project-card class="layout__col--quarter marginned--horizontally" name="Innovation Portal" background="~/assets/images/ip.png" link="/projects">
           <p>A short, fun description.</p>
         </project-card>
-        <project-card class="layout__col--quarter marginned--horizontally" name="Lincus" background="../images/lincus.png" link="/projects" />
-        <project-card class="layout__col--quarter marginned--horizontally" name="GrantTrails" background="../images/huskytrails.png" link="/projects" />
+        <project-card class="layout__col--quarter marginned--horizontally" name="Lincus" background="~/assets/images/lincus.png" link="/projects" />
+        <project-card class="layout__col--quarter marginned--horizontally" name="GrantTrails" background="~/assets/images/huskytrails.png" link="/projects" />
       </layout>
       <layout>
         <SLink class="link--pulled-right" text="See all our projects" fontSize="16px" link_ref="/projects"/>
@@ -47,22 +47,22 @@
             <SLink text="get in touch!" fontSize="16px" link_ref="/connect"/>
           </p>
         </div>
-        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
+        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="~/assets/images/dan.jpg">
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
-        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
+        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="~/assets/images/dan.jpg">
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
-        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
+        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="~/assets/images/dan.jpg">
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
       </layout>
     </section>
     <section>
       <layout style="margin-top: 260px">
-        <connect-card class="layout__col--quarter marginned--horizontally" link="https://gitlab.com/squared-labs" background="../images/gitlab.svg" />
-        <connect-card class="layout__col--quarter marginned--horizontally" background="../images/mail.svg" hidden-image="../images/contact.png" />
-        <connect-card class="layout__col--quarter marginned--horizontally" link="http://www.foundation.uconn.edu/send-your-gift/" background="../images/btc.svg" />
+        <connect-card class="layout__col--quarter marginned--horizontally" link="https://gitlab.com/squared-labs" background="~/assets/images/gitlab.svg" />
+        <connect-card class="layout__col--quarter marginned--horizontally" background="~/assets/images/mail.svg" hidden-image="~/assets/images/contact.png" />
+        <connect-card class="layout__col--quarter marginned--horizontally" link="http://www.foundation.uconn.edu/send-your-gift/" background="~/assets/images/btc.svg" />
         <div class="layout__col--quarter marginned--horizontally" style="position: relative; top: -80px">
           <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
          <SLink text="Connect with us" fontSize="16px" link_ref="/connect"/>
@@ -73,14 +73,14 @@
 </template>
 
 <script>
-import IP from "../images/projects/ip.png";
-import Lincus from "../images/projects/lincus.png";
-import GrantTrails from "../images/projects/huskytrails.png";
-import Dan from "../images/people/dan.jpg";
-import Gitlab from "../images/connect/gitlab.svg";
-import Mail from "../images/connect/mail.svg";
-import BTC from "../images/connect/btc.svg";
-import Contact from "../images/connect/contact.png";
+import IP from "~/assets/images/projects/ip.png";
+import Lincus from "~/assets/images/projects/lincus.png";
+import GrantTrails from "~/assets/images/projects/huskytrails.png";
+import Dan from "~/assets/images/people/dan.jpg";
+import Gitlab from "~/assets/images/connect/gitlab.svg";
+import Mail from "~/assets/images/connect/mail.svg";
+import BTC from "~/assets/images/connect/btc.svg";
+import Contact from "~/assets/images/connect/contact.png";
 import Construction from "../components/Construction.vue";
 import Layout from "../components/Layout.vue";
 import ProjectCard from "../components/ProjectCard.vue";
@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../styles/vars";
+@import "~assets/styles/vars";
 
 section {
   margin-bottom: 80px;

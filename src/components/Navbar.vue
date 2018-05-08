@@ -5,7 +5,7 @@
              :color="theme=='blue'?'white':''"/>
         </div> 
         <figure class="brand">
-            <img src="../images/wordmark.png" /> 
+            <img src="/wordmark.png" /> 
         </figure>
         <div class="links">
             <SLink class="link" text="home" fontSize="16px" link_ref="/home"
@@ -40,7 +40,7 @@
 </script>
 
 <style scoped lang="scss">
-@import "../styles/vars";
+@import "~assets/styles/vars";
 .blueTheme .brand img{
   filter: brightness(0) invert(1);
 }

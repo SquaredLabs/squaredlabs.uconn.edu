@@ -78,7 +78,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/vars";
+  @import "~assets/styles/vars";
   
   #container-connect{
     margin: 0 10px 0 10px;
