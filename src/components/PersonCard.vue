@@ -49,15 +49,9 @@ export default {
 .person__photo {
   height: 100%;
   transition: all 0.25s ease;
-
-  &::before {
-    background-color: black;
-    height: 100%;
-    width: 100%;
-    content: "";
-    opacity: 0.2;
-    position: absolute;
-  }
+}
+.person:hover .person__photo{
+  filter:brightness(60%);
 }
 
 .person__content {

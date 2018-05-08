@@ -10,7 +10,7 @@
     export default {
         props: ["text","link_ref","fontSize","color"],
         data: function() {
-            let data={minWidth:this.text.length*.75}
+            let data={minWidth:this.text.length*.6}
             //If ref is a number, it is interpreted as a vue route
             if(!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref) ){
                 data.ref="";

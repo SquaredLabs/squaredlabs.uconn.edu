@@ -47,9 +47,10 @@
 .navbar {
   padding: 20px;
   text-align: center;
-  z-index: 2;
+  z-index: 15;
   display:flex;
   flex-wrap: wrap;
+  position: relative;
 }
 .links{
   display: flex;
@@ -57,7 +58,7 @@
   align-content: center;
   justify-content: space-between;
   width:70%;
-
+  flex-wrap: wrap;
 }
 
 .brand {
