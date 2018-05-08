@@ -47,7 +47,7 @@
 .navbar {
   padding: 20px;
   text-align: center;
-  
+  z-index: 2;
 }
 .links{
   display: flex;
@@ -62,7 +62,6 @@
   flex-grow: 0;
   min-width: 0;
   margin: 0;
-  z-index: 2;
   position: relative;
 }
 
