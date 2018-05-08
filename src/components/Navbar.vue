@@ -48,6 +48,7 @@
   padding: 20px;
   text-align: center;
   z-index: 2;
+  display:flex;
 }
 .links{
   display: flex;
