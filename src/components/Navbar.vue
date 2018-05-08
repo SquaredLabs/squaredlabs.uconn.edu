@@ -49,13 +49,15 @@
   text-align: center;
   z-index: 2;
   display:flex;
+  flex-wrap: wrap;
 }
 .links{
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-end;
   align-content: center;
   justify-content: space-between;
+  width:70%;
+
 }
 
 .brand {
@@ -98,6 +100,9 @@
 
   .link {
     flex-basis: calc(100% / 7);
+  }
+  .links{
+    flex:0 0 100%;
   }
 
 }
