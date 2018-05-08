@@ -191,6 +191,9 @@ export default {
   right: 5%;
   color: white;
 }
+.plug{
+  margin-top: 0;
+}
 .titleTextLine{
   color: white;
   font-size: 15.5em;
