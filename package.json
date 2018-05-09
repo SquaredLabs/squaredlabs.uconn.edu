@@ -1,8 +1,8 @@
 {
   "name": "squaredlabs",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Andi Andreas <nexuister@gmail.com>",
+  "description": "The official team website (in development)",
+  "author": "squredlabs",
   "private": true,
   "scripts": {
     "dev": "nuxt",
