@@ -1,0 +1,9 @@
+<template>
+  
+</template>
+
+
+<script>
+    import Home from '~/pages/Home'
+    export default Home
+</script>

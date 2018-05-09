@@ -1,7 +1,9 @@
 <template>
     <div class="app" v-bind:class="{blueAppTheme:$store.state.theme=='blue'}">
         <Navbar :theme="$store.state.theme"/>
+        <transition name="slide" mode="out-in">
         <nuxt/>
+        </transition>
         <Footbar :theme="$store.state.theme"/>
     </div>
     
@@ -21,9 +23,10 @@ export default {
 @import "~assets/styles/fonts";
 html,body{
     margin:0;
+    
 }
 .app{
-    transition:all0.3s ease;
+    transition: all 0.3s ease;
     background-color:$pale-grey;
 }
 .blueAppTheme{
@@ -31,4 +34,18 @@ html,body{
 }
     
 </style>
+<style scoped>
+.slide-enter-active, .slide-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+.slide-enter {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(30%);
+}
+</style>
+
 
