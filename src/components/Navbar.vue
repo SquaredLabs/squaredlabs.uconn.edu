@@ -5,7 +5,7 @@
              :color="theme=='blue'?'white':''"/>
         </div> 
         <figure class="brand">
-            <img src="/wordmark.png" /> 
+            <img src="~/assets/images/wordmark.png" /> 
         </figure>
         <div class="links">
             <SLink class="link" text="home" fontSize="16px" link_ref="/home"
