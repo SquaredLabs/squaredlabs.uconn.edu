@@ -71,7 +71,7 @@ export default {
 }
 
 .workshop__technology {
-    background: url("/square-white.png") center/100% no-repeat;
+    background: url("~assets/images/square-white.png") center/100% no-repeat;
     width: 40px;
     height: 40px;
     padding: 10px;

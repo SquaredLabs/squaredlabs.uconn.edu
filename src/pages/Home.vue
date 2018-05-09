@@ -14,11 +14,11 @@
           <p>View our history, purpose, and space on the
             <SLink text="lab page" fontSize="16px" link_ref="/lab"/>.</p>
         </div>
-        <project-card class="layout__col--quarter marginned--horizontally" name="Innovation Portal" background="~/assets/images/ip.png" link="/projects">
+        <project-card class="layout__col--quarter marginned--horizontally" name="Innovation Portal" :background="require('~/assets/images/projects/ip.png')" link="/projects">
           <p>A short, fun description.</p>
         </project-card>
-        <project-card class="layout__col--quarter marginned--horizontally" name="Lincus" background="~/assets/images/lincus.png" link="/projects" />
-        <project-card class="layout__col--quarter marginned--horizontally" name="GrantTrails" background="~/assets/images/huskytrails.png" link="/projects" />
+        <project-card class="layout__col--quarter marginned--horizontally" name="Lincus" :background="require('~/assets/images/projects/lincus.png')" link="/projects" />
+        <project-card class="layout__col--quarter marginned--horizontally" name="GrantTrails" :background="require('~/assets/images/projects/huskytrails.png')" link="/projects" />
       </layout>
       <layout>
         <SLink class="link--pulled-right" text="See all our projects" fontSize="16px" link_ref="/projects"/>
@@ -47,22 +47,22 @@
             <SLink text="get in touch!" fontSize="16px" link_ref="/connect"/>
           </p>
         </div>
-        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="~/assets/images/dan.jpg">
+        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" :background="require('~/assets/images/people/dan.jpg')">
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
-        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="~/assets/images/dan.jpg">
+        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" :background="require('~/assets/images/people/dan.jpg')">
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
-        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" background="~/assets/images/dan.jpg">
+        <person-card class="layout__col--quarter marginned--horizontally" name="Dan Schwartz" role="Director" :background="require('~/assets/images/people/dan.jpg')">
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
       </layout>
     </section>
     <section>
       <layout style="margin-top: 260px">
-        <connect-card class="layout__col--quarter marginned--horizontally" link="https://gitlab.com/squared-labs" background="~/assets/images/gitlab.svg" />
-        <connect-card class="layout__col--quarter marginned--horizontally" background="~/assets/images/mail.svg" hidden-image="~/assets/images/contact.png" />
-        <connect-card class="layout__col--quarter marginned--horizontally" link="http://www.foundation.uconn.edu/send-your-gift/" background="~/assets/images/btc.svg" />
+        <connect-card class="layout__col--quarter marginned--horizontally" link="https://gitlab.com/squared-labs" :background="require('~/assets/images/connect/gitlab.svg')" />
+        <connect-card class="layout__col--quarter marginned--horizontally" :background="require('~/assets/images/connect/mail.svg')" :hidden-image="require('~/assets/images/connect/contact.png')" />
+        <connect-card class="layout__col--quarter marginned--horizontally" link="http://www.foundation.uconn.edu/send-your-gift/" :background="require('~/assets/images/connect/btc.svg') " />
         <div class="layout__col--quarter marginned--horizontally" style="position: relative; top: -80px">
           <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
          <SLink text="Connect with us" fontSize="16px" link_ref="/connect"/>
