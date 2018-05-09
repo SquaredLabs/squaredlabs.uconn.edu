@@ -28,7 +28,7 @@
     </section>
     <section id="alumni" style="margin-bottom: 80px">
       <layout v-for="x in 3" :key="x" style="padding-bottom: 20px">
-        <person-card v-for="y in 4" :key="y" class="layout__col--quarter marginned--horizontally marginned--vertically" name="Dan Schwartz" role="Director" background="../images/dan.jpg">
+        <person-card v-for="y in 4" :key="y" class="layout__col--quarter marginned--horizontally marginned--vertically" name="Dan Schwartz" role="Director" background="~/assets/images/dan.jpg">
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
       </layout>
