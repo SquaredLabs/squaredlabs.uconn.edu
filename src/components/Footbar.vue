@@ -67,6 +67,7 @@
 
 .footbar__signature {
   flex-basis: 100%;
+  font-family: "SpaceMono";
   padding-top: 23px;
   color: $dodger-blue;
   line-height: 1.5;
