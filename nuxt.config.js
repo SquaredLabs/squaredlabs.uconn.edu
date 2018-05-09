@@ -2,7 +2,8 @@ module.exports = {
     srcDir: 'src/',
     plugins: ['~/plugins/vue-resource'],
     router: {
-        middleware:'checkTheme'
+        middleware: 'checkTheme',
+        mode:'hash'
     },
     build: {
         
