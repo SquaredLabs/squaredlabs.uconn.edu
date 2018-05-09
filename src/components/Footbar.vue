@@ -12,7 +12,7 @@
       <SLink class="footbar__link" text="Link 2" fontSize="1em"
       :color="theme=='blue'?'white':''"/>
       <figure class="footbar__brand">
-        <img src="/wordmark.png" /> 
+        <img src="~/assets/images/wordmark.png" /> 
       </figure>
       <span class="footbar__signature">
         Designed & developed by

@@ -13,7 +13,8 @@
 
 <script>
 export default {
-  props: ["name", "role", "background"]
+  props: ["name", "role", "background"],
+
 };
 </script>
 

@@ -16,13 +16,13 @@
         </layout-col>
         <layout-col s="pacman">
           <layout v-for="x in 3" :key="x" style="padding-bottom: 20px">
-            <project-card class="layout__col--third marginned--horizontally" name="Innovation Portal" background="../images/ip.png" link="/projects">
+            <project-card class="layout__col--third marginned--horizontally" name="Innovation Portal" :background="require('~/assets/images/projects/ip.png')" link="/projects">
               <p>A short, fun description.</p>
             </project-card>
-            <project-card class="layout__col--third marginned--horizontally" name="Innovation Portal" background="../images/ip.png" link="/projects">
+            <project-card class="layout__col--third marginned--horizontally" name="Innovation Portal" :background="require('~/assets/images/projects/ip.png')" link="/projects">
               <p>A short, fun description.</p>
             </project-card>
-            <project-card class="layout__col--third marginned--horizontally" name="Innovation Portal" background="../images/ip.png" link="/projects">
+            <project-card class="layout__col--third marginned--horizontally" name="Innovation Portal" :background="require('~/assets/images/projects/ip.png')" link="/projects">
               <p>A short, fun description.</p>
             </project-card>
           </layout>
