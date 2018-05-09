@@ -43,6 +43,7 @@
     @import "~assets/styles/vars";
     .button {
         cursor: pointer;    
+        font-family: "Space Mono";
         background-color: rgba(106, 161, 244, .5);
         display: inline-block;
         box-sizing: border-box;
