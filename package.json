@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "webpack --config webpack.prod.js -p --mode production",
-    "clean": "rm logs/*; rm -rf dist/"
+    "build": "nuxt generate",
+    "clean": "rm logs/*; rm -rf dist/;rm -rf ./.nuxt"
   },
   "devDependencies": {
     "node-sass": "^4.9.0",
