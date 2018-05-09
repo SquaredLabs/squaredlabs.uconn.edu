@@ -8,17 +8,17 @@
             <img src="~/assets/images/wordmark.png" /> 
         </figure>
         <div class="links">
-            <SLink class="link" text="home" fontSize="16px" link_ref="/home"
+            <SLink class="link" text="home" fontSize="16px" width="true" link_ref="/home"
              :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="projects" fontSize="16px" link_ref="/projects"
+            <SLink class="link" text="projects" fontSize="16px" width="true" link_ref="/projects"
             :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="people" fontSize="16px" link_ref="/people"
+            <SLink class="link" text="people" fontSize="16px" width="true" link_ref="/people"
             :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="workshops" fontSize="16px" link_ref="/workshops"
+            <SLink class="link" text="workshops" fontSize="16px" width="true" link_ref="/workshops"
             :color="theme=='blue'?'white':''"/>
-            <SLink class="link lab" text="the lab" fontSize="16px" link_ref="/labs"
+            <SLink class="link lab" text="the lab" fontSize="16px" width="true" link_ref="/labs"
             :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="connect" fontSize="16px" link_ref="/connect"
+            <SLink class="link" text="connect" fontSize="16px" width="true" link_ref="/connect"
             :color="theme=='blue'?'white':''"/>
         </div>
     </div>
@@ -59,6 +59,7 @@
   justify-content: space-between;
   width:70%;
   flex-wrap: wrap;
+  font-family: "SpaceMono";
 }
 
 .brand {

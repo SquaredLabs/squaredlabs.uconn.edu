@@ -5,14 +5,18 @@
         <div class="project__description">
             <p class="project__title-expanded">{{name}}</p>
             <slot />
-            <router-link class="link--highlighted link--pulled-right project__link" :to="link">View Project →</router-link>
+            <SLink class="SLink" text="View Project →" :link_ref="link"/>
         </div>
       </div>
     </div>
 </template>
 
 <script>
+import SLink from './Link'
 export default {
+  components:{
+    SLink
+  },
   props: ["name", "background", "link"]
 };
 </script>
@@ -104,5 +108,10 @@ $inner-box: calc(100% - 20px);
   width: $inner-box;
   height: $inner-box;
   opacity: 0;
+}
+.SLink{
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 </style>

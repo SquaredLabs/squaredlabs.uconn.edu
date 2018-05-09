@@ -137,7 +137,7 @@
 }
 
 .workshop__metadata {
-  font-family: SpaceMono;
+  font-family: "SpaceMono";
 }
 
 .workshop__technology {
@@ -177,7 +177,7 @@
 }
 
 .jumbotron__title {
-  font-family: Moderat;
+  font-family: "Moderat";
   font-size: 4em;
   color: $dodger-blue;
   text-align: center;

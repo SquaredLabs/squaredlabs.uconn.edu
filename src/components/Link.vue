@@ -8,9 +8,11 @@
 
 <script>
     export default {
-        props: ["text","link_ref","fontSize","color"],
+        props: ["text","link_ref","fontSize","color","width"],
         data: function() {
-            let data={minWidth:this.text.length*.6}
+            let minWidth=this.text.length*.5
+            if(this.width)minWidth=7;
+            let data={minWidth:minWidth}
             //If ref is a number, it is interpreted as a vue route
             if(!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref) ){
                 data.ref="";
@@ -43,7 +45,6 @@
     @import "~assets/styles/vars";
     .button {
         cursor: pointer;    
-        font-family: "SpaceMono";
         background-color: rgba(106, 161, 244, .5);
         display: inline-block;
         box-sizing: border-box;
