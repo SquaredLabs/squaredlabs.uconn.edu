@@ -31,7 +31,7 @@
             </div>
         </div>
         
-        <div v-on:click="back" id="back">Return to selection</div>
+        <SLink text="Return to selection" fontSize="16" color="white" :link_ref="back"/> 
     </div>
 </template>
 

@@ -24,7 +24,8 @@
              Here are some of the companies and organizations that our alumni have gone on to work with:
              </p>
         </div>
-        <div v-on:click="back" id="back">Return to selection</div>
+        
+        <SLink class="back" text="Return to selection" fontSize="16" color="white" :link_ref="back"/> 
     </div>
 </template>
 
@@ -73,8 +74,7 @@
         background-position: 50% calc(50% - 2px) ;
         cursor: pointer;
     }
-    #back{
-        background-color: rgba(255, 255, 255, 0.5);
+    .back{
         position: absolute;
         display: inline;
         left: 50%;
