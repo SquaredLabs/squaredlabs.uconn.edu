@@ -69,6 +69,7 @@
   #header-1 {
     font-size: 5em;
     text-align: left;
+    line-height:1em;
     color: #6aa1f4;
     color: $dodger-blue;
   }
