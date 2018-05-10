@@ -81,7 +81,9 @@
   @import "~assets/styles/vars";
   
   #container-connect{
-    margin: 0 10px 0 10px;
+    margin: 0;
+    margin-top:4em;
+    margin-bottom: 4em;
     display: flex;
     align-items: center;
     flex-direction: column;
