@@ -9,7 +9,6 @@
     "build": "nuxt build --spa",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    
     "clean": "rm logs/*; rm -rf dist/;rm -rf ./.nuxt"
   },
   "devDependencies": {
