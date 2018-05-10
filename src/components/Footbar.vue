@@ -39,6 +39,7 @@
   filter: brightness(0) invert(1);
 }
 .footbar {
+  
   padding: 20px;
   text-align: center;
   display: flex;
@@ -62,6 +63,7 @@
 }
 
 .footbar__link {
+  font-family: "SpaceMono";
   flex-basis: calc(100% / 8);
 }
 
