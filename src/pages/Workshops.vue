@@ -84,8 +84,8 @@
         </layout>
       </div>
       <layout class="layout--centered-children">
-        <SLink text="←" fontSize="40" link_ref="-1"/>
-        <SLink text="→" fontSize="40" link_ref="1"/>
+        <SLink style="margin-right:1em;" text="←" fontSize="40px" link_ref=""/>
+        <SLink text="→" fontSize="40px" link_ref=""/>
       </layout>
     </section>
   </div>
