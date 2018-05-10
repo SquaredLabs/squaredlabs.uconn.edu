@@ -4,9 +4,11 @@
             <SLink class="link" text="[menu ↑]" fontSize="16px" :link_ref="top"
              :color="theme=='blue'?'white':''"/>
         </div> 
-        <figure class="brand">
+        <router-link class="brand" to="/">
+          <figure class="brand">
             <img src="~/assets/images/wordmark.png" /> 
-        </figure>
+          </figure>
+        </router-link>
         <div class="links">
             <SLink class="link" text="home" fontSize="16px" width="true" link_ref="/home"
              :color="theme=='blue'?'white':''"/>
