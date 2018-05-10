@@ -4,16 +4,16 @@
             If you’re a UConn or non-UConn developer but want to get involved with ⬚² labs you can: 
 
                 <p><span class="contentStyleList">
-                    1) Contribute to any of our open source
-                    <SLink text="projects" fontSize="16" link_ref="/projects"/>,
+                    <span class="black">1</span>) Contribute to any of our open source
+                    <SLink text="projects" fontSize="16" color="white" link_ref="/projects"/>,
                 </span>
                 <span class="contentStyleList">
-                    2) contact us about presenting a  
-                    <SLink text="workshop" fontSize="16" link_ref="/workshops"/> 
+                    <span class="black">2</span>) contact us about presenting a  
+                    <SLink text="workshop" fontSize="16" color="white" link_ref="/workshops"/> 
                     in an area of your expertise, and/or
                 </span>
                 <span class="contentStyleList">
-                    3) make a monetary contribution to the lab.
+                    <span class="black">3</span>) make a monetary contribution to the lab.
                 </span></p>
             
             <div id="icons">
@@ -59,13 +59,13 @@
         transform: translateY(-50%);
     }
     #content .contentStyleList{
-        color:$onyx;
+        color:white;
     }
     #content .contentStyleEmphasis{
         background:linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5)) ;
         background-position: 50% calc(50% - 5px) ;
         background-repeat: no-repeat;
-        color: $onyx;
+        color:white;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .contentStyleEmphasis:hover{
@@ -73,6 +73,9 @@
         background:linear-gradient(left, rgba(255,255,255,0.2),rgba(255,255,255,0.2)) ;
         background-position: 50% calc(50% - 2px) ;
         cursor: pointer;
+    }
+    .black{
+        color: black;
     }
     #icons{
         display: flex;
