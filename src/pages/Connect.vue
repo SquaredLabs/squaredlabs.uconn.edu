@@ -29,7 +29,6 @@
 <script>
 import ConnectSelect from "../components/connect/ConnectSelect.vue"
 import Link from "../components/Link.vue"
-import background from "~/assets/images/square.png"
 import Graphics from "../components/connect/Graphics.vue"
 export default {
   components: {
