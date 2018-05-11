@@ -57,9 +57,9 @@
           v-for="y in 4"
           :key="y"
           :background="require('@/assets/images/people/dan.jpg')"
-          class="layout__col--quarter marginned--horizontally marginned--vertically"
-          name="Dan Schwartz"
-          role="Director">
+          class="layout__col--quarter marginned--horizontally marginned--vertically">
+          <template slot="name">Dan Schwartz</template>
+          <template slot="role">Director</template>
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
 
@@ -71,7 +71,6 @@
 </template>
 
 <script>
-import Construction from "../components/Construction.vue"
 import OurLayout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
@@ -79,7 +78,6 @@ import PersonCard from "../components/PersonCard.vue"
 
 export default {
   components: {
-    Construction,
     OurLayout,
     LayoutCol,
     PersonCard,

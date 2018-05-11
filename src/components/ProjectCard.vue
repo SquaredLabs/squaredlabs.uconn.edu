@@ -24,7 +24,11 @@ export default {
   components: {
     SLink
   },
-  props: ["name", "background", "link"]
+  props: {
+    name: { type: String, required: true },
+    link: { type: String, default: null },
+    background: { type: String, required: true }
+  }
 }
 </script>
 

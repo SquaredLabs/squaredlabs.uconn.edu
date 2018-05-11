@@ -49,7 +49,9 @@ export default {
   components: {
     SLink
   },
-  props: ["theme"]
+  props: {
+    theme: { type: String, required: true }
+  }
 }
 </script>
 <style scoped lang="scss">

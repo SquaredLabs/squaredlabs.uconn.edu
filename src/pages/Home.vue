@@ -5,8 +5,7 @@
         <construction
           class="marginned--horizontally"
           style="width: 100%"
-          msg="This space will have something really cool here eventually!"
-          height="80vh" />
+        />
       </layout>
     </section>
     <section>
@@ -63,13 +62,14 @@
         <div class="layout__col--pacman padded">
           <workshop-card
             :technologies="['https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/726px-CSS3_logo_and_wordmark.svg.png', 'http://ryanchristiani.com/wp-content/uploads/2015/06/js-logo.png']"
-            name="Workshop Name"
-            time="13:00-17:00"
-            date="Jan 1, 2018"
-            address-top="1 Bishop Circle"
-            address-bottom="Storrs CT 06269"
-            description="Any other relevant text can go here. Now it’s longer though, which is pretty neat. You can talk about the workshop now."
-            registration-link="http://google.com" />
+            registration-link="http://google.com">
+            <template slot="name">Workshop Name</template>
+            <template slot="time">13:00-17:00</template>
+            <template slot="date">Jan 1, 2018</template>
+            <template slot="address-top">1 Bishop Circle</template>
+            <template slot="address-bottom">Storrs CT 06269</template>
+            <p>Any other relevant text can go here. Now it’s longer though, which is pretty neat. You can talk about the workshop now.</p>
+          </workshop-card>
         </div>
         <div
           class="layout__col--quarter padded"
@@ -104,24 +104,14 @@
           </p>
         </div>
         <person-card
+          v-for="i in 3"
+          :key="i"
           :background="require('~/assets/images/people/dan.jpg')"
           class="layout__col--quarter marginned--horizontally"
           name="Dan Schwartz"
           role="Director">
-          <p>“Take life (and everything) with a grain of salt.”</p>
-        </person-card>
-        <person-card
-          :background="require('~/assets/images/people/dan.jpg')"
-          class="layout__col--quarter marginned--horizontally"
-          name="Dan Schwartz"
-          role="Director">
-          <p>“Take life (and everything) with a grain of salt.”</p>
-        </person-card>
-        <person-card
-          :background="require('~/assets/images/people/dan.jpg')"
-          class="layout__col--quarter marginned--horizontally"
-          name="Dan Schwartz"
-          role="Director">
+          <template slot="name">Dan Schwartz</template>
+          <template slot="role">Director</template>
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
       </layout>

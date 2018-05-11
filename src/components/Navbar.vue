@@ -19,46 +19,46 @@
     </router-link>
     <div class="links">
       <SLink
+        :width="true"
         :color="theme=='blue'?'white':''"
         class="link"
         text="home"
         font-size="16px"
-        width="true"
         link_ref="/home"/>
       <SLink
         :color="theme=='blue'?'white':''"
+        :width="true"
         class="link"
         text="projects"
         font-size="16px"
-        width="true"
         link_ref="/projects"/>
       <SLink
+        :width="true"
         :color="theme=='blue'?'white':''"
         class="link"
         text="people"
         font-size="16px"
-        width="true"
         link_ref="/people"/>
       <SLink
+        :width="true"
         :color="theme=='blue'?'white':''"
         class="link"
         text="workshops"
         font-size="16px"
-        width="true"
         link_ref="/workshops"/>
       <SLink
+        :width="true"
         :color="theme=='blue'?'white':''"
         class="link lab"
         text="the lab"
         font-size="16px"
-        width="true"
         link_ref="/labs"/>
       <SLink
+        :width="true"
         :color="theme=='blue'?'white':''"
         class="link"
         text="connect"
         font-size="16px"
-        width="true"
         link_ref="/connect"/>
     </div>
   </div>
@@ -70,7 +70,9 @@ export default {
   components: {
     SLink
   },
-  props: ["theme"],
+  props: {
+    theme: { type: String, required: true }
+  },
   methods: {
     top() {
       window.scrollTo({ top: 0, behavior: "smooth" })

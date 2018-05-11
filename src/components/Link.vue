@@ -10,7 +10,14 @@
 
 <script>
 export default {
-  props: ["text", "link_ref", "fontSize", "color", "width"],
+  props: {
+    text: { type: String, default: "" },
+    link_ref: { type: [String, Function], default: null },
+    fontSize: { type: String, default: "1em" },
+    color: { type: String, default: null },
+    // This prop is used as a boolean; there's probably a better name for it.
+    width: { type: Boolean, default: false }
+  },
   data: function() {
     let minWidth = this.text.length * 0.5
     if (this.width) minWidth = 7
