@@ -4,15 +4,17 @@
       :src="icon"
       class="mini__icon" >
     <div class="mini__card">
-      <b>Raymond Baldwin</b>
-      <p style="margin: 0">Project Lead</p>
+      <strong><slot name="name" /></strong><br>
+      <span><slot name="position" /></span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["icon", "name", "position"]
+  props: {
+    icon: { type: String, required: true }
+  }
 }
 </script>
 

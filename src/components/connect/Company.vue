@@ -36,11 +36,8 @@
 
 <script>
 export default {
-  props: ["backToSelect"],
-  methods: {
-    back() {
-      this.backToSelect()
-    }
+  props: {
+    back: { type: Function, required: true }
   }
 }
 </script>

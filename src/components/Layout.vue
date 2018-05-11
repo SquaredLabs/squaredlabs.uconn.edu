@@ -70,6 +70,8 @@ export default {
       template: `<p>test</p>`
     }
   },
-  props: ["vertical"]
+  props: {
+    vertical: { type: Boolean, default: false }
+  }
 }
 </script>

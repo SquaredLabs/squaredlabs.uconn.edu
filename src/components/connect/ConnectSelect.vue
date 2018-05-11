@@ -26,7 +26,7 @@
       <component
         v-if="selected"
         :is="selected_view[Object.keys(selected_view)[0]]"
-        :back-to-select="backToSelect"/>
+        :back="resetSelection"/>
     </transition>
   </div>
 </template>
@@ -57,7 +57,7 @@ export default {
   methods: {
     select(key) {
       if (this.selected) {
-        return this.backToSelect()
+        return this.resetSelection()
       }
       this.selected_view = {}
       this.selected_view[key] = views[key]
@@ -65,7 +65,7 @@ export default {
       this.views = this.selected_view
       this.selected = true
     },
-    backToSelect() {
+    resetSelection() {
       this.selected_view = {}
       this.selected = false
       this.views = Object.assign({}, views)

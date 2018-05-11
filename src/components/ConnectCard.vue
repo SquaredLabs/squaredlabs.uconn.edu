@@ -16,7 +16,11 @@
 
 <script>
 export default {
-  props: ["link", "background", "hidden-image"]
+  props: {
+    link: { type: String, default: null },
+    background: { type: String, required: true },
+    hiddenImage: { type: String, default: null }
+  }
 }
 </script>
 
