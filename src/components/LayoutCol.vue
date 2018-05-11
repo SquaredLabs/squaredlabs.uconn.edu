@@ -1,6 +1,6 @@
 <template>
-  <div 
-    :class="{ 'padded': p, 
+  <div
+    :class="{ 'padded': p,
               'marginned--horizontally': m == 'horizontal',
               'marginned--vertically': m == 'vertical',
               'layout__col--quarter': s == 'quarter' || s == null,

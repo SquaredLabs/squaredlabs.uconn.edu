@@ -1,38 +1,38 @@
 <template>
-  <div 
-    :class="{blueTheme:theme=='blue'}" 
-    class="footbar">    
-      
-    <SLink 
-      :color="theme=='blue'?'white':''" 
-      class="footbar__link" 
-      text="©2018 UConn" 
+  <div
+    :class="{blueTheme:theme=='blue'}"
+    class="footbar">
+
+    <SLink
+      :color="theme=='blue'?'white':''"
+      class="footbar__link"
+      text="©2018 UConn"
       font-size="1em"
       link_ref="https://uconn.edu"/>
-    <SLink 
-      :color="theme=='blue'?'white':''" 
-      class="footbar__link" 
-      text="UConn COR²E" 
+    <SLink
+      :color="theme=='blue'?'white':''"
+      class="footbar__link"
+      text="UConn COR²E"
       font-size="0.8em"
       link_ref="https://core.uconn.edu"/>
-    <SLink 
-      :color="theme=='blue'?'white':''" 
-      class="footbar__link" 
-      text="UConn COR²E" 
+    <SLink
+      :color="theme=='blue'?'white':''"
+      class="footbar__link"
+      text="UConn COR²E"
       font-size="0.8em"
       link_ref="alert('CONTACT')"/>
-    <SLink 
-      :color="theme=='blue'?'white':''" 
-      class="footbar__link" 
+    <SLink
+      :color="theme=='blue'?'white':''"
+      class="footbar__link"
       text="Link 1"
       font-size="1em"/>
-    <SLink 
-      :color="theme=='blue'?'white':''" 
-      class="footbar__link" 
+    <SLink
+      :color="theme=='blue'?'white':''"
+      class="footbar__link"
       text="Link 2"
       font-size="1em"/>
     <figure class="footbar__brand">
-      <img src="~/assets/images/wordmark.png" > 
+      <img src="~/assets/images/wordmark.png" >
     </figure>
     <span class="footbar__signature">
       Designed & developed by

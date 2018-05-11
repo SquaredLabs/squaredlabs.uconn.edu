@@ -1,63 +1,63 @@
 <template>
-  <div 
-    :class="{blueTheme:theme=='blue'}" 
+  <div
+    :class="{blueTheme:theme=='blue'}"
     class="navbar">
     <div class="mobile">
-      <SLink 
-        :link_ref="top" 
-        :color="theme=='blue'?'white':''" 
-        class="link" 
+      <SLink
+        :link_ref="top"
+        :color="theme=='blue'?'white':''"
+        class="link"
         text="[menu ↑]"
         font-size="16px"/>
-    </div> 
-    <router-link 
-      class="brand" 
+    </div>
+    <router-link
+      class="brand"
       to="/">
       <figure class="brand">
-        <img src="~/assets/images/wordmark.png" > 
+        <img src="~/assets/images/wordmark.png" >
       </figure>
     </router-link>
     <div class="links">
-      <SLink 
-        :color="theme=='blue'?'white':''" 
-        class="link" 
-        text="home" 
-        font-size="16px" 
+      <SLink
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="home"
+        font-size="16px"
         width="true"
         link_ref="/home"/>
-      <SLink 
-        :color="theme=='blue'?'white':''" 
-        class="link" 
-        text="projects" 
-        font-size="16px" 
+      <SLink
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="projects"
+        font-size="16px"
         width="true"
         link_ref="/projects"/>
-      <SLink 
-        :color="theme=='blue'?'white':''" 
-        class="link" 
-        text="people" 
-        font-size="16px" 
+      <SLink
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="people"
+        font-size="16px"
         width="true"
         link_ref="/people"/>
-      <SLink 
-        :color="theme=='blue'?'white':''" 
-        class="link" 
-        text="workshops" 
-        font-size="16px" 
+      <SLink
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="workshops"
+        font-size="16px"
         width="true"
         link_ref="/workshops"/>
-      <SLink 
-        :color="theme=='blue'?'white':''" 
-        class="link lab" 
-        text="the lab" 
-        font-size="16px" 
+      <SLink
+        :color="theme=='blue'?'white':''"
+        class="link lab"
+        text="the lab"
+        font-size="16px"
         width="true"
         link_ref="/labs"/>
-      <SLink 
-        :color="theme=='blue'?'white':''" 
-        class="link" 
-        text="connect" 
-        font-size="16px" 
+      <SLink
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="connect"
+        font-size="16px"
         width="true"
         link_ref="/connect"/>
     </div>

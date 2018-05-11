@@ -5,23 +5,23 @@
       <p>nect</p>
     </div>
     <div class="container-header">
-          
-      <p 
-        id="header-1" 
+
+      <p
+        id="header-1"
         class="header">Like what we do?</p>
       <Graphics/>
-      <p 
-        id="header-2" 
+      <p
+        id="header-2"
         class="header">So do we.</p>
-      <div 
-        id="subHeader" 
+      <div
+        id="subHeader"
         class="header">
-        <p>We’ve got a good thing going here, and we’d like to keep it 
+        <p>We’ve got a good thing going here, and we’d like to keep it
         going. Here’s how you can help.</p>
         <p> If you’re a…</p>
       </div>
     </div>
-        
+
     <ConnectSelect/>
   </section>
 </template>

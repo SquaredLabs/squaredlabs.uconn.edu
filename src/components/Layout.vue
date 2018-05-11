@@ -1,11 +1,11 @@
 <template>
-  <div 
-    v-if="!vertical" 
+  <div
+    v-if="!vertical"
     class="layout">
     <slot/>
   </div>
-  <div 
-    v-else 
+  <div
+    v-else
     class="layout--vertical">
     <slot/>
   </div>

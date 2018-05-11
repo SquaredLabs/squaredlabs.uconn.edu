@@ -1,46 +1,46 @@
 <template>
   <div id="container">
     <div id="content">
-      If you’re a UConn or non-UConn developer but want to get involved with ⬚² labs you can: 
+      If you’re a UConn or non-UConn developer but want to get involved with ⬚² labs you can:
 
       <p><span class="contentStyleList">
         <span class="black">1</span>) Contribute to any of our open source
-        <SLink 
-          text="projects" 
-          font-size="16" 
-          color="white" 
+        <SLink
+          text="projects"
+          font-size="16"
+          color="white"
           link_ref="/projects"/>,
       </span>
         <span class="contentStyleList">
-          <span class="black">2</span>) contact us about presenting a  
-          <SLink 
-            text="workshop" 
-            font-size="16" 
-            color="white" 
-            link_ref="/workshops"/> 
+          <span class="black">2</span>) contact us about presenting a
+          <SLink
+            text="workshop"
+            font-size="16"
+            color="white"
+            link_ref="/workshops"/>
           in an area of your expertise, and/or
         </span>
         <span class="contentStyleList">
           <span class="black">3</span>) make a monetary contribution to the lab.
       </span></p>
-            
+
       <div id="icons">
-        <div class="icon"><img 
-          alt="Gitlab" 
+        <div class="icon"><img
+          alt="Gitlab"
           src="~/assets/images/connect/gitlab.svg" ></div>
-        <div class="icon"><img 
-          alt="Mail" 
+        <div class="icon"><img
+          alt="Mail"
           src="~/assets/images/connect/mail.svg" ></div>
-        <div class="icon"><img 
-          alt="Bitcoin" 
+        <div class="icon"><img
+          alt="Bitcoin"
           src="~/assets/images/connect/btc.svg"></div>
       </div>
     </div>
-    <SLink 
-      :link_ref="back" 
-      text="Return to selection" 
-      font-size="16" 
-      color="white"/> 
+    <SLink
+      :link_ref="back"
+      text="Return to selection"
+      font-size="16"
+      color="white"/>
   </div>
 </template>
 

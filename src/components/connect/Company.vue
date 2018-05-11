@@ -2,35 +2,35 @@
   <div id="container">
     <div id="content">
       <p>
-        If you’re part of a company and you would like to connect with our team, the best way to do 
-        that is to give us free stuff that you think we’d find useful 
+        If you’re part of a company and you would like to connect with our team, the best way to do
+        that is to give us free stuff that you think we’d find useful
         (apps, hardware, furniture, food, money, etc.)
         — we’re not likely to turn you down, so don’t be shy.
       </p>
       <p>
-        When you give us free stuff, we advertise your company’s logo on our main page, below, 
-        and on any ⬚² labs promotional materials (as appropriate).  
-        You also get the opportunity to network with some of the top talent at UConn 
+        When you give us free stuff, we advertise your company’s logo on our main page, below,
+        and on any ⬚² labs promotional materials (as appropriate).
+        You also get the opportunity to network with some of the top talent at UConn
         (and might even be lucky enough to have some of them work for you when they graduate
         — though they tend to be highly competitive in the job market).
       </p>
       <div id="icons">
         <div class="icon">
-          <img 
-            alt="Gitlab" 
+          <img
+            alt="Gitlab"
             src="~/assets/images/connect/stage_lg.svg" >
-          <div class="subHeader">No one's taken the spotlight yet. 
+          <div class="subHeader">No one's taken the spotlight yet.
             <p>(We're still casting.)</p>
           </div>
         </div>
       </div>
     </div>
-        
-    <SLink 
-      :link_ref="back" 
-      text="Return to selection" 
-      font-size="16" 
-      color="white"/> 
+
+    <SLink
+      :link_ref="back"
+      text="Return to selection"
+      font-size="16"
+      color="white"/>
   </div>
 </template>
 
