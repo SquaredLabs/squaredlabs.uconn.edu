@@ -1,24 +1,31 @@
 <template>
-    <div class="project" :style="`background: url('${background}') center / cover no-repeat`">
-      <div class="project__content" ref="title">
-        <p class="project__title">{{ name }}</p>
-        <div class="project__description">
-            <p class="project__title-expanded">{{name}}</p>
-            <slot />
-            <SLink class="SLink" text="View Project →" :link_ref="link"/>
-        </div>
+  <div 
+    :style="`background: url('${background}') center / cover no-repeat`" 
+    class="project">
+    <div 
+      ref="title" 
+      class="project__content">
+      <p class="project__title">{{ name }}</p>
+      <div class="project__description">
+        <p class="project__title-expanded">{{ name }}</p>
+        <slot />
+        <SLink 
+          :link_ref="link" 
+          class="SLink" 
+          text="View Project →"/>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
-import SLink from './Link'
+import SLink from "./Link"
 export default {
-  components:{
+  components: {
     SLink
   },
   props: ["name", "background", "link"]
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -109,7 +116,7 @@ $inner-box: calc(100% - 20px);
   height: $inner-box;
   opacity: 0;
 }
-.SLink{
+.SLink {
   position: absolute;
   bottom: 0;
   right: 0;

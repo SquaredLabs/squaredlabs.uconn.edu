@@ -1,17 +1,18 @@
 <template>
-    <div :class="{ 'padded': p, 
-                    'marginned--horizontally': m == 'horizontal',
-                    'marginned--vertically': m == 'vertical',
-                    'layout__col--quarter': s == 'quarter' || s == null,
-                    'layout__col--third': s == 'third',
-                    'layout__col--half': s == 'half',
-                    'layout__col--pacman': s == 'pacman',
-                    'layout__col--whole': s == 'whole',
-                    'layout__col--centered-children': c == 'centered',
-                    'layout__col--spaced-between-children': c == 'spaced'
-                    }">
-        <slot />
-    </div>
+  <div 
+    :class="{ 'padded': p, 
+              'marginned--horizontally': m == 'horizontal',
+              'marginned--vertically': m == 'vertical',
+              'layout__col--quarter': s == 'quarter' || s == null,
+              'layout__col--third': s == 'third',
+              'layout__col--half': s == 'half',
+              'layout__col--pacman': s == 'pacman',
+              'layout__col--whole': s == 'whole',
+              'layout__col--centered-children': c == 'centered',
+              'layout__col--spaced-between-children': c == 'spaced'
+  }">
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -24,5 +25,5 @@
 */
 export default {
   props: ["m", "s", "c", "p"]
-};
+}
 </script>
