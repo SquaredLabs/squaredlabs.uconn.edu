@@ -1,4 +1,4 @@
-import Vue from 'vue'
-import resource from 'vue-resource'
+import Vue from "vue"
+import resource from "vue-resource"
 
 Vue.use(resource)

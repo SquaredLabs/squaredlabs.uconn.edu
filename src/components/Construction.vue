@@ -1,5 +1,7 @@
 <template>
-  <div class="construction-zone" :style="`height: ${height}`">
+  <div 
+    :style="`height: ${height}`" 
+    class="construction-zone">
     <div style="padding: 20px">{{ msg }}</div>
   </div>
 </template>
@@ -7,7 +9,7 @@
 <script>
 export default {
   props: ["msg", "height"]
-};
+}
 </script>
 
 <style lang="scss" scoped>
