@@ -155,14 +155,6 @@
 </template>
 
 <script>
-import IP from "~/assets/images/projects/ip.png"
-import Lincus from "~/assets/images/projects/lincus.png"
-import GrantTrails from "~/assets/images/projects/huskytrails.png"
-import Dan from "~/assets/images/people/dan.jpg"
-import Gitlab from "~/assets/images/connect/gitlab.svg"
-import Mail from "~/assets/images/connect/mail.svg"
-import BTC from "~/assets/images/connect/btc.svg"
-import Contact from "~/assets/images/connect/contact.png"
 import Construction from "../components/Construction.vue"
 import Layout from "../components/Layout.vue"
 import ProjectCard from "../components/ProjectCard.vue"
