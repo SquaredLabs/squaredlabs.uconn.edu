@@ -1,6 +1,6 @@
 <template>
-  <div 
-    :style="`height: ${height}`" 
+  <div
+    :style="`height: ${height}`"
     class="construction-zone">
     <div style="padding: 20px">{{ msg }}</div>
   </div>

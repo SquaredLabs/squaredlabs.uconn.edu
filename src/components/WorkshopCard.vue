@@ -17,25 +17,25 @@
       <p v-html="description" />
     </div>
     <div class="workshop__technologies">
-      <img 
-        v-for="technology in technologies" 
-        :src="technology" 
-        :key="technology" 
+      <img
+        v-for="technology in technologies"
+        :src="technology"
+        :key="technology"
         class="workshop__technology" >
     </div>
     <div class="workshop__links">
-      <a 
-        :href="registrationLink" 
+      <a
+        :href="registrationLink"
         class="workshop__register">register</a>
       <br>
-      <img 
-        class="workshop__link" 
+      <img
+        class="workshop__link"
         src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png">
-      <img 
-        class="workshop__link" 
+      <img
+        class="workshop__link"
         src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png">
-      <img 
-        class="workshop__link" 
+      <img
+        class="workshop__link"
         src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png">
     </div>
   </div>

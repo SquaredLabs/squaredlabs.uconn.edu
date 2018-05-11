@@ -1,8 +1,8 @@
 <template>
-  <a 
-    :style="{fontSize: fontSize, minWidth:minWidth+'em'}" 
-    :class="{ white: color=='white' }" 
-    class="button" 
+  <a
+    :style="{fontSize: fontSize, minWidth:minWidth+'em'}"
+    :class="{ white: color=='white' }"
+    class="button"
     @click="click">
     <span class="buttonText" >{{ text }} </span>
   </a>

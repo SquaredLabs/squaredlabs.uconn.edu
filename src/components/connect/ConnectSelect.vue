@@ -1,31 +1,31 @@
 <template>
   <div id="container-connect">
-    <transition-group 
-      id="selector" 
+    <transition-group
+      id="selector"
       name="animateSelect"
       @after-leave="readyForBack"
       @before-leave="disableBack">
-      <div 
-        v-for="(value, key) in views" 
-        :key="key" 
+      <div
+        v-for="(value, key) in views"
+        :key="key"
         class="select"
-        @click="select(key)" 
-        @mouseover="hover" 
+        @click="select(key)"
+        @mouseover="hover"
         @mouseleave="hoverLeave">
         <transition name="fade">
-          <p 
-            :class="{expandedTitle:(selected && hoverable)}" 
+          <p
+            :class="{expandedTitle:(selected && hoverable)}"
             class="selectTitle">{{ key }}</p>
         </transition>
-        <p 
-          v-show="selected && hoverable" 
+        <p
+          v-show="selected && hoverable"
           class="selectBack">Back</p>
       </div>
     </transition-group>
     <transition name="slideUp">
-      <component 
-        v-if="selected" 
-        :is="selected_view[Object.keys(selected_view)[0]]" 
+      <component
+        v-if="selected"
+        :is="selected_view[Object.keys(selected_view)[0]]"
         :back-to-select="backToSelect"/>
     </transition>
   </div>

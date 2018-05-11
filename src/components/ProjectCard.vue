@@ -1,17 +1,17 @@
 <template>
-  <div 
-    :style="`background: url('${background}') center / cover no-repeat`" 
+  <div
+    :style="`background: url('${background}') center / cover no-repeat`"
     class="project">
-    <div 
-      ref="title" 
+    <div
+      ref="title"
       class="project__content">
       <p class="project__title">{{ name }}</p>
       <div class="project__description">
         <p class="project__title-expanded">{{ name }}</p>
         <slot />
-        <SLink 
-          :link_ref="link" 
-          class="SLink" 
+        <SLink
+          :link_ref="link"
+          class="SLink"
           text="View Project →"/>
       </div>
     </div>

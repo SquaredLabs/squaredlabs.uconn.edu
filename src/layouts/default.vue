@@ -1,16 +1,16 @@
 <template>
-  <div 
-    :class="{blueAppTheme:$store.state.theme=='blue'}" 
+  <div
+    :class="{blueAppTheme:$store.state.theme=='blue'}"
     class="app">
     <Navbar :theme="$store.state.theme"/>
-    <transition 
-      name="slide" 
+    <transition
+      name="slide"
       mode="out-in">
       <nuxt/>
     </transition>
     <Footbar :theme="$store.state.theme"/>
   </div>
-    
+
 </template>
 <script>
 import Navbar from "../components/Navbar"

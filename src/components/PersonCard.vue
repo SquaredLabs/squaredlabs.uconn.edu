@@ -1,7 +1,7 @@
 <template>
   <div class="person">
-    <div 
-      :style="`background: url('${background}') center/150% no-repeat`" 
+    <div
+      :style="`background: url('${background}') center/150% no-repeat`"
       class="person__photo" />
     <div class="person__content">
       <p class="person__name">{{ name }}</p>
