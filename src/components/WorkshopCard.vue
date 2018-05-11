@@ -1,20 +1,20 @@
 <template>
   <div class="workshop">
-    <h1 class="workshop__title">{{ name }}</h1>
+    <h1 class="workshop__title"><slot name="name" /></h1>
     <div class="workshop__details">
       <div class="workshop__detail">
-        {{ time }}
+        <slot name="time" />
         <br>
-        {{ date }}
+        <slot name="date" />
       </div>
       <div class="workshop__detail">
-        {{ addressTop }}
+        <slot name="address-top" />
         <br>
-        {{ addressBottom }}
+        <slot name="address-bottom" />
       </div>
     </div>
     <div class="workshop__description">
-      <p v-html="description" />
+      <slot />
     </div>
     <div class="workshop__technologies">
       <img
@@ -44,16 +44,10 @@
 <script>
 export default {
   components: {},
-  props: [
-    "name",
-    "time",
-    "date",
-    "addressTop",
-    "addressBottom",
-    "description",
-    "technologies",
-    "registrationLink"
-  ]
+  props: {
+    technologies: { type: Array, default: () => [] },
+    registrationLink: { type: String, default: null }
+  }
 }
 </script>
 

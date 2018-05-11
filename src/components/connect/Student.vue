@@ -52,11 +52,8 @@ export default {
   components: {
     SLink
   },
-  props: ["backToSelect"],
-  methods: {
-    back() {
-      this.backToSelect()
-    }
+  props: {
+    back: { type: Function, required: true }
   }
 }
 </script>

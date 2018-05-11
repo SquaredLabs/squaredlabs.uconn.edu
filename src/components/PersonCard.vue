@@ -4,8 +4,8 @@
       :style="`background: url('${background}') center/150% no-repeat`"
       class="person__photo" />
     <div class="person__content">
-      <p class="person__name">{{ name }}</p>
-      <p class="person__role">{{ role }}</p>
+      <p class="person__name"><slot name="name" /></p>
+      <p class="person__role"><slot name="role" /></p>
       <div class="person__expanded">
         <slot />
       </div>
@@ -15,7 +15,9 @@
 
 <script>
 export default {
-  props: ["name", "role", "background"]
+  props: {
+    background: { type: String, required: true }
+  }
 }
 </script>
 

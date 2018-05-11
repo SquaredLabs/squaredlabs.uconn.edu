@@ -24,6 +24,11 @@
     p - Padded (true/false)
 */
 export default {
-  props: ["m", "s", "c", "p"]
+  props: {
+    m: { type: String, default: null },
+    s: { type: String, default: null },
+    c: { type: String, default: null },
+    p: { type: Boolean, default: false }
+  }
 }
 </script>

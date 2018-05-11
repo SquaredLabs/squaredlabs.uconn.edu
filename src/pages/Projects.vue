@@ -24,9 +24,10 @@
             <mini-person-card
               v-for="x in 5"
               :key="x"
-              name="Raymond Baldwin"
-              icon="https://picsum.photos/80/80"
-              position="Project Manager" />
+              icon="https://picsum.photos/80/80">
+              <template slot="name">Raymond Baldwin</template>
+              <template slot="position">Project Lead</template>
+            </mini-person-card>
           </div>
         </layout-col>
         <layout-col s="pacman">
@@ -273,7 +274,6 @@
 </template>
 
 <script>
-import Construction from "../components/Construction.vue"
 import Layout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
@@ -281,7 +281,6 @@ import MiniPersonCard from "../components/MiniPersonCard.vue"
 
 export default {
   components: {
-    Construction,
     Layout,
     LayoutCol,
     ProjectCard,
