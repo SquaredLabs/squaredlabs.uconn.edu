@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative;">
-    <img 
-      :src="icon" 
+    <img
+      :src="icon"
       class="mini__icon" >
     <div class="mini__card">
       <b>Raymond Baldwin</b>

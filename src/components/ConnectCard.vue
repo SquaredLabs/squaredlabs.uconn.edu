@@ -1,14 +1,14 @@
 <template>
-  <a 
-    :href="link" 
-    class="link" 
+  <a
+    :href="link"
+    class="link"
     target="_blank">
-    <div 
-      :class="{ 'link__image-animated': hiddenImage, 'link__image': !hiddenImage}" 
+    <div
+      :class="{ 'link__image-animated': hiddenImage, 'link__image': !hiddenImage}"
       :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
-    <img 
-      v-if="hiddenImage" 
-      :src="hiddenImage" 
+    <img
+      v-if="hiddenImage"
+      :src="hiddenImage"
       class="link__hidden" >
 
   </a>
