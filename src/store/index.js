@@ -1,17 +1,17 @@
-import Vuex from 'vuex'
+import Vuex from "vuex"
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      theme: 'white'
+      theme: "white"
     },
     mutations: {
-      setBlue (state) {
-        state.theme='blue'
-        },
-        setWhite(state) {
-          state.theme='white'
-      }  
+      setBlue(state) {
+        state.theme = "blue"
+      },
+      setWhite(state) {
+        state.theme = "white"
+      }
     }
   })
 }

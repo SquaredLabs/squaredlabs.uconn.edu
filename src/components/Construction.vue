@@ -1,13 +1,19 @@
 <template>
-  <div class="construction-zone" :style="`height: ${height}`">
-    <div style="padding: 20px">{{ msg }}</div>
+  <div
+    :style="`height: ${height}`"
+    class="construction-zone">
+    <div style="padding: 20px">
+      <slot>This space will have something really cool here eventually!</slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["msg", "height"]
-};
+  props: {
+    height: { type: String, default: "80vh" }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

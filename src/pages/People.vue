@@ -1,61 +1,89 @@
 <template>
   <div>
-    <section id="jumbotron" style="margin-bottom: 80px; margin-top: 130px">
-      <img class="img--fill-container" src="https://picsum.photos/1920/445" style="height:440px" />
-      <OurLayout vertical="true" style="margin-top: -485px">
-        <layout-col s="whole" style="display: flex; justify-content: flex-end">
-          <div style="background: white; width: 32vw" class="marginned--horizontally padded">
+    <section
+      id="jumbotron"
+      style="margin-bottom: 80px; margin-top: 130px">
+      <img
+        class="img--fill-container"
+        src="https://picsum.photos/1920/445"
+        style="height:440px" >
+      <OurLayout
+        vertical="true"
+        style="margin-top: -485px">
+        <layout-col
+          s="whole"
+          style="display: flex; justify-content: flex-end">
+          <div
+            style="background: white; width: 32vw"
+            class="marginned--horizontally padded">
             <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
           </div>
         </layout-col>
         <layout-col s="whole">
           <OurLayout>
             <layout-col style="padding: 40px">
-              <img class="img--fill-container" src="https://picsum.photos/231/340" />
+              <img
+                class="img--fill-container"
+                src="https://picsum.photos/231/340" >
             </layout-col>
             <layout-col style="padding: 40px">
-              <img class="img--fill-container" src="https://picsum.photos/231/340" />
+              <img
+                class="img--fill-container"
+                src="https://picsum.photos/231/340" >
             </layout-col>
             <layout-col style="padding: 40px">
-              <img class="img--fill-container" src="https://picsum.photos/231/340" />
+              <img
+                class="img--fill-container"
+                src="https://picsum.photos/231/340" >
             </layout-col>
             <layout-col style="padding: 40px">
-              <img class="img--fill-container" src="https://picsum.photos/231/340" />
+              <img
+                class="img--fill-container"
+                src="https://picsum.photos/231/340" >
             </layout-col>
           </OurLayout>
         </layout-col>
       </OurLayout>
     </section>
-    <section id="alumni" style="margin-bottom: 80px">
-      
-      <OurLayout v-for="x in 3" :key="x" style="padding-bottom: 20px">
-        <person-card v-for="y in 4" :key="y" class="layout__col--quarter marginned--horizontally marginned--vertically" name="Dan Schwartz" role="Director" :background="require('@/assets/images/people/dan.jpg')">
+    <section
+      id="alumni"
+      style="margin-bottom: 80px">
+
+      <OurLayout
+        v-for="x in 3"
+        :key="x"
+        style="padding-bottom: 20px">
+        <person-card
+          v-for="y in 4"
+          :key="y"
+          :background="require('@/assets/images/people/dan.jpg')"
+          class="layout__col--quarter marginned--horizontally marginned--vertically">
+          <template slot="name">Dan Schwartz</template>
+          <template slot="role">Director</template>
           <p>“Take life (and everything) with a grain of salt.”</p>
         </person-card>
-        
+
       </OurLayout>
-      
+
     </section>
 
   </div>
 </template>
 
 <script>
-import Construction from "../components/Construction.vue";
-import OurLayout from "../components/Layout.vue";
-import LayoutCol from "../components/LayoutCol.vue";
-import ProjectCard from "../components/ProjectCard.vue";
-import PersonCard from "../components/PersonCard.vue";
+import OurLayout from "../components/Layout.vue"
+import LayoutCol from "../components/LayoutCol.vue"
+import ProjectCard from "../components/ProjectCard.vue"
+import PersonCard from "../components/PersonCard.vue"
 
 export default {
   components: {
-    Construction,
     OurLayout,
     LayoutCol,
     PersonCard,
     ProjectCard
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

@@ -1,65 +1,105 @@
 <template>
-    <div class="navbar" v-bind:class="{blueTheme:theme=='blue'}">
-        <div class="mobile">
-            <SLink class="link" text="[menu ↑]" fontSize="16px" :link_ref="top"
-             :color="theme=='blue'?'white':''"/>
-        </div> 
-        <router-link class="brand" to="/">
-          <figure class="brand">
-            <img src="~/assets/images/wordmark.png" /> 
-          </figure>
-        </router-link>
-        <div class="links">
-            <SLink class="link" text="home" fontSize="16px" width="true" link_ref="/home"
-             :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="projects" fontSize="16px" width="true" link_ref="/projects"
-            :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="people" fontSize="16px" width="true" link_ref="/people"
-            :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="workshops" fontSize="16px" width="true" link_ref="/workshops"
-            :color="theme=='blue'?'white':''"/>
-            <SLink class="link lab" text="the lab" fontSize="16px" width="true" link_ref="/labs"
-            :color="theme=='blue'?'white':''"/>
-            <SLink class="link" text="connect" fontSize="16px" width="true" link_ref="/connect"
-            :color="theme=='blue'?'white':''"/>
-        </div>
+  <div
+    :class="{blueTheme:theme=='blue'}"
+    class="navbar">
+    <div class="mobile">
+      <SLink
+        :link_ref="top"
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="[menu ↑]"
+        font-size="16px"/>
     </div>
+    <router-link
+      class="brand"
+      to="/">
+      <figure class="brand">
+        <img src="~/assets/images/wordmark.png" >
+      </figure>
+    </router-link>
+    <div class="links">
+      <SLink
+        :width="true"
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="home"
+        font-size="16px"
+        link_ref="/home"/>
+      <SLink
+        :color="theme=='blue'?'white':''"
+        :width="true"
+        class="link"
+        text="projects"
+        font-size="16px"
+        link_ref="/projects"/>
+      <SLink
+        :width="true"
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="people"
+        font-size="16px"
+        link_ref="/people"/>
+      <SLink
+        :width="true"
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="workshops"
+        font-size="16px"
+        link_ref="/workshops"/>
+      <SLink
+        :width="true"
+        :color="theme=='blue'?'white':''"
+        class="link lab"
+        text="the lab"
+        font-size="16px"
+        link_ref="/labs"/>
+      <SLink
+        :width="true"
+        :color="theme=='blue'?'white':''"
+        class="link"
+        text="connect"
+        font-size="16px"
+        link_ref="/connect"/>
+    </div>
+  </div>
 </template>
 <script>
-  import SLink from "../components/Link.vue";
+import SLink from "../components/Link.vue"
 
-  export default {
-    components: {
-      SLink
-    },
-    props:['theme'],
-    methods:{
-      top(){
-        window.scrollTo({top:0,behavior:'smooth'});
-      }
+export default {
+  components: {
+    SLink
+  },
+  props: {
+    theme: { type: String, required: true }
+  },
+  methods: {
+    top() {
+      window.scrollTo({ top: 0, behavior: "smooth" })
     }
-  };
+  }
+}
 </script>
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
-.blueTheme .brand img{
+.blueTheme .brand img {
   filter: brightness(0) invert(1);
 }
 .navbar {
   padding: 20px;
   text-align: center;
   z-index: 15;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   position: relative;
 }
-.links{
+.links {
   display: flex;
   align-items: flex-end;
   align-content: center;
   justify-content: space-between;
-  width:70%;
+  width: 70%;
   flex-wrap: wrap;
   font-family: "SpaceMono";
 }
@@ -77,7 +117,7 @@
 }
 
 .link {
-  margin-top:5px;
+  margin-top: 5px;
   flex: 0 0 calc(100% / 10);
   align-self: flex-end;
   position: relative;
@@ -85,12 +125,11 @@
 
 .mobile {
   display: none;
-  
 }
 
 // Tablet
 @media (min-width: $tablet) and (max-width: $desktop) {
-  .navbar{
+  .navbar {
     align-items: flex-start;
   }
   .brand {
@@ -105,24 +144,22 @@
   .link {
     flex-basis: calc(100% / 7);
   }
-  .links{
-    flex:0 0 100%;
+  .links {
+    flex: 0 0 100%;
   }
-
 }
 
 // Mobile
 @media (min-width: 0px) and (max-width: $tablet) {
-  
   .brand {
     padding-top: 160px;
     flex-basis: 100%;
   }
 
-  .links{
+  .links {
     width: 100%;
   }
-  .links .link{
+  .links .link {
     transform: translateY(-200px);
   }
   .mobile {
@@ -131,7 +168,7 @@
     font-family: SpaceMono;
     bottom: 25px;
     right: 25px;
-    z-index:12;
+    z-index: 12;
     transition: all 0.3s ease;
   }
 }

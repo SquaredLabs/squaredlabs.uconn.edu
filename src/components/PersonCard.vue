@@ -1,21 +1,24 @@
 <template>
-    <div class="person">
-        <div class="person__photo" :style="`background: url('${background}') center/150% no-repeat`" />
-        <div class="person__content">
-            <p class="person__name">{{ name }}</p>
-            <p class="person__role">{{ role }}</p>
-            <div class="person__expanded">
-                <slot />
-            </div>
-        </div>
+  <div class="person">
+    <div
+      :style="`background: url('${background}') center/150% no-repeat`"
+      class="person__photo" />
+    <div class="person__content">
+      <p class="person__name"><slot name="name" /></p>
+      <p class="person__role"><slot name="role" /></p>
+      <div class="person__expanded">
+        <slot />
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ["name", "role", "background"],
-
-};
+  props: {
+    background: { type: String, required: true }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -33,8 +36,8 @@ export default {
     height: calc(30% + 50px);
   }
 
-  &:hover .person__expanded { 
-      opacity: 1;
+  &:hover .person__expanded {
+    opacity: 1;
   }
 
   &:hover .person__photo {
@@ -51,8 +54,8 @@ export default {
   height: 100%;
   transition: all 0.25s ease;
 }
-.person:hover .person__photo{
-  filter:brightness(60%);
+.person:hover .person__photo {
+  filter: brightness(60%);
 }
 
 .person__content {

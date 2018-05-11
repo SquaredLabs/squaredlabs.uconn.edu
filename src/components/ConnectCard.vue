@@ -1,15 +1,27 @@
 <template>
-    <a class="link" :href="link" target="_blank">
-        <div :class="{ 'link__image-animated': hiddenImage, 'link__image': !hiddenImage}" :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
-        <img v-if="hiddenImage" class="link__hidden" :src="hiddenImage" />
+  <a
+    :href="link"
+    class="link"
+    target="_blank">
+    <div
+      :class="{ 'link__image-animated': hiddenImage, 'link__image': !hiddenImage}"
+      :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
+    <img
+      v-if="hiddenImage"
+      :src="hiddenImage"
+      class="link__hidden" >
 
-    </a>
+  </a>
 </template>
 
 <script>
 export default {
-  props: ["link", "background", "hidden-image"]
-};
+  props: {
+    link: { type: String, default: null },
+    background: { type: String, required: true },
+    hiddenImage: { type: String, default: null }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
