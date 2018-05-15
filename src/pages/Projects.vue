@@ -78,7 +78,7 @@
               <p>You wouldn’t build a building without architectural drawings. We don’t build websites without spending a considerable amount of time on design, ensuring that every choice contributes to crafting the most effective solution.</p>
             </layout-col>
             <layout-col s="half">
-              <layout vertical="true">
+              <layout :vertical="true">
                 <layout-col
                   s="whole"
                   m="vertical">
@@ -96,7 +96,7 @@
           </layout>
           <layout
             id="question"
-            vertical="true"
+            :vertical="true"
             class="marginned--vertically--6x">
             <!-- 25vw to constrain text length -->
             <layout-col style="width: 25vw">
@@ -116,15 +116,15 @@
             <layout-col s="pacman">
               <layout>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
                 </layout-col>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
@@ -132,15 +132,15 @@
               </layout>
               <layout>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
                 </layout-col>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
@@ -172,7 +172,7 @@
           m="horizontal">
           <layout
             id="intiate"
-            vertical="true"
+            :vertical="true"
             class="marginned--vertically--6x">
             <layout-col
               s="whole"
@@ -207,7 +207,7 @@
           </layout>
           <layout
             id="refine"
-            vertical="true"
+            :vertical="true"
             class="marginned--vertically--6x">
             <layout-col
               s="pacman"
@@ -235,15 +235,15 @@
             <layout-col s="pacman">
               <layout>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
                 </layout-col>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
@@ -251,15 +251,15 @@
               </layout>
               <layout>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
                 </layout-col>
                 <layout-col
-                  s="half"
-                  p="true">
+                  :p="true"
+                  s="half">
                   <img
                     class="img--fill-container"
                     src="https://picsum.photos/231/100">
