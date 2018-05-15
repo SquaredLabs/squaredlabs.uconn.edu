@@ -4,7 +4,7 @@ pipeline:
     image: node:10
     commands:
       - npm install
-      - npm run build
+      - npm run generate
 
   lint:
     image: node:10
