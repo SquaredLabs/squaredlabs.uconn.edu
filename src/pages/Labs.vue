@@ -244,6 +244,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom:2em;
 }
 #titleText {
   display: flex;
@@ -357,10 +358,6 @@ export default {
   #rightContent {
     flex: 0 0 100%;
   }
-
-  .titleTextLine {
-    font-size: 10em;
-  }
   #plusIcons {
     font-size: 10em;
     top: 1.5em;
@@ -378,12 +375,10 @@ export default {
   #rightContent {
     flex: 0 0 100%;
   }
-  .titleTextLine {
-    font-size: 5em;
-  }
+
   #plusIcons {
     font-size: 5em;
-    top: 4em;
+    top: 6.5em;
     right: 10%;
   }
   .about {
