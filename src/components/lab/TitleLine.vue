@@ -87,6 +87,10 @@ export default {
     }
 }
 @media (min-width: 0px) and (max-width: $tablet) {
+    .titleTextContainer{
+        margin:2em 5% 0 5%;
+
+    }
     .hoverContentI{
         display:none;
     }
