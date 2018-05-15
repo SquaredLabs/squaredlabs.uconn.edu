@@ -2,9 +2,68 @@
   <div>
     <div id="titleTextContainer">
       <div id="titleText">
-        <p class="titleTextLine">design</p>
-        <p class="titleTextLine">develop</p>
-        <p class="titleTextLine">create.</p>
+        <TitleLine titlePositioning="design">
+          <template slot="title">
+            design
+          </template>
+          <template slot="hoverContent">
+            <p> <span class="weAre">you wouldn't build</span> 
+            a building without architectural drawings.  We don’t build websites without 
+              spending a considerable amount of time on design, ensuring that every choice contributes to crafting 
+              the most effective solution.</p>
+
+            <p> <span class="weAre">we believe that</span> 
+            thoughtfully discussing, debating, and documenting all decisions 
+              (sometimes quite heatedly!) early on pays dividends later.</p>
+
+            <p> <span class="weAre">we lay out</span>
+             every pattern and convention, ensuring continuity throughout the project 
+              from the get-go. Color palette, wireframes, stack choice, database architecture, timeline — 
+              you name it — it’s vetted for consistency with the overall project goals.</p>
+          </template>
+        </TitleLine>
+        <TitleLine titlePositioning="develop">
+          <template slot="title">
+            develop
+          </template>
+          <template slot="hoverContent">
+            <p> <span class="weAre">where our designs</span>
+             slowly transform into reality. We see it as a highly iterative, dynamic, 
+              catalogued, and collaborative process, where everyone learns from everyone else.</p>
+
+            <p> <span class="weAre">we strongly believe</span> 
+            that there’s always room for our development processes to improve. 
+              Always. We’re presently using scrum to manage our projects (or at least our own hacked version 
+              of it ;). Courtney keeps everyone in line.</p>
+
+            <p> <span class="weAre">finally, we think</span> 
+            of “develop” not just in a software sense but also in a personal development 
+              sense. The mission of squared labs is very much one of learning where team members can develop 
+              skills that we hope will serve them well beyond UConn.</p>
+          </template>
+        </TitleLine>
+        <TitleLine titlePositioning="create">
+          <template slot="title">
+            create.
+
+          </template>
+          <template slot="hoverContent">
+            <p> <span class="weAre">you might say</span> 
+            the project is finished at this point, but we believe that websites are never 
+              truly complete. Ever changing technologies, content, and our own growth as a team mean that we’re 
+              often revisiting projects in our portfolio.</p>
+
+            <p> <span class="weAre">beyond maitenence and </span>
+             updates, an idea doesn’t come to fruition until it’s been used; 
+              until it functions, breaks, and takes its own place in the world.</p>
+
+            <p> <span class="weAre">"create" is about</span> 
+            the reward you get when your site goes live, and your audience 
+              gets the opportunity to experience your hard work first hand. The feeling you get having 
+              built something from nothing — hopefully leaving the internet ever so slightly more useful or 
+              informative than it was before.</p>
+          </template>
+        </TitleLine>
       </div>
     </div>
     <div id="plusIcons">
@@ -167,11 +226,13 @@
 </template>
 
 <script>
-import SLink from "../components/Link.vue"
+import SLink from "../components/Link";
+import TitleLine from "../components/lab/TitleLine"
 
 export default {
   components: {
-    SLink
+    SLink,
+    TitleLine
   }
 }
 </script>
@@ -193,7 +254,7 @@ export default {
   position: absolute;
   display: flex;
   flex-direction: column;
-  font-size: 15.5em;
+  font-size: 10em;
   top: 0.5em;
   right: 5%;
   color: white;
@@ -201,13 +262,8 @@ export default {
 .plug {
   margin-top: 0;
 }
-.titleTextLine {
-  color: white;
-  font-size: 15.5em;
-  font-family: "SpaceMono";
-  margin-top: 0.5em;
-}
-#aims {
+
+#aims{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
