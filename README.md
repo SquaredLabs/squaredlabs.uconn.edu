@@ -4,7 +4,7 @@
 
 > A Vue.js project
 
-## Build Setup
+## Build
 
 ``` bash
 # install dependencies
@@ -21,3 +21,14 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Development
+
+This project uses [standard](https://standardjs.com/) and
+[prettier](https://prettier.io/) for linting and code formatting of JavaScript &
+CSS. For vue templates, [Priority C][Vue.js Priority C] is used.
+
+Setting up [ESLint in your editor][Linting Vue in Editor] is highly recommended.
+
+[Vue.js Priority C]: https://vuejs.org/v2/style-guide/#Priority-C-Recommended
+[Linting Vue in Editor]: https://alligator.io/vuejs/vue-eslint-plugin/
