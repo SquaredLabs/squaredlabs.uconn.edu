@@ -8,7 +8,7 @@
         src="https://picsum.photos/1920/445"
         style="height:440px" >
       <OurLayout
-        vertical="true"
+        :vertical="true"
         style="margin-top: -485px">
         <layout-col
           s="whole"
