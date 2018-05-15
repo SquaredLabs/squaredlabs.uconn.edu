@@ -52,11 +52,11 @@ export default {
     width:33%;
     background-color:white;
     color:black;
+    padding:1em;
 }
 .designContent{
     left:0;
     top:-5em;
-
 }
 .developContent{
     right:0;
@@ -69,11 +69,27 @@ export default {
 
 }
 @media (min-width: $tablet) and (max-width: $desktop) {
-  .title {
-    font-size: 10em;
-  }
+    .hoverContentI{
+        width:50%;
+    }
+    .title {
+        font-size: 10em;
+    }
+    .developContent{
+        right:0;
+        top:-20em;
+    }
+    .createContent{
+        top:-35em;
+        right:50%;
+        transform:translateX(50%)
+
+    }
 }
 @media (min-width: 0px) and (max-width: $tablet) {
+    .hoverContentI{
+        display:none;
+    }
     .title{
         font-size:5rem;
     }
