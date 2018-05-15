@@ -6,18 +6,20 @@
       <p><span class="contentStyleList">
         <span class="black">1</span>) Contribute to any of our open source
         <SLink
-          text="projects"
           font-size="16"
           color="white"
-          link_ref="/projects"/>,
+          link_ref="/projects">
+          projects
+        </SLink>,
       </span>
         <span class="contentStyleList">
           <span class="black">2</span>) contact us about presenting a
           <SLink
-            text="workshop"
             font-size="16"
             color="white"
-            link_ref="/workshops"/>
+            link_ref="/workshops">
+            workshop
+          </SLink>
           in an area of your expertise, and/or
         </span>
         <span class="contentStyleList">
@@ -38,9 +40,10 @@
     </div>
     <SLink
       :link_ref="back"
-      text="Return to selection"
       font-size="16"
-      color="white"/>
+      color="white">
+      Return to selection
+    </SLink>
   </div>
 </template>
 

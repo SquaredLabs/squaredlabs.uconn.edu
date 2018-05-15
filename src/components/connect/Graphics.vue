@@ -98,13 +98,15 @@
     <SLink
       id="graphicLeft"
       :link_ref="graphicLeft"
-      text="←"
-      font-size="40px" />
+      font-size="40px">
+      ←
+    </SLink>
     <SLink
       id="graphicRight"
       :link_ref="graphicRight"
-      text="→"
-      font-size="40px" />
+      font-size="40px">
+      →
+    </SLink>
   </div>
 </template>
 
