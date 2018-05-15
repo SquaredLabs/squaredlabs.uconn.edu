@@ -37,7 +37,7 @@
     <span class="footbar__signature">
       Designed & developed by
       <br >
-      <span class="footbar__signature-bold">[squared labs]</span>
+      <span class="footbar__signature">[squared labs]</span>
       <br >
       at UCONN
     </span>
