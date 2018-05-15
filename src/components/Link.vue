@@ -4,7 +4,7 @@
     :class="{ white: color=='white' }"
     class="button"
     @click="click">
-    <span class="buttonText" >{{ text }} </span>
+    {{ text }}
   </a>
 </template>
 
@@ -75,8 +75,5 @@ export default {
 }
 .white:hover {
   background-color: $pale-grey;
-}
-.buttonText {
-  text-decoration: none;
 }
 </style>
