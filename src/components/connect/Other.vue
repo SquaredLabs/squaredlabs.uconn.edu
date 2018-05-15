@@ -35,9 +35,10 @@
 
     <SLink
       :link_ref="back"
-      text="Return to selection"
       font-size="16"
-      color="white"/>
+      color="white">
+      Return to selection
+    </SLink>
   </div>
 </template>
 

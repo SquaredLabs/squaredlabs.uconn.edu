@@ -11,8 +11,9 @@
         <slot />
         <SLink
           :link_ref="link"
-          class="SLink"
-          text="View Project →"/>
+          class="SLink">
+          View Project →
+        </SLink>
       </div>
     </div>
   </div>

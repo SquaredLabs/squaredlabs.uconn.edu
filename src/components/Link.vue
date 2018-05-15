@@ -1,27 +1,22 @@
 <template>
   <a
-    :style="{fontSize: fontSize, minWidth:minWidth+'em'}"
+    :style="{fontSize: fontSize}"
     :class="{ white: color=='white' }"
     class="button"
     @click="click">
-    {{ text }}
+    <slot />
   </a>
 </template>
 
 <script>
 export default {
   props: {
-    text: { type: String, default: "" },
     link_ref: { type: [String, Function], default: null },
     fontSize: { type: String, default: "1em" },
-    color: { type: String, default: null },
-    // This prop is used as a boolean; there's probably a better name for it.
-    width: { type: Boolean, default: false }
+    color: { type: String, default: null }
   },
   data: function() {
-    let minWidth = this.text.length * 0.5
-    if (this.width) minWidth = 7
-    let data = { minWidth: minWidth }
+    let data = {}
     // If ref is a number, it is interpreted as a vue route
     if (!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref)) {
       data.ref = ""

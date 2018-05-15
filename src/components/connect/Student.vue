@@ -16,33 +16,37 @@
         The earlier you are in your college career the better (while we don’t typically hire seniors,
         exceptions have been made). If you’ve read through this website and think you’d be a good fit,
         you can apply for a <SLink
-          text="web development"
           font-size="16"
           link_ref=""
-          color="white"/>
+          color="white">
+          web development
+        </SLink>
         or <SLink
-          text="design"
           font-size="16"
           link_ref=""
-          color="white"/> position.
+          color="white">
+          design
+        </SLink>position.
       </p><p>
         The other way to get involved with us as a student is
         to attend our <SLink
-          text="workshops"
           font-size="16"
           link_ref="/workshops"
-          color="white"/> which cover a
-          variety of topics relevant to our projects (from coding to design to data visualization).
-          Here are some of the companies and organizations that our alumni have gone on to work with:
+          color="white">
+          workshops
+        </SLink> which cover a
+        variety of topics relevant to our projects (from coding to design to data visualization).
+        Here are some of the companies and organizations that our alumni have gone on to work with:
       </p>
     </div>
 
     <SLink
       :link_ref="back"
       class="back"
-      text="Return to selection"
       font-size="16"
-      color="white"/>
+      color="white">
+      Return to selection
+    </SLink>
   </div>
 </template>
 
