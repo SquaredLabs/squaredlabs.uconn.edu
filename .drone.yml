@@ -6,6 +6,11 @@ pipeline:
       - npm install
       - npm run build
 
+  lint:
+    image: node:10
+    commands:
+      - npm run lint
+
   deploy:
     image: drillster/drone-rsync
     secrets: [ rsync_key, rsync_user ]
