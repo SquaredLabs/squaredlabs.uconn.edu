@@ -7,8 +7,9 @@
         :link_ref="top"
         :color="theme=='blue'?'white':''"
         class="link"
-        text="[menu ↑]"
-        font-size="16px"/>
+        font-size="16px">
+        [menu ↑]
+      </SLink>
     </div>
     <router-link
       class="brand"
@@ -20,46 +21,46 @@
     <div class="links">
       <SLink
         :color="theme=='blue'?'white':''"
-        width
         class="link"
-        text="home"
         font-size="16px"
-        link_ref="/home"/>
+        link_ref="/home">
+        home
+      </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
-        width
         class="link"
-        text="projects"
         font-size="16px"
-        link_ref="/projects"/>
+        link_ref="/projects">
+        projects
+      </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
-        width
         class="link"
-        text="people"
         font-size="16px"
-        link_ref="/people"/>
+        link_ref="/people">
+        people
+      </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
-        width
         class="link"
-        text="workshops"
         font-size="16px"
-        link_ref="/workshops"/>
+        link_ref="/workshops">
+        workshops
+      </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
-        width
         class="link lab"
-        text="the lab"
         font-size="16px"
-        link_ref="/labs"/>
+        link_ref="/labs">
+        the lab
+      </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
-        width
         class="link"
-        text="connect"
         font-size="16px"
-        link_ref="/connect"/>
+        link_ref="/connect">
+        connect
+      </SLink>
     </div>
   </div>
 </template>
@@ -102,6 +103,9 @@ export default {
   width: 70%;
   flex-wrap: wrap;
   font-family: "SpaceMono";
+}
+.links > a {
+  min-width: 7em;
 }
 
 .brand {

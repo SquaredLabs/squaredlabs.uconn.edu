@@ -6,31 +6,36 @@
     <SLink
       :color="theme=='blue'?'white':''"
       class="footbar__link"
-      text="©2018 UConn"
       font-size="1em"
-      link_ref="https://uconn.edu"/>
+      link_ref="https://uconn.edu">
+      ©2018 UConn
+    </SLink>
     <SLink
       :color="theme=='blue'?'white':''"
       class="footbar__link"
-      text="UConn COR²E"
       font-size="0.8em"
-      link_ref="https://core.uconn.edu"/>
+      link_ref="https://core.uconn.edu">
+      UConn COR²E
+    </SLink>
     <SLink
       :color="theme=='blue'?'white':''"
       class="footbar__link"
-      text="UConn COR²E"
       font-size="0.8em"
-      link_ref="alert('CONTACT')"/>
+      link_ref="alert('CONTACT')">
+      UConn COR²E
+    </SLink>
     <SLink
       :color="theme=='blue'?'white':''"
       class="footbar__link"
-      text="Link 1"
-      font-size="1em"/>
+      font-size="1em">
+      Link 1
+    </SLink>
     <SLink
       :color="theme=='blue'?'white':''"
       class="footbar__link"
-      text="Link 2"
-      font-size="1em"/>
+      font-size="1em">
+      Link 2
+    </SLink>
     <figure class="footbar__brand">
       <img src="~/assets/images/wordmark.png" >
     </figure>

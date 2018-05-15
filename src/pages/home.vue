@@ -18,18 +18,23 @@
           style="position: relative; top: -80px">
           <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best
             <SLink
-              text="students"
               font-size="16px"
-              link_ref="/people"/>, we build cutting-edge
+              link_ref="/people">
+              students
+            </SLink>, we build cutting-edge
             <SLink
-              text="websites"
               font-size="16px"
-              link_ref="/projects"/> that support UConn’s world-class research infrastructure.</p>
+              link_ref="/projects">
+              websites
+            </SLink> that support UConn’s world-class research infrastructure.
+          </p>
           <p>View our history, purpose, and space on the
             <SLink
-              text="lab page"
               font-size="16px"
-              link_ref="/lab"/>.</p>
+              link_ref="/lab">
+              lab page
+            </SLink>.
+          </p>
         </div>
         <project-card
           :background="require('~/assets/images/projects/ip.png')"
@@ -52,9 +57,10 @@
       <layout>
         <SLink
           class="link--pulled-right"
-          text="See all our projects"
           font-size="16px"
-          link_ref="/projects"/>
+          link_ref="/projects">
+          See all our projects
+        </SLink>
       </layout>
     </section>
     <section>
@@ -77,9 +83,10 @@
           <p>Learning from others and sharing what we know is central to the ⬚² labs philosophy. We see workshops as an opportunity to do both (in addition to getting to know the UConn web development community).</p>
           <p>Our workshops are open to all members of the UConn community, for free.</p>
           <SLink
-            text="View all workshops"
             font-size="16px"
-            link_ref="/workshops"/>
+            link_ref="/workshops">
+            View all workshops
+          </SLink>
         </div>
       </layout>
     </section>
@@ -87,9 +94,10 @@
       <layout>
         <SLink
           class="link--pulled-right"
-          text="Meet the team"
           font-size="16px"
-          link_ref="/people"/>
+          link_ref="/people">
+          Meet the team
+        </SLink>
       </layout>
       <layout>
         <div
@@ -98,9 +106,10 @@
           <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
           <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you,
             <SLink
-              text="get in touch!"
               font-size="16px"
-              link_ref="/connect"/>
+              link_ref="/connect">
+              get in touch!
+            </SLink>
           </p>
         </div>
         <person-card
@@ -135,9 +144,10 @@
           style="position: relative; top: -80px">
           <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
           <SLink
-            text="Connect with us"
             font-size="16px"
-            link_ref="/connect"/>
+            link_ref="/connect">
+            Connect with us
+          </SLink>
         </div>
       </layout>
     </section>

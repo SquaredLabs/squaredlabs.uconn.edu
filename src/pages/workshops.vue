@@ -122,13 +122,15 @@
       <layout class="layout--centered-children">
         <SLink
           style="margin-right:1em;"
-          text="←"
           font-size="40px"
-          link_ref=""/>
+          link_ref="">
+          ←
+        </SLink>
         <SLink
-          text="→"
           font-size="40px"
-          link_ref=""/>
+          link_ref="">
+          →
+        </SLink>
       </layout>
     </section>
   </div>
