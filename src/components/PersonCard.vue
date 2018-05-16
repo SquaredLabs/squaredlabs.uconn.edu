@@ -38,7 +38,6 @@ export default {
 
   &:hover .person__expanded {
     opacity: 1;
-    
   }
 
   &:hover .person__photo {
@@ -87,19 +86,17 @@ export default {
 
 .person__expanded {
   opacity: 0;
-  margin:0;
+  margin: 0;
   padding-top: 1px;
   transition: opacity 0.5s ease;
-  font-size:0.8em;
+  font-size: 0.8em;
 }
-p{
-  margin:0;
+p {
+  margin: 0;
 }
-
-
 </style>
 <style lang="scss">
-.person__expanded *{
-  margin:0;
+.person__expanded * {
+  margin: 0;
 }
 </style>
