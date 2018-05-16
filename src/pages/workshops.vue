@@ -122,11 +122,10 @@
       <layout class="layout--centered-children">
         <SLink
           style="margin-right:1em;"
-          font-size="40px">
+          class="workshop__switchbutton">
           ←
         </SLink>
-        <SLink
-          font-size="40px">
+        <SLink class="workshop__switchbutton">
           →
         </SLink>
       </layout>
@@ -231,6 +230,12 @@
   font-size: 2em;
   color: $charcoal-grey;
   text-align: center;
+}
+</style>
+
+<style lang="scss" scoped>
+.workshop__switchbutton {
+  font-size: 2.5em;
 }
 </style>
 

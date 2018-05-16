@@ -6,7 +6,6 @@
       <p><span class="contentStyleList">
         <span class="black">1</span>) Contribute to any of our open source
         <SLink
-          font-size="16"
           color="white"
           href="/projects">
           projects
@@ -15,7 +14,6 @@
         <span class="contentStyleList">
           <span class="black">2</span>) contact us about presenting a
           <SLink
-            font-size="16"
             color="white"
             href="/workshops">
             workshop
@@ -39,7 +37,6 @@
       </div>
     </div>
     <SLink
-      font-size="16"
       color="white"
       @click="back">
       Return to selection

@@ -2,7 +2,6 @@
   <component
     :is="dynamicComponent"
     v-bind="dynamicProps"
-    :style="{fontSize: fontSize}"
     :class="{ white: color=='white' }"
     class="button"
     @click="$emit('click')">
@@ -14,7 +13,6 @@
 export default {
   props: {
     href: { type: String, default: null },
-    fontSize: { type: String, default: "1em" },
     color: { type: String, default: null }
   },
   computed: {
