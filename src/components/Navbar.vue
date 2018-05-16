@@ -4,7 +4,6 @@
     class="navbar">
     <div class="mobile">
       <SLink
-        :color="theme=='blue'?'white':''"
         href="#"
         class="link"
         @click="top">
@@ -20,37 +19,31 @@
     </router-link>
     <div class="links">
       <SLink
-        :color="theme=='blue'?'white':''"
         class="link"
         href="/home">
         home
       </SLink>
       <SLink
-        :color="theme=='blue'?'white':''"
         class="link"
         href="/projects">
         projects
       </SLink>
       <SLink
-        :color="theme=='blue'?'white':''"
         class="link"
         href="/people">
         people
       </SLink>
       <SLink
-        :color="theme=='blue'?'white':''"
         class="link"
         href="/workshops">
         workshops
       </SLink>
       <SLink
-        :color="theme=='blue'?'white':''"
         class="link lab"
         href="/labs">
         the lab
       </SLink>
       <SLink
-        :color="theme=='blue'?'white':''"
         class="link"
         href="/connect">
         connect
