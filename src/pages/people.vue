@@ -50,14 +50,14 @@
       style="margin-bottom: 80px">
 
       <OurLayout
+        v-for="person in people"
+        :key="person.id"
+        :background="person.imageURL">
         <person-card
-          v-for="person in people"
-          :key="person.id"
-          :background="person.imageURL"
           class="layout__col--quarter marginned--horizontally marginned--vertically">
-          <template slot="name">{{person.name}}</template>
-          <template slot="role">{{person.title}}</template>
-          <span v-html="person.description"></span>
+          <template slot="name">{{ person.name }}</template>
+          <template slot="role">{{ person.title }}</template>
+          <span v-html="person.description"/>
         </person-card>
 
       </OurLayout>
@@ -81,15 +81,15 @@ export default {
     PersonCard,
     ProjectCard
   },
-  data:()=>({people:PeopleData.people})
+  data: () => ({ people: PeopleData.people })
 }
 </script>
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
-#alumni{
-  display:flex;
-  flex-wrap:wrap;
+#alumni {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .number {
