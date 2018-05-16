@@ -46,14 +46,15 @@
       </OurLayout>
     </section>
     <section
-      id="alumni"
+      
       style="margin-bottom: 80px">
 
-      <OurLayout
-        v-for="person in people"
-        :key="person.id"
-        :background="person.imageURL">
+      <OurLayout id="alumni">
         <person-card
+          v-for="person in people"
+          :key="person.id"
+          :background="person.imageURL"
+        
           class="layout__col--quarter marginned--horizontally marginned--vertically">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
