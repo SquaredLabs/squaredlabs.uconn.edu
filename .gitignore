@@ -62,3 +62,5 @@ typings/
 .vscode/settings.json
 
 .nuxt
+src/assets/people.json
+src/assets/projects.json
