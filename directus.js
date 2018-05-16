@@ -42,7 +42,7 @@ function loadProjects(url, endpoint) {
       save(projects, "./src/assets/")
     })
     .catch(function(error) {
-      //console.log(error)
+      throw error
     })
 }
 function alphabetize(data, keyName) {
