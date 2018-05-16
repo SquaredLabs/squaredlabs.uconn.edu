@@ -7,7 +7,6 @@
         :color="theme=='blue'?'white':''"
         href="#"
         class="link"
-        font-size="16px"
         @click="top">
         [menu ↑]
       </SLink>
@@ -23,42 +22,36 @@
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
-        font-size="16px"
         href="/home">
         home
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
-        font-size="16px"
         href="/projects">
         projects
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
-        font-size="16px"
         href="/people">
         people
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
-        font-size="16px"
         href="/workshops">
         workshops
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link lab"
-        font-size="16px"
         href="/labs">
         the lab
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
-        font-size="16px"
         href="/connect">
         connect
       </SLink>

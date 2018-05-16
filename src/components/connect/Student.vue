@@ -16,13 +16,11 @@
         The earlier you are in your college career the better (while we don’t typically hire seniors,
         exceptions have been made). If you’ve read through this website and think you’d be a good fit,
         you can apply for a <SLink
-          font-size="16"
           href=""
           color="white">
           web development
         </SLink>
         or <SLink
-          font-size="16"
           href=""
           color="white">
           design
@@ -30,7 +28,6 @@
       </p><p>
         The other way to get involved with us as a student is
         to attend our <SLink
-          font-size="16"
           href="/workshops"
           color="white">
           workshops
@@ -42,7 +39,6 @@
 
     <SLink
       class="back"
-      font-size="16"
       color="white"
       @click="back">
       Return to selection
