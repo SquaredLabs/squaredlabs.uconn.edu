@@ -34,7 +34,7 @@
     </div>
 
     <SLink
-      color="white"
+      lighter-background
       @click="back">
       Return to selection
     </SLink>

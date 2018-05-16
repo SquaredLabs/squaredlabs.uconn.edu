@@ -2,7 +2,7 @@
   <component
     :is="dynamicComponent"
     v-bind="dynamicProps"
-    :class="{ white: color=='white' }"
+    :class="{ white: shouldApplyWhite }"
     class="button"
     @click="$emit('click')">
     <slot />
@@ -13,9 +13,17 @@
 export default {
   props: {
     href: { type: String, default: null },
-    color: { type: String, default: null }
+    lighterBackground: { type: Boolean, default: null }
   },
   computed: {
+    shouldApplyWhite() {
+      // We can't default props to state from the Vuex store. So as a
+      // workaround, let's default the useLighterBackground prop to null and
+      // compute a default value here.
+      return this.lighterBackground === null
+        ? this.$store.state.theme === "blue"
+        : this.lighterBackground
+    },
     external() {
       // Alternatively, we could force the API of this component to require an
       // "external" prop (default being false). Automagical behavior can be
