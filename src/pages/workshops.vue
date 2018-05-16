@@ -122,13 +122,11 @@
       <layout class="layout--centered-children">
         <SLink
           style="margin-right:1em;"
-          font-size="40px"
-          link_ref="">
+          font-size="40px">
           ←
         </SLink>
         <SLink
-          font-size="40px"
-          link_ref="">
+          font-size="40px">
           →
         </SLink>
       </layout>
