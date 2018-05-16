@@ -32,29 +32,15 @@
         </layout-col>
         <layout-col s="pacman">
           <layout
-            v-for="x in 3"
-            :key="x"
+            v-for="project in projects"
+            :key="project.id"
             style="padding-bottom: 20px">
             <project-card
-              :background="require('~/assets/images/projects/ip.png')"
+              :background="project.imageURL"
               class="layout__col--third marginned--horizontally"
-              name="Innovation Portal"
+              :name="project.name"
               link="/projects">
-              <p>A short, fun description.</p>
-            </project-card>
-            <project-card
-              :background="require('~/assets/images/projects/ip.png')"
-              class="layout__col--third marginned--horizontally"
-              name="Innovation Portal"
-              link="/projects">
-              <p>A short, fun description.</p>
-            </project-card>
-            <project-card
-              :background="require('~/assets/images/projects/ip.png')"
-              class="layout__col--third marginned--horizontally"
-              name="Innovation Portal"
-              link="/projects">
-              <p>A short, fun description.</p>
+              <span v-html="project.large_summary"></span>
             </project-card>
           </layout>
         </layout-col>
@@ -278,6 +264,7 @@ import Layout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
 import MiniPersonCard from "../components/MiniPersonCard.vue"
+import ProjectData from "~/assets/projects.json"
 
 export default {
   components: {
@@ -285,7 +272,8 @@ export default {
     LayoutCol,
     ProjectCard,
     MiniPersonCard
-  }
+  },
+  data:()=>({projects:ProjectData.projects})
 }
 </script>
 
