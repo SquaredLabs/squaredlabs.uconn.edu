@@ -1,6 +1,16 @@
 {
   "projects": [
     {
+      "id": 7,
+      "name": "GrantTrails",
+      "client": "Lorem Ipsum",
+      "timespan": "Lorem Ipsum",
+      "services": "Lorem Ipsum",
+      "technologies": null,
+      "large_summary": "<p>Lorem Ipsum</p>",
+      "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000009.png"
+    },
+    {
       "id": 5,
       "name": "Innovation Portal",
       "client": "Lorem Ipsum",
@@ -19,16 +29,6 @@
       "technologies": "Lorem Ipsum",
       "large_summary": "<p>Lorem Ipsum</p>",
       "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000008.png"
-    },
-    {
-      "id": 7,
-      "name": "GrantTrails",
-      "client": "Lorem Ipsum",
-      "timespan": "Lorem Ipsum",
-      "services": "Lorem Ipsum",
-      "technologies": null,
-      "large_summary": "<p>Lorem Ipsum</p>",
-      "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000009.png"
     }
   ]
 }
