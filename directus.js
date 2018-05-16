@@ -15,6 +15,7 @@ function loadPeople(url, endpoint) {
         description: personData.description,
         imageURL: url + personData.picture.data.url
       }))
+      alphabetize(peopleData, "name")
       let people = { people: peopleData }
       save(people, "./src/assets/")
     })
@@ -36,12 +37,22 @@ function loadProjects(url, endpoint) {
         large_summary: projectData.large_summary,
         imageURL: url + projectData.thumbnail.data.url
       }))
+      alphabetize(projectsData, "name")
       let projects = { projects: projectsData }
       save(projects, "./src/assets/")
     })
     .catch(function(error) {
       console.log(error)
     })
+}
+function alphabetize(data, keyName) {
+  data.sort((a, b) => {
+    let nameA = a[keyName].toUpperCase()
+    let nameB = b[keyName].toUpperCase()
+    if (nameA < nameB) return -1
+    if (nameA > nameB) return 1
+    return 0
+  })
 }
 function save(data, path) {
   let json = JSON.stringify(data, null, 2)
