@@ -97,13 +97,11 @@
     </div>
     <SLink
       id="graphicLeft"
-      font-size="40px"
       @click="graphicLeft">
       ←
     </SLink>
     <SLink
       id="graphicRight"
-      font-size="40px"
       @click="graphicRight">
       →
     </SLink>
@@ -250,11 +248,13 @@ body {
   position: absolute;
   top: 35%;
   left: 10px;
+  font-size: 40px;
 }
 #graphicRight {
   position: absolute;
   top: 35%;
   right: 10px;
+  font-size: 40px;
 }
 .graphic {
   flex: 0 0 300px;
