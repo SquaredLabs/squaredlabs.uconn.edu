@@ -42,7 +42,7 @@ function loadProjects(url, endpoint) {
       save(projects, "./src/assets/")
     })
     .catch(function(error) {
-      console.log(error)
+      //console.log(error)
     })
 }
 function alphabetize(data, keyName) {
@@ -55,7 +55,10 @@ function alphabetize(data, keyName) {
   })
 }
 function unescapeHTML(str) {
-  return str.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+  return str
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
 }
 function save(data, path) {
   let json = JSON.stringify(data, null, 2)
