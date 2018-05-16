@@ -33,11 +33,11 @@
         href="/people">
         people
       </SLink>
-      <SLink
+      <!--<SLink
         class="link"
         href="/workshops">
         workshops
-      </SLink>
+      </SLink>!-->
       <SLink
         class="link lab"
         href="/labs">
