@@ -3,11 +3,7 @@
     :class="{blueAppTheme:$store.state.theme=='blue'}"
     class="app">
     <Navbar :theme="$store.state.theme"/>
-    <transition
-      name="slide"
-      mode="out-in">
-      <nuxt/>
-    </transition>
+    <nuxt />
     <Footbar :theme="$store.state.theme"/>
   </div>
 
@@ -62,15 +58,15 @@ body {
 }
 </style>
 <style scoped>
-.slide-enter-active,
-.slide-leave-active {
+.page-enter-active,
+.page-leave-active {
   transition: opacity 0.3s, transform 0.3s;
 }
-.slide-enter {
+.page-enter {
   opacity: 0;
   transform: translateX(-30%);
 }
-.slide-leave-to {
+.page-leave-to {
   opacity: 0;
   transform: translateX(30%);
 }
