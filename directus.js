@@ -12,7 +12,7 @@ function loadPeople(url, endpoint) {
         title: personData.title,
         class: personData.class,
         degree: personData.degree,
-        description: personData.description,
+        description: unescapeHTML(personData.description),
         imageURL: url + personData.picture.data.url
       }))
       alphabetize(peopleData, "name")
@@ -34,7 +34,7 @@ function loadProjects(url, endpoint) {
         timespan: projectData.timespan,
         services: projectData.services,
         technologies: projectData.technologies,
-        large_summary: projectData.large_summary,
+        large_summary: unescapeHTML(projectData.large_summary),
         imageURL: url + projectData.thumbnail.data.url
       }))
       alphabetize(projectsData, "name")
@@ -53,6 +53,9 @@ function alphabetize(data, keyName) {
     if (nameA > nameB) return 1
     return 0
   })
+}
+function unescapeHTML(str) {
+  return str.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 }
 function save(data, path) {
   let json = JSON.stringify(data, null, 2)
