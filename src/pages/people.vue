@@ -50,17 +50,14 @@
       style="margin-bottom: 80px">
 
       <OurLayout
-        v-for="x in 3"
-        :key="x"
-        style="padding-bottom: 20px">
         <person-card
-          v-for="y in 4"
-          :key="y"
-          :background="require('@/assets/images/people/dan.jpg')"
+          v-for="person in people"
+          :key="person.id"
+          :background="person.imageURL"
           class="layout__col--quarter marginned--horizontally marginned--vertically">
-          <template slot="name">Dan Schwartz</template>
-          <template slot="role">Director</template>
-          <p>“Take life (and everything) with a grain of salt.”</p>
+          <template slot="name">{{person.name}}</template>
+          <template slot="role">{{person.title}}</template>
+          <span v-html="person.description"></span>
         </person-card>
 
       </OurLayout>
@@ -75,6 +72,7 @@ import OurLayout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
 import PersonCard from "../components/PersonCard.vue"
+import PeopleData from "~/assets/people.json"
 
 export default {
   components: {
@@ -82,12 +80,17 @@ export default {
     LayoutCol,
     PersonCard,
     ProjectCard
-  }
+  },
+  data:()=>({people:PeopleData.people})
 }
 </script>
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
+#alumni{
+  display:flex;
+  flex-wrap:wrap;
+}
 
 .number {
   height: 93px;
