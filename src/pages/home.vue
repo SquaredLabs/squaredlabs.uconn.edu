@@ -19,19 +19,19 @@
           <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best
             <SLink
               font-size="16px"
-              link_ref="/people">
+              href="/people">
               students
             </SLink>, we build cutting-edge
             <SLink
               font-size="16px"
-              link_ref="/projects">
+              href="/projects">
               websites
             </SLink> that support UConn’s world-class research infrastructure.
           </p>
           <p>View our history, purpose, and space on the
             <SLink
               font-size="16px"
-              link_ref="/lab">
+              href="/labs">
               lab page
             </SLink>.
           </p>
@@ -58,7 +58,7 @@
         <SLink
           class="link--pulled-right"
           font-size="16px"
-          link_ref="/projects">
+          href="/projects">
           See all our projects
         </SLink>
       </layout>
@@ -84,7 +84,7 @@
           <p>Our workshops are open to all members of the UConn community, for free.</p>
           <SLink
             font-size="16px"
-            link_ref="/workshops">
+            href="/workshops">
             View all workshops
           </SLink>
         </div>
@@ -95,7 +95,7 @@
         <SLink
           class="link--pulled-right"
           font-size="16px"
-          link_ref="/people">
+          href="/people">
           Meet the team
         </SLink>
       </layout>
@@ -107,7 +107,7 @@
           <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you,
             <SLink
               font-size="16px"
-              link_ref="/connect">
+              href="/connect">
               get in touch!
             </SLink>
           </p>
@@ -145,7 +145,7 @@
           <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
           <SLink
             font-size="16px"
-            link_ref="/connect">
+            href="/connect">
             Connect with us
           </SLink>
         </div>

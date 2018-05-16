@@ -10,7 +10,7 @@
         <p class="project__title-expanded">{{ name }}</p>
         <slot />
         <SLink
-          :link_ref="link"
+          :href="link"
           class="SLink">
           View Project →
         </SLink>

@@ -1,46 +1,47 @@
 <template>
-  <a
+  <component
+    :is="dynamicComponent"
+    v-bind="dynamicProps"
     :style="{fontSize: fontSize}"
     :class="{ white: color=='white' }"
     class="button"
-    @click="click">
+    @click="$emit('click')">
     <slot />
-  </a>
+  </component>
 </template>
 
 <script>
 export default {
   props: {
-    link_ref: { type: [String, Function], default: null },
+    href: { type: String, default: null },
     fontSize: { type: String, default: "1em" },
     color: { type: String, default: null }
   },
-  data: function() {
-    let data = {}
-    // If ref is a number, it is interpreted as a vue route
-    if (!isNaN(this.link_ref) || /^\/\.*/.test(this.link_ref)) {
-      data.ref = ""
-      return data
-    }
-    data.ref = this.link_ref
-    return data
-  },
-  methods: {
-    click() {
-      if (!this.link_ref) return
-      if (!isNaN(this.link_ref)) {
-        // If number, go that many pages (back if <0)
-        this.$router.go(parseInt(this.link_ref))
-      } else if (/^\/\.*/.test(this.link_ref)) {
-        // If local url
-        this.$router.push(this.link_ref.slice(1))
-      } else if (!/http/.test(this.link_ref)) {
-        // If not external url
-        this.link_ref()
+  computed: {
+    external() {
+      // Alternatively, we could force the API of this component to require an
+      // "external" prop (default being false). Automagical behavior can be
+      // surprising sometimes.
+      return this.href && this.href.startsWith("http")
+    },
+    dynamicComponent() {
+      if (this.external) {
+        // nuxt-link (which right now is just a proxy for router-link) is only
+        // for links within the site. It'll prepend the current domain to the
+        // path if you try to use it with an external URL.
+        return "a"
+      } else if (this.href === null) {
+        // If no "href" attribute is specified, we probably semantically have
+        // a "button" and not an "a" (anchor).
+        return "button"
       } else {
-        // If external URL
-        window.open(this.link_ref, "_blank")
+        return "nuxt-link"
       }
+    },
+    dynamicProps() {
+      return this.external
+        ? { href: this.href, target: "_blank", rel: "noopener noreferrer" }
+        : { to: this.href }
     }
   }
 }
@@ -51,8 +52,10 @@ export default {
 .button {
   cursor: pointer;
   background-color: rgba(106, 161, 244, 0.5);
+  border: none;
   display: inline-block;
   box-sizing: border-box;
+  font-size: inherit;
   height: calc(1em + 1px);
   vertical-align: text-top;
   color: #0c120c;

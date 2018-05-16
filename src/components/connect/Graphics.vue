@@ -97,14 +97,14 @@
     </div>
     <SLink
       id="graphicLeft"
-      :link_ref="graphicLeft"
-      font-size="40px">
+      font-size="40px"
+      @click="graphicLeft">
       ←
     </SLink>
     <SLink
       id="graphicRight"
-      :link_ref="graphicRight"
-      font-size="40px">
+      font-size="40px"
+      @click="graphicRight">
       →
     </SLink>
   </div>

@@ -7,21 +7,20 @@
       :color="theme=='blue'?'white':''"
       class="footbar__link"
       font-size="1em"
-      link_ref="https://uconn.edu">
+      href="https://uconn.edu">
       ©2018 UConn
     </SLink>
     <SLink
       :color="theme=='blue'?'white':''"
       class="footbar__link"
       font-size="0.8em"
-      link_ref="https://core.uconn.edu">
+      href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
     <SLink
       :color="theme=='blue'?'white':''"
       class="footbar__link"
-      font-size="0.8em"
-      link_ref="alert('CONTACT')">
+      font-size="0.8em">
       UConn COR²E
     </SLink>
     <SLink

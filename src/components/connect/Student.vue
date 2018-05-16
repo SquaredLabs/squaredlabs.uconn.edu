@@ -17,13 +17,13 @@
         exceptions have been made). If you’ve read through this website and think you’d be a good fit,
         you can apply for a <SLink
           font-size="16"
-          link_ref=""
+          href=""
           color="white">
           web development
         </SLink>
         or <SLink
           font-size="16"
-          link_ref=""
+          href=""
           color="white">
           design
         </SLink>position.
@@ -31,7 +31,7 @@
         The other way to get involved with us as a student is
         to attend our <SLink
           font-size="16"
-          link_ref="/workshops"
+          href="/workshops"
           color="white">
           workshops
         </SLink> which cover a
@@ -41,10 +41,10 @@
     </div>
 
     <SLink
-      :link_ref="back"
       class="back"
       font-size="16"
-      color="white">
+      color="white"
+      @click="back">
       Return to selection
     </SLink>
   </div>
