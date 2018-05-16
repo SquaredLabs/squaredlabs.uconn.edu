@@ -19,7 +19,7 @@
       <div class="workshop">
         <layout class="layout--centered-children">
           <layout
-            :vertical="true"
+            vertical
             class="workshop__details">
             <div class="layout__col">
               <h1 class="workshop__name">Workshop Name</h1>
@@ -50,7 +50,7 @@
               class="layout__col layout--centered-children"
               style="padding-top: 30px">
               <layout
-                :vertical="true"
+                vertical
                 style="width: 30%">
                 <div class="layout__col layout--centered-children">
                   <h1 class="workshop__register">register</h1>
@@ -82,7 +82,7 @@
         </layout>
         <layout class="layout---spaced-between-children">
           <layout
-            :vertical="true"
+            vertical
             class="workshop__previous"
             style="color: black; background: #00dbff;">
             <div
@@ -100,7 +100,7 @@
             </div>
           </layout>
           <layout
-            :vertical="true"
+            vertical
             class="workshop__next"
             style="color: white; background: #ff5a5c;">
             <div
