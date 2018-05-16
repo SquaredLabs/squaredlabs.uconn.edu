@@ -4,10 +4,11 @@
     class="navbar">
     <div class="mobile">
       <SLink
-        :link_ref="top"
         :color="theme=='blue'?'white':''"
+        href="#"
         class="link"
-        font-size="16px">
+        font-size="16px"
+        @click="top">
         [menu ↑]
       </SLink>
     </div>
@@ -23,42 +24,42 @@
         :color="theme=='blue'?'white':''"
         class="link"
         font-size="16px"
-        link_ref="/home">
+        href="/home">
         home
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
         font-size="16px"
-        link_ref="/projects">
+        href="/projects">
         projects
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
         font-size="16px"
-        link_ref="/people">
+        href="/people">
         people
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
         font-size="16px"
-        link_ref="/workshops">
+        href="/workshops">
         workshops
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link lab"
         font-size="16px"
-        link_ref="/labs">
+        href="/labs">
         the lab
       </SLink>
       <SLink
         :color="theme=='blue'?'white':''"
         class="link"
         font-size="16px"
-        link_ref="/connect">
+        href="/connect">
         connect
       </SLink>
     </div>

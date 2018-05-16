@@ -8,7 +8,7 @@
         <SLink
           font-size="16"
           color="white"
-          link_ref="/projects">
+          href="/projects">
           projects
         </SLink>,
       </span>
@@ -17,7 +17,7 @@
           <SLink
             font-size="16"
             color="white"
-            link_ref="/workshops">
+            href="/workshops">
             workshop
           </SLink>
           in an area of your expertise, and/or
@@ -39,9 +39,9 @@
       </div>
     </div>
     <SLink
-      :link_ref="back"
       font-size="16"
-      color="white">
+      color="white"
+      @click="back">
       Return to selection
     </SLink>
   </div>

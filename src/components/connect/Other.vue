@@ -34,9 +34,9 @@
     </div>
 
     <SLink
-      :link_ref="back"
       font-size="16"
-      color="white">
+      color="white"
+      @click="back">
       Return to selection
     </SLink>
   </div>
