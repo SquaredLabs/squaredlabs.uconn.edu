@@ -16,20 +16,20 @@
         The earlier you are in your college career the better (while we don’t typically hire seniors,
         exceptions have been made). If you’ve read through this website and think you’d be a good fit,
         you can apply for a <SLink
-          href=""
-          color="white">
+          lighter-background
+          href="">
           web development
         </SLink>
         or <SLink
-          href=""
-          color="white">
+          lighter-background
+          href="">
           design
         </SLink>position.
       </p><p>
         The other way to get involved with us as a student is
         to attend our <SLink
-          href="/workshops"
-          color="white">
+          lighter-background
+          href="/workshops">
           workshops
         </SLink> which cover a
         variety of topics relevant to our projects (from coding to design to data visualization).
@@ -38,8 +38,8 @@
     </div>
 
     <SLink
+      lighter-background
       class="back"
-      color="white"
       @click="back">
       Return to selection
     </SLink>

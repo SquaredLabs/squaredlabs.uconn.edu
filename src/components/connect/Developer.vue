@@ -6,7 +6,7 @@
       <p><span class="contentStyleList">
         <span class="black">1</span>) Contribute to any of our open source
         <SLink
-          color="white"
+          lighter-background
           href="/projects">
           projects
         </SLink>,
@@ -14,7 +14,7 @@
         <span class="contentStyleList">
           <span class="black">2</span>) contact us about presenting a
           <SLink
-            color="white"
+            lighter-background
             href="/workshops">
             workshop
           </SLink>
@@ -37,7 +37,7 @@
       </div>
     </div>
     <SLink
-      color="white"
+      lighter-background
       @click="back">
       Return to selection
     </SLink>

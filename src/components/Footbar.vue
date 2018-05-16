@@ -4,29 +4,24 @@
     class="footbar">
 
     <SLink
-      :color="theme=='blue'?'white':''"
       class="footbar__link"
       href="https://uconn.edu">
       ©2018 UConn
     </SLink>
     <SLink
-      :color="theme=='blue'?'white':''"
       class="footbar__link footbar__link_smaller"
       href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
     <SLink
-      :color="theme=='blue'?'white':''"
       class="footbar__link footbar__link_smaller">
       UConn COR²E
     </SLink>
     <SLink
-      :color="theme=='blue'?'white':''"
       class="footbar__link">
       Link 1
     </SLink>
     <SLink
-      :color="theme=='blue'?'white':''"
       class="footbar__link">
       Link 2
     </SLink>
