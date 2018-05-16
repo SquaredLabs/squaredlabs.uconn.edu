@@ -37,10 +37,10 @@
             style="padding-bottom: 20px">
             <project-card
               :background="project.imageURL"
-              class="layout__col--third marginned--horizontally"
               :name="project.name"
+              class="layout__col--third marginned--horizontally"
               link="/projects">
-              <span v-html="project.large_summary"></span>
+              <span v-html="project.large_summary"/>
             </project-card>
           </layout>
         </layout-col>
@@ -273,7 +273,7 @@ export default {
     ProjectCard,
     MiniPersonCard
   },
-  data:()=>({projects:ProjectData.projects})
+  data: () => ({ projects: ProjectData.projects })
 }
 </script>
 
