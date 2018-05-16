@@ -19,43 +19,43 @@
     </router-link>
     <div class="links">
       <SLink
-        :width="true"
         :color="theme=='blue'?'white':''"
+        width
         class="link"
         text="home"
         font-size="16px"
         link_ref="/home"/>
       <SLink
         :color="theme=='blue'?'white':''"
-        :width="true"
+        width
         class="link"
         text="projects"
         font-size="16px"
         link_ref="/projects"/>
       <SLink
-        :width="true"
         :color="theme=='blue'?'white':''"
+        width
         class="link"
         text="people"
         font-size="16px"
         link_ref="/people"/>
       <SLink
-        :width="true"
         :color="theme=='blue'?'white':''"
+        width
         class="link"
         text="workshops"
         font-size="16px"
         link_ref="/workshops"/>
       <SLink
-        :width="true"
         :color="theme=='blue'?'white':''"
+        width
         class="link lab"
         text="the lab"
         font-size="16px"
         link_ref="/labs"/>
       <SLink
-        :width="true"
         :color="theme=='blue'?'white':''"
+        width
         class="link"
         text="connect"
         font-size="16px"
