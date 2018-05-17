@@ -14,15 +14,15 @@
           </div>
           <div 
             id="project-details">
-            <b>{{hoverData.name}}</b>
-            <p>{{hoverData.client}}</p>
-            <p>{{hoverData.timespan}}</p>
+            <b>{{ hoverData.name }}</b>
+            <p>{{ hoverData.client }}</p>
+            <p>{{ hoverData.timespan }}</p>
             <mini-person-card
               v-for="person in hoverData.people"
               :key="person.id"
               :icon="person.thumbnail">
-              <template slot="name">{{person.name}}</template>
-              <template slot="position">{{person.role}}</template>
+              <template slot="name">{{ person.name }}</template>
+              <template slot="position">{{ person.role }}</template>
             </mini-person-card>
           </div>
         </layout-col>
@@ -39,10 +39,10 @@
             <project-card
               v-for="project in projects"
               v-if="project.order/3>x-1&&project.order/3<=x"
-              v-on:hoverProject="hoverData = $event"
               :key="project.id"
               :project="project"
-              class="layout__col--third marginned--horizontally">
+              class="layout__col--third marginned--horizontally"
+              @hoverProject="hoverData = $event">
               <span v-html="project.large_summary"/>
             </project-card>
             
@@ -277,24 +277,27 @@ export default {
     ProjectCard,
     MiniPersonCard
   },
-  methods:{
-    setHoveredProject(project){
-      this.hoverData={name:project.name,client:project.client,timespan:project.timespan,people:project.people}
+  data: () => ({ projects: ProjectData.projects, hoverData: {} }),
+  methods: {
+    setHoveredProject(project) {
+      this.hoverData = {
+        name: project.name,
+        client: project.client,
+        timespan: project.timespan,
+        people: project.people
+      }
     }
-  },
-  data: () => ({ projects: ProjectData.projects,hoverData:{} }),
-  
+  }
 }
-
 </script>
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
-#jumbotron{
-  margin-top:800px;
+#jumbotron {
+  margin-top: 800px;
 }
-#project-details{
-  margin-top:20px;
+#project-details {
+  margin-top: 20px;
 }
 
 .number {
@@ -328,8 +331,7 @@ export default {
 .marginned--vertically--6x {
   margin-bottom: 120px;
 }
-.layout__col--pacman{
+.layout__col--pacman {
   flex-wrap: wrap;
-
 }
 </style>
