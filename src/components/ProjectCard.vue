@@ -2,9 +2,9 @@
   <div
     :style="`background: url('${project.imageURL}') center / cover no-repeat`"
     class="project" 
-    v-on:mouseover="$emit('hoverProject', {
+    @mouseover="$emit('hoverProject', {
       name:project.name,client:project.client,timespan:project.timespan,people:project.people
-    })">
+  })">
     <div
       ref="title"
       class="project__content">
@@ -29,7 +29,7 @@ export default {
     SLink
   },
   props: {
-    project: { type: Object, required: true },
+    project: { type: Object, required: true }
   }
 }
 </script>
