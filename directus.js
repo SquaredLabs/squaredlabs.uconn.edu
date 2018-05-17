@@ -6,8 +6,8 @@ if(!apiToken){
 const fs = require("fs")
 
 function loadPeople(url, endpoint) {
-  axios
-    .get(encodeURI(url + endpoint + "?access_token=" + apiToken))
+  return axios
+    .get(encodeURI(url + endpoint + "?access_token=" + apiToken + "&depth=2"))
     .then(function(response) {
       let peopleData = response.data.data.map(personData => ({
         id: personData.id,
@@ -16,19 +16,20 @@ function loadPeople(url, endpoint) {
         class: personData.class,
         degree: personData.degree,
         description: unescapeHTML(personData.description),
-        imageURL: url + personData.picture.data.url
+        imageURL: url + personData.picture.data.url,
+        projects: projectTrim(personData.projects.data,personData.id,url)
       }))
       alphabetize(peopleData, "name")
       let people = { people: peopleData }
-      save(people, "./src/assets/")
+      return people
     })
     .catch(function(error) {
       console.log(error)
     })
 }
 function loadProjects(url, endpoint) {
-  axios
-    .get(encodeURI(url + endpoint + "?access_token=" + apiToken))
+  return axios
+    .get(encodeURI(url + endpoint + "?access_token=" + apiToken+"&depth=2"))
     .then(function(response) {
       let projectsData = response.data.data.map(projectData => ({
         id: projectData.id,
@@ -39,11 +40,12 @@ function loadProjects(url, endpoint) {
         services: projectData.services,
         technologies: projectData.technologies,
         large_summary: unescapeHTML(projectData.large_summary),
-        imageURL: url + projectData.thumbnail.data.url
+        imageURL: url + projectData.thumbnail.data.url,
+        people: peopleTrim(projectData.people_assigned.data,projectData.name,url),
       }))
       alphabetize(projectsData, "name")
       let projects = { projects: projectsData }
-      save(projects, "./src/assets/")
+      return projects
     })
     .catch(function(error) {
       throw error
@@ -68,9 +70,42 @@ function save(data, path) {
   let json = JSON.stringify(data, null, 2)
   fs.writeFile(path + Object.keys(data)[0] + ".json", json)
 }
-
-loadPeople("https://admin.squaredlabs.uconn.edu", "/api/1.1/tables/people/rows")
-loadProjects(
-  "https://admin.squaredlabs.uconn.edu",
-  "/api/1.1/tables/projects/rows"
-)
+function projectTrim(data,personId,url) {
+  return data.map(
+    project => ({
+      id: project.id,
+      name: project.name,
+      thumbnail: url+project.thumbnail.data.thumbnail_url,
+      //role: getRole(project.people_assigned.junction.data, 'person_id', personId)
+    })
+  )
+}
+function peopleTrim(data, projectName, url) {
+  return data.map(
+    person => ({
+      id: person.id,
+      name: person.name,
+      thumbnail: url+person.picture.data.thumbnail_url,
+      role: getRolesOfProject(JSON.parse(person.roles) , projectName)
+    })
+  )
+}
+function getRolesOfProject(roles, projectName) {
+  if (!roles) return "Team member"
+  for (let projectNameRole of Object.keys(roles)) {
+    if (projectNameRole === projectName) return roles[projectNameRole];
+  }
+}
+function startLoad() {
+  let peoplePromise = loadPeople("https://admin.squaredlabs.uconn.edu", "/api/1.1/tables/people/rows")
+  let projectPromise = loadProjects(
+    "https://admin.squaredlabs.uconn.edu",
+    "/api/1.1/tables/projects/rows"
+  )
+  Promise.all([peoplePromise, projectPromise]).then(function (values) {
+    save(values[0], "./src/assets/")
+    save(values[1], "./src/assets/")
+  });
+  
+}
+startLoad()
