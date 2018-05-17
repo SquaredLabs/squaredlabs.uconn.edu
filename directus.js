@@ -1,5 +1,8 @@
 const axios = require("axios")
 const apiToken = process.env.directus_token
+if(!apiToken){
+  throw 'Error: env variable "directus_token" is not set'
+}
 const fs = require("fs")
 
 function loadPeople(url, endpoint) {
@@ -29,6 +32,7 @@ function loadProjects(url, endpoint) {
     .then(function(response) {
       let projectsData = response.data.data.map(projectData => ({
         id: projectData.id,
+        order: projectData.order,
         name: projectData.name,
         client: projectData.client,
         timespan: projectData.timespan,

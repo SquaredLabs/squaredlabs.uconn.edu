@@ -3,10 +3,7 @@
     <section
       id="jumbotron"
       style="margin-bottom: 100px">
-      <img
-        class="img--fill-container"
-        src="https://picsum.photos/1920/445"
-        style="height:440px" >
+      
       <layout style="margin-top: -300px">
         <layout-col m="horizontal">
           <div
@@ -16,11 +13,10 @@
             <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
           </div>
           <div
-            id="project-details"
-            style="margin-top: 200px">
-            <b>Hovered Project Name</b>
-            <p>Client Name</p>
-            <p>January - August 2017</p>
+            id="project-details">
+            <b>{{hoverData.name}}</b>
+            <p>{{hoverData.client}}</p>
+            <p>{{hoverData.timespan}}</p>
             <mini-person-card
               v-for="x in 5"
               :key="x"
@@ -32,14 +28,24 @@
         </layout-col>
         <layout-col s="pacman">
           <layout
-            v-for="project in projects"
-            :key="project.id"
+            v-for="x in 3"
+            :key="x"
             style="padding-bottom: 20px">
+            <!--
+              This is setup so that there is a 3x3 grid, and project.order is the index of that grid. 
+              Any project with order not between 1 and 9 is not rendered.
+            -->
             <project-card
+              v-for="project in projects"
+              v-if="project.order/3>x-1&&project.order/3<=x"
+              
+              :key="project.id"
               :background="project.imageURL"
               :name="project.name"
               class="layout__col--third marginned--horizontally"
+              v-on:mouseover="console.log('derp')"
               link="/projects">
+              
               <span v-html="project.large_summary"/>
             </project-card>
           </layout>
@@ -273,12 +279,26 @@ export default {
     ProjectCard,
     MiniPersonCard
   },
-  data: () => ({ projects: ProjectData.projects })
+  methods:{
+    setHoveredProject(project){
+      console.log('d')
+      this.hoverData={name:project.name,client:project.client,timespan:project.timespan}
+    }
+  },
+  data: () => ({ projects: ProjectData.projects,hoverData:{} }),
+  
 }
+
 </script>
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
+#jumbotron{
+  margin-top:800px;
+}
+#project-details{
+  margin-top:20px;
+}
 
 .number {
   height: 93px;
@@ -310,5 +330,9 @@ export default {
 
 .marginned--vertically--6x {
   margin-bottom: 120px;
+}
+.layout__col--pacman{
+  flex-wrap: wrap;
+
 }
 </style>
