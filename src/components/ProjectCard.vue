@@ -28,7 +28,7 @@ export default {
   props: {
     name: { type: String, required: true },
     link: { type: String, default: null },
-    background: { type: String, required: true }
+    background: { type: String, required: true },
   }
 }
 </script>
