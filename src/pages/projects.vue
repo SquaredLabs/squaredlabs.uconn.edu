@@ -12,17 +12,17 @@
             class="padded">
             <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
           </div>
-          <div
+          <div 
             id="project-details">
             <b>{{hoverData.name}}</b>
             <p>{{hoverData.client}}</p>
             <p>{{hoverData.timespan}}</p>
             <mini-person-card
-              v-for="x in 5"
-              :key="x"
-              icon="https://picsum.photos/80/80">
-              <template slot="name">Raymond Baldwin</template>
-              <template slot="position">Project Lead</template>
+              v-for="person in hoverData.people"
+              :key="person.id"
+              :icon="person.thumbnail">
+              <template slot="name">{{person.name}}</template>
+              <template slot="position">{{person.role}}</template>
             </mini-person-card>
           </div>
         </layout-col>
@@ -35,19 +35,17 @@
               This is setup so that there is a 3x3 grid, and project.order is the index of that grid. 
               Any project with order not between 1 and 9 is not rendered.
             -->
+            
             <project-card
               v-for="project in projects"
               v-if="project.order/3>x-1&&project.order/3<=x"
-              
+              v-on:hoverProject="hoverData = $event"
               :key="project.id"
-              :background="project.imageURL"
-              :name="project.name"
-              class="layout__col--third marginned--horizontally"
-              v-on:mouseover="console.log('derp')"
-              link="/projects">
-              
+              :project="project"
+              class="layout__col--third marginned--horizontally">
               <span v-html="project.large_summary"/>
             </project-card>
+            
           </layout>
         </layout-col>
       </layout>
@@ -281,8 +279,7 @@ export default {
   },
   methods:{
     setHoveredProject(project){
-      console.log('d')
-      this.hoverData={name:project.name,client:project.client,timespan:project.timespan}
+      this.hoverData={name:project.name,client:project.client,timespan:project.timespan,people:project.people}
     }
   },
   data: () => ({ projects: ProjectData.projects,hoverData:{} }),

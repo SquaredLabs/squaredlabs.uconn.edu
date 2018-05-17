@@ -1,16 +1,19 @@
 <template>
   <div
-    :style="`background: url('${background}') center / cover no-repeat`"
-    class="project">
+    :style="`background: url('${project.imageURL}') center / cover no-repeat`"
+    class="project" 
+    v-on:mouseover="$emit('hoverProject', {
+      name:project.name,client:project.client,timespan:project.timespan,people:project.people
+    })">
     <div
       ref="title"
       class="project__content">
-      <p class="project__title">{{ name }}</p>
+      <p class="project__title">{{ project.name }}</p>
       <div class="project__description">
-        <p class="project__title-expanded">{{ name }}</p>
+        <p class="project__title-expanded">{{ project.name }}</p>
         <slot />
         <SLink
-          :href="link"
+          href="/home"
           class="SLink">
           View Project →
         </SLink>
@@ -26,9 +29,7 @@ export default {
     SLink
   },
   props: {
-    name: { type: String, required: true },
-    link: { type: String, default: null },
-    background: { type: String, required: true },
+    project: { type: Object, required: true },
   }
 }
 </script>
