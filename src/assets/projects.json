@@ -1,7 +1,19 @@
 {
   "projects": [
     {
+      "id": 9,
+      "order": 4,
+      "name": "COR²E",
+      "client": "Lorem Ipsum",
+      "timespan": "Lorem Ipsum",
+      "services": "Lorem Ipsum",
+      "technologies": "Lorem Ipsum",
+      "large_summary": "<p>Lorem Ipsum</p>",
+      "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000011.png"
+    },
+    {
       "id": 7,
+      "order": 9,
       "name": "GrantTrails",
       "client": "Lorem Ipsum",
       "timespan": "Lorem Ipsum",
@@ -12,6 +24,7 @@
     },
     {
       "id": 5,
+      "order": 1,
       "name": "Innovation Portal",
       "client": "Lorem Ipsum",
       "timespan": "Lorem Ipsum",
@@ -22,6 +35,7 @@
     },
     {
       "id": 6,
+      "order": 5,
       "name": "Lincus",
       "client": "Lorem Ipsum",
       "timespan": "Lorem Ipsum",
