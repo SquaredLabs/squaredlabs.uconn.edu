@@ -13,11 +13,11 @@
       </span>
         <span class="contentStyleList">
           <span class="black">2</span>) contact us about presenting a
-          <SLink
+          <!--<SLink
             lighter-background
             href="/workshops">
             workshop
-          </SLink>
+          </SLink>-->
           in an area of your expertise, and/or
         </span>
         <span class="contentStyleList">

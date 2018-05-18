@@ -42,7 +42,7 @@
         </SLink>
       </layout>
     </section>
-    <section>
+    <!--<section>
       <layout text="workshops">
         <div class="layout__col--pacman padded">
           <workshop-card
@@ -64,7 +64,7 @@
           <SLink href="/workshops">View all workshops</SLink>
         </div>
       </layout>
-    </section>
+    </section>-->
     <section style="padding-top: 6em">
       <layout>
         <SLink
