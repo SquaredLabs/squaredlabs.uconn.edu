@@ -268,16 +268,21 @@ import Layout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
 import MiniPersonCard from "../components/MiniPersonCard.vue"
-import ProjectData from "~/assets/projects.json"
+import Directus from "../../directus"
 
 export default {
+  async asyncData({ params }) {
+    let data = await Directus()
+    let projectData=data[1]
+    return { projects: projectData.projects }
+  },
   components: {
     Layout,
     LayoutCol,
     ProjectCard,
     MiniPersonCard
   },
-  data: () => ({ projects: ProjectData.projects, hoverData: {} }),
+  data: () => ({ hoverData: {} }),
   methods: {
     setHoveredProject(project) {
       this.hoverData = {

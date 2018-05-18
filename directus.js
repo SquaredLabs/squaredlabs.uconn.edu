@@ -1,13 +1,19 @@
-const axios = require("axios")
-const fs = require("fs")
+import { polyfill } from 'es6-promise';
+import fetch from 'isomorphic-fetch'
+
 
 function loadPeople(url, endpoint) {
   console.log("Loading people")
-  return axios
-    .get(encodeURI(url + endpoint + "?depth=2"))
-    .then(function(response) {
+  return fetch(encodeURI(url + endpoint + "?depth=2"))
+    .then(function (response) {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+    })
+    .then(function (data) {
       console.log("Loaded people")
-      let peopleData = response.data.data.map(personData => ({
+      let peopleData = data.data.map(personData => ({
         id: personData.id,
         name: personData.name,
         title: personData.title,
@@ -27,11 +33,16 @@ function loadPeople(url, endpoint) {
 }
 function loadProjects(url, endpoint) {
   console.log("Loading projects")
-  return axios
-    .get(encodeURI(url + endpoint + "?depth=2"))
-    .then(function(response) {
-      console.log("Loaded people")
-      let projectsData = response.data.data.map(projectData => ({
+  return fetch(encodeURI(url + endpoint + "?depth=2"))
+    .then(function (response) {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+    })
+    .then(function(data) {
+      console.log("Loaded projects")
+      let projectsData = data.data.map(projectData => ({
         id: projectData.id,
         order: projectData.order,
         name: projectData.name,
@@ -70,12 +81,6 @@ function unescapeHTML(str) {
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
 }
-function save(data, path) {
-  let json = JSON.stringify(data, null, 2)
-  fs.writeFile(path + Object.keys(data)[0] + ".json", json, () => {
-    console.log("Saved " + path + Object.keys(data)[0])
-  })
-}
 function projectTrim(data, personId, url) {
   return data.map(project => ({
     id: project.id,
@@ -107,9 +112,8 @@ function startLoad() {
     "https://admin.squaredlabs.uconn.edu",
     "/api/1.1/tables/projects/rows"
   )
-  Promise.all([peoplePromise, projectPromise]).then(function(values) {
-    save(values[0], "./src/assets/")
-    save(values[1], "./src/assets/")
+  return Promise.all([peoplePromise, projectPromise]).then(function(values) {
+    return values
   })
 }
-startLoad()
+export default startLoad

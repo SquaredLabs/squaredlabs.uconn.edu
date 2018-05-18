@@ -135,8 +135,7 @@ import WorkshopCard from "../components/WorkshopCard.vue"
 import PersonCard from "../components/PersonCard.vue"
 import ConnectCard from "../components/ConnectCard.vue"
 import SLink from "../components/Link.vue"
-import Projects from "~/assets/projects.json"
-import People from "~/assets/people.json"
+import Directus from "../../directus"
 
 //  Recursive function to pick 3 different random people.
 //  If anyone has a better idea, feel free to change this.
@@ -152,6 +151,12 @@ const selectPeople = (people, numberToSelect, selectedIndices = []) => {
 }
 
 export default {
+  async asyncData({ params }) {
+    let data = await Directus()
+    let peopleData=data[0]
+    let projectData=data[1]
+    return { people: selectPeople(peopleData.people, 3),projects: projectData.projects }
+  },
   components: {
     Layout,
     Construction,
@@ -161,10 +166,6 @@ export default {
     PersonCard,
     SLink
   },
-  data: () => ({
-    projects: Projects.projects,
-    people: selectPeople(People.people, 3)
-  })
 }
 </script>
 
