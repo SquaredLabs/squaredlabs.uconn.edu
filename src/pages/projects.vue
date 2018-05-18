@@ -1,5 +1,6 @@
 <template>
   <div>
+    <BackgroundText :lines="['proj','ects']"/>
     <section
       id="jumbotron"
       style="margin-bottom: 100px">
@@ -269,6 +270,7 @@ import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
 import MiniPersonCard from "../components/MiniPersonCard.vue"
 import Directus from "../../directus"
+import BackgroundText from "../components/BackgroundText.vue"
 
 export default {
   async asyncData({ params }) {
@@ -280,7 +282,8 @@ export default {
     Layout,
     LayoutCol,
     ProjectCard,
-    MiniPersonCard
+    MiniPersonCard,
+    BackgroundText
   },
   data: () => ({ hoverData: {} }),
   methods: {

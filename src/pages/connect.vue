@@ -1,9 +1,6 @@
 <template>
   <section>
-    <div class="connectBackground">
-      <p>con</p>
-      <p>nect</p>
-    </div>
+    <BackgroundText :lines="['con','nect']"/>
     <div class="container-header">
 
       <p
@@ -30,11 +27,14 @@
 import ConnectSelect from "../components/connect/ConnectSelect.vue"
 import Link from "../components/Link.vue"
 import Graphics from "../components/connect/Graphics.vue"
+import BackgroundText from "../components/BackgroundText.vue"
+
 export default {
   components: {
     ConnectSelect,
     Link,
-    Graphics
+    Graphics,
+    BackgroundText
   }
 }
 </script>
@@ -50,19 +50,7 @@ body {
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 /*Header*/
-.connectBackground {
-  font-size: 17em;
-  position: fixed;
-  top: 140px;
-  left: 20px;
-  color: white;
-  line-height: 1;
-  z-index: 1;
-}
-.connectBackground p {
-  margin: 0;
-  padding: 0;
-}
+
 .container-header {
   z-index: 11;
   position: relative;

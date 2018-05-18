@@ -1,5 +1,6 @@
 <template>
   <div>
+    <BackgroundText :lines="['peo','ple']"/>
     <section
       id="jumbotron"
       style="margin-bottom: 80px; margin-top: 130px">
@@ -73,6 +74,7 @@ import OurLayout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
 import PersonCard from "../components/PersonCard.vue"
+import BackgroundText from "../components/BackgroundText.vue"
 import Directus from "../../directus"
 
 export default {
@@ -85,7 +87,8 @@ export default {
     OurLayout,
     LayoutCol,
     PersonCard,
-    ProjectCard
+    ProjectCard,
+    BackgroundText
   }
 }
 </script>
