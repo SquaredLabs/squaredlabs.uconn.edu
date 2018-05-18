@@ -9,18 +9,18 @@
       "services": "Lorem Ipsum",
       "technologies": "Lorem Ipsum",
       "large_summary": "<p>Lorem Ipsum</p>",
-      "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000011.png",
+      "imageURL": "https://admin.squaredlabs.uconn.eduundefined",
       "people": [
         {
           "id": 3,
           "name": "Alec Marcus",
-          "thumbnail": "https://admin.squaredlabs.uconn.edu/storage/uploads/thumbs/12.jpg",
+          "thumbnail": "https://admin.squaredlabs.uconn.eduundefined",
           "role": "Team member"
         },
         {
           "id": 5,
           "name": "Brandon Cheng",
-          "thumbnail": "https://admin.squaredlabs.uconn.edu/storage/uploads/thumbs/14.png",
+          "thumbnail": "https://admin.squaredlabs.uconn.eduundefined",
           "role": "Lead Developer"
         }
       ]
@@ -34,7 +34,7 @@
       "services": "Lorem Ipsum",
       "technologies": null,
       "large_summary": "<p>Lorem Ipsum</p>",
-      "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000009.png",
+      "imageURL": "https://admin.squaredlabs.uconn.eduundefined",
       "people": []
     },
     {
@@ -46,12 +46,12 @@
       "services": "Lorem Ipsum",
       "technologies": "Lorem Ipsum",
       "large_summary": "<p>Lorem Ipsum</p>",
-      "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000007.png",
+      "imageURL": "https://admin.squaredlabs.uconn.eduundefined",
       "people": [
         {
           "id": 10,
           "name": "Dan Schwartz",
-          "thumbnail": "https://admin.squaredlabs.uconn.edu/storage/uploads/thumbs/19.png",
+          "thumbnail": "https://admin.squaredlabs.uconn.eduundefined",
           "role": "Team member"
         }
       ]
@@ -65,12 +65,12 @@
       "services": "Lorem Ipsum",
       "technologies": "Lorem Ipsum",
       "large_summary": "<p>Lorem Ipsum</p>",
-      "imageURL": "https://admin.squaredlabs.uconn.edu/storage/uploads/00000000008.png",
+      "imageURL": "https://admin.squaredlabs.uconn.eduundefined",
       "people": [
         {
           "id": 10,
           "name": "Dan Schwartz",
-          "thumbnail": "https://admin.squaredlabs.uconn.edu/storage/uploads/thumbs/19.png",
+          "thumbnail": "https://admin.squaredlabs.uconn.eduundefined",
           "role": "Team member"
         }
       ]
