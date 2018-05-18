@@ -2,9 +2,11 @@ const axios = require("axios")
 const fs = require("fs")
 
 function loadPeople(url, endpoint) {
+  console.log("Loading people")
   return axios
     .get(encodeURI(url + endpoint + "?depth=2"))
     .then(function(response) {
+      console.log("Loaded people")
       let peopleData = response.data.data.map(personData => ({
         id: personData.id,
         name: personData.name,
@@ -24,9 +26,11 @@ function loadPeople(url, endpoint) {
     })
 }
 function loadProjects(url, endpoint) {
+  console.log("Loading projects")
   return axios
     .get(encodeURI(url + endpoint + "?depth=2"))
     .then(function(response) {
+      console.log("Loaded people")
       let projectsData = response.data.data.map(projectData => ({
         id: projectData.id,
         order: projectData.order,
@@ -69,6 +73,7 @@ function unescapeHTML(str) {
 function save(data, path) {
   let json = JSON.stringify(data, null, 2)
   fs.writeFile(path + Object.keys(data)[0] + ".json", json)
+  console.log("Saved " + path + Object.keys(data)[0])
 }
 function projectTrim(data, personId, url) {
   return data.map(project => ({
