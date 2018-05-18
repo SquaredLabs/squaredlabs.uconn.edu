@@ -46,26 +46,23 @@
         </layout-col>
       </OurLayout>
     </section>
-    <section
-      
+    <section   
       style="margin-bottom: 80px">
-
-      <OurLayout id="alumni">
+      <OurLayout 
+        v-if="people" 
+        id="alumni">
         <person-card
-          v-for="person in people"
+          v-for="person in people"         
           :key="person.id"
           :background="person.imageURL"
-        
           class="layout__col--quarter marginned--horizontally marginned--vertically">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
           <span v-html="person.description"/>
         </person-card>
-
       </OurLayout>
-
+      <div v-if="!people">Loading people</div>
     </section>
-
   </div>
 </template>
 

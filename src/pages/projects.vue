@@ -13,7 +13,7 @@
             class="padded">
             <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
           </div>  
-          <div 
+          <div
             id="project-details">
             <b>{{ hoverData.name }}</b>
             <p>{{ hoverData.client }}</p>
@@ -39,13 +39,14 @@
             
             <project-card
               v-for="project in projects"
-              v-if="project.order/3>x-1&&project.order/3<=x"
+              v-if="projects&&project.order/3>x-1&&project.order/3<=x"
               :key="project.id"
               :project="project"
               class="layout__col--third marginned--horizontally"
               @hoverProject="hoverData = $event">
               <span v-html="project.large_summary"/>
             </project-card>
+            <div v-if="!projects">Loading projects</div>
             
           </layout>
         </layout-col>
