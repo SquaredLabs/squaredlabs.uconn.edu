@@ -27,12 +27,13 @@
         <!-- Will only show first 3 projects in order -->
         <project-card 
           v-for="project in projects"
-          v-if="project.order<=3"
+          v-if="projects&&project.order<=3"
           :key="project.id"
           :project="project"
           class="layout__col--quarter marginned--horizontally">
           <span v-html="project.large_summary"/>
         </project-card>
+        <div v-if="!projects">Loading projects</div>
       </layout>
       <layout>
         <SLink
@@ -73,7 +74,7 @@
           Meet the team
         </SLink>
       </layout>
-      <layout>
+      <layout v-if="people">
         <div
           class="layout__col--quarter marginned--horizontally"
           style="position: relative; top: -80px">
@@ -96,6 +97,7 @@
           <template slot="role">{{ person.role }}</template>
           <span v-html="person.description"/>
         </person-card>
+        <div v-if="!people">Loading people</div>
       </layout>
     </section>
     <section>
@@ -175,6 +177,11 @@ export default {
 @import "~assets/styles/vars";
 .logo {
   padding: 15%;
+}
+.peopleContainer {
+  display: flex;
+  margin-left: 20px;
+  position: relative;
 }
 
 section {
