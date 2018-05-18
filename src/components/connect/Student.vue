@@ -27,11 +27,12 @@
         </SLink>position.
       </p><p>
         The other way to get involved with us as a student is
-        to attend our <SLink
+        to attend our <!--<SLink
           lighter-background
           href="/workshops">
           workshops
-        </SLink> which cover a
+        </SLink>-->
+        workshops which cover a
         variety of topics relevant to our projects (from coding to design to data visualization).
         Here are some of the companies and organizations that our alumni have gone on to work with:
       </p>
