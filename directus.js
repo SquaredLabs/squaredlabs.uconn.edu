@@ -110,8 +110,6 @@ function startLoad() {
     "https://admin.squaredlabs.uconn.edu",
     "/api/1.1/tables/projects/rows"
   )
-  return Promise.all([peoplePromise, projectPromise]).then(function(values) {
-    return values
-  })
+  return Promise.all([peoplePromise, projectPromise])
 }
 export default startLoad
