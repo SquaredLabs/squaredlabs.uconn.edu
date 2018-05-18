@@ -78,7 +78,7 @@ import Directus from "../../directus"
 export default {
   async asyncData({ params }) {
     let data = await Directus()
-    let peopleData=data[0]
+    let peopleData = data[0]
     return { people: peopleData.people }
   },
   components: {
@@ -86,7 +86,7 @@ export default {
     LayoutCol,
     PersonCard,
     ProjectCard
-  },
+  }
 }
 </script>
 

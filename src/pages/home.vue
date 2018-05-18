@@ -153,9 +153,12 @@ const selectPeople = (people, numberToSelect, selectedIndices = []) => {
 export default {
   async asyncData({ params }) {
     let data = await Directus()
-    let peopleData=data[0]
-    let projectData=data[1]
-    return { people: selectPeople(peopleData.people, 3),projects: projectData.projects }
+    let peopleData = data[0]
+    let projectData = data[1]
+    return {
+      people: selectPeople(peopleData.people, 3),
+      projects: projectData.projects
+    }
   },
   components: {
     Layout,
@@ -165,7 +168,7 @@ export default {
     ConnectCard,
     PersonCard,
     SLink
-  },
+  }
 }
 </script>
 
