@@ -273,7 +273,7 @@ import Directus from "../../directus"
 export default {
   async asyncData({ params }) {
     let data = await Directus()
-    let projectData=data[1]
+    let projectData = data[1]
     return { projects: projectData.projects }
   },
   components: {
