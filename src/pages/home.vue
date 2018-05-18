@@ -2,10 +2,9 @@
   <div>
     <section>
       <layout>
-        <construction
-          class="marginned--horizontally"
-          style="width: 100%"
-        />
+        <img 
+          class="logo" 
+          src="~/assets/images/squaredlabs.svg">
       </layout>
     </section>
     <section>
@@ -174,6 +173,9 @@ export default {
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
+.logo {
+  padding: 15%;
+}
 
 section {
   margin-bottom: 80px;
