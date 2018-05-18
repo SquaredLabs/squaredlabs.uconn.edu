@@ -72,8 +72,9 @@ function unescapeHTML(str) {
 }
 function save(data, path) {
   let json = JSON.stringify(data, null, 2)
-  fs.writeFile(path + Object.keys(data)[0] + ".json", json, () => { console.log("Saved " + path + Object.keys(data)[0]) })
-  
+  fs.writeFile(path + Object.keys(data)[0] + ".json", json, () => {
+    console.log("Saved " + path + Object.keys(data)[0])
+  })
 }
 function projectTrim(data, personId, url) {
   return data.map(project => ({
