@@ -1,17 +1,15 @@
-import { polyfill } from 'es6-promise';
-import fetch from 'isomorphic-fetch'
-
+import fetch from "isomorphic-fetch"
 
 function loadPeople(url, endpoint) {
   console.log("Loading people")
   return fetch(encodeURI(url + endpoint + "?depth=2"))
-    .then(function (response) {
+    .then(function(response) {
       if (response.status >= 400) {
-        throw new Error("Bad response from server");
+        throw new Error("Bad response from server")
       }
-      return response.json();
+      return response.json()
     })
-    .then(function (data) {
+    .then(function(data) {
       console.log("Loaded people")
       let peopleData = data.data.map(personData => ({
         id: personData.id,
@@ -34,11 +32,11 @@ function loadPeople(url, endpoint) {
 function loadProjects(url, endpoint) {
   console.log("Loading projects")
   return fetch(encodeURI(url + endpoint + "?depth=2"))
-    .then(function (response) {
+    .then(function(response) {
       if (response.status >= 400) {
-        throw new Error("Bad response from server");
+        throw new Error("Bad response from server")
       }
-      return response.json();
+      return response.json()
     })
     .then(function(data) {
       console.log("Loaded projects")
