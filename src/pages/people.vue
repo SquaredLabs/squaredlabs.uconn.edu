@@ -73,16 +73,20 @@ import OurLayout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import ProjectCard from "../components/ProjectCard.vue"
 import PersonCard from "../components/PersonCard.vue"
-import PeopleData from "~/assets/people.json"
+import Directus from "../../directus"
 
 export default {
+  async asyncData({ params }) {
+    let data = await Directus()
+    let peopleData=data[0]
+    return { people: peopleData.people }
+  },
   components: {
     OurLayout,
     LayoutCol,
     PersonCard,
     ProjectCard
   },
-  data: () => ({ people: PeopleData.people })
 }
 </script>
 
