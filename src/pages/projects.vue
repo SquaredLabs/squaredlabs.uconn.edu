@@ -11,7 +11,7 @@
             style="background: white; margin-top: -80px"
             class="padded">
             <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
-          </div>
+          </div>  
           <div 
             id="project-details">
             <b>{{ hoverData.name }}</b>

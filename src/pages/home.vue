@@ -25,23 +25,15 @@
             <SLink href="/labs">lab page</SLink>.
           </p>
         </div>
-        <project-card
-          :background="require('~/assets/images/projects/ip.png')"
-          class="layout__col--quarter marginned--horizontally"
-          name="Innovation Portal"
-          link="/projects">
-          <p>A short, fun description.</p>
+        <!-- Will only show first 3 projects in order -->
+        <project-card 
+          v-for="project in projects"
+          v-if="project.order<=3"
+          :key="project.id"
+          :project="project"
+          class="layout__col--quarter marginned--horizontally">
+          <span v-html="project.large_summary"/>
         </project-card>
-        <project-card
-          :background="require('~/assets/images/projects/lincus.png')"
-          class="layout__col--quarter marginned--horizontally"
-          name="Lincus"
-          link="/projects" />
-        <project-card
-          :background="require('~/assets/images/projects/huskytrails.png')"
-          class="layout__col--quarter marginned--horizontally"
-          name="GrantTrails"
-          link="/projects" />
       </layout>
       <layout>
         <SLink
@@ -95,15 +87,15 @@
           </p>
         </div>
         <person-card
-          v-for="i in 3"
-          :key="i"
-          :background="require('~/assets/images/people/dan.jpg')"
-          class="layout__col--quarter marginned--horizontally"
-          name="Dan Schwartz"
-          role="Director">
-          <template slot="name">Dan Schwartz</template>
-          <template slot="role">Director</template>
-          <p>“Take life (and everything) with a grain of salt.”</p>
+          v-for="person in people"
+          :key="person.id"
+          :background="person.imageURL"
+          :name="person.name"
+          :role="person.title"
+          class="layout__col--quarter marginned--horizontally">
+          <template slot="name">{{ person.name }}</template>
+          <template slot="role">{{ person.role }}</template>
+          <span v-html="person.description"/>
         </person-card>
       </layout>
     </section>
@@ -143,6 +135,21 @@ import WorkshopCard from "../components/WorkshopCard.vue"
 import PersonCard from "../components/PersonCard.vue"
 import ConnectCard from "../components/ConnectCard.vue"
 import SLink from "../components/Link.vue"
+import Projects from "~/assets/projects.json"
+import People from "~/assets/people.json"
+
+//  Recursive function to pick 3 different random people.
+//  If anyone has a better idea, feel free to change this.
+const selectPeople = (people, numberToSelect, selectedIndices = []) => {
+  if (selectedIndices.length === numberToSelect) {
+    return selectedIndices.map(index => people[index])
+  }
+  let randInt = Math.round(Math.random() * people.length)
+  if (selectedIndices.includes(randInt))
+    return selectPeople(people, numberToSelect, selectedIndices)
+  selectedIndices.push(randInt)
+  return selectPeople(people, numberToSelect, selectedIndices)
+}
 
 export default {
   components: {
@@ -153,7 +160,11 @@ export default {
     ConnectCard,
     PersonCard,
     SLink
-  }
+  },
+  data: () => ({
+    projects: Projects.projects,
+    people: selectPeople(People.people, 3)
+  })
 }
 </script>
 
