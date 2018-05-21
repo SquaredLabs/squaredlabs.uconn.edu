@@ -100,7 +100,6 @@ $inner-box: calc(100% - 20px);
   transition: 0.1s opacity;
   line-height: 1.24;
   font-size: 25px;
-  font-weight: bold;
   color: #0c120c;
 }
 
