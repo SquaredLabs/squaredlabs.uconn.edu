@@ -170,7 +170,7 @@ export default {
     PersonCard,
     SLink
   },
-  data: ()=>({
+  data: () => ({
     people: [],
     projects: []
   })
