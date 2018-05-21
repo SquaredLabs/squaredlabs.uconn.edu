@@ -303,7 +303,7 @@ export default {
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 #jumbotron {
-  margin-top: 800px;
+  margin-top: 400px;
 }
 #project-details {
   margin-top: 20px;
