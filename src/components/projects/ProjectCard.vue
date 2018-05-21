@@ -1,7 +1,7 @@
 <template>
   <div
     :style="`background: url('${project.imageURL}') center / cover no-repeat`"
-    class="project" 
+    class="project"
     @mouseover="$emit('hoverProject', {
       name:project.name,client:project.client,timespan:project.timespan,people:project.people
   })">
@@ -13,7 +13,7 @@
         <p class="project__title-expanded">{{ project.name }}</p>
         <slot />
         <SLink
-          href="/home"
+          @click="expand"
           class="SLink">
           View Project →
         </SLink>
@@ -23,14 +23,19 @@
 </template>
 
 <script>
-import SLink from "./Link"
+import SLink from "../Link"
 export default {
   components: {
     SLink
   },
   props: {
     project: { type: Object, required: true }
-  }
+  },
+  methods:{
+    expand(){
+      this.$store.commit('selectProject',this.project.id)
+    }
+  },
 }
 </script>
 
@@ -39,11 +44,15 @@ export default {
 
 $inner-box: calc(100% - 20px);
 
+
+
 .project {
   position: relative;
-
+  z-index:4;
   padding: 10px;
   height: 20vw;
+  flex-basis:33%;
+  transition:ease 0.3s all;
 
   &:hover .project__content {
     transition: 0.25s all ease;

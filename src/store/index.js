@@ -3,7 +3,8 @@ import Vuex from "vuex"
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      theme: "white"
+      theme: "white",
+      selectedProject: 0,
     },
     mutations: {
       setBlue(state) {
@@ -11,6 +12,9 @@ const createStore = () => {
       },
       setWhite(state) {
         state.theme = "white"
+      },
+      selectProject(state, projectToSelect) {
+        state.selectedProject = projectToSelect
       }
     }
   })
