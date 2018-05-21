@@ -308,7 +308,9 @@ export default {
 #project-details {
   margin-top: 20px;
 }
-
+#white-box p{
+  margin:0;
+}
 .number {
   height: 93px;
   font-family: SpaceMono;

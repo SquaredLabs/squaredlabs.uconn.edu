@@ -87,7 +87,7 @@ $inner-box: calc(100% - 20px);
   min-width: 0;
   min-height: 0;
   overflow: hidden;
-  padding: 0.5em 0.25em;
+  padding: 20px;
   background-color: white;
 }
 

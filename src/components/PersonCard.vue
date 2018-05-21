@@ -28,6 +28,7 @@ export default {
   width: 25vw;
   height: 20vw;
   position: relative;
+  margin: 40px;
   transition: all 0.25s ease;
 
   &:hover .person__content {
@@ -67,7 +68,7 @@ export default {
   background: white;
   text-align: center;
   transition: all 0.25s ease;
-  padding: 10px;
+  padding: 20px;
   overflow: hidden;
   height: 4em;
 }
