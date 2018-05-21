@@ -2,27 +2,21 @@
   <div
     :class="{blueTheme:theme=='blue'}"
     class="footbar">
-
     <SLink
-      class="footbar__link"
       href="https://uconn.edu">
-      ©2018 UConn
+      © 2018 UConn
     </SLink>
     <SLink
-      class="footbar__link footbar__link_smaller"
       href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
-    <SLink
-      class="footbar__link footbar__link_smaller">
+    <SLink>
       UConn COR²E
     </SLink>
-    <SLink
-      class="footbar__link">
+    <SLink>
       Link 1
     </SLink>
-    <SLink
-      class="footbar__link">
+    <SLink>
       Link 2
     </SLink>
     <figure class="footbar__brand">
@@ -75,15 +69,6 @@ export default {
 
 .footbar__brand > img {
   max-width: 60%;
-}
-
-.footbar__link {
-  font-family: "SpaceMono";
-  flex-basis: calc(100% / 8);
-}
-
-.footbar__link_smaller {
-  font-size: 0.8em;
 }
 
 .footbar__signature {
