@@ -4,7 +4,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       theme: "white",
-      selectedProject: 0,
+      selectedProject: 0
     },
     mutations: {
       setBlue(state) {
