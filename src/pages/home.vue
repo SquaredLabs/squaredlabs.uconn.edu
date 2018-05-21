@@ -169,7 +169,11 @@ export default {
     ConnectCard,
     PersonCard,
     SLink
-  }
+  },
+  data: ()=>({
+    people: [],
+    projects: []
+  })
 }
 </script>
 
