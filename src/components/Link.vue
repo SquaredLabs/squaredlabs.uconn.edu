@@ -81,4 +81,11 @@ export default {
 .white:hover {
   background-color: $pale-grey;
 }
+.nuxt-link-active {
+  background-color: #6aa1f4;
+  padding-top: 2px;
+}
+.nuxt-link-active.white {
+  background-color: $pale-grey;
+}
 </style>
