@@ -13,8 +13,8 @@
         <p class="project__title-expanded">{{ project.name }}</p>
         <slot />
         <SLink
-          @click="expand"
-          class="SLink">
+          class="SLink"
+          @click="expand">
           View Project →
         </SLink>
       </div>
@@ -31,11 +31,11 @@ export default {
   props: {
     project: { type: Object, required: true }
   },
-  methods:{
-    expand(){
-      this.$store.commit('selectProject',this.project.id)
+  methods: {
+    expand() {
+      this.$store.commit("selectProject", this.project.id)
     }
-  },
+  }
 }
 </script>
 
@@ -44,15 +44,13 @@ export default {
 
 $inner-box: calc(100% - 20px);
 
-
-
 .project {
   position: relative;
-  z-index:4;
+  z-index: 4;
   padding: 10px;
   height: 20vw;
-  flex-basis:33%;
-  transition:ease 0.3s all;
+  flex-basis: 33%;
+  transition: ease 0.3s all;
 
   &:hover .project__content {
     transition: 0.25s all ease;
