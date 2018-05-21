@@ -15,7 +15,6 @@
 @import "~assets/styles/vars";
 
 .layout {
-  z-index: 3;
   position: relative;
   display: flex;
 }

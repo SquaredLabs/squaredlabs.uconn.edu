@@ -131,7 +131,7 @@
 <script>
 import Construction from "../components/Construction.vue"
 import Layout from "../components/Layout.vue"
-import ProjectCard from "../components/ProjectCard.vue"
+import ProjectCard from "../components/projects/ProjectCard.vue"
 import WorkshopCard from "../components/WorkshopCard.vue"
 import PersonCard from "../components/PersonCard.vue"
 import ConnectCard from "../components/ConnectCard.vue"
