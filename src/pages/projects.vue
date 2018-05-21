@@ -48,7 +48,9 @@
             <div v-if="!projects">Loading projects</div>
           </layout>
         </layout-col>
-        <ProjectView v-if="$store.state.selectedProject!==0" :project="selectedProject"/>
+        <ProjectView 
+          v-if="$store.state.selectedProject!==0" 
+          :project="selectedProject"/>
       </layout>
     </section>
 
@@ -79,6 +81,19 @@ export default {
     ProjectView
   },
   data: () => ({ hoverData: {} }),
+  computed: {
+    selectedProject: function() {
+      let selectedProjID = this.$store.state.selectedProject
+      if (selectedProjID === 0) {
+        // throw new Error('Cannot get selected project obj if selectedProject is 0 in store')
+        return {}
+      }
+      for (let project of this.projects) {
+        if (project.id === selectedProjID) return project
+      }
+      throw new Error("No project by id " + selectedProjID)
+    }
+  },
   methods: {
     setHoveredProject(project) {
       this.hoverData = {
@@ -87,20 +102,6 @@ export default {
         timespan: project.timespan,
         people: project.people
       }
-    }
-  },
-  computed:{
-    selectedProject:function(){
-      let selectedProjID=this.$store.state.selectedProject
-      if (selectedProjID===0) {
-        //throw new Error('Cannot get selected project obj if selectedProject is 0 in store')
-        return {}
-      }
-      for(let project of this.projects){
-        if(project.id==selectedProjID)return project
-      }
-      throw new Error('No project by id '+selectedProjID)
-      return 
     }
   }
 }
@@ -116,11 +117,11 @@ export default {
 }
 #white-box p {
   margin: 0;
-  z-index:4;
+  z-index: 4;
   position: relative;
 }
-#project-details{
-  z-index:4;
+#project-details {
+  z-index: 4;
   position: relative;
 }
 .number {
