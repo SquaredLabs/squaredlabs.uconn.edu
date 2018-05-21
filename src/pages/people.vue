@@ -69,7 +69,6 @@
 <script>
 import OurLayout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
-import ProjectCard from "../components/ProjectCard.vue"
 import PersonCard from "../components/PersonCard.vue"
 import BackgroundText from "../components/BackgroundText.vue"
 import Directus from "../../directus"
@@ -84,7 +83,6 @@ export default {
     OurLayout,
     LayoutCol,
     PersonCard,
-    ProjectCard,
     BackgroundText
   }
 }
