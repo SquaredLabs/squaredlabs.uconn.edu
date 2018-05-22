@@ -29,6 +29,7 @@ export default {
 
 .mini__card {
   background: white;
+  color: black;
   padding: 10px;
   position: absolute;
   top: 22px;
