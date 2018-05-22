@@ -49,6 +49,7 @@ function loadProjects(url, endpoint) {
         services: projectData.services,
         technologies: projectData.technologies,
         large_summary: unescapeHTML(projectData.large_summary),
+        small_summary: unescapeHTML(projectData.small_summary),
         imageURL: url + projectData.thumbnail.data.url,
         people: peopleTrim(
           projectData.people_assigned.data,
