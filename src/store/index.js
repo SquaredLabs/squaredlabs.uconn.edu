@@ -15,6 +15,9 @@ const createStore = () => {
       },
       selectProject(state, projectToSelect) {
         state.selectedProject = projectToSelect
+      },
+      unSelectProject(state) {
+        state.selectedProject = 0
       }
     }
   })

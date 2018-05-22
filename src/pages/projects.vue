@@ -43,7 +43,7 @@
               :key="project.id"
               :project="project"
               @hoverProject="hoverData = $event">
-              <span v-html="project.large_summary"/>
+              <span v-html="project.small_summary"/>
             </project-card>
             <div v-if="!projects">Loading projects</div>
           </layout>
