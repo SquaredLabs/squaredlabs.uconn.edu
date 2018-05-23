@@ -62,6 +62,7 @@ export default {
   display: inline-block;
   box-sizing: border-box;
   font-size: inherit;
+  line-height: inherit;
   height: calc(1em + 1px);
   vertical-align: text-top;
   color: #0c120c;
