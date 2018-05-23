@@ -312,6 +312,11 @@ export default {
   font-weight: 500;
   line-height: 1em;
 }
+#aimboxes{
+    flex-basis:100%;
+    position: relative;
+    width: 100%;
+  }
 #rightContent #aimBoxes {
   display: flex;
   flex-wrap: wrap;
@@ -352,6 +357,14 @@ export default {
   /*position: relative;*/
   width: 80%;
   height: 80%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.aimI{
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
 }
 .about {
   width: 60%;
@@ -369,8 +382,10 @@ export default {
   #aims #leftContent {
     flex: 0 0 100%;
   }
-  #rightContent {
+  #aims  #rightContent {
     flex: 0 0 100%;
+    top:-260px;
+    position: relative;
   }
   #plusIcons {
     font-size: 10em;
@@ -381,12 +396,20 @@ export default {
     color: white;
     padding: 0 2em 0 2em;
   }
+  .aim{
+    margin:10px;
+  }
+  .aimL{
+    top:300px;
+    position: relative;
+  }
+  
 }
 @media (min-width: 0px) and (max-width: $tablet) {
-  #leftContent {
+  #aims #leftContent {
     flex: 0 0 100%;
   }
-  #rightContent {
+  #aims #rightContent {
     flex: 0 0 100%;
   }
 
@@ -399,6 +422,19 @@ export default {
     width: calc(100% - 4em);
     color: white;
     padding: 0 2em 0 2em;
+  }
+  .aim{
+    
+    transform:translateX(20%);
+  }
+  .aimI{
+    top:0;
+    left:0;
+    width:90%;
+    height: 90%;
+  }
+  .aimL{
+    position: relative;
   }
 }
 </style>
