@@ -71,6 +71,7 @@ export default {
   transition: background 0.15s, padding 0.05s;
   text-decoration: none;
   font-weight: normal;
+  font-family: inherit;
 }
 .button:hover {
   background-color: #6aa1f4;
