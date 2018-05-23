@@ -68,24 +68,24 @@ function loadProjects(url, endpoint) {
 function loadImages(url, endpoint) {
   console.log("Loading images")
   return fetch(encodeURI(url + endpoint))
-    .then(function (response) {
+    .then(function(response) {
       if (response.status >= 400) {
         throw new Error("Bad response from server")
       }
       return response.json()
     })
-    .then(function (data) {
+    .then(function(data) {
       console.log("Loaded images")
       let imagesData = data.data.map(imageData => ({
         id: imageData.id,
         page: imageData.page,
         page_location: imageData.page_location,
-        imageURL: url + imageData.image.data.url,
+        imageURL: url + imageData.image.data.url
       }))
       let images = { images: imagesData }
       return images
     })
-    .catch(function (error) {
+    .catch(function(error) {
       console.error(error)
     })
 }
@@ -139,6 +139,6 @@ function startLoad() {
     "https://admin.squaredlabs.uconn.edu",
     "/api/1.1/tables/images/rows"
   )
-  return Promise.all([peoplePromise, projectPromise,imagePromise])
+  return Promise.all([peoplePromise, projectPromise, imagePromise])
 }
 export default startLoad

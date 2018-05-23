@@ -5,12 +5,13 @@
       id="jumbotron"
       style="margin-bottom: 80px; margin-top: 130px">
       <img
-        class="img--fill-container"
         :src="images.top"
+        class="img--fill-container"
         style="height:440px" >
       <OurLayout
         vertical
-        style="margin-top: -485px" class="jumbotronLayout">
+        style="margin-top: -485px" 
+        class="jumbotronLayout">
         
         <layout-col
           s="whole"
@@ -78,13 +79,15 @@ export default {
   async asyncData({ params }) {
     let data = await Directus()
     let peopleData = data[0]
-    let imageData=data[2].images
-    let imageDataDirty = imageData.filter((image)=>{return image.page==="people"})
+    let imageData = data[2].images
+    let imageDataDirty = imageData.filter(image => {
+      return image.page === "people"
+    })
     let images = {}
-    for(let image of imageDataDirty){
-      images[image.page_location]=image.imageURL;
+    for (let image of imageDataDirty) {
+      images[image.page_location] = image.imageURL
     }
-    return { people: peopleData.people,images: images}
+    return { people: peopleData.people, images: images }
   },
   components: {
     OurLayout,
@@ -101,7 +104,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  z-index:4;
+  z-index: 4;
 }
 
 .number {
@@ -126,7 +129,7 @@ export default {
   color: $dodger-blue;
   margin: 0;
 }
-.jumbotronLayout{
+.jumbotronLayout {
   position: relative;
   z-index: 5;
 }
