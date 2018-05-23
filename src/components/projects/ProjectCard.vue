@@ -8,7 +8,9 @@
     <div
       ref="title"
       class="project__content">
-      <p class="project__title" v-bind:style="{fontSize:titleFontSize}">{{ project.name }}</p>
+      <p 
+        :style="{fontSize:titleFontSize}" 
+        class="project__title">{{ project.name }}</p>
       <div class="project__description">
         <p class="project__title-expanded">{{ project.name }}</p>
         <slot />
@@ -31,15 +33,15 @@ export default {
   props: {
     project: { type: Object, required: true }
   },
-  data:function(){
-    let titleFontSize = this.project.name.length>10? "1em":"2em"
-    return {titleFontSize:titleFontSize}
+  data: function() {
+    let titleFontSize = this.project.name.length > 10 ? "1em" : "2em"
+    return { titleFontSize: titleFontSize }
   },
   methods: {
     expand() {
       this.$store.commit("selectProject", this.project.id)
     }
-  },
+  }
 }
 </script>
 
@@ -55,7 +57,7 @@ $inner-box: calc(100% - 20px);
   height: 20vw;
   flex-basis: 33%;
   transition: ease 0.3s all;
-  margin-right:20px;
+  margin-right: 20px;
 
   &:hover .project__content {
     transition: 0.25s all ease;
@@ -101,7 +103,7 @@ $inner-box: calc(100% - 20px);
   overflow: hidden;
   padding: 20px;
   background-color: white;
-  max-width:90%;
+  max-width: 90%;
 }
 
 .project__title,
