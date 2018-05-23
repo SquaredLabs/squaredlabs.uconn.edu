@@ -312,11 +312,11 @@ export default {
   font-weight: 500;
   line-height: 1em;
 }
-#aimboxes{
-    flex-basis:100%;
-    position: relative;
-    width: 100%;
-  }
+#aimboxes {
+  flex-basis: 100%;
+  position: relative;
+  width: 100%;
+}
 #rightContent #aimBoxes {
   display: flex;
   flex-wrap: wrap;
@@ -361,7 +361,7 @@ export default {
   box-sizing: border-box;
   padding: 20px;
 }
-.aimI{
+.aimI {
   text-align: center;
   box-sizing: border-box;
   padding: 20px;
@@ -382,9 +382,9 @@ export default {
   #aims #leftContent {
     flex: 0 0 100%;
   }
-  #aims  #rightContent {
+  #aims #rightContent {
     flex: 0 0 100%;
-    top:-260px;
+    top: -260px;
     position: relative;
   }
   #plusIcons {
@@ -396,14 +396,13 @@ export default {
     color: white;
     padding: 0 2em 0 2em;
   }
-  .aim{
-    margin:10px;
+  .aim {
+    margin: 10px;
   }
-  .aimL{
-    top:300px;
+  .aimL {
+    top: 300px;
     position: relative;
   }
-  
 }
 @media (min-width: 0px) and (max-width: $tablet) {
   #aims #leftContent {
@@ -423,17 +422,16 @@ export default {
     color: white;
     padding: 0 2em 0 2em;
   }
-  .aim{
-    
-    transform:translateX(20%);
+  .aim {
+    transform: translateX(20%);
   }
-  .aimI{
-    top:0;
-    left:0;
-    width:90%;
+  .aimI {
+    top: 0;
+    left: 0;
+    width: 90%;
     height: 90%;
   }
-  .aimL{
+  .aimL {
     position: relative;
   }
 }

@@ -48,10 +48,12 @@
             <div v-if="!projects">Loading projects</div>
           </layout>
         </layout-col>
-        <transition name="slide" mode="out-in">
-        <ProjectView 
-          v-show="$store.state.selectedProject!==0" 
-          :project="selectedProject"/>
+        <transition 
+          name="slide" 
+          mode="out-in">
+          <ProjectView 
+            v-show="$store.state.selectedProject!==0" 
+            :project="selectedProject"/>
         </transition>
       </layout>
     </section>
@@ -159,14 +161,14 @@ export default {
 .layout__col--pacman {
   flex-wrap: wrap;
 }
-.slide-enter-active{
+.slide-enter-active {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.slide-leave-active{
+.slide-leave-active {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity:0;
+  opacity: 0;
   //transform: translateX(-100%);
 }
 </style>
