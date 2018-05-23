@@ -48,9 +48,11 @@
             <div v-if="!projects">Loading projects</div>
           </layout>
         </layout-col>
+        <transition name="slide" mode="out-in">
         <ProjectView 
-          v-if="$store.state.selectedProject!==0" 
+          v-show="$store.state.selectedProject!==0" 
           :project="selectedProject"/>
+        </transition>
       </layout>
     </section>
 
@@ -85,7 +87,6 @@ export default {
     selectedProject: function() {
       let selectedProjID = this.$store.state.selectedProject
       if (selectedProjID === 0) {
-        // throw new Error('Cannot get selected project obj if selectedProject is 0 in store')
         return {}
       }
       for (let project of this.projects) {
@@ -157,5 +158,15 @@ export default {
 }
 .layout__col--pacman {
   flex-wrap: wrap;
+}
+.slide-enter-active{
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slide-leave-active{
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity:0;
+  //transform: translateX(-100%);
 }
 </style>
