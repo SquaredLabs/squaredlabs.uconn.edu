@@ -38,10 +38,6 @@ export default {
   methods: {
     expand() {
       this.$store.commit("selectProject", this.project.id)
-    },
-    titleFontSize(){
-      console.log("this.project")
-      
     }
   },
 }
