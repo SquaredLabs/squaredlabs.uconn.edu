@@ -28,24 +28,35 @@ export default {
 @import "~assets/styles/vars";
 .titleTextContainer {
   margin: 0.5em 5% 0 5%;
+  
 }
 .titleTextContainer:hover .hoverContent {
-  visibility: visible;
+  opacity: 1;
+}
+.titleTextContainer:hover .title {
+  opacity: 1;
 }
 .title {
   color: white;
   font-size: 14em;
   line-height: 1em;
   font-family: "SpaceMono";
+  cursor: default;
+  transition:all ease 0.3s;
+  opacity:0.7;
+  position: relative;
+  z-index: 4;
 }
 .hoverContent {
+  transition:all ease 0.3s;
   position: absolute;
   width: 90%;
   left: 5%;
   height: 15em;
   margin-top: 7em;
-  visibility: hidden;
+  opacity: 0;
   pointer-events: none;
+  z-index: 5;
 }
 
 .hoverContentI {
