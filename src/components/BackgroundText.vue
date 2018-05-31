@@ -18,8 +18,10 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 .backgroundText {
-  font-size: 17em;
-  position: fixed;
+  font-size: 18.19em;
+  font-family: SpaceMono;
+  // position: fixed;
+  height: 0;
   top: 140px;
   left: 20px;
   color: white;
