@@ -4,15 +4,14 @@
     <section
       id="jumbotron"
       style="margin-bottom: 80px; margin-top: 130px">
-      <img
+      <!-- <img
         :src="images.top"
         class="img--fill-container"
-        style="height:440px" >
+        style="height:440px" > -->
       <OurLayout
         vertical
         style="margin-top: -485px" 
         class="jumbotronLayout">
-        
         <layout-col
           s="whole"
           style="display: flex; justify-content: flex-end">
