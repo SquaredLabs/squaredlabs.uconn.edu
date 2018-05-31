@@ -6,7 +6,6 @@
     <nuxt />
     <Footbar :theme="$store.state.theme"/>
   </div>
-
 </template>
 <script>
 import Navbar from "../components/Navbar"
@@ -21,24 +20,33 @@ export default {
 <style lang="scss">
 @import "~assets/styles/vars";
 @import "~assets/styles/fonts";
+
 html {
   margin: 0;
   overflow-x: hidden;
 }
+
 body {
   font-family: "Moderat";
   margin: 0;
   padding: 0;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
+
 .app {
   transition: all 0.3s ease;
   background-color: $pale-grey;
+  height: 100vh;
 }
+
+.app > *:nth-child(2) {
+  z-index: 1;
+}
+
 .blueAppTheme {
   background-color: $dodger-blue;
 }
@@ -57,6 +65,7 @@ body {
   margin-bottom: 20px;
 }
 </style>
+
 <style scoped>
 .page-enter-active,
 .page-leave-active {
