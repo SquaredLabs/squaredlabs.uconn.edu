@@ -63,11 +63,10 @@ export default {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  height: calc(1em + 1px);
+  height: 1em;
   vertical-align: text-top;
   color: #0c120c;
-  padding-left: 2px;
-  padding-right: 2px;
+  padding: 0 2px;
   transition: background 0.15s, padding 0.05s;
   text-decoration: none;
   font-weight: normal;
@@ -75,7 +74,7 @@ export default {
 }
 .button:hover {
   background-color: #6aa1f4;
-  padding-top: 2px;
+  padding-top: 3px;
 }
 .white {
   background-color: #adcaf5;
@@ -85,7 +84,7 @@ export default {
 }
 .nuxt-link-active {
   background-color: #6aa1f4;
-  padding-top: 2px;
+  padding-top: 3px;
 }
 .nuxt-link-active.white {
   background-color: $pale-grey;
