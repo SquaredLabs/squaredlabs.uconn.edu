@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <Grid>
     <BackgroundText :lines="['proj','ects']"/>
     <section
       id="jumbotron"
       style="margin-bottom: 100px">
       
-      <layout style="margin-top: -300px">
-        <layout-col m="horizontal">
+      <div style="margin-top: -300px">
+        <div m="horizontal">
           <div
             id="white-box"
             style="background: white; margin-top: -80px"
@@ -26,9 +26,9 @@
               <template slot="position">{{ person.role }}</template>
             </mini-person-card>
           </div>
-        </layout-col>
-        <layout-col s="pacman">
-          <layout
+        </div>
+        <div s="pacman">
+          <div
             v-for="x in 3"
             :key="x"
             style="padding-bottom: 20px">
@@ -46,8 +46,8 @@
               <span v-html="project.small_summary"/>
             </project-card>
             <div v-if="!projects">Loading projects</div>
-          </layout>
-        </layout-col>
+          </div>
+        </div>
         <transition 
           name="slide" 
           mode="out-in">
@@ -55,15 +55,13 @@
             v-show="$store.state.selectedProject!==0" 
             :project="selectedProject"/>
         </transition>
-      </layout>
+      </div>
     </section>
-
-  </div>
+  </Grid>
 </template>
 
 <script>
-import Layout from "../components/Layout.vue"
-import LayoutCol from "../components/LayoutCol.vue"
+import Grid from "../components/GridLayout.vue"
 import ProjectCard from "../components/projects/ProjectCard.vue"
 import MiniPersonCard from "../components/projects/MiniPersonCard.vue"
 import Directus from "../../directus"
@@ -77,8 +75,7 @@ export default {
     return { projects: projectData.projects }
   },
   components: {
-    Layout,
-    LayoutCol,
+    Grid,
     ProjectCard,
     MiniPersonCard,
     BackgroundText,
