@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <Grid>
     <BackgroundText :lines="['peo','ple']"/>
     <section
       id="jumbotron"
@@ -8,11 +8,11 @@
         :src="images.top"
         class="img--fill-container"
         style="height:440px" > -->
-      <OurLayout
+      <div
         vertical
         style="margin-top: -485px" 
         class="jumbotronLayout">
-        <layout-col
+        <div
           s="whole"
           style="display: flex; justify-content: flex-end">
           <div
@@ -20,36 +20,36 @@
             class="marginned--horizontally padded">
             <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
           </div>
-        </layout-col>
-        <layout-col s="whole">
-          <OurLayout>
-            <layout-col style="padding: 40px">
+        </div>
+        <div s="whole">
+          <div>
+            <div style="padding: 40px">
               <img
                 class="img--fill-container"
                 src="https://picsum.photos/231/340" >
-            </layout-col>
-            <layout-col style="padding: 40px">
+            </div>
+            <div style="padding: 40px">
               <img
                 class="img--fill-container"
                 src="https://picsum.photos/231/340" >
-            </layout-col>
-            <layout-col style="padding: 40px">
+            </div>
+            <div style="padding: 40px">
               <img
                 class="img--fill-container"
                 src="https://picsum.photos/231/340" >
-            </layout-col>
-            <layout-col style="padding: 40px">
+            </div>
+            <div style="padding: 40px">
               <img
                 class="img--fill-container"
                 src="https://picsum.photos/231/340" >
-            </layout-col>
-          </OurLayout>
-        </layout-col>
-      </OurLayout>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section   
       style="margin-bottom: 80px">
-      <OurLayout 
+      <div 
         v-if="people" 
         id="alumni">
         <person-card
@@ -61,15 +61,14 @@
           <template slot="role">{{ person.title }}</template>
           <span v-html="person.description"/>
         </person-card>
-      </OurLayout>
+      </div>
       <div v-if="!people">Loading people</div>
     </section>
-  </div>
+  </Grid>
 </template>
 
 <script>
-import OurLayout from "../components/Layout.vue"
-import LayoutCol from "../components/LayoutCol.vue"
+import Grid from "../components/GridLayout.vue"
 import PersonCard from "../components/PersonCard.vue"
 import BackgroundText from "../components/BackgroundText.vue"
 import Directus from "../../directus"
@@ -89,8 +88,7 @@ export default {
     return { people: peopleData.people, images: images }
   },
   components: {
-    OurLayout,
-    LayoutCol,
+    Grid,
     PersonCard,
     BackgroundText
   }

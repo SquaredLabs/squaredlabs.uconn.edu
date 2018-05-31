@@ -1,87 +1,110 @@
 <template>
-  <div
-    :class="{blueTheme:theme=='blue'}"
-    class="footbar">
-    <SLink
-      href="https://uconn.edu">
+  <div :class="{blueTheme:theme=='blue'}" class="footbar">
+    <SLink class="link" href="https://uconn.edu">
       ©2018 UConn
     </SLink>
-    <SLink
-      href="https://core.uconn.edu">
+    <SLink class="link" href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
-    <SLink>
+    <SLink class="link">
       UConn COR²E
     </SLink>
-    <SLink>
+    <SLink class="link">
       Link 1
     </SLink>
-    <SLink>
+    <SLink class="link">
       Link 2
     </SLink>
     <figure class="footbarBrand">
-      <img src="~/assets/images/wordmark.png" >
+      <img src="~/assets/images/wordmark.png">
     </figure>
     <span class="footbarSignature">
       Designed & developed by
-      <br >
+      <br>
       <span class="footbarSignature-mono">[squared labs]</span>
-      <br >
-      at UCONN
+      <br> at UCONN
     </span>
   </div>
 </template>
 <script>
-import SLink from "./Link.vue"
-export default {
-  components: {
-    SLink
-  },
-  props: {
-    theme: { type: String, required: true }
+  import SLink from "./Link.vue"
+  export default {
+    components: {
+      SLink
+    },
+    props: {
+      theme: {
+        type: String,
+        required: true
+      }
+    }
   }
-}
+
 </script>
 <style scoped lang="scss">
-@import "~assets/styles/vars";
+  @import "~assets/styles/vars";
 
-.blueTheme figure img {
-  filter: brightness(0) invert(1);
-}
-.footbar {
-  font-family: SpaceMono;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-around;
-  position: relative;
-  z-index: 2;
-}
+  .blueTheme figure img {
+    filter: brightness(0) invert(1);
+  }
 
-.footbarBrand {
-  flex-basis: calc(100% / 8 * 2);
-  flex-grow: 0;
-  min-width: 0;
-  margin: 0;
-}
+  .footbar {
+    font-family: SpaceMono;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+    font-family: SpaceMono;
+    display: grid;
+    align-items: end;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 20px;
+  }
 
-.footbarBrand > img {
-  max-width: 60%;
-}
+  @media screen and (min-width: $tablet) {
+    .footbar {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
 
-.footbarSignature {
-  flex-basis: 100%;
-  font-family: "Moderat";
-  padding-top: 23px;
-  color: $dodger-blue;
-  line-height: 1.5;
-}
+  @media screen and (min-width: $desktop) {
+    .footbar {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
 
-.footbarSignature-mono {
-  font-size: 26px;
-  font-family: "SpaceMono";
-}
+  .footbar .link {
+    grid-column: span 1;
+    line-height: 1.75em;
+    height: 1.25em;
+    &:nth-child(1) {
+      grid-column-start: 2;
+    }
+  }
+
+  .footbarBrand {
+    grid-column: span 1;
+    margin: 0;
+  }
+
+  .footbarBrand>img {
+    max-width: 100%;
+  }
+
+  .footbarSignature {
+    font-family: "Moderat";
+    color: $dodger-blue;
+    line-height: 1.5;
+    grid-row: 2;
+    grid-column: 4 / 6;
+  }
+
+  .footbarSignature-mono {
+    font-size: 25px;
+    font-family: "SpaceMono";
+  }
+
 </style>

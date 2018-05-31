@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <Grid>
     <section>
-      <layout>
+      <div>
         <img 
           class="logo" 
           src="~/assets/images/squaredlabs.svg">
-      </layout>
+      </div>
     </section>
     <section>
-      <layout
+      <div
         style="margin-top:80px"
         text="projects"
         padding-top="110px">
@@ -34,14 +34,14 @@
           <span v-html="project.large_summary"/>
         </project-card>
         <div v-if="!projects">Loading projects</div>
-      </layout>
-      <layout>
+      </div>
+      <div>
         <SLink
           class="link--pulled-right"
           href="/projects">
           See all our projects
         </SLink>
-      </layout>
+      </div>
     </section>
     <!--<section>
       <layout text="workshops">
@@ -67,14 +67,14 @@
       </layout>
     </section>-->
     <section style="padding-top: 6em">
-      <layout>
+      <div>
         <SLink
           class="link--pulled-right"
           href="/people">
           Meet the team
         </SLink>
-      </layout>
-      <layout v-if="people">
+      </div>
+      <div v-if="people">
         <div
           class="layout__col--quarter marginned--horizontally"
           style="position: relative; top: -80px">
@@ -98,10 +98,10 @@
           <span v-html="person.description"/>
         </person-card>
         <div v-if="!people">Loading people</div>
-      </layout>
+      </div>
     </section>
     <section>
-      <layout style="margin-top: 260px">
+      <div style="margin-top: 260px">
         <connect-card
           :background="require('~/assets/images/connect/gitlab.svg')"
           class="layout__col--quarter marginned--horizontally"
@@ -123,14 +123,13 @@
             Connect with us
           </SLink>
         </div>
-      </layout>
+      </div>
     </section>
-  </div>
+  </Grid>
 </template>
 
 <script>
-import Construction from "../components/Construction.vue"
-import Layout from "../components/Layout.vue"
+import Grid from "../components/GridLayout.vue"
 import ProjectCard from "../components/projects/ProjectCard.vue"
 import WorkshopCard from "../components/WorkshopCard.vue"
 import PersonCard from "../components/PersonCard.vue"
@@ -162,8 +161,7 @@ export default {
     }
   },
   components: {
-    Layout,
-    Construction,
+    Grid,
     ProjectCard,
     WorkshopCard,
     ConnectCard,
