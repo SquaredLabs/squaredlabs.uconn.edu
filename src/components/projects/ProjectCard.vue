@@ -66,6 +66,7 @@ $inner-box: calc(100% - 20px);
 
   &:hover .projectContent {
     height: calc(14.552em - 20px);
+    // min-width: calc(100% - .1px);
   }
 
   &:hover .projectTitle {
@@ -84,6 +85,8 @@ $inner-box: calc(100% - 20px);
   padding: 10px;
   height: 3.052em;
   display: flex;
+  // width: auto;
+  min-width: 100%;
   justify-content: space-between;
   flex-flow: column nowrap;
   background-color: white;
