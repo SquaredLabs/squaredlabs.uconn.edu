@@ -1,13 +1,13 @@
 <template>
-  <div 
-    :style="`background: url('${project.imageURL}') center / cover no-repeat`" 
-    class="project" 
+  <div
+    :style="`background: url('${project.imageURL}') center / cover no-repeat`"
+    class="project"
     @mouseover="$emit('hoverProject', {
       name:project.name,client:project.client,timespan:project.timespan,people:project.people
   })">
-    <div 
-      ref="title" 
-      :class="{twoLineTitle}" 
+    <div
+      ref="title"
+      :class="{twoLineTitle}"
       class="projectContent">
       <div>
         <p class="projectTitle">{{ project.name }}</p>
@@ -16,8 +16,8 @@
         </div>
       </div>
       <div class="projectLink">
-        <SLink 
-          class="SLink" 
+        <SLink
+          class="SLink"
           @click="expand">
           View Project &rarr;
         </SLink>
@@ -62,11 +62,12 @@ $inner-box: calc(100% - 20px);
   padding: 10px;
   display: flex;
   align-items: flex-end;
-  min-height: 14.552em;
+  // min-height: 14.552em;
+  min-height: calc(50vw - 50px);
 
   &:hover .projectContent {
-    height: calc(14.552em - 20px);
-    // min-width: calc(100% - .1px);
+    // height: calc(14.552em - 20px);
+    height: calc(50vw - 70px);
   }
 
   &:hover .projectTitle {
@@ -102,7 +103,7 @@ $inner-box: calc(100% - 20px);
 }
 
 .projectTitle {
-  font-size: 1.563em;
+  font-size: 1em;
   line-height: 1.25;
   color: #0c120c;
 }
@@ -111,5 +112,38 @@ $inner-box: calc(100% - 20px);
   transition: 0.35s ease;
   transform: translateY(6em);
   align-self: flex-end;
+}
+
+@media screen and (min-width: 500px) {
+  .projectTitle {
+    font-size: 1.563em;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .project {
+    min-height: calc(33vw - 40px);
+    &:hover .projectContent {
+      height: calc(33vw - 60px);
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .project {
+    min-height: calc(25vw - 20px);
+    &:hover .projectContent {
+      height: calc(25vw - 40px);
+    }
+  }
+}
+
+@media screen and (min-width: $desktopLg) {
+  .project {
+    min-height: calc(17vw - 40px);
+    &:hover .projectContent {
+      height: calc(17vw - 60px);
+    }
+  }
 }
 </style>

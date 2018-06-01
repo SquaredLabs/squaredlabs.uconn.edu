@@ -37,6 +37,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 500px) {
+  body {
+    font-size: 0.8em;
+  }
+}
+
 .app {
   transition: all 0.3s ease;
   background-color: $pale-grey;
