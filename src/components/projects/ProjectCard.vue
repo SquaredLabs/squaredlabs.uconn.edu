@@ -1,23 +1,25 @@
 <template>
-  <div
-    :style="`background: url('${project.imageURL}') center / cover no-repeat`"
-    class="project"
+  <div 
+    :style="`background: url('${project.imageURL}') center / cover no-repeat`" 
+    class="project" 
     @mouseover="$emit('hoverProject', {
       name:project.name,client:project.client,timespan:project.timespan,people:project.people
   })">
-    <div
-      ref="title"
-      class="project__content">
-      <p 
-        :style="{fontSize:titleFontSize}" 
-        class="project__title">{{ project.name }}</p>
-      <div class="project__description">
-        <p class="project__title-expanded">{{ project.name }}</p>
-        <slot />
-        <SLink
-          class="SLink"
+    <div 
+      ref="title" 
+      :class="{twoLineTitle}" 
+      class="projectContent">
+      <div>
+        <p class="projectTitle">{{ project.name }}</p>
+        <div class="projectDescription">
+          <slot />
+        </div>
+      </div>
+      <div class="projectLink">
+        <SLink 
+          class="SLink" 
           @click="expand">
-          View Project →
+          View Project &rarr;
         </SLink>
       </div>
     </div>
@@ -31,11 +33,16 @@ export default {
     SLink
   },
   props: {
-    project: { type: Object, required: true }
+    project: {
+      type: Object,
+      required: true
+    }
   },
   data: function() {
-    let titleFontSize = this.project.name.length > 10 ? "1em" : "2em"
-    return { titleFontSize: titleFontSize }
+    let twoLineTitle = this.project.name.length < 10 ? "" : "twoLineTitle"
+    return {
+      twoLineTitle: twoLineTitle
+    }
   },
   methods: {
     expand() {
@@ -51,93 +58,55 @@ export default {
 $inner-box: calc(100% - 20px);
 
 .project {
-  position: relative;
-  z-index: 4;
-  padding: 10px;
-  height: 20vw;
-  flex-basis: 33%;
-  transition: ease 0.3s all;
-  margin-right: 20px;
-
-  &:hover .project__content {
-    transition: 0.25s all ease;
-    min-width: $inner-box;
-    min-height: $inner-box;
-    padding: 10px;
-  }
-
-  &:hover .project__title {
-    transition: 0.25s opacity, height;
-    opacity: 0;
-    height: 0;
-  }
-
-  &:hover .project__description {
-    transition: 0.1s opacity ease 0.15s;
-    opacity: 1;
-  }
-
-  &::before {
-    content: "";
-    transition: opacity 0.25s ease;
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.2;
-  }
-}
-
-.project__content {
-  transition: 0.25s all ease;
-  position: absolute;
-  z-index: 1;
-  bottom: 10px;
-  left: 10px;
   box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
-  padding: 20px;
-  background-color: white;
-  max-width: 90%;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  min-height: 14.552em;
+
+  &:hover .projectContent {
+    height: calc(14.552em - 20px);
+  }
+
+  &:hover .projectTitle {
+    color: $dodger-blue;
+  }
+
+  &:hover .projectLink {
+    transform: translateY(0);
+  }
 }
 
-.project__title,
-.project__description {
+.projectContent {
+  transition: 0.25s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 3.052em;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  background-color: white;
+  &.twoLineTitle {
+    height: 4.768em;
+  }
+}
+
+.projectTitle,
+.projectDescription {
+  transition: 0.3s ease;
   margin: 0;
 }
 
-.project__title {
-  transition: 0.1s opacity;
-  line-height: 1.24;
+.projectTitle {
+  font-size: 1.563em;
+  line-height: 1.25;
   color: #0c120c;
 }
 
-.project__title-expanded {
-  margin: 0;
-  font-size: 25px;
-  color: $dodger-blue;
-}
-
-.project__link {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.project__description {
-  position: absolute;
-  width: $inner-box;
-  height: $inner-box;
-  opacity: 0;
-}
-.SLink {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.projectLink {
+  transition: 0.35s ease;
+  transform: translateY(6em);
+  align-self: flex-end;
 }
 </style>
