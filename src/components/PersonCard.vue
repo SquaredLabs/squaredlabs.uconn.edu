@@ -2,11 +2,13 @@
   <div class="person">
     <div
       :style="`background: url('${background}') center/150% no-repeat`"
-      class="person__photo" />
-    <div class="person__content">
-      <p class="person__name"><slot name="name" /></p>
-      <p class="person__role"><slot name="role" /></p>
-      <div class="person__expanded">
+      class="personPhoto" />
+    <div class="personContent">
+      <div class="personPreview">
+        <p class="personName"><slot name="name" /></p>
+        <p class="personRole"><slot name="role" /></p>
+      </div>
+      <div class="personAbout">
         <slot />
       </div>
     </div>
@@ -25,79 +27,61 @@ export default {
 @import "~assets/styles/vars";
 
 .person {
-  width: 25vw;
-  height: 20vw;
-  position: relative;
-  margin: 40px;
   transition: all 0.25s ease;
+  position: relative;
+  height: 14.552em;
+  margin-bottom: 40px;
 
-  &:hover .person__content {
-    left: 0;
-    right: 0;
-    height: calc(70% + 50px);
+  &:hover .personContent {
+    height: 11.642em;
+    margin: -11.642em 0 0;
+
+    .personAbout {
+      margin: 0 1.25em;
+    }
   }
 
-  &:hover .person__expanded {
-    opacity: 1;
-  }
-
-  &:hover .person__photo {
+  &:hover .personPhoto {
     margin: 30px;
-  }
-
-  &:hover .person__photo::before {
-    width: 80%;
-    left: 10%;
+    filter: brightness(60%);
   }
 }
 
-.person__photo {
+.personPhoto {
   height: 100%;
   transition: all 0.25s ease;
 }
-.person:hover .person__photo {
-  filter: brightness(60%);
-}
 
-.person__content {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: -50px;
-  left: 20px;
-  right: 20px;
+.personContent {
+  height: 3.815em;
+  margin: -2.441em 1.25em 0;
   background: white;
   text-align: center;
   transition: all 0.25s ease;
-  padding: 20px;
   overflow: hidden;
-  height: 4em;
+  position: relative;
 }
 
-.person__name {
+.personPreview {
+  height: 2.441em;
+  margin: 10px;
+}
+
+.personName {
   font-family: Moderat;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: bold;
-  text-align: center;
   color: $dodger-blue;
-}
-
-.person__role {
-  font-size: 16px;
-}
-
-.person__expanded {
-  opacity: 0;
   margin: 0;
-  padding-top: 1px;
-  transition: opacity 0.5s ease;
+}
+
+.personRole {
+  font-size: 1em;
+}
+
+.personAbout {
+  margin-bottom: 1.25em;
   font-size: 0.8em;
-}
-p {
-  margin: 0;
-}
-</style>
-<style lang="scss">
-.person__expanded * {
-  margin: 0;
+  transition: all 0.25s ease;
 }
 </style>
