@@ -1,65 +1,65 @@
 <template>
   <Grid>
-    <BackgroundText :lines="['peo','ple']"/>
-    <section
-      id="jumbotron"
+    <BackgroundText :lines="['peo','ple']" />
+    <section 
+      id="jumbotron" 
       style="margin-bottom: 80px; margin-top: 130px">
       <!-- <img
         :src="images.top"
         class="img--fill-container"
         style="height:440px" > -->
-      <div
-        vertical
+      <div 
+        vertical 
         style="margin-top: -485px" 
         class="jumbotronLayout">
-        <div
-          s="whole"
+        <div 
+          s="whole" 
           style="display: flex; justify-content: flex-end">
-          <div
-            style="background: white; width: 32vw"
+          <div 
+            style="background: white; width: 32vw" 
             class="marginned--horizontally padded">
-            <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
+            <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
+            a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
           </div>
         </div>
         <div s="whole">
           <div>
             <div style="padding: 40px">
-              <img
-                class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+              <img 
+                class="img--fill-container" 
+                src="https://picsum.photos/231/340">
             </div>
             <div style="padding: 40px">
-              <img
-                class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+              <img 
+                class="img--fill-container" 
+                src="https://picsum.photos/231/340">
             </div>
             <div style="padding: 40px">
-              <img
-                class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+              <img 
+                class="img--fill-container" 
+                src="https://picsum.photos/231/340">
             </div>
             <div style="padding: 40px">
-              <img
-                class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+              <img 
+                class="img--fill-container" 
+                src="https://picsum.photos/231/340">
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section   
-      style="margin-bottom: 80px">
+    <section style="margin-bottom: 80px">
       <div 
         v-if="people" 
         id="alumni">
-        <person-card
-          v-for="person in people"         
-          :key="person.id"
-          :background="person.imageURL"
+        <person-card 
+          v-for="person in people" 
+          :key="person.id" 
+          :background="person.imageURL" 
           class="layout__col--quarter marginned--horizontally marginned--vertically">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
-          <span v-html="person.description"/>
+          <span v-html="person.description" />
         </person-card>
       </div>
       <div v-if="!people">Loading people</div>
@@ -85,7 +85,10 @@ export default {
     for (let image of imageDataDirty) {
       images[image.page_location] = image.imageURL
     }
-    return { people: peopleData.people, images: images }
+    return {
+      people: peopleData.people,
+      images: images
+    }
   },
   components: {
     Grid,
@@ -126,6 +129,7 @@ export default {
   color: $dodger-blue;
   margin: 0;
 }
+
 .jumbotronLayout {
   position: relative;
   z-index: 5;

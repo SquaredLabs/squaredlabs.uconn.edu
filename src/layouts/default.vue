@@ -40,7 +40,6 @@ body {
 .app {
   transition: all 0.3s ease;
   background-color: $pale-grey;
-  height: 100vh;
 }
 
 .app > *:nth-child(2) {

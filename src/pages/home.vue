@@ -1,48 +1,42 @@
 <template>
-  <Grid>
-    <section>
-      <div>
+  <div>
+    <Grid>
+      <div class="col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1">
         <img 
           class="logo" 
           src="~/assets/images/squaredlabs.svg">
       </div>
-    </section>
-    <section>
-      <div
-        style="margin-top:80px"
-        text="projects"
-        padding-top="110px">
-        <div
-          class="layout__col--quarter marginned--horizontally"
-          style="position: relative; top: -80px">
-          <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best
-            <SLink href="/people">students</SLink>, we build cutting-edge
-            <SLink href="/projects">websites</SLink> that support UConn’s
-            world-class research infrastructure.
-          </p>
-          <p>View our history, purpose, and space on the
-            <SLink href="/labs">lab page</SLink>.
-          </p>
-        </div>
-        <!-- Will only show first 3 projects in order -->
-        <project-card 
-          v-for="project in projects"
-          v-if="projects&&project.order<=3"
-          :key="project.id"
-          :project="project"
-          class="layout__col--quarter marginned--horizontally">
-          <span v-html="project.large_summary"/>
-        </project-card>
-        <div v-if="!projects">Loading projects</div>
+    </Grid>
+    <Grid>
+      <div 
+        text="projects" 
+        class="col-sm-4 col-md-2 off-lg-1">
+        <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best
+          <SLink href="/people">students</SLink>, we build cutting-edge
+          <SLink href="/projects">websites</SLink> that support UConn’s world-class research infrastructure.
+        </p>
+        <p>View our history, purpose, and space on the
+          <SLink href="/labs">lab page</SLink>.
+        </p>
       </div>
+      <!-- Will only show first 3 projects in order -->
+      <project-card 
+        v-for="project in projects" 
+        v-if="projects&&project.order<=3" 
+        :key="project.id" 
+        :project="project" 
+        class="col-lg-2 col-2">
+        <span v-html="project.large_summary" />
+      </project-card>
+      <div v-if="!projects">Loading projects</div>
       <div>
-        <SLink
-          class="link--pulled-right"
+        <SLink 
+          class="linkPulledRight" 
           href="/projects">
           See all our projects
         </SLink>
       </div>
-    </section>
+    </Grid>
     <!--<section>
       <layout text="workshops">
         <div class="layout__col--pacman padded">
@@ -58,74 +52,73 @@
           </workshop-card>
         </div>
         <div
-          class="layout__col--quarter padded"
-          style="margin-top: 80px">
+          class="">
           <p>Learning from others and sharing what we know is central to the ⬚² labs philosophy. We see workshops as an opportunity to do both (in addition to getting to know the UConn web development community).</p>
           <p>Our workshops are open to all members of the UConn community, for free.</p>
           <SLink href="/workshops">View all workshops</SLink>
         </div>
       </layout>
     </section>-->
-    <section style="padding-top: 6em">
+    <Grid>
       <div>
-        <SLink
-          class="link--pulled-right"
+        <SLink 
+          class="linkPulledRight" 
           href="/people">
           Meet the team
         </SLink>
       </div>
       <div v-if="people">
-        <div
-          class="layout__col--quarter marginned--horizontally"
-          style="position: relative; top: -80px">
+        <div class="">
           <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
-          <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If that sounds like you,
-            <SLink
-              href="/connect">
+          <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track
+          record of building cool stuff in their spare time, web experience, and a passion for innovation and creation.
+          If that sounds like you,
+            <SLink href="/connect">
               get in touch!
             </SLink>
           </p>
         </div>
-        <person-card
-          v-for="person in people"
-          :key="person.id"
-          :background="person.imageURL"
-          :name="person.name"
+        <person-card 
+          v-for="person in people" 
+          :key="person.id" 
+          :background="person.imageURL" 
+          :name="person.name" 
           :role="person.title"
-          class="layout__col--quarter marginned--horizontally">
+          class="">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.role }}</template>
-          <span v-html="person.description"/>
+          <span v-html="person.description" />
         </person-card>
         <div v-if="!people">Loading people</div>
       </div>
-    </section>
-    <section>
-      <div style="margin-top: 260px">
-        <connect-card
-          :background="require('~/assets/images/connect/gitlab.svg')"
-          class="layout__col--quarter marginned--horizontally"
-          link="https://gitlab.com/squared-labs" />
-        <connect-card
-          :background="require('~/assets/images/connect/mail.svg')"
+    </Grid>
+    <Grid>
+      <div>
+        <connect-card 
+          :background="require('~/assets/images/connect/gitlab.svg')" 
+          class="" 
+          link="https://gitlab.com/squared-labs"
+        />
+        <connect-card 
+          :background="require('~/assets/images/connect/mail.svg')" 
           :hidden-image="require('~/assets/images/connect/contact.png')"
-          class="layout__col--quarter marginned--horizontally" />
-        <connect-card
-          :background="require('~/assets/images/connect/btc.svg') "
-          class="layout__col--quarter marginned--horizontally"
-          link="http://www.foundation.uconn.edu/send-your-gift/" />
-        <div
-          class="layout__col--quarter marginned--horizontally"
-          style="position: relative; top: -80px">
-          <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚² labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty ways to become a part of what we do. </p>
-          <SLink
-            href="/connect">
+          class="" />
+        <connect-card 
+          :background="require('~/assets/images/connect/btc.svg') " 
+          class="" 
+          link="http://www.foundation.uconn.edu/send-your-gift/"
+        />
+        <div class="">
+          <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
+          labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty
+          ways to become a part of what we do. </p>
+          <SLink href="/connect">
             Connect with us
           </SLink>
         </div>
       </div>
-    </section>
-  </Grid>
+    </Grid>
+  </div>
 </template>
 
 <script>
@@ -177,20 +170,18 @@ export default {
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
-.logo {
-  padding: 15%;
+
+.project {
+  margin-top: 5.96em;
 }
+
 .peopleContainer {
   display: flex;
-  margin-left: 20px;
-  position: relative;
+  // margin-left: 20px;
+  // position: relative;
 }
 
-section {
-  margin-bottom: 80px;
-}
-
-.link--pulled-right {
+.linkPulledRight {
   margin: 20px;
   margin-left: auto;
 }
