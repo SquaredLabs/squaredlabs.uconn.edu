@@ -1,6 +1,6 @@
 <template>
   <Grid>
-    <BackgroundText :lines="['peo','ple']"/>
+    <BackgroundText :lines="['peo','ple']" />
     <section
       id="jumbotron"
       style="margin-bottom: 80px; margin-top: 130px">
@@ -10,7 +10,7 @@
         style="height:440px" > -->
       <div
         vertical
-        style="margin-top: -485px" 
+        style="margin-top: -485px"
         class="jumbotronLayout">
         <div
           s="whole"
@@ -18,7 +18,8 @@
           <div
             style="background: white; width: 32vw"
             class="marginned--horizontally padded">
-            <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
+            <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
+            a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
           </div>
         </div>
         <div s="whole">
@@ -26,34 +27,33 @@
             <div style="padding: 40px">
               <img
                 class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+                src="https://picsum.photos/231/340">
             </div>
             <div style="padding: 40px">
               <img
                 class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+                src="https://picsum.photos/231/340">
             </div>
             <div style="padding: 40px">
               <img
                 class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+                src="https://picsum.photos/231/340">
             </div>
             <div style="padding: 40px">
               <img
                 class="img--fill-container"
-                src="https://picsum.photos/231/340" >
+                src="https://picsum.photos/231/340">
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section   
-      style="margin-bottom: 80px">
-      <div 
-        v-if="people" 
+    <section style="margin-bottom: 80px">
+      <div
+        v-if="people"
         id="alumni">
         <person-card
-          v-for="person in people"         
+          v-for="person in people"
           :key="person.id"
           :background="person.imageURL"
           class="layout__col--quarter marginned--horizontally marginned--vertically">
@@ -86,7 +86,10 @@ export default {
     for (let image of imageDataDirty) {
       images[image.page_location] = image.imageURL
     }
-    return { people: peopleData.people, images: images }
+    return {
+      people: peopleData.people,
+      images: images
+    }
   },
   components: {
     Grid,
@@ -128,6 +131,7 @@ export default {
   color: $dodger-blue;
   margin: 0;
 }
+
 .jumbotronLayout {
   position: relative;
   z-index: 5;
