@@ -1,13 +1,17 @@
 <template>
   <div>
-    <Grid id="landSection">
+    <Grid
+      id="landSection"
+      section="landing">
       <div class="col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1">
         <img
           class="logo"
           src="~/assets/images/squaredlabs.svg">
       </div>
     </Grid>
-    <Grid id="projectSection">
+    <Grid
+      id="projectSection"
+      section="projects">
       <div
         text="projects"
         class="col-sm-4 col-md-2 off-lg-1">
@@ -31,7 +35,7 @@
       <div v-if="!projects">Loading projects</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
         <SLink href="/projects">
-          See all our projects &rarr;
+          See all projects &rarr;
         </SLink>
       </div>
     </Grid>
@@ -59,7 +63,8 @@
     </section>-->
     <Grid
       v-if="people"
-      id="peopleSection">
+      id="peopleSection"
+      section="people">
       <div class="peopleText col-sm-4 col-md-2 off-lg-1">
         <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
         <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track
@@ -88,32 +93,29 @@
         </SLink>
       </div>
     </Grid>
-    <Grid id="connectSection">
-      <div>
-        <connect-card
-          :background="require('~/assets/images/connect/gitlab.svg')"
-          class=""
-          link="https://gitlab.com/squared-labs"
-        />
-        <connect-card
-          :background="require('~/assets/images/connect/mail.svg')"
-          :hidden-image="require('~/assets/images/connect/contact.png')"
-          class="" />
-        <connect-card
-          :background="require('~/assets/images/connect/btc.svg') "
-          class=""
-          link="http://www.foundation.uconn.edu/send-your-gift/"
-        />
-        <div class="">
-          <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
-          labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty
-          ways to become a part of what we do. </p>
-          <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
-            <SLink href="/connect">
-              Connect with us &rarr;
-            </SLink>
-          </div>
-        </div>
+    <Grid
+      id="connectSection"
+      section="connect">
+      <connect-card
+        :background="require('~/assets/images/connect/gitlab.svg')"
+        link="https://gitlab.com/squared-labs"
+      />
+      <connect-card
+        :background="require('~/assets/images/connect/mail.svg')"
+        :hidden-image="require('~/assets/images/connect/contact.png')" />
+      <connect-card
+        :background="require('~/assets/images/connect/btc.svg') "
+        link="http://www.foundation.uconn.edu/send-your-gift/"
+      />
+      <div class="connectText col-sm-2 col-md-4 off-6 col-2">
+        <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
+        labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty
+        ways to become a part of what we do. </p>
+      </div>
+      <div class="linkPulledRight col-sm-2">
+        <SLink href="/connect">
+          Connect with us &rarr;
+        </SLink>
       </div>
     </Grid>
   </div>
@@ -171,9 +173,47 @@ export default {
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 
+#projectSection,
+#peopleSection,
+#connectSection {
+  &:before {
+    content: attr(section);
+    font-family: SpaceMono;
+    color: white;
+    font-size: 19.5vw;
+    line-height: 1;
+    position: absolute;
+    width: 50vw;
+    text-align: right;
+    word-break: break-word;
+    bottom: 20px;
+    right: 0;
+  }
+  > * {
+    z-index: 1;
+  }
+}
+
+#connectSection:before {
+  left: 0;
+  text-align: left;
+}
+
 .linkPulledRight {
   justify-self: end;
   align-self: end;
+}
+
+.connectText {
+  grid-column-start: 1;
+  grid-row: 1 / 4;
+  margin-bottom: 2em;
+}
+
+#connectSection .linkPulledRight {
+  justify-self: start;
+  grid-row-start: 3;
+  grid-column-start: 1;
 }
 
 @media screen and (min-width: $tablet) {
@@ -185,6 +225,36 @@ export default {
   .person:nth-child(4) {
     grid-column-start: 3;
   }
+
+  .connectText {
+    grid-row: 2 / 3;
+    margin-bottom: 0;
+    p {
+      margin: 0;
+    }
+  }
+
+  .connectCard {
+    grid-column-start: unset;
+  }
+
+  #connectSection .linkPulledRight {
+    align-self: start;
+    grid-row-start: 2;
+    grid-column-start: 5;
+  }
+}
+
+@media (min-width: $tablet) {
+  #projectSection,
+  #peopleSection,
+  #connectSection {
+    &:before {
+      font-size: 16vw;
+      width: calc(100vw - 40px);
+      bottom: -20px;
+    }
+  }
 }
 
 @media screen and (min-width: $desktop) {
@@ -192,6 +262,13 @@ export default {
   #peopleSection .person {
     margin-top: 5.96em;
     grid-column-start: unset;
+  }
+  .connectText {
+    grid-row: 1 / 2;
+  }
+  #connectSection .linkPulledRight {
+    grid-row-start: 2;
+    grid-column-start: 7;
   }
 }
 </style>
