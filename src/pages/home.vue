@@ -1,13 +1,13 @@
 <template>
   <div>
-    <Grid>
+    <Grid id="landSection">
       <div class="col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1">
         <img 
           class="logo" 
           src="~/assets/images/squaredlabs.svg">
       </div>
     </Grid>
-    <Grid>
+    <Grid id="projectSection">
       <div 
         text="projects" 
         class="col-sm-4 col-md-2 off-lg-1">
@@ -25,15 +25,13 @@
         v-if="projects&&project.order<=3" 
         :key="project.id" 
         :project="project" 
-        class="col-lg-2 col-2">
+        class="col-lg-2 col-sm-2">
         <span v-html="project.large_summary" />
       </project-card>
       <div v-if="!projects">Loading projects</div>
-      <div>
-        <SLink 
-          class="linkPulledRight" 
-          href="/projects">
-          See all our projects
+      <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
+        <SLink href="/projects">
+          See all our projects &rarr;
         </SLink>
       </div>
     </Grid>
@@ -59,40 +57,38 @@
         </div>
       </layout>
     </section>-->
-    <Grid>
-      <div>
-        <SLink 
-          class="linkPulledRight" 
-          href="/people">
-          Meet the team
+    <Grid 
+      v-if="people" 
+      id="peopleSection">
+      <div class="peopleText col-sm-4 col-md-2 off-lg-1">
+        <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
+        <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track
+        record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If
+        that sounds like you,
+          <SLink href="/connect">
+            get in touch!
+          </SLink>
+        </p>
+      </div>
+      <person-card 
+        v-for="person in people" 
+        :key="person.id" 
+        :background="person.imageURL" 
+        :name="person.name" 
+        :role="person.title"
+        class="col-sm-2 col-lg-2">
+        <template slot="name">{{ person.name }}</template>
+        <template slot="role">{{ person.role }}</template>
+        <span v-html="person.description" />
+      </person-card>
+      <div v-if="!people">Loading people</div>
+      <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
+        <SLink href="/people">
+          Meet the full team &rarr;
         </SLink>
       </div>
-      <div v-if="people">
-        <div class="">
-          <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
-          <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track
-          record of building cool stuff in their spare time, web experience, and a passion for innovation and creation.
-          If that sounds like you,
-            <SLink href="/connect">
-              get in touch!
-            </SLink>
-          </p>
-        </div>
-        <person-card 
-          v-for="person in people" 
-          :key="person.id" 
-          :background="person.imageURL" 
-          :name="person.name" 
-          :role="person.title"
-          class="">
-          <template slot="name">{{ person.name }}</template>
-          <template slot="role">{{ person.role }}</template>
-          <span v-html="person.description" />
-        </person-card>
-        <div v-if="!people">Loading people</div>
-      </div>
     </Grid>
-    <Grid>
+    <Grid id="connectSection">
       <div>
         <connect-card 
           :background="require('~/assets/images/connect/gitlab.svg')" 
@@ -112,9 +108,11 @@
           <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
           labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty
           ways to become a part of what we do. </p>
-          <SLink href="/connect">
-            Connect with us
-          </SLink>
+          <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
+            <SLink href="/connect">
+              Connect with us &rarr;
+            </SLink>
+          </div>
         </div>
       </div>
     </Grid>
@@ -171,18 +169,27 @@ export default {
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 
-.project {
-  margin-top: 5.96em;
-}
-
-.peopleContainer {
-  display: flex;
-  // margin-left: 20px;
-  // position: relative;
-}
-
 .linkPulledRight {
-  margin: 20px;
-  margin-left: auto;
+  justify-self: end;
+  align-self: end;
+}
+
+@media screen and (min-width: $tablet) {
+  .project:not(:nth-child(4)),
+  .person:not(:nth-child(4)) {
+    margin-top: 5.96em;
+  }
+  .project:nth-child(4),
+  .person:nth-child(4) {
+    grid-column-start: 3;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  #projectSection .project,
+  #peopleSection .person {
+    margin-top: 5.96em;
+    grid-column-start: unset;
+  }
 }
 </style>
