@@ -1,15 +1,15 @@
 <template>
   <a
     :href="link"
-    class="link"
+    class="connectCard link col-sm-2 col-md-2"
     target="_blank">
     <div
-      :class="{ 'link__image-animated': hiddenImage, 'link__image': !hiddenImage}"
+      :class="{ 'linkImageAnimated': hiddenImage, 'linkImage': !hiddenImage}"
       :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
     <img
       v-if="hiddenImage"
       :src="hiddenImage"
-      class="link__hidden" >
+      class="linkHidden" >
 
   </a>
 </template>
@@ -27,32 +27,32 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
-.link {
+.connectCard {
   height: 100px;
   background-color: #ffffff;
   overflow: hidden;
 }
 
-.link__image-animated,
-.link__hidden {
+.linkImageAnimated,
+.linkHidden {
   transform: translateY(0);
   transition-duration: 0.2s;
 }
 
-.link__image,
-.link__image-animated {
+.linkImage,
+.linkImageAnimated {
   height: 100%;
 }
 
-.link__hidden {
+.linkHidden {
   max-width: 100%;
 }
 
-.link:hover .link__image-animated {
+.link:hover .linkImageAnimated {
   transform: translateY(-20px);
 }
 
-.link:hover .link__hidden {
+.link:hover .linkHidden {
   transform: translateY(-50px);
 }
 </style>

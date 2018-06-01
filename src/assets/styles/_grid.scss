@@ -4,8 +4,7 @@
     margin: 149px 20px;
     height: fit-content;
     grid-column-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-    // grid-auto-rows: 60px;
+    grid-template-columns: repeat(4, 1fr); // grid-auto-rows: 60px;
     grid-row-gap: 20px;
 }
 
@@ -48,13 +47,31 @@
 .off-sm-4 {
     grid-column-start: 5
 }
+// row offsets
+.row-off-sm-0 {
+    grid-row-start: 1
+}
+.row-off-sm-1 {
+    grid-row-start: 2
+}
+
+.row-off-sm-2 {
+    grid-row-start: 3
+}
+
+.row-off-sm-3 {
+    grid-row-start: 4
+}
+
+.row-off-csm-4 {
+    grid-row-start: 5
+}
 
 // ++++++++++++ tablet ++++++++++++
 // ++++++++++++++++++++++++++++++++
 @media screen and (min-width: $tablet) {
     .gridded {
-        grid-template-columns: repeat(6, 1fr);
-        // grid-auto-rows: 100px;
+        grid-template-columns: repeat(6, 1fr); // grid-auto-rows: 100px;
     }
     .col-md-1 {
         grid-column-end: span 1
@@ -95,6 +112,22 @@
     }
     .off-md-6 {
         grid-column-start: 7
+    }
+    /* row offsets */
+    .row-off-md-0 {
+        grid-row-start: 1
+    }
+    .row-off-md-1 {
+        grid-row-start: 2
+    }
+    .row-off-md-2 {
+        grid-row-start: 3
+    }
+    .row-off-md-3 {
+        grid-row-start: 4
+    }
+    .row-off-md-4 {
+        grid-row-start: 5
     }
 }
 
@@ -156,6 +189,22 @@
     .off-8 {
         grid-column-start: 9
     }
+    /* row offsets */
+    .row-off-0 {
+        grid-row-start: 1
+    }
+    .row-off-1 {
+        grid-row-start: 2
+    }
+    .row-off-2 {
+        grid-row-start: 3
+    }
+    .row-off-3 {
+        grid-row-start: 4
+    }
+    .row-off-4 {
+        grid-row-start: 5
+    }
 }
 
 // ++++++++++++ large desktop ++++++++++++
@@ -201,18 +250,6 @@
     .col-lg-12 {
         grid-column-end: span 12
     }
-    .row-off-lg-1 {
-        grid-column-start: 2
-    }
-    .row-off-lg-2 {
-        grid-column-start: 3
-    }
-    .row-off-lg-3 {
-        grid-column-start: 4
-    }
-    .row-off-lg-4 {
-        grid-column-start: 5
-    }
     /* offsets */
     .off-lg-0 {
         grid-column-start: 1
@@ -249,5 +286,21 @@
     }
     .off-lg-11 {
         grid-column-start: 12
+    }
+    /* row offsets */
+    .row-off-lg-0 {
+        grid-row-start: 1
+    }
+    .row-off-lg-1 {
+        grid-row-start: 2
+    }
+    .row-off-lg-2 {
+        grid-row-start: 3
+    }
+    .row-off-lg-3 {
+        grid-row-start: 4
+    }
+    .row-off-lg-4 {
+        grid-row-start: 5
     }
 }
