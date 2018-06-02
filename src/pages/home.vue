@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Grid 
-      id="landSection" 
+    <Grid
+      id="landSection"
       section="landing">
       <div class="col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1">
         <img
@@ -9,8 +9,8 @@
           src="~/assets/images/squaredlabs.svg">
       </div>
     </Grid>
-    <Grid 
-      id="projectSection" 
+    <Grid
+      id="projectSection"
       section="projects">
       <div
         text="projects"
@@ -81,7 +81,7 @@
         :background="person.imageURL"
         :name="person.name"
         :role="person.title"
-        class="col-sm-2 col-lg-2">
+        class="col-sm-2">
         <template slot="name">{{ person.name }}</template>
         <template slot="role">{{ person.role }}</template>
         <span v-html="person.description" />
@@ -93,8 +93,8 @@
         </SLink>
       </div>
     </Grid>
-    <Grid 
-      id="connectSection" 
+    <Grid
+      id="connectSection"
       section="connect">
       <connect-card
         :background="require('~/assets/images/connect/gitlab.svg')"
