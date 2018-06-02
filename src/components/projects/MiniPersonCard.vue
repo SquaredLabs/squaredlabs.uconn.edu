@@ -1,9 +1,9 @@
 <template>
-  <div style="position: relative;">
+  <div class="miniCard">
     <img
       :src="icon"
-      class="mini__icon" >
-    <div class="mini__card">
+      class="miniPortrait" >
+    <div class="miniBio">
       <strong><slot name="name" /></strong><br>
       <span><slot name="position" /></span>
     </div>
@@ -22,19 +22,23 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
-.mini__icon {
-  width: 80px;
-  height: 80px;
+.miniCard {
+  margin-bottom: 1.25em;
+  position: relative;
 }
 
-.mini__card {
+.miniPortrait {
+  width: 4.768em;
+  height: 4.768em;
+}
+
+.miniBio {
   background: white;
-  color: black;
-  padding: 10px;
+  color: $charcoal-grey;
   position: absolute;
-  top: 22px;
+  padding: 5px 10px;
   bottom: 10px;
-  left: 40px;
+  left: calc(4.768em -10px);
   white-space: nowrap;
 }
 </style>
