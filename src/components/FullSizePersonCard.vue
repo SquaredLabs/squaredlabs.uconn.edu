@@ -1,5 +1,5 @@
 <template>
-  <div class="person">
+  <div class="fullSizePersonCard">
     <div
       :style="`background: url('${background}') center/150% no-repeat`"
       class="personPhoto" />
@@ -26,7 +26,11 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
-.person {
+@media screen and (min-width: tablet) {
+
+}
+
+.fullSizePersonCard {
   transition: all 0.25s ease;
   position: relative;
   height: 14.552em;

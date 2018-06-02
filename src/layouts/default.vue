@@ -37,6 +37,14 @@ body {
   overflow-x: hidden;
 }
 
+*,
+*:hover,
+*:active,
+*:checked,
+*:enabled {
+  outline: none !important;
+}
+
 .noScroll {
   overflow: hidden;
 }

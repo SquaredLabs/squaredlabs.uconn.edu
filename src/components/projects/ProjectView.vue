@@ -56,7 +56,8 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 #selectedProjectModal {
-  top: 5.96em;
+  // top: 5.96em;
+  top: 0;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -97,7 +98,7 @@ export default {
 
 .return {
   justify-self: start;
-  margin-top: -1em;
+  margin: -1em 0 1em;
 }
 </style>
 
