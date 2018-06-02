@@ -1,75 +1,53 @@
 <template>
-  <Grid>
+  <div>
     <BackgroundText :lines="['peo','ple']" />
-    <section 
-      id="jumbotron" 
-      style="margin-bottom: 80px; margin-top: 130px">
-      <!-- <img
-        :src="images.top"
-        class="img--fill-container"
-        style="height:440px" > -->
-      <div 
-        vertical 
-        style="margin-top: -485px" 
-        class="jumbotronLayout">
-        <div 
-          s="whole" 
-          style="display: flex; justify-content: flex-end">
-          <div 
-            style="background: white; width: 32vw" 
-            class="marginned--horizontally padded">
-            <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
-            a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
-          </div>
+    <div id="peoplePage">
+      <Grid id="currentPeopleSection">
+        <!-- <img
+          :src="images.top"
+          class="img--fill-container"
+          style="height:440px" > -->
+        <div
+          class="whiteBox col-sm-4 col-md-2">
+          <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
+          a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
         </div>
-        <div s="whole">
-          <div>
-            <div style="padding: 40px">
-              <img 
-                class="img--fill-container" 
-                src="https://picsum.photos/231/340">
-            </div>
-            <div style="padding: 40px">
-              <img 
-                class="img--fill-container" 
-                src="https://picsum.photos/231/340">
-            </div>
-            <div style="padding: 40px">
-              <img 
-                class="img--fill-container" 
-                src="https://picsum.photos/231/340">
-            </div>
-            <div style="padding: 40px">
-              <img 
-                class="img--fill-container" 
-                src="https://picsum.photos/231/340">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section style="margin-bottom: 80px">
-      <div 
-        v-if="people" 
-        id="alumni">
-        <person-card 
-          v-for="person in people" 
-          :key="person.id" 
-          :background="person.imageURL" 
-          class="layout__col--quarter marginned--horizontally marginned--vertically">
+        <FullSizePersonCard
+          v-for="person in people"
+          v-if="people"
+          :key="person.id"
+          :background="person.imageURL"
+          :name="person.name"
+          :role="person.title"
+          class="col-sm-2">
+          <template slot="name">{{ person.name }}</template>
+          <template slot="role">{{ person.role }}</template>
+          <span v-html="person.description" />
+        </FullSizePersonCard>
+        <div v-if="!people">Loading current people...</div>
+      </Grid>
+      <Grid
+        v-if="people"
+        id="alumniSection">
+        <person-card
+          v-for="person in people"
+          :key="person.id"
+          :background="person.imageURL"
+          class="col-sm-2">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
           <span v-html="person.description" />
         </person-card>
-      </div>
-      <div v-if="!people">Loading people</div>
-    </section>
-  </Grid>
+      </Grid>
+      <div v-if="!people">Loading alumni...</div>
+    </div>
+  </div>
 </template>
 
 <script>
 import Grid from "../components/GridLayout.vue"
 import PersonCard from "../components/PersonCard.vue"
+import FullSizePersonCard from "../components/FullSizePersonCard.vue"
 import BackgroundText from "../components/BackgroundText.vue"
 import Directus from "../../directus"
 
@@ -93,6 +71,7 @@ export default {
   components: {
     Grid,
     PersonCard,
+    FullSizePersonCard,
     BackgroundText
   }
 }
@@ -100,47 +79,47 @@ export default {
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
-#alumni {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 4;
+
+#peoplePage {
+  margin-top: 9.313em;
 }
 
-.number {
-  height: 93px;
-  font-family: SpaceMono;
-  font-size: 143px;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  padding-top: 40px;
-  text-decoration: underline;
-  text-decoration-color: $rouge-40;
-}
-
-.design {
-  transform: rotate(-90deg);
-  font-family: SpaceMono;
-  font-size: 205px;
-  font-weight: normal;
-  line-height: normal;
-  text-align: right;
-  color: $dodger-blue;
-  margin: 0;
-}
-
-.jumbotronLayout {
-  position: relative;
-  z-index: 5;
-}
-
-.img--fill-container {
+.whiteBox {
+  background: white;
+  padding: 20px;
   width: 100%;
-  height: 100%;
+  margin-left: -20px;
+  p {
+    margin: 0;
+  }
 }
 
-.marginned--vertically--6x {
-  margin-bottom: 120px;
+@media screen and (min-width: $tablet) {
+  .whiteBox {
+    margin-left: 0;
+    height: fit-content;
+    width: auto;
+  }
+}
+</style>
+
+<style lang="scss">
+@import "~assets/styles/vars";
+
+div.fullSizePersonCard:nth-child(2) {
+  grid-column: 1 / 5;
+  margin-left: -20px;
+  padding: 20px;
+  width: 100%;
+  height: 50vh;
+  // box-sizing: border-box;
+}
+
+@media screen and (min-width: $tablet) {
+  div.fullSizePersonCard:nth-child(2) {
+    grid-column-start: unset;
+    grid-column-end: span 2;
+    margin-left: 0;
+  }
 }
 </style>

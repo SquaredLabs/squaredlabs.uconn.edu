@@ -18,15 +18,14 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 .backgroundText {
-  font-size: 7.541em;
+  font-size: 9.313em;
   font-family: SpaceMono;
   position: absolute;
   height: 0;
-  top: 80px;
+  top: -25px;
   left: 20px;
   color: white;
   line-height: 1;
-  z-index: 1;
 }
 .backgroundTextLine {
   margin: 0;

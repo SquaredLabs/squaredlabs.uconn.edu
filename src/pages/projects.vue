@@ -99,6 +99,16 @@ export default {
   z-index: 2;
 }
 
+.whiteBox {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  margin-left: -20px;
+  p {
+    margin: 0;
+  }
+}
+
 #detailSidebar {
   display: none;
   // margin-top: -3.052em;
@@ -112,19 +122,9 @@ export default {
   }
 }
 
-.whiteBox {
-  background: white;
-  padding: 20px;
-  width: 100%;
-  margin-left: -20px;
-  p {
-    margin: 0;
-  }
-}
-
 @media screen and (min-width: $tablet) {
   #projectSection {
-    margin-top: 22.737em;
+    margin-top: 18.19em;
   }
   .whiteBox {
     margin-left: 0;
@@ -137,7 +137,7 @@ export default {
     grid-row: 2 / span 2;
   }
   .project {
-    transform: translateY(5.96em);
+    transform: translateY(3.815em);
   }
 }
 
