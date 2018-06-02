@@ -81,7 +81,7 @@
         :background="person.imageURL"
         :name="person.name"
         :role="person.title"
-        class="col-sm-2 col-lg-2">
+        class="col-sm-2">
         <template slot="name">{{ person.name }}</template>
         <template slot="role">{{ person.role }}</template>
         <span v-html="person.description" />
