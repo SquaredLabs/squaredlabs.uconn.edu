@@ -37,6 +37,10 @@ body {
   overflow-x: hidden;
 }
 
+.noScroll {
+  overflow: hidden;
+}
+
 @media (max-width: 500px) {
   body {
     font-size: 0.8em;

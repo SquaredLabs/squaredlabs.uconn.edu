@@ -1,28 +1,32 @@
 <template>
-  <div class="container">
+  <div
+    id="selectedProjectModal"
+    class="col-sm-4 col-md-6 col-8 col-lg-12">
     <h1 class="title">{{ project.name }}</h1>
     <SLink
-      class="SLink"
+      class="SLink return"
       @click="unexpand">
       ← Return to all projects
     </SLink>
-    <div class="columns">
-      <div 
-        class="column desc" 
-        v-html="project.large_summary"/>
-      <div class="column people">
-        <mini-person-card
-          v-for="person in project.people"
-          :key="person.id"
-          :icon="person.thumbnail">
-          <template slot="name">{{ person.name }}</template>
-          <template slot="position">{{ person.role }}</template>
-        </mini-person-card>
-      </div>
-      <div class="column client">Client: {{ project.client }}</div>
-      <div class="column timespan">{{ project.timespan }}</div>
-      <div class="column service">{{ project.services }}</div>
-      <div class="column tech">{{ project.technologies }}</div>
+    <div
+      class="desc"
+      v-html="project.large_summary">
+      <slot />
+    </div>
+    <div class="activeDetailSidebar">
+      <mini-person-card
+        v-for="person in project.people"
+        :key="person.id"
+        :icon="person.thumbnail">
+        <template slot="name">{{ person.name }}</template>
+        <template slot="position">{{ person.role }}</template>
+      </mini-person-card>
+    </div>
+    <div class="projectInfo">
+      <p class="client">Client: {{ project.client }}</p>
+      <p class="timespan">{{ project.timespan }}</p>
+      <p class="service">{{ project.services }}</p>
+      <p class="tech">{{ project.technologies }}</p>
     </div>
   </div>
 </template>
@@ -42,6 +46,7 @@ export default {
   methods: {
     unexpand() {
       this.$store.commit("unSelectProject")
+      document.querySelector(".noScroll").classList.remove("noScroll")
     }
   }
 }
@@ -50,27 +55,78 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
-.container {
-  position: absolute;
+#selectedProjectModal {
+  top: 5.96em;
+  bottom: 0;
+  left: 0;
+  position: fixed;
   width: 100%;
-  background-color: $pale-orange;
-  z-index: 5;
   padding: 20px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  background-color: $dodger-blue;
   color: white;
 }
+
+.activeDetailSidebar {
+  grid-column: 1 / 2;
+  grid-row: 5 / 9;
+}
+
 .title {
-  font-size: 6em;
+  grid-column: 1 / 3;
+  font-size: 3.815em;
   margin: 0;
-  line-height: 1em;
+  line-height: 1;
+  font-weight: normal;
 }
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 200px;
-  width: 30%;
+
+.desc {
+  grid-column: 1 / 2;
+  grid-row: 3 / 5;
 }
-.column {
-  margin: 10px;
-  width: 280px;
+
+.projectInfo {
+  grid-row: 3 / 5;
+  grid-column: 2 / 3;
+}
+
+.return {
+  justify-self: start;
+  margin-top: -1em;
+}
+</style>
+
+<style lang="scss">
+@import "~assets/styles/vars";
+#selectedProjectModal {
+  .desc,
+  .projectInfo {
+    *:first-child {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .activeDetailSidebar {
+    div.miniCard {
+      position: unset;
+      margin-bottom: 0;
+      .miniPortrait {
+        display: none;
+      }
+      .miniBio {
+        background: none;
+        position: unset;
+        color: white;
+        padding-left: 0;
+      }
+    }
+  }
 }
 </style>

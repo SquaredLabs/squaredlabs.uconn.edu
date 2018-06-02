@@ -1,14 +1,14 @@
 <template>
-  <div 
-    :class="{blueTheme:theme=='blue'}" 
+  <div
+    :class="{blueTheme:theme=='blue'}"
     class="footbar">
-    <SLink 
-      class="link" 
+    <SLink
+      class="link"
       href="https://uconn.edu">
       ©2018 UConn
     </SLink>
-    <SLink 
-      class="link" 
+    <SLink
+      class="link"
       href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
@@ -60,7 +60,6 @@ export default {
   justify-content: center;
   justify-content: space-around;
   position: relative;
-  z-index: 2;
   font-family: SpaceMono;
   display: grid;
   align-items: end;
