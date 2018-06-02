@@ -1,63 +1,44 @@
 <template>
-  <Grid>
+  <div>
     <BackgroundText :lines="['proj','ects']" />
-    <section 
-      id="jumbotron" 
-      style="margin-bottom: 100px">
-
-      <div style="margin-top: -300px">
-        <div m="horizontal">
-          <div 
-            id="white-box" 
-            style="background: white; margin-top: -80px" 
-            class="padded">
-            <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually
-            we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
-          </div>
-          <div id="project-details">
-            <b>{{ hoverData.name }}</b>
-            <p>{{ hoverData.client }}</p>
-            <p>{{ hoverData.timespan }}</p>
-            <mini-person-card 
-              v-for="person in hoverData.people" 
-              :key="person.id" 
-              :icon="person.thumbnail">
-              <template slot="name">{{ person.name }}</template>
-              <template slot="position">{{ person.role }}</template>
-            </mini-person-card>
-          </div>
-        </div>
-        <div s="pacman">
-          <div 
-            v-for="x in 3" 
-            :key="x" 
-            style="padding-bottom: 20px">
-            <!--
-              This is setup so that there is a 3x3 grid, and project.order is the index of that grid. 
-              Any project with order not between 1 and 9 is not rendered.
-            -->
-
-            <project-card 
-              v-for="project in projects" 
-              v-if="projects&&project.order/3>x-1&&project.order/3<=x" 
-              :key="project.id" 
-              :project="project"
-              @hoverProject="hoverData = $event">
-              <span v-html="project.small_summary" />
-            </project-card>
-            <div v-if="!projects">Loading projects</div>
-          </div>
-        </div>
-        <transition 
-          name="slide" 
-          mode="out-in">
-          <ProjectView 
-            v-show="$store.state.selectedProject!==0" 
-            :project="selectedProject" />
-        </transition>
+    <Grid id="projectSection">
+      <div
+        class="whiteBox col-sm-4 col-md-2">
+        <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually
+        we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
       </div>
-    </section>
-  </Grid>
+      <div id="detailSidebar">
+        <b>{{ hoverData.name }}</b>
+        <p>{{ hoverData.client }}</p>
+        <p>{{ hoverData.timespan }}</p>
+        <mini-person-card
+          v-for="person in hoverData.people"
+          :key="person.id"
+          :icon="person.thumbnail">
+          <template slot="name">{{ person.name }}</template>
+          <template slot="position">{{ person.role }}</template>
+        </mini-person-card>
+      </div>
+
+      <project-card
+        v-for="project in projects"
+        v-if="projects"
+        :key="project.id"
+        :project="project"
+        class="col-sm-2"
+        @hoverProject="hoverData = $event">
+        <span v-html="project.small_summary" />
+      </project-card>
+      <div v-if="!projects">Loading projects</div>
+      <transition
+        name="slide"
+        mode="out-in">
+        <ProjectView
+          v-show="$store.state.selectedProject!==0"
+          :project="selectedProject" />
+      </transition>
+    </Grid>
+  </div>
 </template>
 
 <script>
@@ -113,46 +94,61 @@ export default {
 
 <style scoped lang="scss">
 @import "~assets/styles/vars";
-#jumbotron {
-  margin-top: 400px;
+
+.gridded {
+  z-index: 2;
 }
 
-#project-details {
-  margin-top: 20px;
+#detailSidebar {
+  display: none;
+  // margin-top: -3.052em;
+  position: sticky;
+  top: 1.563em;
+  b + p {
+    margin: 0.328em 0;
+  }
+  b + p + p {
+    margin: 0.41em 0 1.25em;
+  }
 }
 
-#white-box p {
-  margin: 0;
-  z-index: 4;
-  position: relative;
+.whiteBox {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  margin-left: -20px;
+  p {
+    margin: 0;
+  }
 }
 
-#project-details {
-  z-index: 4;
-  position: relative;
+@media screen and (min-width: $tablet) {
+  #projectSection {
+    margin-top: 22.737em;
+  }
+  .whiteBox {
+    margin-left: 0;
+    height: fit-content;
+    width: auto;
+  }
+  #detailSidebar {
+    display: initial;
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+  }
+  .project {
+    transform: translateY(5.96em);
+  }
 }
 
-.number {
-  height: 93px;
-  font-family: SpaceMono;
-  font-size: 143px;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  padding-top: 40px;
-  text-decoration: underline;
-  text-decoration-color: $rouge-40;
-}
-
-.design {
-  transform: rotate(-90deg);
-  font-family: SpaceMono;
-  font-size: 205px;
-  font-weight: normal;
-  line-height: normal;
-  text-align: right;
-  color: $dodger-blue;
-  margin: 0;
+@media screen and (min-width: $desktopLg) {
+  // #detailSidebar {
+  //   margin-top: 0;
+  // }
+  .whiteBox,
+  #detailSidebar {
+    grid-column-start: 2;
+  }
 }
 
 .img--fill-container {
