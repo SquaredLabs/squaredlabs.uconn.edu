@@ -1,7 +1,11 @@
+/* Currently, all of this is referenced in the getAsyncData() method of our pages
+ * Extremely basic API to fetch data from directus for the frontend components to easily work with 
+*/
 import fetch from "isomorphic-fetch"
 
 function loadPeople(url, endpoint) {
   console.log("Loading people")
+  // Depth 2 is specified in order to get thumbnail image URL
   return fetch(encodeURI(url + endpoint + "?depth=2"))
     .then(function(response) {
       if (response.status >= 400) {
@@ -109,7 +113,6 @@ function projectTrim(data, personId, url) {
     id: project.id,
     name: project.name,
     thumbnail: url + project.thumbnail.data.thumbnail_url
-    // role: getRole(project.people_assigned.junction.data, 'person_id', personId)
   }))
 }
 function peopleTrim(data, projectName, url) {
