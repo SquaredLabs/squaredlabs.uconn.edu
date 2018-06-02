@@ -47,6 +47,7 @@ export default {
   methods: {
     expand() {
       this.$store.commit("selectProject", this.project.id)
+      document.querySelector("html").classList.add("noScroll")
     }
   }
 }
