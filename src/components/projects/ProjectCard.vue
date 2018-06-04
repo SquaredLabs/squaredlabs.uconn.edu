@@ -46,11 +46,11 @@ export default {
   },
   methods: {
     expand() {
-      this.$store.commit("selectProject", this.project.id)
-      if (this.$route.path !== '/projects') {
-        this.$router.push('projects')
-      }
       document.querySelector("html").classList.add("noScroll")
+      this.$store.commit("selectProject", this.project.id)
+      if (this.$route.path !== "/projects") {
+        this.$router.push("projects")
+      }
     }
   }
 }
