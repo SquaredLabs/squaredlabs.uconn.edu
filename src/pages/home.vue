@@ -31,7 +31,7 @@
           :key="project.id"
           :project="project"
           class="layout__col--quarter marginned--horizontally">
-          <span v-html="project.large_summary"/>
+          <LinkParse :raw-html="project.large_summary"/>
         </project-card>
         <div v-if="!projects">Loading projects</div>
       </layout>
@@ -136,6 +136,7 @@ import WorkshopCard from "../components/WorkshopCard.vue"
 import PersonCard from "../components/PersonCard.vue"
 import ConnectCard from "../components/ConnectCard.vue"
 import SLink from "../components/Link.vue"
+import LinkParse from "../components/LinkParse.vue"
 import Directus from "../../directus"
 
 //  Recursive function to pick 3 different random people.
@@ -168,7 +169,8 @@ export default {
     WorkshopCard,
     ConnectCard,
     PersonCard,
-    SLink
+    SLink,
+    LinkParse
   },
   data: () => ({
     people: [],
