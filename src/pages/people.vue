@@ -19,7 +19,7 @@
           :background="person.imageURL"
           :name="person.name"
           :role="person.title"
-          class="col-sm-2">
+          class="col-sm-1 col-md-3">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.role }}</template>
           <span v-html="person.description" />
@@ -106,20 +106,34 @@ export default {
 <style lang="scss">
 @import "~assets/styles/vars";
 
-div.fullSizePersonCard:nth-child(2) {
-  grid-column: 1 / 5;
-  margin-left: -20px;
-  padding: 20px;
-  width: 100%;
-  height: 50vh;
-  // box-sizing: border-box;
+@media screen and (max-width: $tablet) {
+  div.fullSizePersonCard:nth-child(2) {
+    grid-column: 1 / 5;
+    margin-left: -20px;
+    width: calc(100% + 40px);
+    height: 50vh;
+    // box-sizing: border-box;
+  }
 }
 
 @media screen and (min-width: $tablet) {
   div.fullSizePersonCard:nth-child(2) {
-    grid-column-start: unset;
-    grid-column-end: span 2;
+    // grid-column-start: unset;
+    // grid-column-end: span 2;
     margin-left: 0;
+  }
+}
+div.fullSizePersonCard:nth-child(2) ~ .fullSizePersonCard {
+  height: auto;
+
+  .personPhoto {
+    width: 100%;
+    height: calc((100vw - 100px) / 4);
+  }
+  .personContent {
+    width: 0;
+    height: 0;
+    display: none;
   }
 }
 </style>
