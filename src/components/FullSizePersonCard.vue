@@ -27,48 +27,57 @@ export default {
 @import "~assets/styles/vars";
 
 @media screen and (min-width: tablet) {
-
 }
 
 .fullSizePersonCard {
   transition: all 0.25s ease;
-  position: relative;
+  // position: relative;
   height: 14.552em;
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
 
   &:hover .personContent {
-    height: 11.642em;
-    margin: -13.642em 0 0;
+    // height: 11.642em;
+    // margin: -14.642em 0 0;
+    // transition: all 0.25s ease, margin 0.25s ease .05s;
 
     .personAbout {
-      margin: 0 1.25em;
+      // margin: 0 1.25em;
+      // opacity: 1;
+      // transition: opacity .15s ease .15s;
     }
   }
 
   &:hover .personPhoto {
-    margin: 30px;
-    filter: brightness(60%);
+    // margin: 30px;
+    // filter: brightness(60%);
   }
+}
+
+@media screen and (max-width: $tablet) {
 }
 
 .personPhoto {
   height: 100%;
+  width: calc(50% - 10px);
   transition: all 0.25s ease;
+  display: inline-block;
 }
 
 .personContent {
-  height: 3.815em;
-  margin: -2.441em 1.25em 0;
+  display: inline-block;
+  height: 100%;
+  width: calc(50% + 10px);
+  padding: 0 10px;
+  box-sizing: border-box;
   background: white;
   text-align: center;
   transition: all 0.25s ease;
   overflow: hidden;
-  position: relative;
 }
 
 .personPreview {
   height: 2.441em;
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .personName {
@@ -84,8 +93,6 @@ export default {
 }
 
 .personAbout {
-  margin-bottom: 1.25em;
-  font-size: 0.8em;
-  transition: all 0.25s ease;
+  // font-size: 0.8em;
 }
 </style>
