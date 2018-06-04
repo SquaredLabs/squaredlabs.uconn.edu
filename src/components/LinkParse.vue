@@ -22,7 +22,7 @@ export default {
     SLink
   },
   props: {
-    rawHTML: { type: String, required: true }
+    rawhtml: { type: String, required: true }
   },
   computed: {
     parsedHTML: function() {
