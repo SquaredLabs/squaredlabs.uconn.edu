@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     parsedHTML: function() {
-      let html = this.rawHTML.replace("</p>", "").replace("<p>", "")
+      let html = this.rawhtml.replace("</p>", "").replace("<p>", "")
       let parsedHTML = []
       let split = html.split("</a>")
       if (split.length === 1)
