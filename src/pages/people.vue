@@ -60,7 +60,7 @@
           class="layout__col--quarter marginned--horizontally marginned--vertically">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
-          <span v-html="person.description"/>
+          <LinkParse :raw-html="person.description"/>
         </person-card>
       </OurLayout>
       <div v-if="!people">Loading people</div>
@@ -73,6 +73,7 @@ import OurLayout from "../components/Layout.vue"
 import LayoutCol from "../components/LayoutCol.vue"
 import PersonCard from "../components/PersonCard.vue"
 import BackgroundText from "../components/BackgroundText.vue"
+import LinkParse from "../components/LinkParse.vue"
 import Directus from "../../directus"
 
 export default {
@@ -93,7 +94,8 @@ export default {
     OurLayout,
     LayoutCol,
     PersonCard,
-    BackgroundText
+    BackgroundText,
+    LinkParse
   }
 }
 </script>
