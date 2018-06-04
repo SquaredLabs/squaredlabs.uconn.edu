@@ -60,7 +60,7 @@
           class="layout__col--quarter marginned--horizontally marginned--vertically">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
-          <LinkParse :raw-html="person.description"/>
+          <LinkParse :rawhtml="person.description"/>
         </person-card>
       </OurLayout>
       <div v-if="!people">Loading people</div>

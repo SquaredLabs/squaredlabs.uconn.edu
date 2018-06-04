@@ -31,7 +31,7 @@
           :key="project.id"
           :project="project"
           class="layout__col--quarter marginned--horizontally">
-          <LinkParse :raw-html="project.large_summary"/>
+          <LinkParse :rawhtml="project.large_summary"/>
         </project-card>
         <div v-if="!projects">Loading projects</div>
       </layout>
