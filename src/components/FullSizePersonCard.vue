@@ -32,6 +32,9 @@ export default {
     margin-left: -20px;
     width: calc(100% + 40px);
     height: 50vh;
+    .personPhoto {
+      width: calc(50% - 10px);
+    }
   }
   div.fullSizePersonCard:nth-child(2) ~ .fullSizePersonCard {
     height: calc((100vw - 120px) / 4);
@@ -90,12 +93,15 @@ export default {
     grid-column-start: 2;
 
     &:nth-child(2) {
-      margin-bottom: 40px;
+      width: 100%;
+      margin-bottom: 60px;
       .personPhoto {
-        width: calc(50% - 10px);
+        width: calc(50% + 30px);
+        margin-right: -20px;
       }
       .personContent {
-        margin-bottom: -40px;
+        margin-left: -20px;
+        margin-bottom: -1.953em;
       }
     }
     &:not(:nth-child(2)) {
@@ -111,20 +117,20 @@ export default {
         width: 100%;
       }
     }
-    &:nth-child(3) {
-      height: 22.737em;
-      grid-column: 1 / span 1;
-      grid-row-start: 2;
-      width: 200%;
-      margin-left: -100%;
-      margin-top: 20px;
-    }
+    &:nth-child(3),
     &:nth-child(4) {
       height: 22.737em;
-      grid-column: 6 / span 1;
-      grid-row-start: 2;
       width: 200%;
-      margin-top: 20px;
+      margin-top: 0.9765em;
+      grid-row-start: 2;
+    }
+    &:nth-child(3) {
+      grid-column: 1 / span 1;
+      margin-left: calc(-100% - 20px);
+    }
+    &:nth-child(4) {
+      grid-column: 6 / span 1;
+      margin-left: 20px;
     }
   }
 }
@@ -137,16 +143,51 @@ export default {
     &:not(:nth-child(2)) {
       height: calc((100vw - 300px) / 16);
     }
-    &:nth-child(3) {
-      height: 22.737em;
-      width: calc(100% + 40px);
-      grid-column: 1 / span 2;
-      margin-left: -40px;
-    }
+    &:nth-child(3),
     &:nth-child(4) {
       height: 22.737em;
       width: calc(100% + 40px);
+    }
+    &:nth-child(3) {
+      grid-column: 1 / span 2;
+      margin-left: -60px;
+    }
+    &:nth-child(4) {
       grid-column: 7 / span 2;
+    }
+  }
+}
+
+@media screen and (min-width: $desktopLg) {
+  div.fullSizePersonCard {
+    &:nth-child(2) {
+      grid-column-start: 5;
+    }
+    &:not(:nth-child(2)) {
+      height: calc((100vw - 300px) / 20);
+    }
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      height: 22.737em;
+      width: calc(100% + 40px);
+      grid-row-start: 2;
+      margin-top: 0.9765em;
+    }
+    &:nth-child(3) {
+      grid-column: 3 / span 2;
+    }
+    &:nth-child(4) {
+      grid-column: 9 / span 2;
+    }
+    &:nth-child(5) {
+      grid-column: 1 / span 2;
+      margin-left: -100px;
+    }
+    &:nth-child(6) {
+      grid-column: 11 / span 2;
+      margin-left: 60px;
     }
   }
 }
