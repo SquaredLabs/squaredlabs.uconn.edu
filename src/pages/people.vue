@@ -8,7 +8,7 @@
           class="img--fill-container"
           style="height:440px" > -->
         <div
-          class="whiteBox col-sm-4 col-md-2 off-md-4">
+          class="whiteBox col-sm-4 col-md-3 off-md-3 off-5 off-lg-8">
           <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
           a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
         </div>
@@ -99,6 +99,7 @@ export default {
     margin-left: 0;
     height: fit-content;
     width: auto;
+    margin-bottom: 9.313em;
   }
 }
 </style>
