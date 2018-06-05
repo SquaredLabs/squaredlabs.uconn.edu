@@ -1,7 +1,7 @@
 <template>
   <div class="person">
     <div
-      :style="`background: url('${background}') center/150% no-repeat`"
+      :style="`background-image: url('${background}')`"
       class="personPhoto" />
     <div class="personPreview">
       <p class="personName"><slot name="name" /></p>
@@ -50,6 +50,8 @@ export default {
 
 .personPhoto {
   height: 100%;
+  background-size: cover;
+  background-position: center;
   transition: margin 0.25s ease, filter 0.25s ease;
 }
 
@@ -75,8 +77,9 @@ export default {
 }
 
 .personRole {
-  line-height: 0.8em;
-  margin: 0;
+  margin-top: 0.328em;
+  line-height: 1em;
+  font-size: 1em;
 }
 
 .personAbout {
