@@ -11,24 +11,24 @@
       </SLink>
     </div>
     <router-link
-      class="brand col-lg-2 off-lg-0 col-1 off-1"
+      class="brand col-1 off-1 off-lg-1"
       to="/">
       <figure class="brand">
         <img src="~/assets/images/wordmark.png">
       </figure>
     </router-link>
     <SLink
-      class="link col-lg-2 col-1"
+      class="link col-1 off-lg-6"
       href="/home">
       home
     </SLink>
     <SLink
-      class="link col-lg-2 col-1"
+      class="link col-1"
       href="/projects">
       projects
     </SLink>
     <SLink
-      class="link col-lg-2 col-1"
+      class="link col-1"
       href="/people">
       people
     </SLink>
@@ -38,12 +38,12 @@
         workshops
       </SLink>!-->
     <SLink
-      class="link lab col-lg-2 col-1"
+      class="link lab col-1"
       href="/labs">
       the lab
     </SLink>
     <SLink
-      class="link col-lg-2 col-1"
+      class="link col-1"
       href="/connect">
       connect
     </SLink>
@@ -106,5 +106,8 @@ nav .link {
 
 .mobile {
   display: none;
+}
+
+@media screen and (min-width: $desktopLg) {
 }
 </style>

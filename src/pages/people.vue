@@ -22,9 +22,13 @@
           <span v-html="person.description" />
         </FullSizePersonCard>
       </Grid>
+      <BackgroundText
+        :lines="['alu','mni']"
+        class="alumni" />
       <Grid
         v-if="people"
         id="alumniSection">
+        <!-- <h2 class="col-sm-4 col-md-6 col-8 off-lg-1">Alumni</h2> -->
         <person-card
           v-for="person in people"
           :key="person.id"
@@ -90,12 +94,50 @@ export default {
   }
 }
 
+#alumniSection {
+  margin-top: 18.19em;
+}
+
 @media screen and (min-width: $tablet) {
   .whiteBox {
     margin-left: 0;
     height: fit-content;
     width: auto;
     margin-bottom: 9.313em;
+  }
+}
+
+@media screen and (min-width: $desktopLg) {
+  #alumniSection {
+    .person:nth-of-type(4n + 1) {
+      grid-column-start: 3;
+    }
+  }
+}
+</style>
+
+<style lang="scss">
+@import "~assets/styles/vars";
+
+div.backgroundText.alumni {
+  top: 154vh;
+}
+
+@media screen and (min-width: $tablet) {
+  div.backgroundText.alumni {
+    top: 1225px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  div.backgroundText.alumni {
+    top: 1150px;
+  }
+}
+
+@media screen and (min-width: $desktopLg) {
+  div.backgroundText.alumni {
+    top: 1100px;
   }
 }
 </style>

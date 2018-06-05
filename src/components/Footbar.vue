@@ -1,30 +1,30 @@
 <template>
   <div
     :class="{blueTheme:theme=='blue'}"
-    class="footbar">
+    class="footbar gridded">
     <SLink
-      class="link"
+      class="link col-sm-2 off-1 off-lg-3"
       href="https://uconn.edu">
       ©2018 UConn
     </SLink>
     <SLink
-      class="link"
+      class="link col-md-2 col-lg-2"
       href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
-    <SLink class="link">
-      UConn COR²E
+    <SLink class="link col-md-2 col-lg-2">
+      &#x263B;
     </SLink>
-    <SLink class="link">
+    <!-- <SLink class="link col-md-1 col-1 col-lg-2">
       Link 1
     </SLink>
-    <SLink class="link">
+    <SLink class="link col-md-1 col-1 col-lg-2">
       Link 2
-    </SLink>
-    <figure class="footbarBrand">
+    </SLink> -->
+    <!-- <figure class="footbarBrand col-1">
       <img src="~/assets/images/wordmark.png">
-    </figure>
-    <span class="footbarSignature">
+    </figure> -->
+    <span class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4">
       Designed & developed by
       <br>
       <span class="footbarSignature-mono">[squared labs]</span>
@@ -48,6 +48,7 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "~assets/styles/vars";
+@import "~assets/styles/grid";
 
 .blueTheme figure img {
   filter: brightness(0) invert(1);
@@ -55,42 +56,19 @@ export default {
 
 .footbar {
   font-family: SpaceMono;
-  padding: 20px;
+  padding: 9.313em 0 20px;
   text-align: center;
-  justify-content: center;
-  justify-content: space-around;
   position: relative;
-  font-family: SpaceMono;
-  display: grid;
-  align-items: end;
-  grid-column-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 20px;
-}
-
-@media screen and (min-width: $tablet) {
-  .footbar {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .footbar {
-    grid-template-columns: repeat(8, 1fr);
-  }
+  // margin-top: 0;
+  margin-bottom: 0;
 }
 
 .footbar .link {
-  grid-column: span 1;
   line-height: 1.75em;
   height: 1.25em;
-  &:nth-child(1) {
-    grid-column-start: 2;
-  }
 }
 
 .footbarBrand {
-  grid-column: span 1;
   margin: 0;
 }
 
@@ -103,11 +81,10 @@ export default {
   color: $dodger-blue;
   line-height: 1.5;
   grid-row: 2;
-  grid-column: 4 / 6;
 }
 
 .footbarSignature-mono {
-  font-size: 25px;
+  font-size: 1.563em;
   font-family: "SpaceMono";
 }
 </style>
