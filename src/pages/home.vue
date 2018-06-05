@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="homePage">
     <Grid
       id="landSection"
       section="landing">
@@ -107,7 +107,7 @@
         :background="require('~/assets/images/connect/btc.svg') "
         link="http://www.foundation.uconn.edu/send-your-gift/"
       />
-      <div class="connectText col-sm-2 col-md-4 off-6 col-2">
+      <div class="connectText col-sm-2 col-md-4 off-6 col-2 off-lg-8 col-lg-3">
         <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
         labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty
         ways to become a part of what we do. </p>
@@ -266,9 +266,43 @@ export default {
   .connectText {
     grid-row: 1 / 2;
   }
-  #connectSection .linkPulledRight {
+  .connectText {
+    grid-row: 1 / 3;
+  }
+  .connectCard {
     grid-row-start: 2;
+    margin-bottom: 20px;
+  }
+  #connectSection .linkPulledRight {
+    grid-row-start: 3;
     grid-column-start: 7;
+  }
+}
+
+@media screen and (min-width: $desktopLg) {
+  #connectSection,
+  #peopleSection,
+  #projectSection {
+    &:before {
+      right: 8vw;
+      left: unset;
+      text-align: right;
+    }
+  }
+  a.connectCard {
+    &:first-of-type {
+      grid-column: 3 / 5;
+    }
+    &:nth-of-type(2) {
+      grid-column: 5 / 7;
+    }
+    &:last-of-type {
+      grid-column: 7 / 9;
+    }
+  }
+  #connectSection .linkPulledRight {
+    grid-row-start: 3;
+    grid-column-start: 9;
   }
 }
 </style>
