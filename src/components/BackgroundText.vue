@@ -32,9 +32,16 @@ export default {
   padding: 0;
 }
 
-@media (min-width: $tablet) {
+@media screen and (min-width: $tablet) {
   .backgroundText {
     font-size: 18.19em;
+  }
+}
+
+@media screen and (min-width: $desktopLg) {
+  .backgroundText {
+    left: 5vw;
+    font-size: 22.737em;
   }
 }
 </style>
