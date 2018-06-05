@@ -3,18 +3,15 @@
     <BackgroundText :lines="['peo','ple']" />
     <div id="peoplePage">
       <Grid id="currentPeopleSection">
-        <!-- <img
-          :src="images.top"
-          class="img--fill-container"
-          style="height:440px" > -->
         <div
           class="whiteBox col-sm-4 col-md-3 off-md-3 off-5 off-lg-8">
           <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
           a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
         </div>
+        <div v-if="!people">Loading current people...</div>
         <FullSizePersonCard
           v-for="person in people"
-          v-if="people"
+          v-else
           :key="person.id"
           :background="person.imageURL"
           :name="person.name"
@@ -24,7 +21,6 @@
           <template slot="role">{{ person.role }}</template>
           <span v-html="person.description" />
         </FullSizePersonCard>
-        <div v-else>Loading current people...</div>
       </Grid>
       <Grid
         v-if="people"
