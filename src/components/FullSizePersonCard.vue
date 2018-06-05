@@ -1,5 +1,7 @@
 <template>
-  <div class="fullSizePersonCard">
+  <div 
+    :class="{selected:selected}" 
+    class="fullSizePersonCard">
     <div
       :style="`background-image: url('${background}')`"
       class="personPhoto" />
@@ -18,7 +20,13 @@
 <script>
 export default {
   props: {
-    background: { type: String, required: true }
+    background: { type: String, required: true },
+    id: { type: Number, required: true }
+  },
+  computed: {
+    selected() {
+      return this.$store.state.selectedPerson === this.id
+    }
   }
 }
 </script>
@@ -47,6 +55,10 @@ export default {
       display: none;
     }
   }
+}
+
+.selected {
+  border: solid black 3px;
 }
 
 .personPhoto {

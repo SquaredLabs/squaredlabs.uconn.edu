@@ -1,5 +1,7 @@
 <template>
-  <div class="person">
+  <div 
+    :class="{selected: selected}" 
+    class="person">
     <div
       :style="`background-image: url('${background}')`"
       class="personPhoto" />
@@ -16,7 +18,13 @@
 <script>
 export default {
   props: {
-    background: { type: String, required: true }
+    background: { type: String, required: true },
+    id: { type: Number, required: true }
+  },
+  computed: {
+    selected() {
+      return this.$store.state.selectedPerson === this.id
+    }
   }
 }
 </script>
