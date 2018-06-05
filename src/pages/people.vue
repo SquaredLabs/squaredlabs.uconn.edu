@@ -8,7 +8,7 @@
           class="img--fill-container"
           style="height:440px" > -->
         <div
-          class="whiteBox col-sm-4 col-md-2">
+          class="whiteBox col-sm-4 col-md-2 off-md-4">
           <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
           a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
         </div>
@@ -19,12 +19,12 @@
           :background="person.imageURL"
           :name="person.name"
           :role="person.title"
-          class="col-sm-1 col-md-3">
+          class="col-sm-1 col-md-4">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.role }}</template>
           <span v-html="person.description" />
         </FullSizePersonCard>
-        <div v-if="!people">Loading current people...</div>
+        <div v-else>Loading current people...</div>
       </Grid>
       <Grid
         v-if="people"
@@ -99,41 +99,6 @@ export default {
     margin-left: 0;
     height: fit-content;
     width: auto;
-  }
-}
-</style>
-
-<style lang="scss">
-@import "~assets/styles/vars";
-
-@media screen and (max-width: $tablet) {
-  div.fullSizePersonCard:nth-child(2) {
-    grid-column: 1 / 5;
-    margin-left: -20px;
-    width: calc(100% + 40px);
-    height: 50vh;
-    // box-sizing: border-box;
-  }
-}
-
-@media screen and (min-width: $tablet) {
-  div.fullSizePersonCard:nth-child(2) {
-    // grid-column-start: unset;
-    // grid-column-end: span 2;
-    margin-left: 0;
-  }
-}
-div.fullSizePersonCard:nth-child(2) ~ .fullSizePersonCard {
-  height: auto;
-
-  .personPhoto {
-    width: 100%;
-    height: calc((100vw - 100px) / 4);
-  }
-  .personContent {
-    width: 0;
-    height: 0;
-    display: none;
   }
 }
 </style>
