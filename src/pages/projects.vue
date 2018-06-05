@@ -19,17 +19,16 @@
           <template slot="position">{{ person.role }}</template>
         </mini-person-card>
       </div>
-
+      <div v-if="!projects">Loading projects</div>
       <project-card
         v-for="project in projects"
-        v-if="projects"
+        v-else
         :key="project.id"
         :project="project"
         class="col-sm-2"
         @hoverProject="hoverData = $event">
         <span v-html="project.small_summary" />
       </project-card>
-      <div v-if="!projects">Loading projects</div>
       <transition
         name="slide"
         mode="out-in">
