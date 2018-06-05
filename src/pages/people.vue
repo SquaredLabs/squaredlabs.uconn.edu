@@ -120,7 +120,9 @@ export default {
 @import "~assets/styles/vars";
 
 div.backgroundText.alumni {
-  top: 154vh;
+  // top: 154vh;
+  top: calc(775px + 90vw);
+  line-height: 0.8;
 }
 
 @media screen and (min-width: $tablet) {
