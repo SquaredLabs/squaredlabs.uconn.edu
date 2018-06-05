@@ -3,11 +3,13 @@
     <BackgroundText :lines="['proj','ects']" />
     <Grid id="projectSection">
       <div
-        class="whiteBox col-sm-4 col-md-2">
+        class="whiteBox off-sm-0 col-sm-4 col-md-2 off-lg-1">
         <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually
         we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
       </div>
-      <div id="detailSidebar">
+      <div
+        id="detailSidebar"
+        class="off-md-0 off-lg-1 col-md-2">
         <b>{{ hoverData.name }}</b>
         <p>{{ hoverData.client }}</p>
         <p>{{ hoverData.timespan }}</p>
@@ -96,6 +98,7 @@ export default {
 
 .gridded {
   z-index: 2;
+  grid-template-rows: min-content;
 }
 
 .whiteBox {
@@ -110,7 +113,6 @@ export default {
 
 #detailSidebar {
   display: none;
-  // margin-top: -3.052em;
   position: sticky;
   top: 1.563em;
   b + p {
@@ -121,32 +123,38 @@ export default {
   }
 }
 
+.project {
+  grid-row: span 4;
+}
+
 @media screen and (min-width: $tablet) {
   #projectSection {
     margin-top: 18.19em;
   }
   .whiteBox {
+    grid-row: 1 / span 4;
     margin-left: 0;
     height: fit-content;
     width: auto;
   }
   #detailSidebar {
     display: initial;
-    grid-column: 1 / span 2;
-    grid-row: 2 / span 2;
+    grid-row: 5 / span 7;
   }
-  .project {
-    transform: translateY(3.815em);
+  div.project:nth-of-type(-n + 4) {
+    grid-row: 2 / span 4;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  div.project:nth-of-type(-n + 5) {
+    grid-row: 2 / span 4;
   }
 }
 
 @media screen and (min-width: $desktopLg) {
-  // #detailSidebar {
-  //   margin-top: 0;
-  // }
-  .whiteBox,
-  #detailSidebar {
-    grid-column-start: 2;
+  div.project:nth-of-type(-n + 6) {
+    grid-row: 2 / span 4;
   }
 }
 
