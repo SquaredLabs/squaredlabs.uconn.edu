@@ -23,7 +23,6 @@ export default {
 
 html {
   margin: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -34,7 +33,6 @@ body {
   line-height: 1.25;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 *,
@@ -66,20 +64,6 @@ body {
 
 .blueAppTheme {
   background-color: $dodger-blue;
-}
-
-.padded {
-  padding: 20px;
-}
-
-.marginned--horizontally {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.marginned--vertically {
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 </style>
 
