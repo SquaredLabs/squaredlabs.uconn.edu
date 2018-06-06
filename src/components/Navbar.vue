@@ -62,18 +62,10 @@ export default {
     }
   },
   mounted() {
-    // if (window.matchMedia("(max-width: 700px)").matches) {
-    //   ;(function() {
-    //     console.log("mq fired")
-    //     var nav = document.querySelector("nav.gridded.navbar")
-    //     nav.style.height = document.documentElement.scrollHeight
-    //   })()
-    // }
-
     var el = document.querySelectorAll("nav > .link")
     el.forEach(function(el) {
       el.addEventListener("click", function() {
-        console.log("menu reset")
+        document.querySelector(".menu.link").textContent = "[menu ↑]"
         document.querySelector("nav").classList.remove("expanded")
         document.querySelector("nav ~ *.dimmed").classList.remove("dimmed")
       })
@@ -81,9 +73,15 @@ export default {
   },
   methods: {
     toggleMenu() {
-      console.log("menu toggled")
-      document.querySelector("nav").classList.toggle("expanded")
-      document.querySelector("nav ~ *").classList.toggle("dimmed")
+      if (document.querySelector("nav.expanded")) {
+        document.querySelector(".menu.link").textContent = "[menu ↑]"
+        document.querySelector("nav").classList.remove("expanded")
+        document.querySelector("nav ~ *").classList.remove("dimmed")
+      } else {
+        document.querySelector(".menu.link").textContent = "[menu ↓]"
+        document.querySelector("nav").classList.add("expanded")
+        document.querySelector("nav ~ *").classList.add("dimmed")
+      }
     }
   }
 }
