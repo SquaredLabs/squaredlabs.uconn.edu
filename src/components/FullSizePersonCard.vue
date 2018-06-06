@@ -65,6 +65,10 @@ export default {
   background-position: center;
 }
 
+.selected {
+  border: solid black 3px;
+}
+
 .personContent {
   display: inline-block;
   height: 100%;
