@@ -57,10 +57,6 @@ export default {
   }
 }
 
-.selected {
-  border: solid black 3px;
-}
-
 .personPhoto {
   height: 100%;
   transition: all 0.25s ease;

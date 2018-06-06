@@ -39,7 +39,7 @@ export default {
     }
   },
   data: function() {
-    let twoLineTitle = this.project.name.length < 10 ? "" : "twoLineTitle"
+    let twoLineTitle = this.project.name.length < 19 ? "" : "twoLineTitle"
     return {
       twoLineTitle: twoLineTitle
     }
@@ -59,18 +59,18 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
-$inner-box: calc(100% - 20px);
-
 .project {
   box-sizing: border-box;
   padding: 10px;
   display: flex;
   align-items: flex-end;
-  // min-height: 14.552em;
-  min-height: calc(50vw - 50px);
+  height: calc(50vw - 50px);
+
+  &:hover {
+    background-size: 175%;
+  }
 
   &:hover .projectContent {
-    // height: calc(14.552em - 20px);
     height: calc(50vw - 70px);
   }
 
@@ -90,7 +90,6 @@ $inner-box: calc(100% - 20px);
   padding: 10px;
   height: 3.052em;
   display: flex;
-  // width: auto;
   min-width: 100%;
   justify-content: space-between;
   flex-flow: column nowrap;
@@ -103,12 +102,12 @@ $inner-box: calc(100% - 20px);
 .projectTitle,
 .projectDescription {
   transition: 0.3s ease;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 .projectTitle {
   font-size: 1em;
-  line-height: 1.25;
+  line-height: 1.563;
   color: #0c120c;
 }
 
@@ -121,32 +120,33 @@ $inner-box: calc(100% - 20px);
 @media screen and (min-width: 500px) {
   .projectTitle {
     font-size: 1.563em;
+    line-height: 1.25em;
   }
 }
 
 @media screen and (min-width: $tablet) {
   .project {
-    min-height: calc(33vw - 40px);
+    height: calc(((100vw - 140px) / 3) + 20px);
     &:hover .projectContent {
-      height: calc(33vw - 60px);
+      height: calc((100vw - 140px) / 3);
     }
   }
 }
 
 @media screen and (min-width: $desktop) {
   .project {
-    min-height: calc(25vw - 20px);
+    height: calc(((100vw - 180px) / 4) + 20px);
     &:hover .projectContent {
-      height: calc(25vw - 40px);
+      height: calc((100vw - 180px) / 4);
     }
   }
 }
 
 @media screen and (min-width: $desktopLg) {
   .project {
-    min-height: calc(17vw - 40px);
+    height: calc(((100vw - 260px) / 6) + 20px);
     &:hover .projectContent {
-      height: calc(17vw - 60px);
+      height: calc((100vw - 260px) / 6);
     }
   }
 }
