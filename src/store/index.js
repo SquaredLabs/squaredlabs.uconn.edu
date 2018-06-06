@@ -4,7 +4,8 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       theme: "white",
-      selectedProject: 0
+      selectedProject: 0,
+      selectedPerson: 0
     },
     mutations: {
       setBlue(state) {
@@ -18,6 +19,12 @@ const createStore = () => {
       },
       unSelectProject(state) {
         state.selectedProject = 0
+      },
+      selectPerson(state, personToSelect) {
+        state.selectedPerson = personToSelect
+      },
+      unSelectPerson(state) {
+        state.selectedPerson = 0
       }
     }
   })

@@ -79,12 +79,13 @@
         v-for="person in people"
         :key="person.id"
         :background="person.imageURL"
+        :id="person.id"
         :name="person.name"
         :role="person.title"
         class="col-sm-2">
         <template slot="name">{{ person.name }}</template>
         <template slot="role">{{ person.role }}</template>
-        <span v-html="person.description" />
+        <LinkParse rawhtml="person.description" />
       </person-card>
       <div v-if="!people">Loading people</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
