@@ -3,16 +3,16 @@
     :class="{blueTheme:theme=='blue'}"
     class="footbar gridded">
     <SLink
-      class="link col-sm-2 off-1 off-lg-3"
+      class="link col-sm-2 off-1 off-lg-3 row-off-md-0"
       href="https://uconn.edu">
       ©2018 UConn
     </SLink>
     <SLink
-      class="link col-md-2 col-lg-2"
+      class="link col-sm-2 col-lg-2 row-off-sm-1 row-off-md-0 off-lg-5"
       href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
-    <SLink class="link col-md-2 col-lg-2">
+    <SLink class="link col-sm-2 col-lg-2 row-off-sm-1 row-off-md-0 off-lg-7">
       &#x263B;
     </SLink>
     <!-- <SLink class="link col-md-1 col-1 col-lg-2">
@@ -24,7 +24,7 @@
     <!-- <figure class="footbarBrand col-1">
       <img src="~/assets/images/wordmark.png">
     </figure> -->
-    <span class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4">
+    <span class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1">
       Designed & developed by
       <br>
       <span class="footbarSignature-mono">[squared labs]</span>
@@ -59,7 +59,6 @@ export default {
   padding: 9.313em 0 20px;
   text-align: center;
   position: relative;
-  // margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -80,7 +79,6 @@ export default {
   font-family: "Moderat";
   color: $dodger-blue;
   line-height: 1.5;
-  grid-row: 2;
 }
 
 .footbarSignature-mono {
