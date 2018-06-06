@@ -39,7 +39,7 @@
           class="col-sm-2">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
-          <span v-html="person.description" />
+          <LinkParse :rawhtml="person.description"/>
         </person-card>
       </Grid>
       <div v-if="!people">Loading alumni...</div>
@@ -52,6 +52,7 @@ import Grid from "../components/GridLayout.vue"
 import PersonCard from "../components/PersonCard.vue"
 import FullSizePersonCard from "../components/FullSizePersonCard.vue"
 import BackgroundText from "../components/BackgroundText.vue"
+import LinkParse from "../components/LinkParse.vue"
 import Directus from "../../directus"
 
 export default {
@@ -74,6 +75,7 @@ export default {
   components: {
     Grid,
     PersonCard,
+    LinkParse,
     FullSizePersonCard,
     BackgroundText
   },
@@ -144,6 +146,10 @@ div.backgroundText.alumni {
     top: 1150px;
   }
 }
+</style>
+
+<style lang="scss">
+@import "~assets/styles/vars";
 
 @media screen and (min-width: $desktopLg) {
   div.backgroundText.alumni {
