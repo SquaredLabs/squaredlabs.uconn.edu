@@ -62,13 +62,25 @@ export default {
     }
   },
   mounted() {
-    var el = document.querySelectorAll("nav > .link")
-    el.forEach(function(el) {
-      el.addEventListener("click", function() {
+    var navLinks = document.querySelectorAll("nav > .link")
+    navLinks.forEach(function(navLinks) {
+      navLinks.addEventListener("click", function() {
         document.querySelector(".menu.link").textContent = "[menu ↑]"
         document.querySelector("nav").classList.remove("expanded")
         document.querySelector("nav ~ *.dimmed").classList.remove("dimmed")
       })
+    })
+    window.addEventListener("scroll", function() {
+      var docHeight = document.body.clientHeight
+      var winHeight = window.innerHeight
+      var scrollPos = window.scrollY
+      var spaceLeft = docHeight - winHeight - scrollPos
+      if (spaceLeft <= 94) {
+        var navElements = document.querySelectorAll("nav > *")
+        for (var i = 0; i < navElements.length; i++) {
+          navElements[i].style.bottom = 144 - spaceLeft + "px"
+        }
+      }
     })
   },
   methods: {
@@ -100,7 +112,7 @@ export default {
   div.mobile {
     width: calc((100vw - 100px) / 2 + 20px);
     right: 20px;
-    bottom: 40px;
+    bottom: 50px;
     position: fixed;
   }
   nav > .link {
