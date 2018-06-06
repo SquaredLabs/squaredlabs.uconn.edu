@@ -36,7 +36,8 @@
           :key="person.id"
           :background="person.imageURL"
           :id="person.id"
-          class="col-sm-2">
+          class="col-sm-2"
+          @mouseover.native="selectPerson(person.id)">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
           <LinkParse :rawhtml="person.description"/>
