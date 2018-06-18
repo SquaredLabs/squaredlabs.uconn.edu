@@ -71,6 +71,9 @@ export default {
       })
     })
     window.addEventListener("scroll", function() {
+      var footbar = document.querySelector(".footbar")
+      var footHeight =
+        parseInt(window.getComputedStyle(footbar).height, 10) + 3.5
       var docHeight = document.body.clientHeight
       var winHeight = window.innerHeight
       var scrollPos = window.scrollY
@@ -78,7 +81,7 @@ export default {
       if (spaceLeft <= 94) {
         var navElements = document.querySelectorAll("nav > *")
         for (var i = 0; i < navElements.length; i++) {
-          navElements[i].style.bottom = 144 - spaceLeft + "px"
+          navElements[i].style.bottom = footHeight - spaceLeft + "px"
         }
       }
     })
@@ -174,10 +177,10 @@ export default {
   }
 }
 
-@media screen and (max-width: $tablet) and (max-height: 600px) {
+@media screen and (max-width: $tablet) and (min-height: 600px) {
   nav > .link,
   div.mobile {
-    width: calc((100vw - 100px) / 2 + 38px);
+    width: calc((100vw - 100px) / 2 + 12px);
   }
 }
 
