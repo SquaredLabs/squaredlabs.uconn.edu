@@ -174,6 +174,13 @@ export default {
   }
 }
 
+@media screen and (max-width: $tablet) and (max-height: 600px) {
+  nav > .link,
+  div.mobile {
+    width: calc((100vw - 100px) / 2 + 38px);
+  }
+}
+
 .blueTheme .brand img {
   filter: brightness(0) invert(1);
 }
