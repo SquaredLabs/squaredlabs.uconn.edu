@@ -14,9 +14,11 @@
           v-else
           :key="person.id"
           :background="person.imageURL"
+          :id="person.id"
           :name="person.name"
           :role="person.title"
-          class="col-sm-1 col-md-4">
+          class="col-sm-1 col-md-4"
+          @mouseover.native="selectPerson(person.id)">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.role }}</template>
           <span v-html="person.description" />
@@ -33,7 +35,9 @@
           v-for="person in people"
           :key="person.id"
           :background="person.imageURL"
-          class="col-sm-2">
+          :id="person.id"
+          class="col-sm-2"
+          @mouseover.native="selectPerson(person.id)">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.title }}</template>
           <LinkParse :rawhtml="person.description"/>
@@ -75,6 +79,11 @@ export default {
     LinkParse,
     FullSizePersonCard,
     BackgroundText
+  },
+  methods: {
+    selectPerson(id) {
+      this.$store.commit("selectPerson", id)
+    }
   }
 }
 </script>
@@ -138,6 +147,10 @@ div.backgroundText.alumni {
     top: 1150px;
   }
 }
+</style>
+
+<style lang="scss">
+@import "~assets/styles/vars";
 
 @media screen and (min-width: $desktopLg) {
   div.backgroundText.alumni {
