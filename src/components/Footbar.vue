@@ -25,8 +25,8 @@
       <img src="~/assets/images/wordmark.png">
     </figure> -->
     <span 
-    :class="{blueTheme:theme=='blue'}"
-    class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1">
+      :class="{blueTheme:theme=='blue'}"
+      class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1">
       Designed & developed by
       <br>
       <span class="footbarSignature-mono">[squared labs]</span>
@@ -51,8 +51,6 @@ export default {
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 @import "~assets/styles/grid";
-
-
 
 .footbar {
   font-family: SpaceMono;
