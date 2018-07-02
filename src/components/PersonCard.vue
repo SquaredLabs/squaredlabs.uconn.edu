@@ -34,6 +34,7 @@ export default {
 
 .person {
   position: relative;
+  z-index: 4;
   height: 14.552em;
   padding-bottom: 40px;
   overflow: hidden;
