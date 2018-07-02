@@ -192,7 +192,7 @@ export default {
   padding: 20px 0;
   margin-top: 0;
   position: relative;
-  z-index: 3;
+  z-index: 4;
   text-align: center;
   font-family: SpaceMono;
   align-items: end;
