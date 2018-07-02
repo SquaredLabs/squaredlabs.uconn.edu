@@ -37,13 +37,6 @@
         Here are some of the companies and organizations that our alumni have gone on to work with:
       </p>
     </div>
-
-    <SLink
-      lighter-background
-      class="back"
-      @click="back">
-      Return to selection
-    </SLink>
   </div>
 </template>
 

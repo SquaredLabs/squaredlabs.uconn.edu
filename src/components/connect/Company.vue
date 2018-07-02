@@ -25,12 +25,6 @@
         </div>
       </div>
     </div>
-
-    <SLink
-      lighter-background
-      @click="back">
-      Return to selection
-    </SLink>
   </div>
 </template>
 
