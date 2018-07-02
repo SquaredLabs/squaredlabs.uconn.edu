@@ -17,12 +17,12 @@
         exceptions have been made). If you’ve read through this website and think you’d be a good fit,
         you can apply for a <SLink
           lighter-background
-          >
+        >
           web development
         </SLink>
         or <SLink
           lighter-background
-          >
+        >
           design
         </SLink>position.
       </p><p>
