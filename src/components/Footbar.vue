@@ -24,7 +24,9 @@
     <!-- <figure class="footbarBrand col-1">
       <img src="~/assets/images/wordmark.png">
     </figure> -->
-    <span class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1">
+    <span 
+    :class="{blueTheme:theme=='blue'}"
+    class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1">
       Designed & developed by
       <br>
       <span class="footbarSignature-mono">[squared labs]</span>
@@ -50,9 +52,7 @@ export default {
 @import "~assets/styles/vars";
 @import "~assets/styles/grid";
 
-.blueTheme figure img {
-  filter: brightness(0) invert(1);
-}
+
 
 .footbar {
   font-family: SpaceMono;
@@ -84,5 +84,8 @@ export default {
 .footbarSignature-mono {
   font-size: 1.563em;
   font-family: "SpaceMono";
+}
+.blueTheme {
+  color: white;
 }
 </style>
