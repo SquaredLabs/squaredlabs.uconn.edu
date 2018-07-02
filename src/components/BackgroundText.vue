@@ -26,10 +26,13 @@ export default {
   left: 20px;
   color: white;
   line-height: 1;
+  z-index: 3;
 }
 .backgroundTextLine {
   margin: 0;
   padding: 0;
+  z-index: 3;
+  position: relative;
 }
 
 @media screen and (min-width: $tablet) {

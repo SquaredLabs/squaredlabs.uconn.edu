@@ -57,6 +57,11 @@ export default {
   }
 }
 
+.fullSizePersonCard {
+  position: relative;
+  z-index: 4;
+}
+
 .personPhoto {
   height: 100%;
   transition: all 0.25s ease;
