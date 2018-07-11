@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <div id="titleTextContainer">
+  <Grid>
+    <div
+      id="titleTextContainer"
+      class="col-sm-3 col-md-5 col-7 col-lg-9">
       <div id="titleText">
         <TitleLine title-positioning="design">
           <template slot="title">
@@ -77,9 +79,13 @@
         </TitleLine>
       </div>
     </div>
-    <div id="plusIcons">
-      <p class="plus">+</p>
-      <p class="plus">+</p>
+    <div
+      id="plusIcons"
+      class="col-sm-1">
+      <div class="plus">
+        +<br>
+        +
+      </div>
     </div>
     <div id="aims">
       <div id="leftContent">
@@ -137,34 +143,23 @@
           </div>
         </div>
       </div>
-
     </div>
-    <div
-      id="philosphy"
-      class="about">
-      <h1 class="aboutTitle">our philosphy</h1>
-      <div>
-        <p>
-          Students are the lifeblood of any University.
-          When they graduate, many will go on to transform the world
-          — literally. Yet, academia, with its long-standing obsession
-          with status, title, and seniority, too often makes students
-          feel unready or incapable of making a difference until they
-          have a diploma in their hand
-          (maybe it’s their way of justifying their existence in
-          the face of people like Steve Jobs, Bill Gates,
-          Mark Zuckerberg, etc. ;)
-        </p>
-        <p>
-          Anyway, we believe that’s bogus.
-        </p>
-        <p>
-          At UConn we have some of the brightest,
-          most motivated, and hard-working students in the country.
-          At squared labs we believe that students need to be
-          supported to unleash their creativity
-          (and paid well to do it).
-        </p>
+    <div class="aboutText col-sm-4 col-md-5">
+      <div
+        id="philosphy"
+        class="about">
+        <h1 class="aboutTitle">our philosphy</h1>
+        <div>
+          <p>
+            Students are the lifeblood of any University. When they graduate, many will go on to transform the world&mdash;literally. Yet, academia, with its long-standing obsession with status, title, and seniority, too often makes students feel unready or incapable of making a difference until they have a diploma in their hand (maybe it’s their way of justifying their existence in the face of people like Steve Jobs, Bill Gates, Mark Zuckerberg, etc. ;)
+          </p>
+          <p>
+            Anyway, we believe that’s bogus.
+          </p>
+          <p>
+            At UConn we have some of the brightest, most motivated, and hard-working students in the country. At squared labs we believe that students need to be supported to unleash their creativity (and paid well to do it).
+          </p>
+        </div>
       </div>
     </div>
     <div

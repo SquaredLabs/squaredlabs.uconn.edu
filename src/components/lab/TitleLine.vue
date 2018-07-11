@@ -70,8 +70,8 @@ export default {
   top: -5em;
 }
 .developContent {
-  right: 0;
-  top: -35em;
+  left: 50%;
+  margin-top: -35%;
 }
 .createContent {
   top: -50em;
