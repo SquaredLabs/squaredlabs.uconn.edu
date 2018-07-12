@@ -26,25 +26,26 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
-.titleTextContainer {
-  margin: 0.5em 5% 0 5%;
-}
-.titleTextContainer:hover .hoverContent {
-  opacity: 1;
-}
-.titleTextContainer:hover .title {
-  opacity: 1;
-}
+
 .title {
   color: white;
-  font-size: 14em;
+  font-size: 16vw;
   line-height: 1em;
   font-family: "SpaceMono";
   cursor: default;
-  transition: all ease 0.3s;
-  opacity: 0.7;
   position: relative;
   z-index: 4;
+}
+.titleTextContainer:not(:last-child) .title:after {
+  content: "+";
+  font-size: 1em;
+  position: absolute;
+  right: 10%;
+  top: 50%;
+}
+.title:hover {
+  text-decoration: underline;
+  text-decoration-color: #e9a0a2;
 }
 .hoverContent {
   transition: all ease 0.3s;
@@ -57,33 +58,36 @@ export default {
   pointer-events: none;
   z-index: 5;
 }
-
+.titleTextContainer:hover .hoverContent {
+  opacity: 1;
+}
 .hoverContentI {
   position: absolute;
   width: 33%;
+  right: -5vw;
+  top: -10%;
   background-color: white;
   color: black;
   padding: 1em;
 }
-.designContent {
-  left: 0;
-  top: -5em;
+.hoverContentI p:first-child {
+  margin-top: 0;
 }
-.developContent {
-  left: 50%;
-  margin-top: -35%;
+.hoverContentI p:last-child {
+  margin-bottom: 0;
 }
-.createContent {
-  top: -50em;
-  right: 50%;
-  transform: translateX(50%);
-}
+// .designContent {
+//   top: -10vh;
+// }
+// .developContent {
+//   top: 10vh;
+// }
+// .createContent {
+//   top: 20vh;
+// }
 @media (min-width: $tablet) and (max-width: $desktop) {
   .hoverContentI {
     width: 50%;
-  }
-  .title {
-    font-size: 10em;
   }
   .developContent {
     right: 0;
@@ -96,14 +100,8 @@ export default {
   }
 }
 @media (min-width: 0px) and (max-width: $tablet) {
-  .titleTextContainer {
-    margin: 2em 5% 0 5%;
-  }
   .hoverContentI {
     display: none;
-  }
-  .title {
-    font-size: 5rem;
   }
 }
 </style>
