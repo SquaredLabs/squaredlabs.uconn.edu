@@ -374,9 +374,7 @@ export default {
     top: 1.5em;
   }
   .about {
-    // width: calc(100% - 4em);
     color: white;
-    // padding: 0 2em 0 2em;
   }
   // .aim {
   //   margin: 10px;
@@ -393,16 +391,6 @@ export default {
   // #aims #rightContent {
   //   flex: 0 0 100%;
   // }
-  #plusIcons {
-    font-size: 5em;
-    top: 6.5em;
-    right: 10%;
-  }
-  .about {
-    // width: calc(100% - 4em);
-    color: white;
-    // padding: 0 2em 0 2em;
-  }
   // .aim {
   //   transform: translateX(20%);
   // }
