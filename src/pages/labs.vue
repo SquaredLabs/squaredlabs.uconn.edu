@@ -231,7 +231,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </Grid>
 </template>
 
 <script>
