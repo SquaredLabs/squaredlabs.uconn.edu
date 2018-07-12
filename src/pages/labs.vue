@@ -80,44 +80,6 @@
       </div>
     </div>
 
-    <!-- <div
-      id="aims"
-      class="col-sm-4 col-md-5">
-        <div class="aimL">
-        <div class="aimI5">
-          To leave UConn better than we found it.
-        </div>
-      </div>
-      <div id="rightContent">
-        <h1 id="title">
-          our aims
-        </h1>
-        <div id="aimBoxes">
-          <div class="aim">
-            <div class="aimI aimI1">
-              To give students real-world software development experience.
-            </div>
-          </div>
-          <div class="aim">
-            <div class="aimI aimI2">
-              To provide an unparalleled work and learning environment.
-            </div>
-          </div>
-          <div class="aim">
-            <div class="aimI aimI3">
-              To support different and creative ways of thinking.
-            </div>
-          </div>
-
-          <div class="aim">
-            <div class="aimI aimI4">
-              To build awesome websites.
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div
       id="aboutSummary"
       class="aboutModule col-sm-4 col-md-5">
@@ -238,91 +200,12 @@ export default {
 @import "~assets/styles/vars";
 @import "~assets/styles/grid";
 
-// #aims {
-//   display: flex;
-//   justify-content: space-between;
-//   flex-wrap: wrap;
-// }
-// #aims #leftContent {
-//   flex: 0 0 40%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-end;
-// }
 .weAre,
 .aboutTitle {
   font-family: "SpaceMono";
   font-variant: small-caps;
   font-weight: bold;
 }
-// #aims #rightContent {
-//   flex: 0 0 60%;
-//   display: flex;
-//   flex-direction: column;
-// }
-// #rightContent #title {
-//   font-size: 3em;
-//   text-align: center;
-//   color: white;
-//   font-family: "SpaceMono";
-//   margin-top: 0;
-//   font-weight: 500;
-//   line-height: 1em;
-// }
-// #aimboxes {
-//   flex-basis: 100%;
-//   position: relative;
-//   width: 100%;
-// }
-// #rightContent #aimBoxes {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-around;
-// }
-// #aimBoxes .aim {
-//   position: relative;
-//   flex: 0 0 15em;
-//   height: 15em;
-// }
-// .aim .aimI {
-//   background-color: white;
-//   position: absolute;
-//   width: 80%;
-//   height: 80%;
-// }
-// .aim .aimI1 {
-//   top: 0;
-// }
-// .aim .aimI2 {
-//   bottom: 0;
-// }
-// .aim .aimI3 {
-//   top: 0;
-//   right: 0;
-// }
-// .aim .aimI4 {
-//   bottom: 0;
-//   right: 0;
-// }
-// .aimL {
-//   flex: 0 0 15em;
-//   width: 15em;
-//   right: 0;
-// }
-// .aimI5 {
-//   background-color: white;
-//   /*position: relative;*/
-//   width: 80%;
-//   height: 80%;
-//   text-align: center;
-//   box-sizing: border-box;
-//   padding: 20px;
-// }
-// .aimI {
-//   text-align: center;
-//   box-sizing: border-box;
-//   padding: 20px;
-// }
 #aboutSummary {
   font-size: 1.953em;
   margin: 4.768em 0;
@@ -361,14 +244,6 @@ export default {
 }
 // Tablet
 @media (min-width: $tablet) and (max-width: $desktop) {
-  // #aims #leftContent {
-  //   flex: 0 0 100%;
-  // }
-  // #aims #rightContent {
-  //   flex: 0 0 100%;
-  //   top: -260px;
-  //   position: relative;
-  // }
   #plusIcons {
     font-size: 10em;
     top: 1.5em;
@@ -376,32 +251,5 @@ export default {
   .about {
     color: white;
   }
-  // .aim {
-  //   margin: 10px;
-  // }
-  // .aimL {
-  //   top: 300px;
-  //   position: relative;
-  // }
-}
-@media (min-width: 0px) and (max-width: $tablet) {
-  // #aims #leftContent {
-  //   flex: 0 0 100%;
-  // }
-  // #aims #rightContent {
-  //   flex: 0 0 100%;
-  // }
-  // .aim {
-  //   transform: translateX(20%);
-  // }
-  // .aimI {
-  //   top: 0;
-  //   left: 0;
-  //   width: 90%;
-  //   height: 90%;
-  // }
-  // .aimL {
-  //   position: relative;
-  // }
 }
 </style>
