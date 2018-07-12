@@ -2,8 +2,7 @@
   <component
     :is="dynamicComponent"
     v-bind="dynamicProps"
-    :class="{ white: shouldApplyWhite,
-              arrow: isArrowButton }"
+    :class="{ white: shouldApplyWhite }"
     class="button"
     @click="$emit('click')">
     <slot />
@@ -15,7 +14,6 @@ export default {
   props: {
     href: { type: String, default: null },
     lighterBackground: { type: Boolean, default: null }
-    // arrowButton: { type: Boolean, default: null }
   },
   computed: {
     shouldApplyWhite() {
@@ -32,11 +30,6 @@ export default {
       // surprising sometimes.
       return this.href && this.href.startsWith("http")
     },
-    // isArrowButton() {
-    //   return this.arrowButton === null
-    //     ? this.classList.contains("arrow") === "arrow"
-    //     : this.arrowButton
-    // },
     dynamicComponent() {
       if (this.external) {
         // nuxt-link (which right now is just a proxy for router-link) is only
@@ -69,7 +62,6 @@ export default {
   display: inline-block;
   box-sizing: border-box;
   font-size: inherit;
-  // line-height: inherit;
   height: 1em;
   vertical-align: text-top;
   color: #0c120c;
