@@ -65,7 +65,6 @@ export default {
   position: absolute;
   width: 33%;
   right: -5vw;
-  top: -10%;
   background-color: white;
   color: black;
   padding: 1em;
@@ -76,15 +75,15 @@ export default {
 .hoverContentI p:last-child {
   margin-bottom: 0;
 }
-// .designContent {
-//   top: -10vh;
-// }
-// .developContent {
-//   top: 10vh;
-// }
-// .createContent {
-//   top: 20vh;
-// }
+.designContent {
+  top: -15vh;
+}
+.developContent {
+  top: 0;
+}
+.createContent {
+  top: 15vh;
+}
 @media (min-width: $tablet) and (max-width: $desktop) {
   .hoverContentI {
     width: 50%;
