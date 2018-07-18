@@ -241,6 +241,9 @@ export default {
   section.gridded.noMarginTop {
     margin-top: -10vh;
   }
+  .aboutModule {
+    grid-column-start: 1;
+  }
 }
 // Tablet
 @media (min-width: $tablet) and (max-width: $desktop) {
