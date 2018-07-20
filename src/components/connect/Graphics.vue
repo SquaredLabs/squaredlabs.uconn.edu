@@ -242,7 +242,6 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  height: 400px;
   overflow-x: visible;
   transition: all 0.3s ease;
 }

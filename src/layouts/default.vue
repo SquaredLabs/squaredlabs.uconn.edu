@@ -58,10 +58,6 @@ body {
   background-color: $pale-grey;
 }
 
-.app > *:nth-child(2) {
-  z-index: 1;
-}
-
 .blueAppTheme {
   background-color: $dodger-blue;
 }

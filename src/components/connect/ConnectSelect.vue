@@ -1,5 +1,5 @@
 <template>
-  <div id="container-connect">
+  <div id="containerConnect">
     <transition-group
       id="selector"
       name="animateSelect"
@@ -93,48 +93,46 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
-#container-connect {
+#containerConnect {
   margin: 0;
-  margin-top: 4em;
-  margin-bottom: 4em;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
-  z-index: 2;
 }
+
 #selector {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   z-index: 11;
-  width: 85%;
+  width: 100%;
   transition: all 0.3s;
 }
 .select {
-  width: 24%;
+  width: calc(50% - 0.4em);
+  min-width: 6.25em;
   background-color: white;
-  height: 100px;
+  height: 3.815em;
   text-align: center;
-  font-size: 25px;
+  font-size: 1.563em;
   font-family: "Moderat";
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 12;
-  margin-top: 10px;
+  margin: 0.8em 0 0 0;
 }
+
 .select:hover {
   cursor: pointer;
   background-color: rgb(230, 230, 230);
 }
 .selectTitle {
-  position: relative;
-  top: 50%;
   margin: 0;
-  transform: translateY(-50%);
+  position: relative;
+  top: 1.25em;
 }
 .select:hover .expandedTitle {
   font-size: 0;
-  /*transform:scale(0);*/
 }
 
 .selectBack {
@@ -142,16 +140,14 @@ export default {
   font-size: 0.6em;
   opacity: 0.3;
   position: relative;
-  top: 30px;
-  padding-left: 4px;
-  line-height: 1.75em;
+  top: 1.25em;
 }
 .select:hover .selectBack {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1em;
   font-size: 1em;
   opacity: 1;
-  transform: translateY(-35px);
+  top: 0.41em;
 }
 /*Class toggled by vue when back is hovered*/
 .expandedTitle {
@@ -180,19 +176,23 @@ export default {
   opacity: 0;
 }
 .slideUp-leave-to {
-  /*transform: translateY(-100%);*/
+  transform-origin: top;
   transform: scaleY(0);
 }
-@media screen and (max-width: 1150px) {
-  /*Tablet View*/
-  #selector {
-    max-width: 510px;
-    width: 100%;
-  }
+
+.slideUp-leave-active * {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media screen and (min-width: $desktop) {
   .select {
-    width: 35%;
-    max-width: 200px;
-    min-width: 130px;
+    width: calc(25% - 0.8em);
   }
+}
+
+#container {
+  // margin-left: -0.8em;
+  width: calc(100% + 2.5em);
 }
 </style>

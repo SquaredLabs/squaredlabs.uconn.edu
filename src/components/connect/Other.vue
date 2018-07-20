@@ -12,11 +12,11 @@
       <p class="level-reward">You can buy a team member lunch
       (if they don’t mind just having a bowl of soup).</p>
       <p class="level">At the $10 level:</p>
-      <p class="level-reward">You can buy a couple of team members a half pizza
-      (video of them fighting over it can be provided).</p>
+      <p class="level-reward">You can buy a couple of team members half a pizza
+      (footage of them fighting over it can be provided).</p>
       <p class="level">At the $25 level:</p>
       <p class="level-reward">You can sponsor a lunch meeting
-      (we will draw straws for which 2 team members will get to eat).</p>
+      (we will draw straws for which 2 team members will get to eat [appetizers]).</p>
       <p class="level">At the $50 level:</p>
       <p class="level-reward">You can sponsor a UConn cookie platter for one of our workshops.</p>
       <p class="level">At the $100 level:</p>
