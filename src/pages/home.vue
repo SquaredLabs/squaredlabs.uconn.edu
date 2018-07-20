@@ -133,16 +133,11 @@ import LinkParse from "../components/LinkParse.vue"
 import Directus from "../../directus"
 
 //  Recursive function to pick 3 different random people.
-//  If anyone has a better idea, feel free to change this.
-const selectPeople = (people, numberToSelect, selectedIndices = []) => {
-  if (selectedIndices.length === numberToSelect) {
-    return selectedIndices.map(index => people[index])
-  }
-  let randInt = Math.floor(Math.random() * people.length)
-  if (selectedIndices.includes(randInt))
-    return selectPeople(people, numberToSelect, selectedIndices)
-  selectedIndices.push(randInt)
-  return selectPeople(people, numberToSelect, selectedIndices)
+const selectPeople = (people, numberToSelect) => {
+  if (numberToSelect === 0) return []
+  const randIndex = Math.floor(Math.random() * people.length)
+  const selected = people.splice(randIndex, 1)[0]
+  return [selected, ...selectPeople(people, numberToSelect - 1)]
 }
 
 export default {
