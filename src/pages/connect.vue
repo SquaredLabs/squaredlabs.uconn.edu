@@ -1,26 +1,31 @@
 <template>
-  <section>
+  <div>
     <BackgroundText :lines="['con','nect']"/>
-    <div class="container-header">
-
+    <Grid id="connectPageContent">
       <p
-        id="header-1"
-        class="header">Like what we do?</p>
-      <Graphics/>
+        id="mainHeader"
+        class="header col-sm-4 col-md-6 col-7 off-1">
+        Like what we do?
+      </p>
+      <Graphics class="col-sm-4 col-md-6 col-7 off-1 col-lg-10"/>
       <p
-        id="header-2"
-        class="header">So do we.</p>
+        id="secondaryHeader"
+        class="header col-sm-4 col-md-6 off-1">
+        So do we.
+      </p>
       <div
         id="subHeader"
-        class="header">
-        <p>We’ve got a good thing going here, and we’d like to keep it
-        going. Here’s how you can help.</p>
-        <p> If you’re a…</p>
+        class="col-sm-4 off-1">
+        <p>
+          We’ve got a good thing going here, and we’d like to keep it going. Here’s how you can help.
+        </p>
+        <p>
+          If you’re a…
+        </p>
       </div>
-    </div>
-
-    <ConnectSelect/>
-  </section>
+      <ConnectSelect class="col-sm-4 col-md-6 col-8 col-lg-10"/>
+    </Grid>
+  </div>
 </template>
 
 <script>
@@ -28,86 +33,51 @@ import ConnectSelect from "../components/connect/ConnectSelect.vue"
 import Link from "../components/Link.vue"
 import Graphics from "../components/connect/Graphics.vue"
 import BackgroundText from "../components/BackgroundText.vue"
+import Grid from "../components/GridLayout.vue"
 
 export default {
   components: {
     ConnectSelect,
     Link,
     Graphics,
-    BackgroundText
+    BackgroundText,
+    Grid
   }
 }
 </script>
-<style lang="scss">
-@import "~assets/styles/vars";
-html,
-body {
-  background-color: $pale-grey;
-}
-</style>
 
-<!--Graphics Style!-->
 <style scoped lang="scss">
 @import "~assets/styles/vars";
-/*Header*/
 
-.container-header {
-  z-index: 11;
-  position: relative;
-  margin-left: 1.25em;
-  margin-right: 1.25em;
+#connectPageContent {
+  margin-top: -9.313em;
 }
+
 .header {
-  font-family: "SpaceMono";
+  font-family: "Space Mono";
+  font-size: 4.768em;
+  margin: 0;
 }
-#header-1 {
-  font-size: 5em;
-  text-align: left;
-  line-height: 1em;
-  color: #6aa1f4;
+
+p:first-child {
+  margin-top: 0;
+}
+
+#mainHeader {
+  margin-top: 0.64em;
   color: $dodger-blue;
 }
-</style>
 
-/*Remainder of page*/
-<style scoped lang="scss">
-@import "~assets/styles/vars";
-#header-2 {
-  font-size: 4em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
 #subHeader {
-  font-size: 20px;
-  font-family: "Moderat";
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 1.25em;
 }
-#subHeader p {
+
+@media screen and (min-width: $tablet) {
 }
-#back {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  background-color: $dodger-blue;
+
+@media screen and (min-width: $desktop) {
 }
-@media only screen and (max-width: $desktop) {
-  .container-header {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-}
-@media only screen and (max-width: 750px) {
-  #header-1 {
-    font-size: 35px;
-  }
-  #header-2 {
-    font-size: 25px;
-  }
-  #subHeader {
-    font-size: 20px;
-  }
+
+@media screen and (min-width: $desktopLg) {
 }
 </style>

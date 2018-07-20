@@ -97,7 +97,6 @@ export default {
 @import "~assets/styles/vars";
 
 .gridded {
-  z-index: 4;
   grid-template-rows: min-content;
 }
 
