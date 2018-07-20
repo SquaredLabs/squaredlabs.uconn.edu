@@ -138,7 +138,7 @@ const selectPeople = (people, numberToSelect, selectedIndices = []) => {
   if (selectedIndices.length === numberToSelect) {
     return selectedIndices.map(index => people[index])
   }
-  let randInt = Math.round(Math.random() * people.length)
+  let randInt = Math.floor(Math.random() * people.length)
   if (selectedIndices.includes(randInt))
     return selectPeople(people, numberToSelect, selectedIndices)
   selectedIndices.push(randInt)
