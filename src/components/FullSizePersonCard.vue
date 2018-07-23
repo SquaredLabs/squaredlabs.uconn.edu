@@ -1,6 +1,10 @@
 <template>
-  <div 
-    :class="{selected:selected}" 
+  <div
+    :class="[
+      {selected:selected},
+      {previousAdjacent:previous},
+      {nextAdjacent:next}
+    ]"
     class="fullSizePersonCard">
     <div
       :style="`background-image: url('${background}')`"
@@ -26,63 +30,71 @@ export default {
   computed: {
     selected() {
       return this.$store.state.selectedPerson === this.id
+    },
+    previous() {
+      return this.$store.state.selectedPersons > this.id
+    },
+    next() {
+      return this.$store.state.selectedPersons < this.id
     }
   }
+  // beforeUpdate() {
+  //   var lastPerson = document.getElementById("peopleCarousel").lastChild
+  //   lastPerson.classList.add("previousAdjacent")
+  //   var peopleEls = document.querySelectorAll(".fullSizePersonCard")
+  //   var selectedPersonId = document.querySelector(".selected").id
+  //   peopleEls.forEach(function(el) {
+  //     var thisEl = el
+  //     var i = (function() {
+  //       var i = 0
+  //       while ((el = el.previousSibling) != null) i++
+  //       return i
+  //     })()
+  //     // console.log("my i= " + i + "selectedId = " + selectedPersonId)
+  //     if (i === selectedPersonId) {
+  //       return false
+  //     } else if (i > selectedPersonId) {
+  //       // console.log(thisEl + " my i is less than selectedId")
+  //       thisEl.classList.add("previousAdjacent")
+  //       thisEl.classList.remove("nextAdjacent")
+  //     } else {
+  //       // console.log(thisEl + " my i is greater than selectedId")
+  //       thisEl.classList.add("nextAdjacent")
+  //       thisEl.classList.remove("previousAdjacent")
+  //     }
+  //   })
+  // }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
-@media screen and (max-width: $tablet) {
-  div.fullSizePersonCard:nth-child(2) {
-    grid-column: 1 / 5;
-    margin-left: -20px;
-    width: calc(100% + 40px);
-    height: 50vh;
-    .personPhoto {
-      width: calc(50% - 10px);
-    }
-  }
-  div.fullSizePersonCard:nth-child(2) ~ .fullSizePersonCard {
-    height: calc((100vw - 120px) / 4);
-    .personPhoto {
-      width: 100%;
-    }
-    .personContent {
-      width: 0;
-      height: 0;
-      display: none;
-    }
-  }
-}
-
 .fullSizePersonCard {
   position: relative;
-  z-index: 4;
 }
 
 .personPhoto {
   height: 100%;
-  transition: all 0.25s ease;
+  // z-index: 2;
   display: inline-block;
   background-size: cover;
   background-position: center;
 }
 
-.selected {
-  border: solid black 3px;
-}
-
 .personContent {
   display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  // z-index: 1;
   height: 100%;
   width: calc(50% + 10px);
   padding: 0 10px;
   box-sizing: border-box;
   background: white;
   text-align: center;
-  transition: all 0.25s ease;
+  opacity: 1;
   overflow: hidden;
 }
 
@@ -92,7 +104,7 @@ export default {
 }
 
 .personName {
-  font-family: Moderat;
+  font-family: "Moderat";
   font-size: 1.25em;
   font-weight: bold;
   color: $dodger-blue;
@@ -103,109 +115,136 @@ export default {
   font-size: 1em;
 }
 
+div.fullSizePersonCard.selected {
+  grid-column: 1 / 5;
+  width: calc(100% + 2.5em);
+  .personPhoto {
+    width: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  div.fullSizePersonCard.selected {
+    height: 40vh;
+    order: 1;
+    margin-left: -1.25em;
+    .personContent {
+      right: 0;
+      left: unset;
+      // z-index: unset;
+    }
+  }
+  div.fullSizePersonCard:not(.selected) {
+    display: none;
+  }
+}
+
 @media screen and (min-width: $tablet) {
   div.fullSizePersonCard {
-    transition: all 0.25s ease;
     height: 22.737em;
-    grid-column-start: 2;
 
-    &:nth-child(2) {
+    &.selected {
       width: 100%;
-      margin-bottom: 60px;
+      grid-column: 2 / 6;
+
       .personPhoto {
         width: calc(50% + 30px);
-        margin-right: -20px;
+        margin-right: -1.25em;
       }
       .personContent {
-        margin-left: -20px;
+        margin-left: -1.25em;
         margin-bottom: -1.953em;
       }
     }
-    &:not(:nth-child(2)) {
-      grid-column: span 1;
-      width: calc(50% - 10px);
-      height: calc((100vw - 300px) / 12);
+    .personContent {
+      position: relative;
+      top: unset;
+      left: unset;
+    }
+
+    &:not(.selected) {
+      position: absolute;
+      top: 1.25em;
+      width: calc((100vw - 1.25em) / 6);
+
       .personContent {
-        display: none;
-        width: 0;
-        height: 0;
+        opacity: 0;
+        top: calc(-100% + 1.25em);
+        width: 100%;
       }
       .personPhoto {
         width: 100%;
+        height: calc(100% - 1.25em);
       }
-    }
-    &:nth-child(3),
-    &:nth-child(4) {
-      height: 22.737em;
-      width: 200%;
-      margin-top: 0.9765em;
-      grid-row-start: 2;
-    }
-    &:nth-child(3) {
-      grid-column: 1 / span 1;
-      margin-left: calc(-100% - 20px);
-    }
-    &:nth-child(4) {
-      grid-column: 6 / span 1;
-      margin-left: 20px;
+
+      &.previousAdjacent {
+        left: 0;
+        &:nth-of-type(-n + 3) {
+          left: -100%;
+        }
+      }
+      &.nextAdjacent {
+        right: 0;
+        &:nth-of-type(n + 3) {
+          right: calc(-100% - 1.25em);
+        }
+      }
     }
   }
 }
 
 @media screen and (min-width: $desktop) {
   div.fullSizePersonCard {
-    &:nth-child(2) {
-      grid-column-start: 3;
+    &.selected {
+      grid-column: 3 / span 4;
     }
-    &:not(:nth-child(2)) {
-      height: calc((100vw - 300px) / 16);
-    }
-    &:nth-child(3),
-    &:nth-child(4) {
-      height: 22.737em;
-      width: calc(100% + 40px);
-    }
-    &:nth-child(3) {
-      grid-column: 1 / span 2;
-      margin-left: -60px;
-    }
-    &:nth-child(4) {
-      grid-column: 7 / span 2;
-    }
+    // &.previousAdjacent {
+    // }
+    // &:nth-child(3),
+    // &:nth-child(4) {
+    //   height: 22.737em;
+    //   width: calc(100% + 2.5em);
+    // }
+    // &:nth-child(3) {
+    //   grid-column: 1 / span 2;
+    //   margin-left: -60px;
+    // }
+    // &:nth-child(4) {
+    //   grid-column: 7 / span 2;
+    // }
   }
 }
 
 @media screen and (min-width: $desktopLg) {
   div.fullSizePersonCard {
-    &:nth-child(2) {
+    &.selected {
       grid-column-start: 5;
     }
-    &:not(:nth-child(2)) {
-      height: calc((100vw - 300px) / 20);
+    &:not(.selected) {
     }
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5),
-    &:nth-child(6) {
-      height: 22.737em;
-      width: calc(100% + 40px);
-      grid-row-start: 2;
-      margin-top: 0.9765em;
-    }
-    &:nth-child(3) {
-      grid-column: 3 / span 2;
-    }
-    &:nth-child(4) {
-      grid-column: 9 / span 2;
-    }
-    &:nth-child(5) {
-      grid-column: 1 / span 2;
-      margin-left: -100px;
-    }
-    &:nth-child(6) {
-      grid-column: 11 / span 2;
-      margin-left: 60px;
-    }
+    // &:nth-child(3),
+    // &:nth-child(4),
+    // &:nth-child(5),
+    // &:nth-child(6) {
+    //   height: 22.737em;
+    //   width: calc(100% + 2.5em);
+    //   grid-row-start: 2;
+    //   margin-top: 0.9765em;
+    // }
+    // &:nth-child(3) {
+    //   grid-column: 3 / span 2;
+    // }
+    // &:nth-child(4) {
+    //   grid-column: 9 / span 2;
+    // }
+    // &:nth-child(5) {
+    //   grid-column: 1 / span 2;
+    //   margin-left: -100px;
+    // }
+    // &:nth-child(6) {
+    //   grid-column: 11 / span 2;
+    //   margin-left: 60px;
+    // }
   }
 }
 </style>
