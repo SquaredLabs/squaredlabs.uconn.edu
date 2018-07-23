@@ -8,8 +8,27 @@
           <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
           a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
         </div>
-        <div v-if="!people">Loading current people...</div>
-        <FullSizePersonCard
+        <Grid
+          id="peopleCarousel"
+          class="col-sm-4 col-md-6 col-8 col-lg-12">
+          <div v-if="!people">Loading people...</div>
+          <FullSizePersonCard
+            v-for="person in people"
+            v-else
+            :key="person.id"
+            :background="person.imageURL"
+            :id="person.id"
+            :name="person.name"
+            :role="person.title"
+            class=""
+            @click.native="selectPerson(person.id)">
+            <template slot="name">{{ person.name }}</template>
+            <template slot="role">{{ person.role }}</template>
+            <span v-html="person.description" />
+          </FullSizePersonCard>
+        </Grid>
+        <div v-if="!people">Loading people...</div>
+        <MiniPersonPhoto
           v-for="person in people"
           v-else
           :key="person.id"
@@ -17,20 +36,15 @@
           :id="person.id"
           :name="person.name"
           :role="person.title"
-          class="col-sm-1 col-md-4"
-          @mouseover.native="selectPerson(person.id)">
-          <template slot="name">{{ person.name }}</template>
-          <template slot="role">{{ person.role }}</template>
-          <span v-html="person.description" />
-        </FullSizePersonCard>
+          class="col-1"
+          @click.native="selectPerson(person.id)"/>
       </Grid>
-      <BackgroundText
+      <!-- <BackgroundText
         :lines="['alu','mni']"
-        class="alumni" />
-      <Grid
+        class="alumni" /> -->
+      <!-- <Grid
         v-if="people"
         id="alumniSection">
-        <!-- <h2 class="col-sm-4 col-md-6 col-8 off-lg-1">Alumni</h2> -->
         <person-card
           v-for="person in people"
           :key="person.id"
@@ -43,7 +57,7 @@
           <LinkParse :rawhtml="person.description"/>
         </person-card>
       </Grid>
-      <div v-if="!people">Loading alumni...</div>
+      <div v-if="!people">Loading alumni...</div> -->
     </div>
   </div>
 </template>
@@ -52,6 +66,7 @@
 import Grid from "../components/GridLayout.vue"
 import PersonCard from "../components/PersonCard.vue"
 import FullSizePersonCard from "../components/FullSizePersonCard.vue"
+import MiniPersonPhoto from "../components/MiniPersonPhoto.vue"
 import BackgroundText from "../components/BackgroundText.vue"
 import LinkParse from "../components/LinkParse.vue"
 import Directus from "../../directus"
@@ -78,8 +93,34 @@ export default {
     PersonCard,
     LinkParse,
     FullSizePersonCard,
+    MiniPersonPhoto,
     BackgroundText
   },
+  // mounted() {
+  //   document.querySelector(".fullSizePersonCard").classList.add("selected")
+  //   document.querySelector(".miniPersonPhoto").classList.add("selected")
+  //   var peopleCount = this.people.length
+  //   var lastPerson = document.getElementById("peopleCarousel").lastChild
+  //   lastPerson.classList.add("previousAdjacent")
+  //   var peopleEls = document.querySelectorAll(".fullSizePersonCard")
+  //   peopleEls.forEach(function(el) {
+  //     var thisEl = el
+  //     var i = (function() {
+  //       var i = 0
+  //       while ((el = el.previousSibling) != null) i++
+  //       return i
+  //     })()
+  //     if (thisEl.classList.contains("selected")) {
+  //       return false
+  //     } else if (i > peopleCount / 2) {
+  //       thisEl.classList.add("previousAdjacent")
+  //     } else {
+  //       thisEl.classList.add("nextAdjacent")
+  //     }
+  //   })
+  // },
+  // beforeUpdate() {
+  // },
   methods: {
     selectPerson(id) {
       this.$store.commit("selectPerson", id)
@@ -95,18 +136,26 @@ export default {
   margin-top: 9.313em;
 }
 
+.gridded .gridded {
+  margin: 0 0 0 -1.25em;
+  padding-left: 1.25em;
+}
+
 .whiteBox {
   background: white;
-  padding: 20px;
+  padding: 1.25em;
   width: 100%;
-  margin-left: -20px;
+  margin-left: -1.25em;
   p {
     margin: 0;
   }
 }
 
-#alumniSection {
-  margin-top: 18.19em;
+#peopleCarousel {
+  padding-bottom: 3.052em;
+  padding-right: 1.25em;
+  margin-right: -1.25em;
+  overflow: hidden;
 }
 
 @media screen and (min-width: $tablet) {
@@ -115,46 +164,6 @@ export default {
     height: fit-content;
     width: auto;
     margin-bottom: 9.313em;
-  }
-}
-
-@media screen and (min-width: $desktopLg) {
-  #alumniSection {
-    .person:nth-of-type(4n + 1) {
-      grid-column-start: 3;
-    }
-  }
-}
-</style>
-
-<style lang="scss">
-@import "~assets/styles/vars";
-
-div.backgroundText.alumni {
-  // top: 154vh;
-  top: calc(775px + 90vw);
-  line-height: 0.8;
-}
-
-@media screen and (min-width: $tablet) {
-  div.backgroundText.alumni {
-    top: 1225px;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  div.backgroundText.alumni {
-    top: 1150px;
-  }
-}
-</style>
-
-<style lang="scss">
-@import "~assets/styles/vars";
-
-@media screen and (min-width: $desktopLg) {
-  div.backgroundText.alumni {
-    top: 1100px;
   }
 }
 </style>
