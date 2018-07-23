@@ -21,6 +21,7 @@
             :name="person.name"
             :role="person.title"
             class=""
+            @reflowPeople="reflowPeople(person.id)"
             @click.native="selectPerson(person.id)">
             <template slot="name">{{ person.name }}</template>
             <template slot="role">{{ person.role }}</template>
@@ -102,26 +103,43 @@ export default {
   //   var peopleCount = this.people.length
   //   var lastPerson = document.getElementById("peopleCarousel").lastChild
   //   lastPerson.classList.add("previousAdjacent")
-  //   var peopleEls = document.querySelectorAll(".fullSizePersonCard")
-  //   peopleEls.forEach(function(el) {
-  //     var thisEl = el
-  //     var i = (function() {
-  //       var i = 0
-  //       while ((el = el.previousSibling) != null) i++
-  //       return i
-  //     })()
-  //     if (thisEl.classList.contains("selected")) {
-  //       return false
-  //     } else if (i > peopleCount / 2) {
-  //       thisEl.classList.add("previousAdjacent")
-  //     } else {
-  //       thisEl.classList.add("nextAdjacent")
-  //     }
-  //   })
+  // var peopleEls = document.querySelectorAll(".fullSizePersonCard")
+  // peopleEls.forEach(function(el) {
+  //   var thisEl = el
+  //   var i = (function() {
+  //     var i = 0
+  //     while ((el = el.previousSibling) != null) i++
+  //     return i
+  //   })()
+  //   if (thisEl.classList.contains("selected")) {
+  //     return false
+  //   } else if (i > peopleCount / 2) {
+  //     thisEl.classList.add("previousAdjacent")
+  //   } else {
+  //     thisEl.classList.add("nextAdjacent")
+  //   }
+  // })
   // },
-  // beforeUpdate() {
-  // },
+  beforeUpdate() {
+    var prevPeople = document.querySelectorAll(".previousAdjacent")
+    var nextPeople = document.querySelectorAll(".nextAdjacent")
+    console.log(prevPeople)
+    console.log(nextPeople)
+    nextPeople[0].classList.add("immediate")
+    prevPeople[prevPeople.length].classList.add("immediate")
+  },
   methods: {
+    reflowPeople(id) {
+      var people = document.querySelectorAll(".fullSizePersonCard")
+      people.forEach(function(el) {
+        el.classList.remove("immediate")
+        el.classList.remove("penultimate")
+      })
+      var prev = id - 4
+      var penUlt = id - 5
+      people[prev].classList.add("immediate")
+      people[penUlt].classList.add("penultimate")
+    },
     selectPerson(id) {
       this.$store.commit("selectPerson", id)
     }
