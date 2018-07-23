@@ -149,7 +149,10 @@ export default {
   opacity: 1;
   top: 0.41em;
 }
-/*Class toggled by vue when back is hovered*/
+
+// Vue transition documentation:
+// https://vuejs.org/v2/guide/transitions.html#Transition-Classes
+
 .expandedTitle {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -162,27 +165,37 @@ export default {
   transform: translateY(-35px);
   opacity: 0;
 }
+
+.slideUp-enter {
+  // transform: translateY(300px);
+  opacity: 0;
+  height: 0;
+}
 .slideUp-enter-active {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+// .slideUp-enter-to {
+// }
+
+// .slideUp-leave {
+//   transform: translateY(300px);
+//   height: 0;
+// }
 .slideUp-leave-active {
+  margin-bottom: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   z-index: -1;
   overflow: hidden;
-}
-.slideUp-enter {
-  transform: translateY(300px);
-  opacity: 0;
+  opacity: 1;
+  height: calc(100vh - 2.441em);
+  min-height: 0;
 }
 .slideUp-leave-to {
-  transform-origin: top;
-  transform: scaleY(0);
-}
-
-.slideUp-leave-active * {
+  // transform: scaleY(0);
   opacity: 0;
-  visibility: hidden;
+  // min-height: 0;
+  height: 0;
 }
 
 @media screen and (min-width: $desktop) {
@@ -190,9 +203,28 @@ export default {
     width: calc(25% - 0.8em);
   }
 }
+</style>
 
+<style lang="scss">
+@import "~assets/styles/vars";
 #container {
-  // margin-left: -0.8em;
+  // overflow-y: hidden;
+  // transform-origin: top;
   width: calc(100% + 2.5em);
+  position: relative;
+  top: -3.815em;
+  background-color: $dodger-blue;
+  min-height: 44em;
+  height: calc(100vh - 2.441em);
+  margin-bottom: -18.626em;
+}
+#content {
+  position: relative;
+  padding: 0 10%;
+  color: white;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease;
 }
 </style>

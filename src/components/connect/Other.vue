@@ -45,20 +45,20 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
-#container {
-  position: relative;
-  top: -50px;
-  background-color: $dodger-blue;
-  height: 900px;
-}
-#content {
-  padding-left: 145px;
-  padding-right: 145px;
-  color: white;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
+// #container {
+//   position: relative;
+//   top: -50px;
+//   background-color: $dodger-blue;
+//   height: 900px;
+// }
+// #content {
+//   padding-left: 145px;
+//   padding-right: 145px;
+//   color: white;
+//   position: relative;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 .level {
   color: $charcoal-grey;
   margin: 5px 0 5px 0;
