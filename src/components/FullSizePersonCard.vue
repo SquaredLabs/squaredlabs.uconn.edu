@@ -95,7 +95,7 @@ export default {
 }
 
 div.fullSizePersonCard.selected {
-  grid-column: 1 / 5;
+  z-index: 9999;
   width: calc(100% + 2.5em);
   .personPhoto {
     width: calc(50% - 10px);
@@ -105,6 +105,7 @@ div.fullSizePersonCard.selected {
 @media screen and (max-width: $tablet) {
   div.fullSizePersonCard.selected {
     height: 40vh;
+    grid-column: 1 / 5;
     order: 1;
     margin-left: -1.25em;
     .personContent {
@@ -119,11 +120,21 @@ div.fullSizePersonCard.selected {
 
 @media screen and (min-width: $tablet) {
   div.fullSizePersonCard {
+    transition: left 0.5s ease, top 0.5s ease, margin 0.5s ease;
     height: 22.737em;
 
+    // .personPhoto,
+    // .personContent {
+    //   transition: all 0.5s ease;
+    // }
+
     &.selected {
-      width: 100%;
-      grid-column: 2 / 6;
+      position: absolute;
+      grid-column-start: unset;
+      grid-column-end: unset;
+      top: 0;
+      left: calc(17vw + 0.8em);
+      width: calc(66.33vw - 2.5em);
 
       .personPhoto {
         width: calc(50% + 30px);
@@ -162,13 +173,15 @@ div.fullSizePersonCard.selected {
         }
       }
       &.nextAdjacent {
-        right: calc(-100% - 1.25em);
+        // right: calc(-100% - 1.25em);
+        left: calc(100vw + (100vw * (1 / 6)));
       }
     }
   }
   div.fullSizePersonCard.selected
     + div.fullSizePersonCard:not(.selected).nextAdjacent {
-    right: calc((100vw - 5.96em) / -6);
+    // right: calc((100vw - 5.96em) / -6);
+    left: calc(100vw * (5 / 6));
   }
 }
 
