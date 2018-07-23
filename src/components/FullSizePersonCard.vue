@@ -32,38 +32,17 @@ export default {
       return this.$store.state.selectedPerson === this.id
     },
     previous() {
-      return this.$store.state.selectedPersons > this.id
+      return this.$store.state.selectedPerson > this.id
     },
     next() {
-      return this.$store.state.selectedPersons < this.id
+      return this.$store.state.selectedPerson < this.id
+    }
+  },
+  beforeUpdate() {
+    if (this.selected) {
+      this.$emit("reflowPeople")
     }
   }
-  // beforeUpdate() {
-  //   var lastPerson = document.getElementById("peopleCarousel").lastChild
-  //   lastPerson.classList.add("previousAdjacent")
-  //   var peopleEls = document.querySelectorAll(".fullSizePersonCard")
-  //   var selectedPersonId = document.querySelector(".selected").id
-  //   peopleEls.forEach(function(el) {
-  //     var thisEl = el
-  //     var i = (function() {
-  //       var i = 0
-  //       while ((el = el.previousSibling) != null) i++
-  //       return i
-  //     })()
-  //     // console.log("my i= " + i + "selectedId = " + selectedPersonId)
-  //     if (i === selectedPersonId) {
-  //       return false
-  //     } else if (i > selectedPersonId) {
-  //       // console.log(thisEl + " my i is less than selectedId")
-  //       thisEl.classList.add("previousAdjacent")
-  //       thisEl.classList.remove("nextAdjacent")
-  //     } else {
-  //       // console.log(thisEl + " my i is greater than selectedId")
-  //       thisEl.classList.add("nextAdjacent")
-  //       thisEl.classList.remove("previousAdjacent")
-  //     }
-  //   })
-  // }
 }
 </script>
 
@@ -131,7 +110,6 @@ div.fullSizePersonCard.selected {
     .personContent {
       right: 0;
       left: unset;
-      // z-index: unset;
     }
   }
   div.fullSizePersonCard:not(.selected) {
@@ -165,7 +143,7 @@ div.fullSizePersonCard.selected {
     &:not(.selected) {
       position: absolute;
       top: 1.25em;
-      width: calc((100vw - 1.25em) / 6);
+      width: calc((100vw - 5.96em) / 3);
 
       .personContent {
         opacity: 0;
@@ -178,18 +156,19 @@ div.fullSizePersonCard.selected {
       }
 
       &.previousAdjacent {
-        left: 0;
-        &:nth-of-type(-n + 3) {
-          left: -100%;
+        left: -100%;
+        &.immediate {
+          left: calc((100vw - 5.96em) / -6);
         }
       }
       &.nextAdjacent {
-        right: 0;
-        &:nth-of-type(n + 3) {
-          right: calc(-100% - 1.25em);
-        }
+        right: calc(-100% - 1.25em);
       }
     }
+  }
+  div.fullSizePersonCard.selected
+    + div.fullSizePersonCard:not(.selected).nextAdjacent {
+    right: calc((100vw - 5.96em) / -6);
   }
 }
 
@@ -198,20 +177,16 @@ div.fullSizePersonCard.selected {
     &.selected {
       grid-column: 3 / span 4;
     }
-    // &.previousAdjacent {
-    // }
-    // &:nth-child(3),
-    // &:nth-child(4) {
-    //   height: 22.737em;
-    //   width: calc(100% + 2.5em);
-    // }
-    // &:nth-child(3) {
-    //   grid-column: 1 / span 2;
-    //   margin-left: -60px;
-    // }
-    // &:nth-child(4) {
-    //   grid-column: 7 / span 2;
-    // }
+    &:not(.selected) {
+      width: calc((100vw - 5.96em) / 4);
+    }
+  }
+  div.fullSizePersonCard:not(.selected).previousAdjacent.immediate {
+    left: 0;
+  }
+  div.fullSizePersonCard.selected
+    + div.fullSizePersonCard:not(.selected).nextAdjacent {
+    right: 0;
   }
 }
 
@@ -221,30 +196,23 @@ div.fullSizePersonCard.selected {
       grid-column-start: 5;
     }
     &:not(.selected) {
+      width: calc((100vw - 5.96em) / 6);
     }
-    // &:nth-child(3),
-    // &:nth-child(4),
-    // &:nth-child(5),
-    // &:nth-child(6) {
-    //   height: 22.737em;
-    //   width: calc(100% + 2.5em);
-    //   grid-row-start: 2;
-    //   margin-top: 0.9765em;
-    // }
-    // &:nth-child(3) {
-    //   grid-column: 3 / span 2;
-    // }
-    // &:nth-child(4) {
-    //   grid-column: 9 / span 2;
-    // }
-    // &:nth-child(5) {
-    //   grid-column: 1 / span 2;
-    //   margin-left: -100px;
-    // }
-    // &:nth-child(6) {
-    //   grid-column: 11 / span 2;
-    //   margin-left: 60px;
-    // }
+  }
+  div.fullSizePersonCard:not(.selected).previousAdjacent.immediate {
+    left: calc((100vw - 7.451em) / 6);
+  }
+  div.fullSizePersonCard:not(.selected).previousAdjacent.penultimate {
+    left: -1.563em;
+  }
+  div.fullSizePersonCard.selected
+    + div.fullSizePersonCard:not(.selected).nextAdjacent {
+    right: calc((100vw - 7.451em) / 6);
+  }
+  div.fullSizePersonCard.selected
+    + div.fullSizePersonCard:not(.selected).nextAdjacent
+    + div.fullSizePersonCard:not(.selected).nextAdjacent {
+    right: -1.563em;
   }
 }
 </style>
