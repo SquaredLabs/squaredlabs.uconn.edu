@@ -123,10 +123,9 @@ div.fullSizePersonCard.selected {
     transition: left 0.5s ease, top 0.5s ease, margin 0.5s ease;
     height: 22.737em;
 
-    // .personPhoto,
-    // .personContent {
-    //   transition: all 0.5s ease;
-    // }
+    .personContent {
+      transform: translate(-3em, 3em);
+    }
 
     &.selected {
       position: absolute;
@@ -141,6 +140,10 @@ div.fullSizePersonCard.selected {
         margin-right: -1.25em;
       }
       .personContent {
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        transition-delay: 0.2s;
+        transform: translate(0, 0);
+        top: 0;
         margin-left: -1.25em;
         margin-bottom: -1.953em;
       }
@@ -173,14 +176,12 @@ div.fullSizePersonCard.selected {
         }
       }
       &.nextAdjacent {
-        // right: calc(-100% - 1.25em);
         left: calc(100vw + (100vw * (1 / 6)));
       }
     }
   }
   div.fullSizePersonCard.selected
     + div.fullSizePersonCard:not(.selected).nextAdjacent {
-    // right: calc((100vw - 5.96em) / -6);
     left: calc(100vw * (5 / 6));
   }
 }
@@ -188,7 +189,8 @@ div.fullSizePersonCard.selected {
 @media screen and (min-width: $desktop) {
   div.fullSizePersonCard {
     &.selected {
-      grid-column: 3 / span 4;
+      left: calc(25vw + 0.8em);
+      width: calc(100vw - (2 * (25vw + 1.25em)));
     }
     &:not(.selected) {
       width: calc((100vw - 5.96em) / 4);
@@ -199,14 +201,15 @@ div.fullSizePersonCard.selected {
   }
   div.fullSizePersonCard.selected
     + div.fullSizePersonCard:not(.selected).nextAdjacent {
-    right: 0;
+    left: calc((100vw - 0.4em) * 0.75);
   }
 }
 
 @media screen and (min-width: $desktopLg) {
   div.fullSizePersonCard {
     &.selected {
-      grid-column-start: 5;
+      left: calc(33vw + 0.8em);
+      width: calc(100vw - (2 * (33vw + 1.25em)));
     }
     &:not(.selected) {
       width: calc((100vw - 5.96em) / 6);
@@ -220,12 +223,12 @@ div.fullSizePersonCard.selected {
   }
   div.fullSizePersonCard.selected
     + div.fullSizePersonCard:not(.selected).nextAdjacent {
-    right: calc((100vw - 7.451em) / 6);
+    left: calc(67vw + 0.8em);
   }
   div.fullSizePersonCard.selected
     + div.fullSizePersonCard:not(.selected).nextAdjacent
     + div.fullSizePersonCard:not(.selected).nextAdjacent {
-    right: -1.563em;
+    left: calc(100vw - ((100vw - 7.25em) / 6));
   }
 }
 </style>
