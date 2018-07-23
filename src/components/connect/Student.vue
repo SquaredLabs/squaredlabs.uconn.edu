@@ -77,18 +77,4 @@ export default {
   transform: translateX(-50%);
   bottom: 40px;
 }
-@media screen and (max-width: $desktop) {
-  /*Tablet View*/
-  #content {
-    padding: 5px;
-    transition: all 0.3s ease;
-  }
-}
-@media screen and (max-width: $tablet) {
-  /*Mobile View*/
-  #content {
-    top: 10%;
-    transform: none;
-  }
-}
 </style>

@@ -167,20 +167,13 @@ export default {
 }
 
 .slideUp-enter {
-  // transform: translateY(300px);
   opacity: 0;
   height: 0;
 }
 .slideUp-enter-active {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-// .slideUp-enter-to {
-// }
 
-// .slideUp-leave {
-//   transform: translateY(300px);
-//   height: 0;
-// }
 .slideUp-leave-active {
   margin-bottom: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -192,9 +185,7 @@ export default {
   min-height: 0;
 }
 .slideUp-leave-to {
-  // transform: scaleY(0);
   opacity: 0;
-  // min-height: 0;
   height: 0;
 }
 
@@ -208,8 +199,6 @@ export default {
 <style lang="scss">
 @import "~assets/styles/vars";
 #container {
-  // overflow-y: hidden;
-  // transform-origin: top;
   width: calc(100% + 2.5em);
   position: relative;
   top: -3.815em;
@@ -226,5 +215,12 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.5s ease;
+}
+@media screen and (max-width: $tablet) {
+  /*Mobile View*/
+  #content {
+    top: 10%;
+    transform: none;
+  }
 }
 </style>
