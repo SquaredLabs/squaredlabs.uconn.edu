@@ -131,14 +131,20 @@ export default {
   methods: {
     reflowPeople(id) {
       var people = document.querySelectorAll(".fullSizePersonCard")
-      people.forEach(function(el) {
-        el.classList.remove("immediate")
-        el.classList.remove("penultimate")
-      })
+      if (typeof people !== "undefined" && people.length > 0) {
+        people.forEach(function(el) {
+          el.classList.remove("immediate")
+          el.classList.remove("penultimate")
+        })
+      }
       var prev = id - 4
       var penUlt = id - 5
-      people[prev].classList.add("immediate")
-      people[penUlt].classList.add("penultimate")
+      if (prev > -1) {
+        people[prev].classList.add("immediate")
+      }
+      if (penUlt > -1) {
+        people[penUlt].classList.add("penultimate")
+      }
     },
     selectPerson(id) {
       this.$store.commit("selectPerson", id)
@@ -182,6 +188,9 @@ export default {
     height: fit-content;
     width: auto;
     margin-bottom: 9.313em;
+  }
+  #peopleCarousel {
+    height: 22.737em;
   }
 }
 </style>
