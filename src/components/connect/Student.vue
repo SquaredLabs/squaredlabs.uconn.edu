@@ -27,12 +27,7 @@
         </SLink>position.
       </p><p>
         The other way to get involved with us as a student is
-        to attend our <!--<SLink
-          lighter-background
-          href="/workshops">
-          workshops
-        </SLink>-->
-        workshops which cover a
+        to attend our workshops, which cover a
         variety of topics relevant to our projects (from coding to design to data visualization).
         Here are some of the companies and organizations that our alumni have gone on to work with:
       </p>
@@ -54,21 +49,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
-// #container {
-//   position: relative;
-//   top: -70px;
-//   background-color: $dodger-blue;
-//   height: 700px;
-// }
-// #content {
-//   position: relative;
-//   padding-left: 145px;
-//   padding-right: 145px;
-//   color: white;
-//   position: relative;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
 .content-style-emphasis {
   background: linear-gradient(
     left,

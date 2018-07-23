@@ -38,21 +38,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
-// #container {
-//   position: relative;
-//   top: -70px;
-//   background-color: $dodger-blue;
-//   height: 700px;
-// }
-// #content {
-//   position: relative;
-//   padding-left: 145px;
-//   padding-right: 145px;
-//   color: white;
-//   position: relative;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
 .contentStyleEmphasis {
   background: linear-gradient(
     left,
