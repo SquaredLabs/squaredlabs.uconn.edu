@@ -37,7 +37,6 @@ export default {
 }
 
 .miniPersonPhoto.selected {
-  // background-color: $dodger-blue;
   border: 3px dashed $dodger-blue;
 }
 </style>

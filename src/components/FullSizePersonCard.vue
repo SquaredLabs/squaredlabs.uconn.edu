@@ -55,7 +55,6 @@ export default {
 
 .personPhoto {
   height: 100%;
-  // z-index: 2;
   display: inline-block;
   background-size: cover;
   background-position: center;
@@ -66,7 +65,6 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  // z-index: 1;
   height: 100%;
   width: calc(50% + 10px);
   padding: 0 10px;

@@ -97,34 +97,9 @@ export default {
     MiniPersonPhoto,
     BackgroundText
   },
-  // mounted() {
-  //   document.querySelector(".fullSizePersonCard").classList.add("selected")
-  //   document.querySelector(".miniPersonPhoto").classList.add("selected")
-  //   var peopleCount = this.people.length
-  //   var lastPerson = document.getElementById("peopleCarousel").lastChild
-  //   lastPerson.classList.add("previousAdjacent")
-  // var peopleEls = document.querySelectorAll(".fullSizePersonCard")
-  // peopleEls.forEach(function(el) {
-  //   var thisEl = el
-  //   var i = (function() {
-  //     var i = 0
-  //     while ((el = el.previousSibling) != null) i++
-  //     return i
-  //   })()
-  //   if (thisEl.classList.contains("selected")) {
-  //     return false
-  //   } else if (i > peopleCount / 2) {
-  //     thisEl.classList.add("previousAdjacent")
-  //   } else {
-  //     thisEl.classList.add("nextAdjacent")
-  //   }
-  // })
-  // },
   beforeUpdate() {
     var prevPeople = document.querySelectorAll(".previousAdjacent")
     var nextPeople = document.querySelectorAll(".nextAdjacent")
-    console.log(prevPeople)
-    console.log(nextPeople)
     nextPeople[0].classList.add("immediate")
     prevPeople[prevPeople.length].classList.add("immediate")
   },
