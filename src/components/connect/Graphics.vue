@@ -13,7 +13,7 @@
           id="pixelsPerDay"
           class="graphicInner">
           <img src="~/assets/images/connect/pixels.svg">
-          <p class="statisticText">{{ statCount }}m</p>
+          <p class="statisticText">{{ statCount }}m+</p>
           <p class="statisticSubText">pixels per day</p>
         </div>
       </div>
@@ -25,8 +25,8 @@
           id="covfefe"
           class="graphicInner">
           <img src="~/assets/images/connect/kawffeeh.svg">
-          <p class="statisticText">{{ statCount }}</p>
-          <p class="statisticSubText">coffees per day</p>
+          <p class="statisticText">{{ statCount }}+</p>
+          <p class="statisticSubText">coffees per day (definitely +)</p>
         </div>
       </div>
       <div class="graphic" >
@@ -82,7 +82,7 @@
             <div
               id="icon4"
               class="graphicIconI">
-              d
+              ...
             </div>
           </div>
         </div>
@@ -90,9 +90,7 @@
       <div
         id="moreStuff"
         class="graphic">
-        <div class="graphicInner">
-          More stuff here.
-        </div>
+        <div class="graphicInner">&nbsp;</div>
       </div>
     </div>
     <SLink
