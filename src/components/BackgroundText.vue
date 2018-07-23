@@ -26,7 +26,7 @@ export default {
   left: 20px;
   color: white;
   line-height: 1;
-  z-index: 3;
+  z-index: 1;
 }
 .backgroundTextLine {
   margin: 0;
