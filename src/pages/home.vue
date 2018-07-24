@@ -102,8 +102,10 @@
         link="https://gitlab.com/squared-labs"
       />
       <connect-card
-        :background="require('~/assets/images/connect/mail.svg')"
-        :hidden-image="require('~/assets/images/connect/contact.png')" />
+        title="Contact ⬚² labs"
+        link="mailto:squaredlabs@uconn.edu">
+        <MailArt />
+      </connect-card>
       <connect-card
         :background="require('~/assets/images/connect/btc.svg') "
         link="http://www.foundation.uconn.edu/send-your-gift/"
@@ -130,6 +132,7 @@ import PersonCard from "../components/PersonCard.vue"
 import ConnectCard from "../components/ConnectCard.vue"
 import SLink from "../components/Link.vue"
 import LinkParse from "../components/LinkParse.vue"
+import MailArt from "../components/connect/MailArt"
 import Directus from "../../directus"
 
 //  Recursive function to pick 3 different random people.
@@ -157,7 +160,8 @@ export default {
     ConnectCard,
     PersonCard,
     SLink,
-    LinkParse
+    LinkParse,
+    MailArt
   },
   data: () => ({
     people: [],
