@@ -46,18 +46,21 @@ p {
 
 <style lang="scss">
 svg.connectArt {
-  width: 33%;
-  height: auto;
+  width: auto;
+  height: 80%;
+  transform: translateY(-20%);
+  transition: all 0.2s ease;
   .animateIn {
     transfrom: scale(0);
     transform-origin: (0, 0, 0);
     transition: all 0.25s ease;
   }
   &:hover {
+    height: 100%;
+    transform: translateY(0);
     .animateIn {
       transfrom: scale(1);
     }
   }
 }
 </style>
-
