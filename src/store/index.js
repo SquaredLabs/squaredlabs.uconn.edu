@@ -5,7 +5,7 @@ const createStore = () => {
     state: {
       theme: "white",
       selectedProject: 0,
-      selectedPerson: 0
+      selectedPerson: 4
     },
     mutations: {
       setBlue(state) {

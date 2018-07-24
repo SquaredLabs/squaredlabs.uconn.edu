@@ -41,25 +41,6 @@
           class="col-1"
           @click.native="selectPerson(person.id)"/>
       </Grid>
-      <!-- <BackgroundText
-        :lines="['alu','mni']"
-        class="alumni" /> -->
-      <!-- <Grid
-        v-if="people"
-        id="alumniSection">
-        <person-card
-          v-for="person in people"
-          :key="person.id"
-          :background="person.imageURL"
-          :id="person.id"
-          class="col-sm-2"
-          @mouseover.native="selectPerson(person.id)">
-          <template slot="name">{{ person.name }}</template>
-          <template slot="role">{{ person.title }}</template>
-          <LinkParse :rawhtml="person.description"/>
-        </person-card>
-      </Grid>
-      <div v-if="!people">Loading alumni...</div> -->
     </div>
   </div>
 </template>
