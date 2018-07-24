@@ -1,16 +1,15 @@
 <template>
   <a
     :href="link"
+    :title="title"
     class="connectCard link col-sm-2 col-md-2"
     target="_blank">
-    <div
-      :class="{ 'linkImageAnimated': hiddenImage, 'linkImage': !hiddenImage}"
-      :style="`background-image: url('${background}'); background-repeat: no-repeat; background-position: center center; background-size: 15%;`" />
-    <img
-      v-if="hiddenImage"
-      :src="hiddenImage"
-      class="linkHidden" >
-
+    <div class="svgWrapper">
+      <slot />
+    </div>
+    <p class="btnTxt">
+      {{ title }}
+    </p>
   </a>
 </template>
 
@@ -18,8 +17,7 @@
 export default {
   props: {
     link: { type: String, default: null },
-    background: { type: String, required: true },
-    hiddenImage: { type: String, default: null }
+    title: { type: String, required: true }
   }
 }
 </script>
@@ -27,32 +25,39 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
+a {
+  color: $onyx;
+  text-decoration: none;
+}
+
+.svgWrapper,
+p {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
 .connectCard {
   height: 100px;
   background-color: #ffffff;
   overflow: hidden;
 }
+</style>
 
-.linkImageAnimated,
-.linkHidden {
-  transform: translateY(0);
-  transition-duration: 0.2s;
-}
-
-.linkImage,
-.linkImageAnimated {
-  height: 100%;
-}
-
-.linkHidden {
-  max-width: 100%;
-}
-
-.link:hover .linkImageAnimated {
-  transform: translateY(-20px);
-}
-
-.link:hover .linkHidden {
-  transform: translateY(-50px);
+<style lang="scss">
+svg.connectArt {
+  width: 33%;
+  height: auto;
+  .animateIn {
+    transfrom: scale(0);
+    transform-origin: (0, 0, 0);
+    transition: all 0.25s ease;
+  }
+  &:hover {
+    .animateIn {
+      transfrom: scale(1);
+    }
+  }
 }
 </style>
+
