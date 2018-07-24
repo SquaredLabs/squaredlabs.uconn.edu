@@ -36,6 +36,7 @@
           :background="person.imageURL"
           :id="person.id"
           :name="person.name"
+          :alt="person.name"
           :role="person.title"
           class="col-1"
           @click.native="selectPerson(person.id)"/>
