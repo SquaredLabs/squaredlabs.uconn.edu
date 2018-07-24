@@ -62,6 +62,10 @@ body {
   z-index: 1;
 }
 
+.gridded {
+  z-index: 2;
+}
+
 .blueAppTheme {
   background-color: $dodger-blue;
 }

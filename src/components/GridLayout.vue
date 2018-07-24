@@ -7,19 +7,10 @@
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 @import "~assets/styles/grid";
-
-.gridded {
-  z-index: 2;
-}
 </style>
 
 <script>
 export default {
-  components: {
-    test: {
-      template: `<p>test</p>`
-    }
-  },
   props: {
     vertical: {
       type: Boolean,
