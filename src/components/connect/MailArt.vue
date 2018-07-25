@@ -3,7 +3,7 @@
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 62 36">
     <title>Contact Us</title>
-    <g>
+    <g id="mailArt">
       <g class="mainIcon">
         <path
           id="envelope"

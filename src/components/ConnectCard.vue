@@ -78,7 +78,7 @@ object {
 .svgWrapper svg g g {
   &.mainIcon {
     fill: $onyx;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
   }
   &:not(.mainIcon) * {
     transform: scale(0);
@@ -86,6 +86,16 @@ object {
     transform-box: fill-box;
     transition: all 0.25s cubic-bezier(0.75, -0.5, 0, 1.75);
   }
+}
+
+#gitHubArt {
+  transition: transform 0.15s ease;
+  transform: translate(0.2em, 0.4em);
+}
+
+#btcArt {
+  transition: transform 0.15s ease;
+  transform: translateY(-0.35em);
 }
 
 .connectCard:hover {
@@ -96,6 +106,10 @@ object {
     &:not(.mainIcon) * {
       transform: scale(1);
     }
+  }
+  #gitHubArt,
+  #btcArt {
+    transform: translateY(0);
   }
 }
 </style>
