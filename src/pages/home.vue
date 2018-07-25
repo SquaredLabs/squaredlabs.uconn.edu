@@ -85,7 +85,7 @@
         class="col-sm-2">
         <template slot="name">{{ person.name }}</template>
         <template slot="role">{{ person.role }}</template>
-        <LinkParse rawhtml="person.description" />
+        <LinkParse :rawhtml="person.description" />
       </person-card>
       <div v-if="!people">Loading people</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
