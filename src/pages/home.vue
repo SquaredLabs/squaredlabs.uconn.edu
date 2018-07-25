@@ -101,25 +101,19 @@
         title="Contribute on GitHub"
         link="https://github.com/squaredlabs"
         class="col-sm-2 col-md-2">
-        <slot>
-          <GitHubArt />
-        </slot>
+        <GitHubArt />
       </connect-card>
       <connect-card
         title="Contact ⬚² labs"
         link="mailto:squaredlabs@uconn.edu"
         class="col-sm-2 col-md-2">
-        <slot>
-          <MailArt />
-        </slot>
+        <MailArt />
       </connect-card>
       <connect-card
         title="Donate to ⬚² labs"
         link="http://www.foundation.uconn.edu/send-your-gift/"
         class="col-sm-2 col-md-2">
-        <slot>
-          <BtcArt />
-        </slot>
+        <BtcArt />
       </connect-card>
       <div class="connectText col-sm-2 col-md-4 off-6 col-2 off-lg-8 col-lg-3">
         <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
