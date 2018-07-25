@@ -2,7 +2,7 @@
   <a
     :href="link"
     :title="title"
-    class="connectCard link col-sm-2 col-md-2"
+    class="connectCard link"
     target="_blank">
     <div class="svgWrapper">
       <slot />
@@ -17,7 +17,8 @@
 export default {
   props: {
     link: { type: String, default: null },
-    title: { type: String, required: true }
+    title: { type: String, required: true },
+    imgPath: { type: String, required: true }
   }
 }
 </script>
@@ -31,35 +32,69 @@ a {
 }
 
 .svgWrapper,
-p {
+.btnTxt {
   text-align: center;
   width: 100%;
   overflow: hidden;
 }
 
+.btnTxt {
+  margin: 0.328em 0 0 0;
+  font-size: 1.25em;
+}
+
 .connectCard {
-  height: 100px;
+  height: 7.451em;
   background-color: #ffffff;
   overflow: hidden;
+}
+
+.svgWrapper {
+  width: auto;
+  height: 47%;
+  margin: 4% 0 0 0;
+  transition: all 0.2s ease;
+}
+
+.connectCard:hover .svgWrapper {
+  height: 80%;
+  margin: 5% 0;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+}
+
+object {
+  height: 100%;
+  width: auto;
 }
 </style>
 
 <style lang="scss">
-svg.connectArt {
-  width: auto;
-  height: 80%;
-  transform: translateY(-20%);
-  transition: all 0.2s ease;
-  .animateIn {
-    transfrom: scale(0);
-    transform-origin: (0, 0, 0);
-    transition: all 0.25s ease;
+@import "~assets/styles/vars";
+
+.svgWrapper svg g g {
+  &.mainIcon {
+    fill: $onyx;
+    transition: all 0.2s ease;
   }
-  &:hover {
-    height: 100%;
-    transform: translateY(0);
-    .animateIn {
-      transfrom: scale(1);
+  &:not(.mainIcon) * {
+    transform: scale(0);
+    transform-origin: center center;
+    transform-box: fill-box;
+    transition: all 0.25s cubic-bezier(0.75, -0.5, 0, 1.75);
+  }
+}
+
+.connectCard:hover {
+  .svgWrapper svg g g {
+    &.mainIcon {
+      fill: $dodger-blue;
+    }
+    &:not(.mainIcon) * {
+      transform: scale(1);
     }
   }
 }

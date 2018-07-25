@@ -100,15 +100,20 @@
       <connect-card
         :background="require('~/assets/images/connect/gitlab.svg')"
         link="https://gitlab.com/squared-labs"
+        class="col-sm-2 col-md-2"
       />
       <connect-card
         title="Contact ⬚² labs"
-        link="mailto:squaredlabs@uconn.edu">
-        <MailArt />
+        link="mailto:squaredlabs@uconn.edu"
+        class="col-sm-2 col-md-2">
+        <slot>
+          <MailArt />
+        </slot>
       </connect-card>
       <connect-card
         :background="require('~/assets/images/connect/btc.svg') "
         link="http://www.foundation.uconn.edu/send-your-gift/"
+        class="col-sm-2 col-md-2"
       />
       <div class="connectText col-sm-2 col-md-4 off-6 col-2 off-lg-8 col-lg-3">
         <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
@@ -132,7 +137,7 @@ import PersonCard from "../components/PersonCard.vue"
 import ConnectCard from "../components/ConnectCard.vue"
 import SLink from "../components/Link.vue"
 import LinkParse from "../components/LinkParse.vue"
-import MailArt from "../components/connect/MailArt"
+import MailArt from "../components/connect/MailArt.vue"
 import Directus from "../../directus"
 
 //  Recursive function to pick 3 different random people.
