@@ -55,7 +55,9 @@ export default {
     let data = await Directus()
     let projectData = data[1]
     return {
-      projects: projectData.projects
+      projects: projectData.projects.sort((project1, project2)=> {
+        return project1.order - project2.order;
+      })
     }
   },
   components: {
