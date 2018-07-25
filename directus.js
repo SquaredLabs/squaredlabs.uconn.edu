@@ -22,8 +22,7 @@ function loadPeople(url, endpoint) {
         class: personData.class,
         degree: personData.degree,
         description: unescapeHTML(personData.description),
-        imageURL: url + personData.picture.data.url,
-        projects: projectTrim(personData.projects.data, personData.id, url)
+        imageURL: url + personData.picture.data.url
       }))
       alphabetize(peopleData, "name")
       let people = { people: peopleData }
@@ -46,7 +45,7 @@ function loadProjects(url, endpoint) {
       console.log("Loaded projects")
       let projectsData = data.data.map(projectData => ({
         id: projectData.id,
-        order: projectData.order,
+        order: projectData.sort,
         name: projectData.name,
         client: projectData.client,
         timespan: projectData.timespan,
@@ -54,12 +53,7 @@ function loadProjects(url, endpoint) {
         technologies: projectData.technologies,
         large_summary: unescapeHTML(projectData.large_summary),
         small_summary: unescapeHTML(projectData.small_summary),
-        imageURL: url + projectData.thumbnail.data.url,
-        people: peopleTrim(
-          projectData.people_assigned.data,
-          projectData.name,
-          url
-        )
+        imageURL: url + projectData.thumbnail.data.url
       }))
       alphabetize(projectsData, "name")
       let projects = { projects: projectsData }
