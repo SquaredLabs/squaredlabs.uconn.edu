@@ -17,8 +17,7 @@
 export default {
   props: {
     link: { type: String, default: null },
-    title: { type: String, required: true },
-    imgPath: { type: String, required: true }
+    title: { type: String, required: true }
   }
 }
 </script>
