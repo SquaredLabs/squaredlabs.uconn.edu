@@ -3,7 +3,7 @@
     :style="`background: url('${project.imageURL}') center / cover no-repeat`"
     class="project"
     @mouseover="$emit('hoverProject', {
-      name:project.name,client:project.client,timespan:project.timespan,people:project.people
+      name:project.name,client:project.client,timespan:project.timespan,people:setRole(project)
   })">
     <div
       ref="title"
@@ -28,6 +28,7 @@
 
 <script>
 import SLink from "../Link"
+
 export default {
   components: {
     SLink
@@ -51,6 +52,18 @@ export default {
       if (this.$route.path !== "/projects") {
         this.$router.push("projects")
       }
+    },
+    setRole(project) {
+      for (let person of project.people) {
+        let projectsInRole = Object.keys(person.roles).map(role =>
+          role.toLowerCase()
+        )
+        let projectName = project.name.toLowerCase()
+        if (projectsInRole.includes(projectName)) {
+          person.role = person.roles[project.name]
+        }
+      }
+      return project.people
     }
   }
 }
