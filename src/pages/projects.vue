@@ -16,7 +16,7 @@
         <mini-person-card
           v-for="person in hoverData.people"
           :key="person.id"
-          :icon="person.thumbnail">
+          :icon="person.imageURL">
           <template slot="name">{{ person.name }}</template>
           <template slot="position">{{ person.role }}</template>
         </mini-person-card>
@@ -50,14 +50,44 @@ import Directus from "../../directus"
 import BackgroundText from "../components/BackgroundText.vue"
 import ProjectView from "../components/projects/ProjectView.vue"
 
+const setPeople = function(person, projects){
+  let role = person.roles;
+  for(let project of projects){
+    project.people = []
+    let projectsInRole = Object.keys(role).map((role)=>role.toLowerCase())
+    let projectName = project.name.toLowerCase()
+    console.log(projectsInRole, projectName)
+    if(projectsInRole.includes(projectName)){
+      project.people.push(person)
+    }
+  }
+}
+
 export default {
   async asyncData({ params }) {
     let data = await Directus()
-    let projectData = data[1]
+    let projectData = data[1].projects
+    let peopleData = data[0].people
+
+    for(let person of peopleData){
+      
+      let roleStr = person.roles;
+      if(roleStr===null) continue
+      let role = {}
+      try{
+        person.roles = JSON.parse(roleStr)
+        
+      }
+      catch(e){
+        console.error(`Failed to parse JSON: ${roleStr}`)
+      }
+      setPeople( person, projectData)
+    }
     return {
-      projects: projectData.projects.sort((project1, project2)=> {
+      projects: projectData.sort((project1, project2)=> {
         return project1.order - project2.order;
-      })
+      }),
+      people:peopleData
     }
   },
   components: {
@@ -84,6 +114,13 @@ export default {
   },
   methods: {
     setHoveredProject(project) {
+      for(let person of project.people){
+        let projectsInRole = Object.keys(person.roles).map((role)=>role.toLowerCase())
+        let projectName = project.name.toLowerCase()
+        if(projectsInRole.includes(projectName)){
+          person.role=person.roles[projectName]
+        }
+      }
       this.hoverData = {
         name: project.name,
         client: project.client,

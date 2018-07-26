@@ -31,6 +31,7 @@
     "image-downloader": "^3.4.0",
     "isomorphic-fetch": "^2.2.1",
     "node-sass": "^4.9.0",
+    "npm": "^6.2.0",
     "nuxt": "^1.4.0",
     "sass-loader": "^7.0.2",
     "vue-resource": "^1.5.1"

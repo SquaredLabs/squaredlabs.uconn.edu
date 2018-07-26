@@ -22,6 +22,7 @@ function loadPeople(url, endpoint) {
         class: personData.class,
         degree: personData.degree,
         description: unescapeHTML(personData.description),
+        roles: personData.roles,
         imageURL: url + personData.picture.data.url
       }))
       alphabetize(peopleData, "name")
@@ -101,27 +102,6 @@ function unescapeHTML(str) {
     .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
-}
-function projectTrim(data, personId, url) {
-  return data.map(project => ({
-    id: project.id,
-    name: project.name,
-    thumbnail: url + project.thumbnail.data.thumbnail_url
-  }))
-}
-function peopleTrim(data, projectName, url) {
-  return data.map(person => ({
-    id: person.id,
-    name: person.name,
-    thumbnail: url + person.picture.data.thumbnail_url,
-    role: getRolesOfProject(JSON.parse(person.roles), projectName)
-  }))
-}
-function getRolesOfProject(roles, projectName) {
-  if (!roles) return "Team member"
-  for (let projectNameRole of Object.keys(roles)) {
-    if (projectNameRole === projectName) return roles[projectNameRole]
-  }
 }
 function startLoad() {
   let peoplePromise = loadPeople(
