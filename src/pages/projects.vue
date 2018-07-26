@@ -50,14 +50,13 @@ import Directus from "../../directus"
 import BackgroundText from "../components/BackgroundText.vue"
 import ProjectView from "../components/projects/ProjectView.vue"
 
-const setPeople = function(person, projects){
-  let role = person.roles;
-  for(let project of projects){
+const setPeople = function(person, projects) {
+  let role = person.roles
+  for (let project of projects) {
     project.people = []
-    let projectsInRole = Object.keys(role).map((role)=>role.toLowerCase())
+    let projectsInRole = Object.keys(role).map(role => role.toLowerCase())
     let projectName = project.name.toLowerCase()
-    console.log(projectsInRole, projectName)
-    if(projectsInRole.includes(projectName)){
+    if (projectsInRole.includes(projectName)) {
       project.people.push(person)
     }
   }
@@ -69,25 +68,23 @@ export default {
     let projectData = data[1].projects
     let peopleData = data[0].people
 
-    for(let person of peopleData){
-      
-      let roleStr = person.roles;
-      if(roleStr===null) continue
-      let role = {}
-      try{
+    for (let person of peopleData) {
+      let roleStr = person.roles
+      if (roleStr === null) continue
+
+      try {
         person.roles = JSON.parse(roleStr)
-        
-      }
-      catch(e){
+      } catch (e) {
+        person.roles = {}
         console.error(`Failed to parse JSON: ${roleStr}`)
       }
-      setPeople( person, projectData)
+      setPeople(person, projectData)
     }
     return {
-      projects: projectData.sort((project1, project2)=> {
-        return project1.order - project2.order;
+      projects: projectData.sort((project1, project2) => {
+        return project1.order - project2.order
       }),
-      people:peopleData
+      people: peopleData
     }
   },
   components: {
@@ -110,23 +107,6 @@ export default {
         if (project.id === selectedProjID) return project
       }
       throw new Error("No project by id " + selectedProjID)
-    }
-  },
-  methods: {
-    setHoveredProject(project) {
-      for(let person of project.people){
-        let projectsInRole = Object.keys(person.roles).map((role)=>role.toLowerCase())
-        let projectName = project.name.toLowerCase()
-        if(projectsInRole.includes(projectName)){
-          person.role=person.roles[projectName]
-        }
-      }
-      this.hoverData = {
-        name: project.name,
-        client: project.client,
-        timespan: project.timespan,
-        people: project.people
-      }
     }
   }
 }
