@@ -54,6 +54,12 @@ import BackgroundText from "../components/BackgroundText.vue"
 import LinkParse from "../components/LinkParse.vue"
 import Directus from "../../directus"
 
+function getLowestID(people) {
+  return people.reduce((accum, current) => {
+    return current.id < accum.id ? current : accum
+  }).id
+}
+
 export default {
   async asyncData({ params }) {
     let data = await Directus()
@@ -79,23 +85,29 @@ export default {
     MiniPersonPhoto,
     BackgroundText
   },
+  mounted() {
+    this.reflowPeople()
+  },
   beforeUpdate() {
-    var prevPeople = document.querySelectorAll(".previousAdjacent")
-    var nextPeople = document.querySelectorAll(".nextAdjacent")
+    let prevPeople = document.querySelectorAll(".previousAdjacent")
+    let nextPeople = document.querySelectorAll(".nextAdjacent")
     nextPeople[0].classList.add("immediate")
     prevPeople[prevPeople.length].classList.add("immediate")
   },
   methods: {
     reflowPeople(id) {
-      var people = document.querySelectorAll(".fullSizePersonCard")
-      if (typeof people !== "undefined" && people.length > 0) {
-        people.forEach(function(el) {
+      let people = document.querySelectorAll(".fullSizePersonCard")
+      if (people && people.length > 0) {
+        people.forEach(el => {
           el.classList.remove("immediate")
           el.classList.remove("penultimate")
         })
       }
-      var prev = id - 4
-      var penUlt = id - 5
+      // let prev = id - 4
+      // let penUlt = id - 5
+      let penUlt = id - (getLowestID(this.people) + 1)
+      console.log(penUlt)
+      let prev = id - (getLowestID(this.people) + 2)
       if (prev > -1) {
         people[prev].classList.add("immediate")
       }
