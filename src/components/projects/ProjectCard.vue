@@ -40,7 +40,7 @@ export default {
     }
   },
   data: function() {
-    let twoLineTitle = this.project.name.length < 19 ? "" : "twoLineTitle"
+    let twoLineTitle = this.project.name.length < 16 ? "" : "twoLineTitle"
     return {
       twoLineTitle: twoLineTitle
     }
