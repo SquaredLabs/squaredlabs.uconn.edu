@@ -1,4 +1,5 @@
 FROM node:10
+LABEL maintainer = "SquaredLabs"
 
 WORKDIR /usr/src/app
 
