@@ -67,7 +67,9 @@ export default {
       navLinks.addEventListener("click", function() {
         document.querySelector(".menu.link").textContent = "[menu ↑]"
         document.querySelector("nav").classList.remove("expanded")
-        document.querySelector("nav ~ *.dimmed").classList.remove("dimmed")
+        try {
+          document.querySelector("nav ~ *.dimmed").classList.remove("dimmed")
+        } catch (e) {}
       })
     })
     window.addEventListener("scroll", function() {
