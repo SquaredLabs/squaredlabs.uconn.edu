@@ -40,7 +40,7 @@ export default {
     }
   },
   data: function() {
-    let twoLineTitle = this.project.name.length < 16 ? "" : "twoLineTitle"
+    let twoLineTitle = this.project.name.length < 19 ? "" : "twoLineTitle"
     return {
       twoLineTitle: twoLineTitle
     }
@@ -54,6 +54,7 @@ export default {
       }
     },
     setRole(project) {
+      if (!project.people || project.people.length === 0) return
       for (let person of project.people) {
         let projectsInRole = Object.keys(person.roles).map(role =>
           role.toLowerCase()
