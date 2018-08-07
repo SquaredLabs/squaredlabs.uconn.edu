@@ -3,7 +3,8 @@
     :class="[
       {selected:selected},
       {previousAdjacent:previous},
-      {nextAdjacent:next}
+      {nextAdjacent:next},
+      {immediate: immediate}
     ]"
     class="fullSizePersonCard">
     <div
@@ -36,11 +37,9 @@ export default {
     },
     next() {
       return this.$store.state.selectedPerson < this.id
-    }
-  },
-  beforeUpdate() {
-    if (this.selected) {
-      this.$emit("reflowPeople")
+    },
+    immediate() {
+      return Math.abs(this.$store.state.selectedPerson - this.id) === 1
     }
   }
 }

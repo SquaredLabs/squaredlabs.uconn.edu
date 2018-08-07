@@ -20,8 +20,6 @@
             :id="person.id"
             :name="person.name"
             :role="person.title"
-            class=""
-            @reflowPeople="reflowPeople(person.id)"
             @click.native="selectPerson(person.id)">
             <template slot="name">{{ person.name }}</template>
             <template slot="role">{{ person.role }}</template>
@@ -79,30 +77,7 @@ export default {
     MiniPersonPhoto,
     BackgroundText
   },
-  beforeUpdate() {
-    var prevPeople = document.querySelectorAll(".previousAdjacent")
-    var nextPeople = document.querySelectorAll(".nextAdjacent")
-    nextPeople[0].classList.add("immediate")
-    prevPeople[prevPeople.length].classList.add("immediate")
-  },
   methods: {
-    reflowPeople(id) {
-      var people = document.querySelectorAll(".fullSizePersonCard")
-      if (typeof people !== "undefined" && people.length > 0) {
-        people.forEach(function(el) {
-          el.classList.remove("immediate")
-          el.classList.remove("penultimate")
-        })
-      }
-      var prev = id - 4
-      var penUlt = id - 5
-      if (prev > -1) {
-        people[prev].classList.add("immediate")
-      }
-      if (penUlt > -1) {
-        people[penUlt].classList.add("penultimate")
-      }
-    },
     selectPerson(id) {
       this.$store.commit("selectPerson", id)
     }
