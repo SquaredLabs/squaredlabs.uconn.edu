@@ -17,7 +17,7 @@
       <mini-person-card
         v-for="person in project.people"
         :key="person.id"
-        :icon="person.thumbnail">
+        :icon="person.thumbnail || ''">
         <template slot="name">{{ person.name }}</template>
         <template slot="position">{{ person.role }}</template>
       </mini-person-card>

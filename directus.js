@@ -54,7 +54,9 @@ function loadProjects(url, endpoint) {
         technologies: projectData.technologies,
         large_summary: unescapeHTML(projectData.large_summary),
         small_summary: unescapeHTML(projectData.small_summary),
-        imageURL: url + projectData.thumbnail.data.url
+        imageURL: projectData.thumbnail
+          ? url + projectData.thumbnail.data.url
+          : ""
       }))
       alphabetize(projectsData, "name")
       let projects = { projects: projectsData }
