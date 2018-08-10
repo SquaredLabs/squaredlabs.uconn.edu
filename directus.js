@@ -59,7 +59,10 @@ function loadProjects(url, endpoint) {
         small_summary: unescapeHTML(projectData.small_summary),
         imageURL: projectData.thumbnail
           ? url + projectData.thumbnail.data.url
-          : ""
+          : "",
+        images: projectData.project_graphics.data.map(
+          image => url + image.thumbnail_url
+        )
       }))
       let projects = { projects: projectsData }
       return projects

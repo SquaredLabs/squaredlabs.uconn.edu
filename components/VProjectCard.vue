@@ -15,6 +15,8 @@
           <slot />
         </div>
       </div>
+      <!-- See Here -->
+      <!-- <img :src="project.images[0]"/> -->
       <div class="projectLink">
         <v-link
           class="VLink"
