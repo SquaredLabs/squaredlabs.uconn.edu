@@ -23,7 +23,8 @@ function loadPeople(url, endpoint) {
         degree: personData.degree,
         description: unescapeHTML(personData.description),
         roles: personData.roles,
-        imageURL: url + personData.picture.data.url
+        imageURL:
+          personData.picture === null ? "" : url + personData.picture.data.url
       }))
       alphabetize(peopleData, "name")
       let people = { people: peopleData }
@@ -58,7 +59,6 @@ function loadProjects(url, endpoint) {
           ? url + projectData.thumbnail.data.url
           : ""
       }))
-      alphabetize(projectsData, "name")
       let projects = { projects: projectsData }
       return projects
     })
