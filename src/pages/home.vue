@@ -26,11 +26,11 @@
       <!-- Will only show first 3 projects in order -->
       <project-card
         v-for="project in projects"
-        v-if="projects&&project.order<=3"
+        v-if="projects && project.order <= 3"
         :key="project.id"
         :project="project"
         class="col-lg-2 col-sm-2">
-        <LinkParse :rawhtml="project.large_summary"/>
+        <LinkParse :rawhtml="project.small_summary"/>
       </project-card>
       <div v-if="!projects">Loading projects</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
