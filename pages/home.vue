@@ -23,13 +23,13 @@
           <v-link href="/labs">lab page</v-link>.
         </p>
       </div>
+      <div v-if="!projects">Loading projects...</div>
       <v-project-card
-        v-for="project in projects"
-        v-if="projects && project.order <= 3"
-        :key="project.id"
-        :project="project"
+        v-for="index in 3"
+        v-else
+        :key="index"
+        :project="projects[index]"
         class="col-lg-2 col-sm-2"/>
-      <div v-if="!projects">Loading projects</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
         <v-link href="/projects">
           See all projects &rarr;
