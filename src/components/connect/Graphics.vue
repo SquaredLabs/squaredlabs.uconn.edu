@@ -93,7 +93,7 @@
         <div class="graphicInner">&nbsp;</div>
       </div>
     </div>
-    <SLink
+    <!-- <SLink
       id="graphicLeft"
       class="arrow"
       @click="graphicLeft">
@@ -104,7 +104,7 @@
       class="arrow"
       @click="graphicRight">
       →
-    </SLink>
+    </SLink> -->
   </div>
 </template>
 
