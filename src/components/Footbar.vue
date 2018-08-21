@@ -3,18 +3,18 @@
     :class="{blueTheme:theme=='blue'}"
     class="footbar gridded">
     <SLink
-      class="link col-sm-2 off-1 off-lg-3 row-off-md-0"
+      class="link col-sm-2 off-1 col-md-3 off-lg-3 row-off-md-0"
       href="https://uconn.edu">
       ©2018 UConn
     </SLink>
     <SLink
-      class="link col-sm-2 col-lg-2 row-off-sm-1 row-off-md-0 off-lg-5"
+      class="link col-sm-2 col-lg-2 col-md-3 row-off-sm-1 row-off-md-0 off-lg-5"
       href="https://core.uconn.edu">
       UConn COR²E
     </SLink>
-    <SLink class="link col-sm-2 col-lg-2 row-off-sm-1 row-off-md-0 off-lg-7">
+    <!-- <SLink class="link col-sm-2 col-lg-2 row-off-sm-1 row-off-md-0 off-lg-7">
       &#x263B;
-    </SLink>
+    </SLink> -->
     <!-- <SLink class="link col-md-1 col-1 col-lg-2">
       Link 1
     </SLink>
