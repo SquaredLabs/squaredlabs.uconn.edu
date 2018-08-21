@@ -53,7 +53,7 @@ import ProjectView from "../components/projects/ProjectView.vue"
 const setPeople = function(person, projects) {
   let role = person.roles
   for (let project of projects) {
-    project.people = []
+    if(!project.people) project.people = []
     let projectsInRole = Object.keys(role).map(role => role.toLowerCase())
     let projectName = project.name.toLowerCase()
     if (projectsInRole.includes(projectName)) {
