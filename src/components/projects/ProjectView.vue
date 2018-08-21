@@ -71,6 +71,7 @@ export default {
   grid-row-gap: 20px;
   background-color: $dodger-blue;
   color: white;
+  z-index: 5;
 }
 
 .activeDetailSidebar {

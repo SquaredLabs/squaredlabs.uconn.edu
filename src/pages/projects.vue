@@ -53,7 +53,7 @@ import ProjectView from "../components/projects/ProjectView.vue"
 const setPeople = function(person, projects) {
   let role = person.roles
   for (let project of projects) {
-    if(!project.people) project.people = []
+    if (!project.people) project.people = []
     let projectsInRole = Object.keys(role).map(role => role.toLowerCase())
     let projectName = project.name.toLowerCase()
     if (projectsInRole.includes(projectName)) {
@@ -148,6 +148,7 @@ export default {
 @media screen and (min-width: $tablet) {
   #projectSection {
     margin-top: 18.19em;
+    z-index: 5;
   }
   .whiteBox {
     grid-row: 1 / span 4;
