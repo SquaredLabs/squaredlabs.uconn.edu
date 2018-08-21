@@ -39,6 +39,43 @@
           class="col-1"
           @click.native="selectPerson(person.id)"/>
       </Grid>
+
+      <Grid id="alumniPeopleSection">
+        <div
+          class="whiteBox left col-sm-4 col-md-3 off-md-0 off-0 off-lg-0">
+          <h1>Alumni</h1>
+        </div>
+        <Grid
+          id="alumniCarousel"
+          class="col-sm-4 col-md-6 col-8 col-lg-12">
+          <div v-if="!people">Loading alumni...</div>
+          <FullSizePersonCard
+            v-for="person in alumni"
+            v-else
+            :key="person.id"
+            :background="person.imageURL"
+            :id="person.id"
+            :name="person.name"
+            :role="person.title"
+            @click.native="selectPerson(person.id)">
+            <template slot="name">{{ person.name }}</template>
+            <template slot="role">{{ person.role }}</template>
+            <span v-html="person.description" />
+          </FullSizePersonCard>
+        </Grid>
+        <div v-if="!people">Loading alumni...</div>
+        <MiniPersonPhoto
+          v-for="person in alumni"
+          v-else
+          :key="person.id"
+          :background="person.imageURL"
+          :id="person.id"
+          :name="person.name"
+          :alt="person.name"
+          :role="person.title"
+          class="col-1"
+          @click.native="selectPerson(person.id)"/>
+      </Grid>
     </div>
   </div>
 </template>
@@ -65,7 +102,8 @@ export default {
       images[image.page_location] = image.imageURL
     }
     return {
-      people: peopleData.people,
+      people: peopleData.people.filter(person => !person.alumni),
+      alumni: peopleData.people.filter(person => person.alumni),
       images: images
     }
   },
@@ -106,8 +144,17 @@ export default {
     margin: 0;
   }
 }
+.whiteBox.left {
+  margin-left: 1.25em;
+}
 
 #peopleCarousel {
+  padding-bottom: 3.052em;
+  padding-right: 1.25em;
+  margin-right: -1.25em;
+  overflow: hidden;
+}
+#alumniCarousel {
   padding-bottom: 3.052em;
   padding-right: 1.25em;
   margin-right: -1.25em;

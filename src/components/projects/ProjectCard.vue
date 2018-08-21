@@ -49,6 +49,7 @@ export default {
     expand() {
       document.querySelector("html").classList.add("noScroll")
       this.$store.commit("selectProject", this.project.id)
+      console.log(this.$route.path)
       if (this.$route.path !== "/projects") {
         this.$router.push("projects")
       }

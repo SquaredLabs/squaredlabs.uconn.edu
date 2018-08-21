@@ -23,6 +23,7 @@ function loadPeople(url, endpoint) {
         degree: personData.degree,
         description: unescapeHTML(personData.description),
         roles: personData.roles,
+        alumni: false,
         imageURL:
           personData.picture === null ? "" : url + personData.picture.data.url
       }))
