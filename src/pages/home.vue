@@ -29,8 +29,7 @@
         v-if="projects && project.order <= 3"
         :key="project.id"
         :project="project"
-        class="col-lg-2 col-sm-2">
-      </project-card>
+        class="col-lg-2 col-sm-2"/>
       <div v-if="!projects">Loading projects</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
         <SLink href="/projects">
