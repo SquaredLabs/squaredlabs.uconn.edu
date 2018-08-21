@@ -30,7 +30,6 @@
         :key="project.id"
         :project="project"
         class="col-lg-2 col-sm-2">
-        <LinkParse :rawhtml="project.small_summary"/>
       </project-card>
       <div v-if="!projects">Loading projects</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
