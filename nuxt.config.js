@@ -1,5 +1,6 @@
 module.exports = {
   srcDir: "src/",
+  rootDir: __dirname,
   plugins: ["~/plugins/vue-resource"],
   router: {
     middleware: "checkTheme"
@@ -31,7 +32,7 @@ module.exports = {
       },
       {
         name: "msapplication-config",
-        content: "/static/browserconfig.xml?v=E656kOkMMx"
+        content: "/browserconfig.xml?v=E656kOkMMx"
       },
       {
         name: "theme-color",
@@ -40,34 +41,21 @@ module.exports = {
     ],
     link: [
       {
-        rel: "shortcut icon",
-        href: "/static/favicon.ico?v=E656kOkMMx"
-      },
-      {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: "/static/favicon-16x16.png?v=E656kOkMMx"
+        href: "/favicon-16x16.png"
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/static/favicon-32x32.png?v=E656kOkMMx"
+        href: "/favicon-32x32.png"
       },
       {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/static/apple-touch-icon.png?v=E656kOkMMx"
-      },
-      {
-        rel: "manifest",
-        href: "/static/site.webmanifest?v=E656kOkMMx"
-      },
-      {
-        rel: "mask-icon",
-        href: "/static/safari-pinned-tab.svg?v=E656kOkMMx",
-        color: "#5bbad5"
+        href: "/apple-touch-icon.png"
       }
     ]
   }
