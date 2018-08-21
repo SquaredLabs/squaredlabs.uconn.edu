@@ -93,26 +93,26 @@
         <div class="graphicInner">&nbsp;</div>
       </div>
     </div>
-    <!-- <SLink
+    <v-link
       id="graphicLeft"
       class="arrow"
       @click="graphicLeft">
       ←
-    </SLink>
-    <SLink
+    </v-link>
+    <v-link
       id="graphicRight"
       class="arrow"
       @click="graphicRight">
       →
-    </SLink> -->
+    </v-link>
   </div>
 </template>
 
 <script>
-import SLink from "../Link.vue"
+import VLink from "~/components/VLink.vue"
 export default {
   components: {
-    SLink
+    VLink
   },
   data() {
     this.getRepos()

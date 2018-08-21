@@ -1,17 +1,12 @@
 module.exports = {
-  srcDir: "src/",
-  rootDir: __dirname,
   plugins: ["~/plugins/vue-resource"],
   router: {
     middleware: "checkTheme"
   },
-  build: {
-    assetsPublicPath: "/",
-    assetsSubDirectory: "static",
-    extend(config, { isDev, isClient }) {
-      // ...
-    }
-  },
+  // build: {
+  //   extend(config, { isDev, isClient }) {
+  //   }
+  // },
   head: {
     meta: [
       {
@@ -29,10 +24,6 @@ module.exports = {
       {
         name: "msapplication-TileColor",
         content: "#6aa1f4"
-      },
-      {
-        name: "msapplication-config",
-        content: "/browserconfig.xml?v=E656kOkMMx"
       },
       {
         name: "theme-color",

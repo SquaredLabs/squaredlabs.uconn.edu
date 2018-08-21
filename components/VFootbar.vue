@@ -2,29 +2,17 @@
   <div
     :class="{blueTheme:theme=='blue'}"
     class="footbar gridded">
-    <SLink
+    <v-link
       class="link col-sm-2 off-1 col-md-3 off-lg-3 row-off-md-0"
       href="https://uconn.edu">
       ©2018 UConn
-    </SLink>
-    <SLink
+    </v-link>
+    <v-link
       class="link col-sm-2 col-lg-2 col-md-3 row-off-sm-1 row-off-md-0 off-lg-5"
       href="https://core.uconn.edu">
       UConn COR²E
-    </SLink>
-    <!-- <SLink class="link col-sm-2 col-lg-2 row-off-sm-1 row-off-md-0 off-lg-7">
-      &#x263B;
-    </SLink> -->
-    <!-- <SLink class="link col-md-1 col-1 col-lg-2">
-      Link 1
-    </SLink>
-    <SLink class="link col-md-1 col-1 col-lg-2">
-      Link 2
-    </SLink> -->
-    <!-- <figure class="footbarBrand col-1">
-      <img src="~/assets/images/wordmark.png">
-    </figure> -->
-    <span 
+    </v-link>
+    <span
       :class="{blueTheme:theme=='blue'}"
       class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1">
       Designed & developed by
@@ -35,10 +23,10 @@
   </div>
 </template>
 <script>
-import SLink from "./Link.vue"
+import VLink from "~/components/VLink.vue"
 export default {
   components: {
-    SLink
+    VLink
   },
   props: {
     theme: {

@@ -1,18 +1,18 @@
 <template>
   <div>
-    <BackgroundText :lines="['peo','ple']" />
+    <v-background-text :lines="['peo','ple']" />
     <div id="peoplePage">
-      <Grid id="currentPeopleSection">
+      <v-grid-layout id="currentPeopleSection">
         <div
           class="whiteBox col-sm-4 col-md-3 off-md-3 off-5 off-lg-8">
           <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
           a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
         </div>
-        <Grid
+        <v-grid-layout
           id="peopleCarousel"
           class="col-sm-4 col-md-6 col-8 col-lg-12">
           <div v-if="!people">Loading people...</div>
-          <FullSizePersonCard
+          <v-person-card-full
             v-for="person in people"
             v-else
             :key="person.id"
@@ -23,11 +23,11 @@
             @click.native="selectPerson(person.id)">
             <template slot="name">{{ person.name }}</template>
             <template slot="role">{{ person.role }}</template>
-            <span v-html="person.description" />
-          </FullSizePersonCard>
-        </Grid>
+            {{ person.description }}
+          </v-person-card-full>
+        </v-grid-layout>
         <div v-if="!people">Loading people...</div>
-        <MiniPersonPhoto
+        <v-person-photo
           v-for="person in people"
           v-else
           :key="person.id"
@@ -38,14 +38,13 @@
           :role="person.title"
           class="col-1"
           @click.native="selectPerson(person.id)"/>
-      </Grid>
+      </v-grid-layout>
       <div
         class="whiteBox alumni col-sm-4 col-md-3 off-md-0 off-0 off-lg-0">
         <h1>Alumni</h1>
       </div>
-      <Grid id="alumniPeopleSection">
-        
-        <person-card
+      <v-grid-layout id="alumniPeopleSection">
+        <v-person-card-medium
           v-for="person in alumni"
           :key="person.id"
           :background="person.imageURL"
@@ -55,22 +54,20 @@
           class="col-sm-2">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.role }}</template>
-          <LinkParse :rawhtml="person.description" />
-        </person-card>
-
-      </Grid>
+          {{ person.description }}
+        </v-person-card-medium>
+      </v-grid-layout>
     </div>
   </div>
 </template>
 
 <script>
-import Grid from "../components/GridLayout.vue"
-import PersonCard from "../components/PersonCard.vue"
-import FullSizePersonCard from "../components/FullSizePersonCard.vue"
-import MiniPersonPhoto from "../components/MiniPersonPhoto.vue"
-import BackgroundText from "../components/BackgroundText.vue"
-import LinkParse from "../components/LinkParse.vue"
-import Directus from "../../directus"
+import VGridLayout from "~/components/VGridLayout.vue"
+import VPersonCardMedium from "~/components/VPersonCardMedium.vue"
+import VPersonCardFull from "~/components/VPersonCardFull.vue"
+import VPersonPhoto from "~/components/VPersonPhoto.vue"
+import VBackgroundText from "~/components/VBackgroundText.vue"
+import Directus from "~/directus"
 
 export default {
   async asyncData({ params }) {
@@ -91,12 +88,11 @@ export default {
     }
   },
   components: {
-    Grid,
-    PersonCard,
-    LinkParse,
-    FullSizePersonCard,
-    MiniPersonPhoto,
-    BackgroundText
+    VGridLayout,
+    VPersonCardMedium,
+    VPersonCardFull,
+    VPersonPhoto,
+    VBackgroundText
   },
   methods: {
     selectPerson(id) {

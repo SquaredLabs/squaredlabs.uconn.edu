@@ -16,22 +16,22 @@
         </div>
       </div>
       <div class="projectLink">
-        <SLink
-          class="SLink"
+        <v-link
+          class="VLink"
           @click="expand">
           View Project &rarr;
-        </SLink>
+        </v-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import SLink from "../Link"
+import VLink from "~/components/VLink"
 
 export default {
   components: {
-    SLink
+    VLink
   },
   props: {
     project: {

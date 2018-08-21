@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import Developer from "./Developer.vue"
-import Student from "./Student.vue"
-import Company from "./Company.vue"
-import Other from "./Other.vue"
+import Developer from "~/components/VConnectDeveloper.vue"
+import Student from "~/components/VConnectStudent.vue"
+import Company from "~/components/VConnectCompany.vue"
+import Other from "~/components/VConnectOther.vue"
 
 const views = {
   Student: Student,

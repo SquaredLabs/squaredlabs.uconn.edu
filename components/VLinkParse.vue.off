@@ -1,12 +1,12 @@
 <template>
   <div>
     <p>
-      <span 
-        v-for="line in parsedHTML" 
+      <span
+        v-for="line in parsedHTML"
         :key="line.number">
         <span v-html="line.content"/>
-        <SLink 
-          v-if="line.href" 
+        <SLink
+          v-if="line.href"
           :href="line.href">
           {{ line.linkText }}
         </SLink>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import SLink from "./Link.vue"
+import SLink from "~/components/Link.vue"
 export default {
   components: {
     SLink

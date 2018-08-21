@@ -15,16 +15,16 @@
       <p>
         The earlier you are in your college career the better (while we don’t typically hire seniors,
         exceptions have been made). If you’ve read through this website and think you’d be a good fit,
-        you can apply for a <SLink
+        you can apply for a <v-link
           lighter-background
         >
           web development
-        </SLink>
-        or <SLink
+        </v-link>
+        or <v-link
           lighter-background
         >
           design
-        </SLink>position.
+        </v-link>position.
       </p><p>
         The other way to get involved with us as a student is
         to attend our workshops, which cover a
@@ -36,10 +36,10 @@
 </template>
 
 <script>
-import SLink from "../Link.vue"
+import VLink from "~/components/VLink.vue"
 export default {
   components: {
-    SLink
+    VLink
   },
   props: {
     back: { type: Function, required: true }

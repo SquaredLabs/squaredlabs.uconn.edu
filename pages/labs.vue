@@ -1,10 +1,10 @@
 <template>
-  <Grid class="noMarginTop">
+  <v-grid-layout class="noMarginTop">
     <div
       id="titleTextContainer"
       class="col-sm-4 col-md-6 col-8 col-lg-12">
       <div id="titleText">
-        <TitleLine title-positioning="design">
+        <v-title-line title-positioning="design">
           <template slot="title">
             design
           </template>
@@ -27,8 +27,8 @@
               you name it — it’s vetted for consistency with the overall project goals.
             </p>
           </template>
-        </TitleLine>
-        <TitleLine title-positioning="develop">
+        </v-title-line>
+        <v-title-line title-positioning="develop">
           <template slot="title">
             develop
           </template>
@@ -51,8 +51,8 @@
               skills that we hope will serve them well beyond UConn.
             </p>
           </template>
-        </TitleLine>
-        <TitleLine title-positioning="create">
+        </v-title-line>
+        <v-title-line title-positioning="create">
           <template slot="title">
             create.
           </template>
@@ -76,7 +76,7 @@
               informative than it was before.
             </p>
           </template>
-        </TitleLine>
+        </v-title-line>
       </div>
     </div>
 
@@ -140,7 +140,7 @@
         </p>
         <p>
           If you want to know everything we’ve worked on, and are
-          working on, check out our <SLink href="/projects">projects</SLink> page.
+          working on, check out our <v-link href="/projects">projects</v-link> page.
         </p>
       </div>
     </div>
@@ -179,19 +179,19 @@
         </p>
       </div>
     </div>
-  </Grid>
+  </v-grid-layout>
 </template>
 
 <script>
-import SLink from "../components/Link"
-import TitleLine from "../components/lab/TitleLine"
-import Grid from "../components/GridLayout"
+import VLink from "~/components/VLink"
+import VTitleLine from "~/components/VTitleLine"
+import VGridLayout from "~/components/VGridLayout"
 
 export default {
   components: {
-    SLink,
-    TitleLine,
-    Grid
+    VLink,
+    VTitleLine,
+    VGridLayout
   }
 }
 </script>

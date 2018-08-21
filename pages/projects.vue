@@ -1,7 +1,7 @@
 <template>
   <div>
-    <BackgroundText :lines="['proj','ects']" />
-    <Grid id="projectSection">
+    <v-background-text :lines="['proj','ects']" />
+    <v-grid-layout id="projectSection">
       <div
         class="whiteBox off-sm-0 col-sm-4 col-md-2 off-lg-1">
         <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually
@@ -13,16 +13,16 @@
         <b>{{ hoverData.name }}</b>
         <p>{{ hoverData.client }}</p>
         <p>{{ hoverData.timespan }}</p>
-        <mini-person-card
+        <v-person-card-mini
           v-for="person in hoverData.people"
           :key="person.id"
           :icon="person.imageURL">
           <template slot="name">{{ person.name }}</template>
           <template slot="position">{{ person.role }}</template>
-        </mini-person-card>
+        </v-person-card-mini>
       </div>
       <div v-if="!projects">Loading projects</div>
-      <project-card
+      <v-project-card
         v-for="project in projects"
         v-else
         :key="project.id"
@@ -30,25 +30,25 @@
         class="col-sm-2"
         @hoverProject="hoverData = $event">
         <span v-html="project.small_summary" />
-      </project-card>
+      </v-project-card>
       <transition
         name="slide"
         mode="out-in">
-        <ProjectView
+        <v-selected-project
           v-show="$store.state.selectedProject!==0"
           :project="selectedProject" />
       </transition>
-    </Grid>
+    </v-grid-layout>
   </div>
 </template>
 
 <script>
-import Grid from "../components/GridLayout.vue"
-import ProjectCard from "../components/projects/ProjectCard.vue"
-import MiniPersonCard from "../components/projects/MiniPersonCard.vue"
-import Directus from "../../directus"
-import BackgroundText from "../components/BackgroundText.vue"
-import ProjectView from "../components/projects/ProjectView.vue"
+import VGridLayout from "~/components/VGridLayout.vue"
+import VProjectCard from "~/components/VProjectCard.vue"
+import VPersonCardMini from "~/components/VPersonCardMini.vue"
+import Directus from "~/directus"
+import VBackgroundText from "~/components/VBackgroundText.vue"
+import VSelectedProject from "~/components/VSelectedProject.vue"
 
 const setPeople = function(person, projects) {
   let role = person.roles
@@ -88,11 +88,11 @@ export default {
     }
   },
   components: {
-    Grid,
-    ProjectCard,
-    MiniPersonCard,
-    BackgroundText,
-    ProjectView
+    VGridLayout,
+    VProjectCard,
+    VPersonCardMini,
+    VBackgroundText,
+    VSelectedProject
   },
   data: () => ({
     hoverData: {}

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <BackgroundText :lines="['con','nect']"/>
-    <Grid id="connectPageContent">
+    <v-background-text :lines="['con','nect']"/>
+    <v-grid-layout id="connectPageContent">
       <p
         id="mainHeader"
         class="header col-sm-4 col-md-6 col-7 off-1">
         Like what we do?
       </p>
-      <Graphics class="col-sm-4 col-md-6 col-7 off-1 col-lg-10"/>
+      <v-connect-graphics class="col-sm-4 col-md-6 col-7 off-1 col-lg-10"/>
       <p
         id="secondaryHeader"
         class="header col-sm-4 col-md-6 off-1">
@@ -23,25 +23,23 @@
           If you’re a…
         </p>
       </div>
-      <ConnectSelect class="col-sm-4 col-md-6 col-8 col-lg-10"/>
-    </Grid>
+      <v-connect-select class="col-sm-4 col-md-6 col-8 col-lg-10"/>
+    </v-grid-layout>
   </div>
 </template>
 
 <script>
-import ConnectSelect from "../components/connect/ConnectSelect.vue"
-import Link from "../components/Link.vue"
-import Graphics from "../components/connect/Graphics.vue"
-import BackgroundText from "../components/BackgroundText.vue"
-import Grid from "../components/GridLayout.vue"
+import VConnectSelect from "~/components/VConnectSelect.vue"
+import VConnectGraphics from "~/components/VConnectGraphics.vue"
+import VBackgroundText from "~/components/VBackgroundText.vue"
+import VGridLayout from "~/components/VGridLayout.vue"
 
 export default {
   components: {
-    ConnectSelect,
-    Link,
-    Graphics,
-    BackgroundText,
-    Grid
+    VConnectSelect,
+    VConnectGraphics,
+    VBackgroundText,
+    VGridLayout
   }
 }
 </script>

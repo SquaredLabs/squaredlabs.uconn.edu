@@ -2,22 +2,16 @@
   <div id="container">
     <div id="content">
       If you’re a UConn or non-UConn developer but want to get involved with ⬚² labs you can:
-
       <p><span class="contentStyleList">
         <span class="black">1</span>) Contribute to any of our open source
-        <SLink
+        <v-link
           lighter-background
           href="/projects">
           projects
-        </SLink>,
+        </v-link>,
       </span>
         <span class="contentStyleList">
           <span class="black">2</span>) contact us about presenting a
-          <!--<SLink
-            lighter-background
-            href="/workshops">
-            workshop
-          </SLink>-->
           in an area of your expertise, and/or
         </span>
         <span class="contentStyleList">
@@ -40,10 +34,10 @@
 </template>
 
 <script>
-import SLink from "../Link.vue"
+import VLink from "~/components/VLink.vue"
 export default {
   components: {
-    SLink
+    VLink
   },
   props: {
     back: { type: Function, required: true }

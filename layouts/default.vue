@@ -2,18 +2,18 @@
   <div
     :class="{blueAppTheme:$store.state.theme=='blue'}"
     class="app">
-    <Navbar :theme="$store.state.theme"/>
+    <v-navbar :theme="$store.state.theme"/>
     <nuxt />
-    <Footbar :theme="$store.state.theme"/>
+    <v-footbar :theme="$store.state.theme"/>
   </div>
 </template>
 <script>
-import Navbar from "../components/Navbar"
-import Footbar from "../components/Footbar"
+import VNavbar from "~/components/VNavbar"
+import VFootbar from "~/components/VFootbar"
 export default {
   components: {
-    Navbar,
-    Footbar
+    VNavbar,
+    VFootbar
   }
 }
 </script>

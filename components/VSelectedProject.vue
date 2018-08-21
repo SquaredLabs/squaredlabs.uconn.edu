@@ -3,11 +3,11 @@
     id="selectedProjectModal"
     class="col-sm-4 col-md-6 col-8 col-lg-12">
     <h1 class="title">{{ project.name }}</h1>
-    <SLink
-      class="SLink return"
+    <v-link
+      class="VLink return"
       @click="unexpand">
       ← Return to all projects
-    </SLink>
+    </v-link>
     <div
       class="desc"
       v-html="project.large_summary">
@@ -32,13 +32,13 @@
 </template>
 
 <script>
-import SLink from "../Link"
-import MiniPersonCard from "./MiniPersonCard.vue"
+import VLink from "~/components/VLink"
+import VPersonCardMini from "~/components/VPersonCardMini.vue"
 
 export default {
   components: {
-    SLink,
-    MiniPersonCard
+    VLink,
+    VPersonCardMini
   },
   props: {
     project: { type: Object, required: true }

@@ -1,6 +1,6 @@
 <template>
   <div id="homePage">
-    <Grid
+    <v-grid-layout
       id="landSection"
       section="landing">
       <div class="col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1">
@@ -8,23 +8,22 @@
           class="logo"
           src="~/assets/images/squaredlabs.svg">
       </div>
-    </Grid>
-    <Grid
+    </v-grid-layout>
+    <v-grid-layout
       id="projectSection"
       section="projects">
       <div
         text="projects"
         class="col-sm-4 col-md-2 off-lg-1">
         <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best
-          <SLink href="/people">students</SLink>, we build cutting-edge
-          <SLink href="/projects">websites</SLink> that support UConn’s world-class research infrastructure.
+          <v-link href="/people">students</v-link>, we build cutting-edge
+          <v-link href="/projects">websites</v-link> that support UConn’s world-class research infrastructure.
         </p>
         <p>View our history, purpose, and space on the
-          <SLink href="/labs">lab page</SLink>.
+          <v-link href="/labs">lab page</v-link>.
         </p>
       </div>
-      <!-- Will only show first 3 projects in order -->
-      <project-card
+      <v-project-card
         v-for="project in projects"
         v-if="projects && project.order <= 3"
         :key="project.id"
@@ -32,34 +31,12 @@
         class="col-lg-2 col-sm-2"/>
       <div v-if="!projects">Loading projects</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
-        <SLink href="/projects">
+        <v-link href="/projects">
           See all projects &rarr;
-        </SLink>
+        </v-link>
       </div>
-    </Grid>
-    <!--<section>
-      <layout text="workshops">
-        <div class="layout__col--pacman padded">
-          <workshop-card
-            :technologies="['https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/726px-CSS3_logo_and_wordmark.svg.png', 'http://ryanchristiani.com/wp-content/uploads/2015/06/js-logo.png']"
-            registration-link="http://google.com">
-            <template slot="name">Workshop Name</template>
-            <template slot="time">13:00-17:00</template>
-            <template slot="date">Jan 1, 2018</template>
-            <template slot="address-top">1 Bishop Circle</template>
-            <template slot="address-bottom">Storrs CT 06269</template>
-            <p>Any other relevant text can go here. Now it’s longer though, which is pretty neat. You can talk about the workshop now.</p>
-          </workshop-card>
-        </div>
-        <div
-          class="">
-          <p>Learning from others and sharing what we know is central to the ⬚² labs philosophy. We see workshops as an opportunity to do both (in addition to getting to know the UConn web development community).</p>
-          <p>Our workshops are open to all members of the UConn community, for free.</p>
-          <SLink href="/workshops">View all workshops</SLink>
-        </div>
-      </layout>
-    </section>-->
-    <Grid
+    </v-grid-layout>
+    <v-grid-layout
       v-if="people"
       id="peopleSection"
       section="people">
@@ -68,12 +45,12 @@
         <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track
         record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If
         that sounds like you,
-          <SLink href="/connect">
+          <v-link href="/connect">
             get in touch!
-          </SLink>
+          </v-link>
         </p>
       </div>
-      <person-card
+      <v-person-card-medium
         v-for="person in people"
         :key="person.id"
         :background="person.imageURL"
@@ -84,61 +61,59 @@
         <template slot="name">{{ person.name }}</template>
         <template slot="role">{{ person.role }}</template>
         <LinkParse :rawhtml="person.description" />
-      </person-card>
+      </v-person-card-medium>
       <div v-if="!people">Loading people</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
-        <SLink href="/people">
+        <v-link href="/people">
           Meet the full team &rarr;
-        </SLink>
+        </v-link>
       </div>
-    </Grid>
-    <Grid
+    </v-grid-layout>
+    <v-grid-layout
       id="connectSection"
       section="connect">
-      <connect-card
+      <v-connect-card
         title="Contribute on GitHub"
         link="https://github.com/squaredlabs"
         class="col-sm-2 col-md-2">
-        <GitHubArt />
-      </connect-card>
-      <connect-card
+        <VConnectButtonArtGitHub />
+      </v-connect-card>
+      <v-connect-card
         title="Contact ⬚² labs"
         link="mailto:squaredlabs@uconn.edu"
         class="col-sm-2 col-md-2">
-        <MailArt />
-      </connect-card>
-      <connect-card
+        <VConnectButtonArtMail />
+      </v-connect-card>
+      <v-connect-card
         title="Donate to ⬚² labs"
         link="http://www.foundation.uconn.edu/send-your-gift/"
         class="col-sm-2 col-md-2">
-        <BtcArt />
-      </connect-card>
+        <VConnectButtonArtBtc />
+      </v-connect-card>
       <div class="connectText col-sm-2 col-md-4 off-6 col-2 off-lg-8 col-lg-3">
         <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
         labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty
         ways to become a part of what we do. </p>
       </div>
       <div class="linkPulledRight col-sm-2">
-        <SLink href="/connect">
+        <v-link href="/connect">
           Connect with us &rarr;
-        </SLink>
+        </v-link>
       </div>
-    </Grid>
+    </v-grid-layout>
   </div>
 </template>
 
 <script>
-import Grid from "../components/GridLayout.vue"
-import ProjectCard from "../components/projects/ProjectCard.vue"
-import WorkshopCard from "../components/WorkshopCard.vue"
-import PersonCard from "../components/PersonCard.vue"
-import ConnectCard from "../components/ConnectCard.vue"
-import SLink from "../components/Link.vue"
-import LinkParse from "../components/LinkParse.vue"
-import MailArt from "../components/connect/MailArt.vue"
-import GitHubArt from "../components/connect/GitHubArt.vue"
-import BtcArt from "../components/connect/BtcArt.vue"
-import Directus from "../../directus"
+import VGridLayout from "~/components/VGridLayout.vue"
+import VProjectCard from "~/components/VProjectCard.vue"
+import VPersonCardMedium from "~/components/VPersonCardMedium.vue"
+import VConnectCard from "~/components/VConnectCard.vue"
+import VLink from "~/components/VLink.vue"
+import VConnectButtonArtMail from "~/components/VConnectButtonArtMail.vue"
+import VConnectButtonArtGitHub from "~/components/VConnectButtonArtGitHub.vue"
+import VConnectButtonArtBtc from "~/components/VConnectButtonArtBtc.vue"
+import Directus from "~/directus"
 
 //  Recursive function to pick 3 different random people.
 const selectPeople = (people, numberToSelect) => {
@@ -159,16 +134,14 @@ export default {
     }
   },
   components: {
-    Grid,
-    ProjectCard,
-    WorkshopCard,
-    ConnectCard,
-    PersonCard,
-    SLink,
-    LinkParse,
-    MailArt,
-    GitHubArt,
-    BtcArt
+    VGridLayout,
+    VProjectCard,
+    VConnectCard,
+    VPersonCardMedium,
+    VLink,
+    VConnectButtonArtMail,
+    VConnectButtonArtGitHub,
+    VConnectButtonArtBtc
   },
   data: () => ({
     people: [],
@@ -241,7 +214,7 @@ export default {
     }
   }
 
-  .connectCard {
+  .VConnectCard {
     grid-column-start: unset;
   }
 
@@ -276,7 +249,7 @@ export default {
   .connectText {
     grid-row: 1 / 3;
   }
-  .connectCard {
+  .VConnectCard {
     grid-row-start: 2;
     margin-bottom: 20px;
   }
@@ -296,7 +269,7 @@ export default {
       text-align: right;
     }
   }
-  a.connectCard {
+  a.VConnectCard {
     &:first-of-type {
       grid-column: 3 / 5;
     }

@@ -3,11 +3,11 @@
     :class="{blueTheme:theme=='blue'}"
     class="navbar gridded">
     <div class="mobile">
-      <SLink
+      <v-link
         class="menu link row-off-sm-1 off-sm-2 col-sm-2"
         @click="toggleMenu">
         [menu ↑]
-      </SLink>
+      </v-link>
     </div>
     <router-link
       class="brand col-sm-2 off-sm-1 off-md-0 col-md-1 col-1"
@@ -16,44 +16,39 @@
         <img src="~/assets/images/wordmark.png">
       </figure>
     </router-link>
-    <SLink
+    <v-link
       class="link col-sm-1 off-3 off-lg-6"
       href="/home">
       home
-    </SLink>
-    <SLink
+    </v-link>
+    <v-link
       class="link col-sm-1"
       href="/projects">
       projects
-    </SLink>
-    <SLink
+    </v-link>
+    <v-link
       class="link col-sm-1"
       href="/people">
       people
-    </SLink>
-    <!--<SLink
-        class="link"
-        href="/workshops">
-        workshops
-      </SLink>!-->
-    <SLink
+    </v-link>
+    <v-link
       class="link lab col-sm-1"
       href="/labs">
       the lab
-    </SLink>
-    <SLink
+    </v-link>
+    <v-link
       class="link col-sm-1"
       href="/connect">
       connect
-    </SLink>
+    </v-link>
   </nav>
 </template>
 <script>
-import SLink from "../components/Link.vue"
+import VLink from "~/components/VLink.vue"
 
 export default {
   components: {
-    SLink
+    VLink
   },
   props: {
     theme: {
