@@ -96,6 +96,10 @@ export default {
   margin: 0.2em 0 1em 0;
 }
 
+.personInfo * {
+  margin: 3px;
+}
+
 .personAbout {
   line-height: 1em;
 }
