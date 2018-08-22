@@ -84,10 +84,17 @@ export default {
     return {
       people: peopleData.people
         .filter(person => !person.alumni)
-        .sort((person1, person2) => person1.order - person2.order),
+        .sort((person1, person2) => person1.order - person2.order)
+        // forEach is necessary to remove "holes" after cutting out alumni
+        .forEach((person, index) => {
+          person.order = index
+        }),
       alumni: peopleData.people
         .filter(person => person.alumni)
-        .sort((person1, person2) => person1.order - person2.order),
+        .sort((person1, person2) => person1.order - person2.order)
+        .forEach((person, index) => {
+          person.order = index
+        }),
       images: images
     }
   },
