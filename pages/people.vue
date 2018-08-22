@@ -43,10 +43,8 @@
           class="col-1"
           @click.native="selectPerson(person.order)"/>
       </v-grid-layout>
-      <div
-        class="whiteBox alumni col-sm-4 col-md-3 off-md-0 off-0 off-lg-0">
-        <h1>Alumni</h1>
-      </div>
+      <section class="alumni-section">
+        <v-background-text :lines="['alu','mni']" />
       <v-grid-layout id="alumniPeopleSection">
         <v-person-card-medium
           v-for="person in alumni"
@@ -55,12 +53,13 @@
           :order="person.order"
           :name="person.name"
           :role="person.title"
-          class="col-sm-2">
+            class="col-sm-2 alumni">
           <template slot="name">{{ person.name }}</template>
           <template slot="role">{{ person.role }}</template>
           {{ person.description }}
         </v-person-card-medium>
       </v-grid-layout>
+      </section>
     </div>
   </div>
 </template>
@@ -155,6 +154,21 @@ export default {
   padding-right: 1.25em;
   margin-right: -1.25em;
   overflow: hidden;
+}
+
+.alumni-section {
+  position: relative;
+  min-height: 60vh;
+}
+
+.alumni-section .gridded {
+  padding-top: 30em;
+}
+
+@media (min-width: $desktopLg) {
+  .alumni-section .gridded {
+    padding-top: 35em;
+  }
 }
 
 @media screen and (min-width: $tablet) {
