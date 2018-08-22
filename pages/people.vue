@@ -82,8 +82,12 @@ export default {
       images[image.page_location] = image.imageURL
     }
     return {
-      people: peopleData.people.filter(person => !person.alumni),
-      alumni: peopleData.people.filter(person => person.alumni),
+      people: peopleData.people
+        .filter(person => !person.alumni)
+        .sort((person1, person2) => person1.order - person2.order),
+      alumni: peopleData.people
+        .filter(person => person.alumni)
+        .sort((person1, person2) => person1.order - person2.order),
       images: images
     }
   },
