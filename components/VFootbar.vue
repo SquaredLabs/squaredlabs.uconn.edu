@@ -3,12 +3,12 @@
     :class="{blueTheme:theme=='blue'}"
     class="footbar gridded">
     <v-link
-      class="link col-sm-2 off-1 col-md-3 off-lg-3 row-off-md-0"
+      class="link col-sm-2 off-md-1 off-2 off-lg-4 row-off-md-0"
       href="https://uconn.edu">
       ©2018 UConn
     </v-link>
     <v-link
-      class="link col-sm-2 col-lg-2 col-md-3 row-off-sm-1 row-off-md-0 off-lg-5"
+      class="link col-sm-2 off-md-3 off-4 off-lg-6 row-off-sm-1 row-off-md-0"
       href="https://core.uconn.edu">
       UConn COR²E
     </v-link>
