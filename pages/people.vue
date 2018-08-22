@@ -31,17 +31,19 @@
           </v-person-card-full>
         </v-grid-layout>
         <div v-if="!people">Loading people...</div>
-        <v-person-photo
-          v-for="person in people"
+        <div
           v-else
-          :key="person.id"
-          :background="person.imageURL"
-          :order="person.order"
-          :name="person.name"
-          :alt="person.name"
-          :role="person.title"
-          class="col-1"
-          @click.native="selectPerson(person.order)"/>
+          class="people-quick-select col-sm-4 col-md-4 off-md-1 off-2 off-lg-3">
+          <v-person-photo
+            v-for="person in people"
+            :key="person.id"
+            :background="person.imageURL"
+            :order="person.order"
+            :name="person.name"
+            :alt="person.name"
+            :role="person.title"
+            @click.native="selectPerson(person.order)"/>
+        </div>
       </v-grid-layout>
       <section class="alumni-section">
         <v-background-text :lines="['alu','mni']" />
