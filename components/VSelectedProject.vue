@@ -14,13 +14,13 @@
       <slot />
     </div>
     <div class="activeDetailSidebar">
-      <mini-person-card
+      <v-person-card-mini
         v-for="person in project.people"
         :key="person.id"
         :icon="person.thumbnail || ''">
         <template slot="name">{{ person.name }}</template>
         <template slot="position">{{ person.role }}</template>
-      </mini-person-card>
+      </v-person-card-mini>
     </div>
     <div class="projectInfo">
       <p class="client">Client: {{ project.client }}</p>
