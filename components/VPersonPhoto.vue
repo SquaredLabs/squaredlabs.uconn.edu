@@ -24,6 +24,7 @@ export default {
 
 .miniPersonPhoto {
   box-sizing: border-box;
+  margin: 0.312em;
   justify-self: center;
   position: relative;
   width: 4.768em;
@@ -31,12 +32,18 @@ export default {
   display: inline-block;
   background-size: cover;
   background-position: center;
-  background-blend-mode: luminosity;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.3s ease;
+  border-color: $dodger-blue;
+  border-style: dashed;
+  border-width: 0px;
+  transition: border-width 0.1s ease;
 }
 
-.miniPersonPhoto.selected {
-  border: 3px dashed $dodger-blue;
+.miniPersonPhoto.selected,
+.miniPersonPhoto:hover {
+  border-width: 5px;
+}
+
+.miniPersonPhoto:hover {
+  cursor: pointer;
 }
 </style>
