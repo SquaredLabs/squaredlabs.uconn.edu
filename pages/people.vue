@@ -17,7 +17,7 @@
             v-else
             :key="person.id"
             :background="person.imageURL"
-            :id="person.id"
+            :order="person.order"
             :name="person.name"
             :role="person.title"
             @click.native="selectPerson(person.order)">
@@ -32,7 +32,7 @@
           v-else
           :key="person.id"
           :background="person.imageURL"
-          :id="person.id"
+          :order="person.order"
           :name="person.name"
           :alt="person.name"
           :role="person.title"
@@ -48,7 +48,7 @@
           v-for="person in alumni"
           :key="person.id"
           :background="person.imageURL"
-          :id="person.id"
+          :order="person.order"
           :name="person.name"
           :role="person.title"
           class="col-sm-2">

@@ -19,11 +19,11 @@
 export default {
   props: {
     background: { type: String, required: true },
-    id: { type: Number, required: true }
+    order: { type: Number, required: true }
   },
   computed: {
     selected() {
-      return this.$store.state.selectedPerson === this.id
+      return this.$store.state.selectedPerson === this.order
     }
   }
 }
