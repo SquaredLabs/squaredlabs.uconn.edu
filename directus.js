@@ -17,6 +17,7 @@ function loadPeople(url, endpoint) {
       console.log("Loaded people")
       let peopleData = data.data.map(personData => ({
         id: personData.id,
+        order: personData.sort,
         name: personData.name,
         title: personData.title,
         class: personData.class,
