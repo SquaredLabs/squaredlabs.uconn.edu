@@ -13,8 +13,8 @@
     <div class="personContent">
       <div class="personPreview">
         <p class="personName"><slot name="name" /></p>
-        <p class="personRole"><slot name="role" /></p>
       </div>
+      <div class="personInfo"><slot name="info" /></div>
       <div class="personAbout">
         <slot />
       </div>
@@ -72,6 +72,7 @@ export default {
   text-align: center;
   opacity: 1;
   overflow: hidden;
+  line-height: 1em;
 }
 
 .personPreview {
@@ -87,8 +88,16 @@ export default {
   margin: 0;
 }
 
-.personRole {
-  font-size: 1em;
+.personInfo {
+  font-size: 0.7em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.2em 0 1em 0;
+}
+
+.personAbout {
+  line-height: 1em;
 }
 
 div.fullSizePersonCard.selected {
