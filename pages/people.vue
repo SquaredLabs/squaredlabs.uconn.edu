@@ -37,7 +37,7 @@
           :alt="person.name"
           :role="person.title"
           class="col-1"
-          @click.native="selectPerson(person.id)"/>
+          @click.native="selectPerson(person.sort)"/>
       </v-grid-layout>
       <div
         class="whiteBox alumni col-sm-4 col-md-3 off-md-0 off-0 off-lg-0">
@@ -95,8 +95,8 @@ export default {
     VBackgroundText
   },
   methods: {
-    selectPerson(id) {
-      this.$store.commit("selectPerson", id)
+    selectPerson(sort) {
+      this.$store.commit("selectPerson", sort)
     }
   }
 }

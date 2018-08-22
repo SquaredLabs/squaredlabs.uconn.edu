@@ -30,16 +30,16 @@ export default {
   },
   computed: {
     selected() {
-      return this.$store.state.selectedPerson === this.id
+      return this.$store.state.selectedPerson === this.sort
     },
     previous() {
-      return this.$store.state.selectedPerson > this.id
+      return this.$store.state.selectedPerson > this.sort
     },
     next() {
-      return this.$store.state.selectedPerson < this.id
+      return this.$store.state.selectedPerson < this.sort
     },
     immediate() {
-      return Math.abs(this.$store.state.selectedPerson - this.id) === 1
+      return Math.abs(this.$store.state.selectedPerson - this.sort) === 1
     }
   }
 }
