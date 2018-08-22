@@ -141,8 +141,26 @@ export default {
   }
 }
 
-.project {
+div.project {
   grid-row: span 4;
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+  div.project:nth-of-type(2n + 1) {
+    grid-column-start: 3;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: $desktopLg) {
+  div.project:nth-of-type(3n + 1) {
+    grid-column-start: 3;
+  }
+}
+
+@media (min-width: $desktopLg) {
+  div.project:nth-of-type(4n + 1) {
+    grid-column-start: 4;
+  }
 }
 
 @media screen and (min-width: $tablet) {
@@ -198,11 +216,9 @@ export default {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* .fade-leave-active below version 2.1.8 */
 .slide-enter,
-  .slide-leave-to
-  /* .fade-leave-active below version 2.1.8 */
-
- {
-  opacity: 0; //transform: translateX(-100%);
+.slide-leave-to {
+  opacity: 0;
 }
 </style>
