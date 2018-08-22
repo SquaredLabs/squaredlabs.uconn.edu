@@ -4,7 +4,8 @@
       {selected:selected},
       {previousAdjacent:previous},
       {nextAdjacent:next},
-      {immediate: immediate}
+      {immediate: immediate},
+      {penultimate: penultimate}
     ]"
     class="fullSizePersonCard">
     <div
@@ -40,6 +41,9 @@ export default {
     },
     immediate() {
       return Math.abs(this.$store.state.selectedPerson - this.order) === 1
+    },
+    penultimate() {
+      return Math.abs(this.$store.state.selectedPerson - this.order) === 2
     }
   }
 }
