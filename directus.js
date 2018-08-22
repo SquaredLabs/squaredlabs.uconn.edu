@@ -105,10 +105,17 @@ function alphabetize(data, keyName) {
   })
 }
 function unescapeHTML(str) {
-  return str
+  let html = str
     .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
+  return removeHTML(html)
+}
+function removeHTML(str) {
+  return str
+    .replace("<p>", "")
+    .replace("</p>", "")
+    .replace("<br>", "")
 }
 function startLoad() {
   let peoplePromise = loadPeople(
