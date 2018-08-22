@@ -23,7 +23,7 @@
           If you’re a…
         </p>
       </div>
-      <v-connect-select class="col-sm-4 col-md-6 col-8 col-lg-10"/>
+      <v-connect-select class="col-sm-4 col-md-6 col-8 col-lg-12"/>
     </v-grid-layout>
   </div>
 </template>
