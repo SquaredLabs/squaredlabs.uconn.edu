@@ -16,7 +16,7 @@
         <v-person-card-mini
           v-for="person in hoverData.people"
           :key="person.id"
-          :icon="person.imageURL">
+          :icon="person.iconURL">
           <template slot="name">{{ person.name }}</template>
           <template slot="position">{{ person.role }}</template>
         </v-person-card-mini>
