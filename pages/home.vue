@@ -54,7 +54,7 @@
         v-for="person in people"
         :key="person.id"
         :background="person.imageURL"
-        :id="person.id"
+        :order="person.order"
         :name="person.name"
         :role="person.title"
         class="col-sm-2">
