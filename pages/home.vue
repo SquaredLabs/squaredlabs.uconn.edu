@@ -3,11 +3,9 @@
     <v-grid-layout
       id="landSection"
       section="landing">
-      <div class="col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1">
-        <img
-          class="logo"
-          src="~/assets/images/squaredlabs.svg">
-      </div>
+      <img
+        class="logo col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1"
+        src="~/assets/images/full-wordmark.svg">
     </v-grid-layout>
     <v-grid-layout
       id="projectSection"
@@ -172,6 +170,15 @@ export default {
   > * {
     z-index: 1;
   }
+}
+
+#landSection {
+  min-height: 40vh;
+}
+
+.logo {
+  width: 80%;
+  margin: auto;
 }
 
 #connectSection:before {
