@@ -152,14 +152,8 @@ div.project {
 }
 
 @media (min-width: $desktop) and (max-width: $desktopLg) {
-  div.project:nth-of-type(3n + 1) {
+  div.project:nth-of-type(3n) {
     grid-column-start: 3;
-  }
-}
-
-@media (min-width: $desktopLg) {
-  div.project:nth-of-type(4n + 1) {
-    grid-column-start: 4;
   }
 }
 
@@ -176,7 +170,7 @@ div.project {
   }
   #detailSidebar {
     display: initial;
-    grid-row: 5 / span 7;
+    grid-row: 5 / span 16;
   }
   div.project:nth-of-type(-n + 4) {
     grid-row: 2 / span 4;
