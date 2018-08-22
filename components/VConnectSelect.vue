@@ -109,41 +109,49 @@ export default {
   width: 100%;
   transition: all 0.3s;
 }
+
 .select {
   width: calc(50% - 0.4em);
+  max-width: 10em;
   min-width: 6.25em;
   background-color: white;
   height: 3.815em;
   text-align: center;
   font-size: 1.563em;
   font-family: "Moderat";
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   z-index: 12;
   margin: 0.8em 0 0 0;
 }
 
 .select:hover {
   cursor: pointer;
-  background-color: rgb(230, 230, 230);
 }
+
 .selectTitle {
+  transition: all 0.2s ease;
   margin: 0;
   position: relative;
   top: 1.25em;
 }
+
+.select:hover * {
+  color: $dodger-blue;
+}
+
 .select:hover .expandedTitle {
   font-size: 0;
 }
 
 .selectBack {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   font-size: 0.6em;
   opacity: 0.3;
   position: relative;
   top: 1.25em;
 }
+
 .select:hover .selectBack {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1em;
   font-size: 1em;
   opacity: 1;
@@ -154,12 +162,13 @@ export default {
 // https://vuejs.org/v2/guide/transitions.html#Transition-Classes
 
 .expandedTitle {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
 .animateSelect-leave-active {
   position: absolute;
 }
+
 .animateSelect-enter,
 .animateSelect-leave-to {
   transform: translateY(-35px);
@@ -171,12 +180,12 @@ export default {
   height: 0;
 }
 .slideUp-enter-active {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s ease;
 }
 
 .slideUp-leave-active {
   margin-bottom: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s ease;
   position: absolute;
   z-index: -1;
   overflow: hidden;
@@ -184,12 +193,17 @@ export default {
   height: calc(100vh - 2.441em);
   min-height: 0;
 }
+
 .slideUp-leave-to {
   opacity: 0;
   height: 0;
 }
 
 @media screen and (min-width: $desktop) {
+  #selector {
+    box-sizing: border-box;
+    padding: 0 11.5vw;
+  }
   .select {
     width: calc(25% - 0.8em);
   }
@@ -207,6 +221,7 @@ export default {
   height: calc(100vh - 2.441em);
   margin-bottom: -18.626em;
 }
+
 #content {
   position: relative;
   padding: 0 10%;
@@ -216,6 +231,7 @@ export default {
   transform: translateY(-50%);
   transition: all 0.5s ease;
 }
+
 @media screen and (max-width: $tablet) {
   /*Mobile View*/
   #content {
