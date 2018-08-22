@@ -75,7 +75,7 @@
       <v-connect-card
         title="Contribute on GitHub"
         link="https://github.com/squaredlabs"
-        class="col-sm-2 col-md-2">
+        class="col-sm-2 col-md-2 off-lg-1">
         <VConnectButtonArtGitHub />
       </v-connect-card>
       <v-connect-card
