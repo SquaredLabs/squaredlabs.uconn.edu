@@ -48,6 +48,11 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 
+.fullSizePersonCard,
+.fullSizePersonCard * {
+  user-select: none;
+}
+
 .fullSizePersonCard {
   position: relative;
 }

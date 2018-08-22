@@ -1,6 +1,6 @@
 <template>
-  <div 
-    :class="{selected: selected}" 
+  <div
+    :class="{selected: selected}"
     class="person">
     <div
       :style="`background-image: url('${background}')`"
@@ -31,6 +31,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
+
+.person,
+.person * {
+  user-select: none;
+}
 
 .person {
   position: relative;
