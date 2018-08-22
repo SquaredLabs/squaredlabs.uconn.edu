@@ -40,5 +40,6 @@ export default {
   bottom: 10px;
   left: calc(4.768em -10px);
   white-space: nowrap;
+  user-select: none;
 }
 </style>
