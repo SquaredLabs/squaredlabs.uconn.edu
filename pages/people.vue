@@ -45,20 +45,20 @@
       </v-grid-layout>
       <section class="alumni-section">
         <v-background-text :lines="['alu','mni']" />
-      <v-grid-layout id="alumniPeopleSection">
-        <v-person-card-medium
-          v-for="person in alumni"
-          :key="person.id"
-          :background="person.imageURL"
-          :order="person.order"
-          :name="person.name"
-          :role="person.title"
+        <v-grid-layout id="alumniPeopleSection">
+          <v-person-card-medium
+            v-for="person in alumni"
+            :key="person.id"
+            :background="person.imageURL"
+            :order="person.order"
+            :name="person.name"
+            :role="person.title"
             class="col-sm-2 alumni">
-          <template slot="name">{{ person.name }}</template>
-          <template slot="role">{{ person.role }}</template>
-          {{ person.description }}
-        </v-person-card-medium>
-      </v-grid-layout>
+            <template slot="name">{{ person.name }}</template>
+            <template slot="role">{{ person.role }}</template>
+            {{ person.description }}
+          </v-person-card-medium>
+        </v-grid-layout>
       </section>
     </div>
   </div>
@@ -168,6 +168,12 @@ export default {
 @media (min-width: $desktopLg) {
   .alumni-section .gridded {
     padding-top: 35em;
+  }
+}
+
+@media (min-width: $desktopLg) {
+  .alumni:nth-of-type(4n + 1) {
+    grid-column-start: 3;
   }
 }
 
