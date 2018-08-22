@@ -4,6 +4,8 @@
 import fetch from "isomorphic-fetch"
 const thumbnailUrl =
   "https://admin.squaredlabs.uconn.edu/thumbnail/500/400/contain/best/"
+const thumbnailUrlIcon =
+  "https://admin.squaredlabs.uconn.edu/thumbnail/80/80/contain/best/"
 
 function loadPeople(url, endpoint) {
   console.log("Loading people")
@@ -30,7 +32,11 @@ function loadPeople(url, endpoint) {
         imageURL:
           personData.picture === null
             ? ""
-            : thumbnailUrl + personData.picture.data.url
+            : thumbnailUrl + personData.picture.data.url,
+        iconURL:
+          personData.picture === null
+            ? ""
+            : thumbnailUrlIcon + personData.picture.data.url
       }))
       alphabetize(peopleData, "name")
       let people = { people: peopleData }
