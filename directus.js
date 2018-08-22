@@ -2,6 +2,8 @@
  * Extremely basic API to fetch data from directus for the frontend components to easily work with 
 */
 import fetch from "isomorphic-fetch"
+const thumbnailUrl =
+  "https://admin.squaredlabs.uconn.edu/thumbnail/500/400/contain/best/"
 
 function loadPeople(url, endpoint) {
   console.log("Loading people")
@@ -26,7 +28,9 @@ function loadPeople(url, endpoint) {
         roles: personData.roles,
         alumni: personData.alumni === 1,
         imageURL:
-          personData.picture === null ? "" : url + personData.picture.data.url
+          personData.picture === null
+            ? ""
+            : thumbnailUrl + personData.picture.data.url
       }))
       alphabetize(peopleData, "name")
       let people = { people: peopleData }
@@ -58,7 +62,7 @@ function loadProjects(url, endpoint) {
         large_summary: unescapeHTML(projectData.large_summary),
         small_summary: unescapeHTML(projectData.small_summary),
         imageURL: projectData.thumbnail
-          ? url + projectData.thumbnail.data.url
+          ? thumbnailUrl + projectData.thumbnail.data.url
           : "",
         images: projectData.project_graphics.data.map(
           image => url + image.thumbnail_url
