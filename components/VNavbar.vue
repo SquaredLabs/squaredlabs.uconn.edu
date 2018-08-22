@@ -12,9 +12,9 @@
     <router-link
       class="brand col-sm-2 off-sm-1 off-md-0 col-md-1 col-1"
       to="/">
-      <figure class="brand">
-        <img src="~/assets/images/wordmark.png">
-      </figure>
+      <img
+        class="brand"
+        src="~/assets/images/wordmark.svg">
     </router-link>
     <v-link
       class="link col-sm-1 off-3 off-lg-6"
@@ -181,7 +181,11 @@ export default {
   }
 }
 
-.blueTheme .brand img {
+.brand {
+  width: 100%;
+}
+
+.blueTheme .brand {
   filter: brightness(0) invert(1);
 }
 
@@ -198,14 +202,6 @@ export default {
 nav .link {
   line-height: 1.75em;
   height: 1.25em;
-}
-
-.brand {
-  margin: 0;
-}
-
-.brand > img {
-  width: 100%;
 }
 </style>
 
