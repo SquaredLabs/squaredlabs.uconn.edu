@@ -1,6 +1,6 @@
 <template>
   <div
-    :style="`background: url('${project.imageURL}') center / cover no-repeat`"
+    :style="`background: rgba(0,0,0,0.03) url('${project.imageURL}') center / cover no-repeat`"
     class="project"
     @mouseover="$emit('hoverProject', {
       name:project.name,client:project.client,timespan:project.timespan,people:setRole(project)
@@ -77,6 +77,7 @@ export default {
 @import "~assets/styles/vars";
 
 .project {
+  background-blend-mode: darken;
   box-sizing: border-box;
   padding: 10px;
   display: flex;
