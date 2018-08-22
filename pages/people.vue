@@ -23,9 +23,9 @@
             @click.native="selectPerson(person.order)">
             <template slot="name">{{ person.name }}</template>
             <template slot="info">
-              <div>{{person.title}}</div>
-              <div>{{person.degree}}</div>
-              <div>{{person.class}}</div>
+              <div> {{ person.title }} </div>
+              <div> {{ person.degree }} </div>
+              <div> {{ person.class }} </div>
             </template>
             {{ person.description }}
           </v-person-card-full>
