@@ -72,7 +72,7 @@ export default {
 .personPreview {
   height: 3.815em;
   margin: -2.441em 1.25em 0;
-  padding: 10px;
+  padding: 1.25em;
   box-sizing: border-box;
   background: white;
   text-align: center;
@@ -97,7 +97,7 @@ export default {
 }
 
 .personAbout {
-  padding: 10px;
+  padding: 1.25em 1.95em;
   box-sizing: border-box;
   font-size: 0.8em;
   position: relative;

@@ -13,9 +13,21 @@
       class="personPhoto" />
     <div class="personContent">
       <div class="personPreview">
-        <p class="personName"><slot name="name" /></p>
+        <p class="personName">
+          <slot name="name" />
+        </p>
+        <p class="title">
+          <slot name="title" />
+        </p>
       </div>
-      <div class="personInfo"><slot name="info" /></div>
+      <div class="personInfo">
+        <p class="degree">
+          <slot name="degree" />
+        </p>
+        <p class="class">
+          <slot name="class" />
+        </p>
+      </div>
       <div class="personAbout">
         <slot />
       </div>
@@ -75,7 +87,7 @@ export default {
   top: 0;
   height: 100%;
   width: calc(50% + 10px);
-  padding: 0 10px;
+  padding: 1.25em;
   box-sizing: border-box;
   background: white;
   text-align: center;
@@ -84,29 +96,27 @@ export default {
   line-height: 1em;
 }
 
-.personPreview {
-  height: 2.441em;
-  margin: 10px 0;
-}
-
 .personName {
   font-family: "Moderat";
   font-size: 1.25em;
   font-weight: bold;
   color: $dodger-blue;
-  margin: 0;
+  margin: 0.25em 0;
+}
+
+.title {
+  font-family: "Space Mono";
+  font-weight: 500;
+  margin-top: 0;
 }
 
 .personInfo {
-  font-size: 0.7em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0.2em 0 1em 0;
+  font-size: 0.8em;
+  margin: 0 0 1.25em;
 }
 
-.personInfo * {
-  margin: 3px;
+.personInfo p {
+  margin: 0.25em 0;
 }
 
 .personAbout {

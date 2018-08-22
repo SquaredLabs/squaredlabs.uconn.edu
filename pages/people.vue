@@ -22,11 +22,9 @@
             :role="person.title"
             @click.native="selectPerson(person.order)">
             <template slot="name">{{ person.name }}</template>
-            <template slot="info">
-              <div> {{ person.title }} </div>
-              <div> {{ person.degree }} </div>
-              <div> {{ person.class }} </div>
-            </template>
+            <template slot="title"> {{ person.title }} </template>>
+            <template slot="class"> {{ person.class }} </template>
+            <template slot="degree"> {{ person.degree }} </template>
             {{ person.description }}
           </v-person-card-full>
         </v-grid-layout>
