@@ -77,12 +77,14 @@ export default {
 @import "~assets/styles/vars";
 
 .project {
+  --side-length: calc(50vw - 50px);
   background-blend-mode: darken;
   box-sizing: border-box;
   padding: 10px;
   display: flex;
   align-items: flex-end;
-  height: calc(50vw - 50px);
+  height: var(--side-length);
+  width: var(--side-length);
 
   &:hover {
     background-size: 175%;
@@ -144,27 +146,27 @@ export default {
 
 @media screen and (min-width: $tablet) {
   .project {
-    height: calc(((100vw - 140px) / 3) + 20px);
+    --side-length: calc((100vw - 8.75em) / 3 + 1em);
     &:hover .projectContent {
-      height: calc((100vw - 140px) / 3);
+      height: calc((100vw - 8.75em) / 3 - 0.25em);
     }
   }
 }
 
 @media screen and (min-width: $desktop) {
   .project {
-    height: calc(((100vw - 180px) / 4) + 20px);
+    --side-length: calc((100vw - 11.25em) / 4 + 1em);
     &:hover .projectContent {
-      height: calc((100vw - 180px) / 4);
+      height: calc((100vw - 11.25em) / 4 - 0.25em);
     }
   }
 }
 
 @media screen and (min-width: $desktopLg) {
   .project {
-    height: calc(((100vw - 260px) / 6) + 20px);
+    --side-length: calc((100vw - 16.25em) / 6 + 1em);
     &:hover .projectContent {
-      height: calc((100vw - 260px) / 6);
+      height: calc((100vw - 16.25em) / 6 - 0.25em);
     }
   }
 }

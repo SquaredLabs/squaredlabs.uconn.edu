@@ -1,44 +1,45 @@
 <template>
   <div>
     <v-background-text :lines="['proj','ects']" />
-    <v-grid-layout id="projectSection">
-      <div
-        class="whiteBox off-sm-0 col-sm-4 col-md-2 off-lg-1">
-        <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually
-        we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
+    <section class="projectSection">
+      <div class="information">
+        <div
+          class="whiteBox">
+          <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually
+          we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
+        </div>
+        <div class="detailSidebar">
+          <b>{{ hoverData.name }}</b>
+          <p>{{ hoverData.client }}</p>
+          <p>{{ hoverData.timespan }}</p>
+          <v-person-card-mini
+            v-for="person in hoverData.people"
+            :key="person.id"
+            :icon="person.iconURL">
+            <template slot="name">{{ person.name }}</template>
+            <template slot="position">{{ person.role }}</template>
+          </v-person-card-mini>
+        </div>
       </div>
-      <div
-        id="detailSidebar"
-        class="off-md-0 off-lg-1 col-md-2">
-        <b>{{ hoverData.name }}</b>
-        <p>{{ hoverData.client }}</p>
-        <p>{{ hoverData.timespan }}</p>
-        <v-person-card-mini
-          v-for="person in hoverData.people"
-          :key="person.id"
-          :icon="person.iconURL">
-          <template slot="name">{{ person.name }}</template>
-          <template slot="position">{{ person.role }}</template>
-        </v-person-card-mini>
+      <div class="projects">
+        <div v-if="!projects">Loading projects</div>
+        <v-project-card
+          v-for="project in projects"
+          v-else
+          :key="project.id"
+          :project="project"
+          @hoverProject="hoverData = $event">
+          <span v-html="project.small_summary" />
+        </v-project-card>
+        <transition
+          name="slide"
+          mode="out-in">
+          <v-project-modal
+            v-if="$store.state.selectedProject!==0"
+            :project="selectedProject" />
+        </transition>
       </div>
-      <div v-if="!projects">Loading projects</div>
-      <v-project-card
-        v-for="project in projects"
-        v-else
-        :key="project.id"
-        :project="project"
-        class="col-sm-2"
-        @hoverProject="hoverData = $event">
-        <span v-html="project.small_summary" />
-      </v-project-card>
-      <transition
-        name="slide"
-        mode="out-in">
-        <v-project-modal
-          v-if="$store.state.selectedProject!==0"
-          :project="selectedProject" />
-      </transition>
-    </v-grid-layout>
+    </section>
   </div>
 </template>
 
@@ -115,24 +116,32 @@ export default {
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 
-.gridded {
-  grid-template-rows: min-content;
+section {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  z-index: 1;
+  padding: 1.25em;
+}
+
+.information,
+.projects {
+  width: 100%;
+  flex: none;
 }
 
 .whiteBox {
   background: white;
-  padding: 20px;
+  padding: 1.25em;
   width: 100%;
-  margin-left: -20px;
+  margin-left: -1.25em;
   p {
     margin: 0;
   }
 }
 
-#detailSidebar {
+.detailSidebar {
   display: none;
-  position: sticky;
-  top: 1.563em;
   b + p {
     margin: 0.328em 0;
   }
@@ -141,65 +150,73 @@ export default {
   }
 }
 
-div.project {
-  grid-row: span 4;
+.projects {
+  padding-top: 1.25em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
-@media (min-width: $tablet) and (max-width: $desktop) {
-  div.project:nth-of-type(2n + 1) {
-    grid-column-start: 3;
-  }
+.project {
+  margin-bottom: 1.25em;
 }
 
-@media (min-width: $desktop) and (max-width: $desktopLg) {
-  div.project:nth-of-type(3n) {
-    grid-column-start: 3;
-  }
-}
-
-@media screen and (min-width: $tablet) {
-  #projectSection {
+@media (min-width: $tablet) {
+  section {
     margin-top: 18.19em;
-    z-index: 5;
+    flex-flow: row nowrap;
   }
+
+  .information {
+    flex: 2;
+    padding-right: 1em;
+    box-sizing: border-box;
+  }
+
+  .projects {
+    flex: 4;
+    padding-top: 5.96em;
+  }
+
   .whiteBox {
-    grid-row: 1 / span 4;
     margin-left: 0;
+    margin-bottom: 1.25em;
     height: fit-content;
     width: auto;
   }
-  #detailSidebar {
-    display: initial;
-    grid-row: 5 / span 16;
-  }
-  div.project:nth-of-type(-n + 4) {
-    grid-row: 2 / span 4;
+
+  .detailSidebar {
+    display: block;
+    position: sticky;
+    top: 1em;
+    max-height: 75vh;
   }
 }
 
-@media screen and (min-width: $desktop) {
-  div.project:nth-of-type(-n + 5) {
-    grid-row: 2 / span 4;
+@media (min-width: $desktop) {
+  .information {
+    flex: 3;
+  }
+  .projects {
+    flex: 9;
   }
 }
 
-@media screen and (min-width: $desktopLg) {
-  div.project:nth-of-type(-n + 6) {
-    grid-row: 2 / span 4;
+@media (min-width: $desktopLg) {
+  section {
+    margin: 0 5vw;
+  }
+  .information {
+    flex: 3;
+  }
+  .projects {
+    flex: 9;
   }
 }
 
 .img--fill-container {
   width: 100%;
   height: 100%;
-}
-
-.marginned--vertically--6x {
-  margin-bottom: 120px;
-}
-
-.layout__col--pacman {
-  flex-wrap: wrap;
 }
 
 .slide-enter-active {

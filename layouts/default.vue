@@ -56,6 +56,7 @@ body {
 .app {
   transition: all 0.3s ease;
   background-color: $pale-grey;
+  min-height: 100vh;
 }
 
 .app > :nth-child(2) {
