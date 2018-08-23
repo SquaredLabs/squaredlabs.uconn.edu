@@ -18,16 +18,22 @@
           <span class="black">3</span>) make a monetary contribution to the lab.
       </span></p>
 
-      <div id="icons">
-        <div class="icon"><img
-          alt="Gitlab"
-          src="~/assets/images/connect/gitlab.svg" ></div>
-        <div class="icon"><img
-          alt="Mail"
-          src="~/assets/images/connect/mail.svg" ></div>
-        <div class="icon"><img
-          alt="Bitcoin"
-          src="~/assets/images/connect/btc.svg"></div>
+      <div class="connectButtons">
+        <v-connect-card
+          title="Contribute on GitHub"
+          link="https://github.com/squaredlabs" >
+          <v-connect-button-art-git-hub />
+        </v-connect-card>
+        <v-connect-card
+          title="Contact ⬚² labs"
+          link="mailto:squaredlabs@uconn.edu" >
+          <v-connect-button-art-mail />
+        </v-connect-card>
+        <v-connect-card
+          title="Donate to ⬚² labs"
+          link="http://www.foundation.uconn.edu/send-your-gift/" >
+          <v-connect-button-art-btc />
+        </v-connect-card>
       </div>
     </div>
   </div>
@@ -35,9 +41,17 @@
 
 <script>
 import VLink from "~/components/VLink.vue"
+import VConnectCard from "~/components/VConnectCard.vue"
+import VConnectButtonArtMail from "~/components/VConnectButtonArtMail.vue"
+import VConnectButtonArtGitHub from "~/components/VConnectButtonArtGitHub.vue"
+import VConnectButtonArtBtc from "~/components/VConnectButtonArtBtc.vue"
 export default {
   components: {
-    VLink
+    VLink,
+    VConnectCard,
+    VConnectButtonArtMail,
+    VConnectButtonArtGitHub,
+    VConnectButtonArtBtc
   },
   props: {
     back: { type: Function, required: true }
@@ -74,12 +88,17 @@ export default {
 .black {
   color: black;
 }
-#icons {
+.connectButtons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-top: 40px;
   color: black;
+}
+.connectCard {
+  margin: 1em;
+  width: calc(33% - 2em);
+  min-width: 15em;
 }
 @media only screen and (max-device-width: 949px) {
   #icons {
