@@ -164,9 +164,9 @@ export default {
 
 @media screen and (min-width: $desktopLg) {
   .project {
-    --side-length: calc((100vw - 16.25em) / 6 + 1em);
+    --side-length: calc((100vw - 20.25em) / 5 + 1em);
     &:hover .projectContent {
-      height: calc((100vw - 16.25em) / 6 - 0.25em);
+      height: calc((100vw - 20.25em) / 5 - 0.25em);
     }
   }
 }

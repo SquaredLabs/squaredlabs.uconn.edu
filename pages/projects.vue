@@ -203,9 +203,6 @@ section {
 }
 
 @media (min-width: $desktopLg) {
-  section {
-    margin: 0 5vw;
-  }
   .information {
     flex: 3;
   }
