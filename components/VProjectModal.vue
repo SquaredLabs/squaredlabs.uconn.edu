@@ -25,7 +25,7 @@
           <v-person-card-mini
             v-for="person in project.people"
             :key="person.id"
-            :icon="person.thumbnail || ''">
+            :icon="person.iconURL">
             <template slot="name">{{ person.name }}</template>
             <template slot="position">{{ person.role }}</template>
           </v-person-card-mini>
@@ -35,7 +35,7 @@
         <img
           v-for="index in 3"
           :key="`image-${index}`"
-          :src="project.images[index]"
+          :src="project.images[index - 1]"
           :alt="`Project Image ${index}`"
           class="projectImage" >
       </div>
@@ -43,7 +43,7 @@
     <div class="images">
       <img
         v-for="(image, index) in project.images"
-        v-if="index>3"
+        v-if="index>2"
         :key="`image-${index}`"
         :src="image"
         :alt="`Project Image ${index}`"
@@ -87,11 +87,12 @@ export default {
   background-color: $dodger-blue;
   color: white;
   z-index: 5;
+  overflow-y: scroll;
 }
 
 .title {
   font-size: 5.96em;
-  margin: 0.25em 0 0;
+  margin: 0.25em 0 0.08em;
   font-weight: normal;
 }
 
@@ -103,10 +104,17 @@ export default {
   background-color: rgb(242, 243, 247);
 }
 
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 7.451em;
+}
+
 .information {
-  width: 25%;
+  flex: 1;
   padding-right: 1.25em;
-  display: inline-block;
   box-sizing: border-box;
 }
 
@@ -123,9 +131,28 @@ export default {
 }
 
 .preview-images {
-  width: 75%;
-  margin-top: 15%;
-  display: inline-block;
+  flex: 3;
+  padding-top: 15%;
+}
+
+img {
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.preview-images img:first-child {
+  width: 100%;
+}
+
+.preview-images img:nth-child(2),
+.images img:nth-child(2n + 1) {
+  width: calc(50% - 0.625em);
+  margin-right: 1.25em;
+}
+
+.preview-images img:nth-child(3),
+.images img:nth-child(2n) {
+  width: calc(50% - 0.625em);
 }
 
 @media screen and (max-width: $tablet) {
