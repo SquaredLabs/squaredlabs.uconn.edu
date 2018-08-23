@@ -4,6 +4,7 @@
 <script>
 import Directus from "~/directus"
 import VProjectModal from "~/components/VProjectModal.vue"
+
 const getProject = (projects, name) => {
   let match = {}
   projects.forEach(project => {
@@ -11,6 +12,7 @@ const getProject = (projects, name) => {
   })
   return match
 }
+
 export default {
   async asyncData({ params }) {
     let data = await Directus()
@@ -24,9 +26,8 @@ export default {
     VProjectModal
   },
   mounted() {
-    let html = document.querySelector("html").classList.add("noScroll")
+    document.querySelector("html").classList.add("noScroll")
     if (!this.project.name) this.$router.push(`/projects`)
-    
   }
 }
 </script>
