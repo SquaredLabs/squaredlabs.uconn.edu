@@ -30,7 +30,9 @@
           </v-person-card-mini>
         </div>
       </div>
-      <div class="preview-images">
+      <div
+        v-if="project.images.length > 0"
+        class="preview-images">
         <img
           v-for="index in 3"
           :key="`image-${index}`"
@@ -39,7 +41,9 @@
           class="projectImage" >
       </div>
     </div>
-    <div class="images">
+    <div
+      v-if="project.images.length > 0"
+      class="images">
       <img
         v-for="(image, index) in project.images"
         v-if="index>2"
