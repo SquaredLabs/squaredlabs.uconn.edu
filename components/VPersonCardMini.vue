@@ -30,8 +30,8 @@ export default {
 }
 
 .miniPortrait {
-  max-width: 4.768em;
-  max-height: 4.768em;
+  width: 4.768em;
+  height: 4.768em;
   overflow: hidden;
   text-align: center;
 }
