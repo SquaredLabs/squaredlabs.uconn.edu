@@ -35,7 +35,7 @@
         name="slide"
         mode="out-in">
         <v-project-modal
-          v-show="$store.state.selectedProject!==0"
+          v-if="$store.state.selectedProject!==0"
           :project="selectedProject" />
       </transition>
     </v-grid-layout>
