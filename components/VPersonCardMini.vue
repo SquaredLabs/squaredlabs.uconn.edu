@@ -42,7 +42,7 @@ export default {
 }
 
 .miniBio {
-  max-width: 60%;
+  // max-width: 60%;
   background: white;
   color: $charcoal-grey;
   position: absolute;
@@ -58,5 +58,14 @@ export default {
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media screen and (max-width: $tablet) {
+  .miniPortrait {
+    display: none;
+  }
+  .miniBio {
+    left: 0;
+    position: relative;
+}
 }
 </style>

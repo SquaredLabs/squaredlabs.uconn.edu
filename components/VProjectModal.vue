@@ -20,7 +20,9 @@
           <p class="service">{{ project.services }}</p>
           <p class="tech">{{ project.technologies }}</p>
         </div>
-        <div class="activeDetailSidebar">
+        
+      </div>
+      <div class="activeDetailSidebar">
           <v-person-card-mini
             v-for="person in project.people"
             :key="person.id"
@@ -31,7 +33,6 @@
         </div>
       </div>
       <div
-        v-if="project.images.length > 0"
         class="preview-images">
         <img
           v-for="index in 3"
@@ -40,18 +41,16 @@
           :alt="`Project Image ${index}`"
           class="projectImage" >
       </div>
-    </div>
-    <div
-      v-if="project.images.length > 0"
-      class="images">
-      <img
-        v-for="(image, index) in project.images"
-        v-if="index>2"
-        :key="`image-${index}`"
-        :src="image"
-        :alt="`Project Image ${index}`"
-        class="projectImage" >
-    </div>
+      <div
+        class="images">
+        <img
+          v-for="(image, index) in project.images"
+          v-if="index>2"
+          :key="`image-${index}`"
+          :src="image"
+          :alt="`Project Image ${index}`"
+          class="projectImage" >
+      </div>
   </div>
 </template>
 
@@ -94,6 +93,11 @@ export default {
   overflow-y: scroll;
 }
 
+.content {
+  display: flex;
+  flex-wrap: wrap;  
+ }
+
 .title {
   font-size: 5.96em;
   margin: 0.25em 0 0.08em;
@@ -118,12 +122,18 @@ export default {
 
 .information {
   flex: 2;
+  width: 35%;
+  min-width: 370px;
   padding-right: 1.25em;
   box-sizing: border-box;
 }
 
 .information > * {
   margin: 1.56em 0;
+}
+
+.activeDetailSidebar { 
+  width: 15em;
 }
 
 .projectInfo p {
@@ -186,4 +196,5 @@ img {
     --image-width: calc((100% - 3.75em) / 3);
   }
 }
+
 </style>
