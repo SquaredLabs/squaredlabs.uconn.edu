@@ -48,6 +48,9 @@ module.exports = {
         sizes: "180x180",
         href: "/apple-touch-icon.png"
       }
-    ]
+    ],
+    router: {
+      base: process.env.BASE_URL
+    }
   }
 }
