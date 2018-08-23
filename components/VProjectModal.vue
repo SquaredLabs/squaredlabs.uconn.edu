@@ -31,16 +31,16 @@
           </v-person-card-mini>
         </div>
       </div>
-      <!-- <div class="preview-images">
+      <div class="preview-images">
         <img
           v-for="index in 3"
           :key="`image-${index}`"
           :src="project.images[index]"
           :alt="`Project Image ${index}`"
           class="projectImage" >
-      </div> -->
+      </div>
     </div>
-    <!-- <div class="images">
+    <div class="images">
       <img
         v-for="(image, index) in project.images"
         v-if="index>3"
@@ -48,7 +48,7 @@
         :src="image"
         :alt="`Project Image ${index}`"
         class="projectImage" >
-    </div> -->
+    </div>
   </div>
 </template>
 
