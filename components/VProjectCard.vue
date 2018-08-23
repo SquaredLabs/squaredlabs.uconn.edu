@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     expand() {
-      this.$router.push(`projects/${encodeURI(this.project.name)}`)
+      this.$router.push(`/projects/${encodeURI(this.project.name)}`)
     },
     setRole(project) {
       if (!project.people || project.people.length === 0) return
