@@ -32,11 +32,11 @@ function loadPeople(url, endpoint) {
         imageURL:
           personData.picture === null
             ? ""
-            : thumbnailUrl + personData.picture.data.url,
+            : thumbnailUrl + personData.picture.data.name,
         iconURL:
           personData.picture === null
             ? ""
-            : thumbnailUrlIcon + personData.picture.data.url
+            : thumbnailUrlIcon + personData.picture.data.name
       }))
       alphabetize(peopleData, "name")
       let people = { people: peopleData }
@@ -68,10 +68,10 @@ function loadProjects(url, endpoint) {
         large_summary: unescapeHTML(projectData.large_summary),
         small_summary: unescapeHTML(projectData.small_summary),
         imageURL: projectData.thumbnail
-          ? thumbnailUrl + projectData.thumbnail.data.url
+          ? thumbnailUrl + projectData.thumbnail.data.name
           : "",
         images: projectData.project_graphics.data.map(
-          image => url + image.thumbnail_url
+          image => thumbnailUrl + image.name
         )
       }))
       let projects = { projects: projectsData }
