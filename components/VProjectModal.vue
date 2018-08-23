@@ -1,7 +1,6 @@
 <template>
   <div
-    id="selectedProjectModal"
-    class="col-sm-4 col-md-6 col-8 col-lg-12">
+    id="selectedProjectModal" >
     <h1 class="title">{{ project.name }}</h1>
     <v-link
       class="return"
@@ -77,12 +76,13 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 #selectedProjectModal {
+  --image-width: calc(48% - 0.625em);
   top: 0;
   bottom: 0;
   left: 0;
   position: fixed;
   width: 100%;
-  padding: 20px;
+  padding: 1.25em;
   box-sizing: border-box;
   background-color: $dodger-blue;
   color: white;
@@ -113,7 +113,7 @@ export default {
 }
 
 .information {
-  flex: 1;
+  flex: 2;
   padding-right: 1.25em;
   box-sizing: border-box;
 }
@@ -135,41 +135,51 @@ export default {
   padding-top: 15%;
 }
 
+.images {
+  margin-left: -0.625em;
+  margin-right: -0.625em;
+}
+
 img {
   height: auto;
   margin-bottom: 1em;
+}
+
+.preview-images img {
+  width: calc(50% - 0.625em);
+}
+
+.preview-images img:nth-child(2) {
+  margin-right: 1.25em;
 }
 
 .preview-images img:first-child {
   width: 100%;
 }
 
-.preview-images img:nth-child(2),
-.images img:nth-child(2n + 1) {
-  width: calc(50% - 0.625em);
-  margin-right: 1.25em;
+.images img {
+  width: var(--image-width);
+  margin-left: 0.625em;
+  margin-right: 0.625em;
 }
 
-.preview-images img:nth-child(3),
-.images img:nth-child(2n) {
-  width: calc(50% - 0.625em);
+@media (max-width: $tablet) {
+  .title {
+    font-size: 3.815em;
+  }
+  .content {
+    flex-flow: column;
+    margin-bottom: 0;
+  }
+  .content > * {
+    width: 100%;
+    flex: 1;
+  }
 }
 
-@media screen and (max-width: $tablet) {
-  .activeDetailSidebar {
-    div.miniCard {
-      position: unset;
-      margin-bottom: 0;
-      .miniPortrait {
-        display: none;
-      }
-      .miniBio {
-        background: none;
-        position: unset;
-        color: white;
-        padding-left: 0;
-      }
-    }
+@media (min-width: $desktop) {
+  #selectedProjectModal {
+    --image-width: calc((100% - 3.75em) / 3);
   }
 }
 </style>
