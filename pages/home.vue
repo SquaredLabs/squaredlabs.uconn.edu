@@ -74,19 +74,19 @@
         title="Contribute on GitHub"
         link="https://github.com/squaredlabs"
         class="col-sm-2 col-md-2 off-lg-1">
-        <VConnectButtonArtGitHub />
+        <v-connect-button-art-git-hub />
       </v-connect-card>
       <v-connect-card
         title="Contact ⬚² labs"
         link="mailto:squaredlabs@uconn.edu"
         class="col-sm-2 col-md-2">
-        <VConnectButtonArtMail />
+        <v-connect-button-art-mail />
       </v-connect-card>
       <v-connect-card
         title="Donate to ⬚² labs"
         link="http://www.foundation.uconn.edu/send-your-gift/"
         class="col-sm-2 col-md-2">
-        <VConnectButtonArtBtc />
+        <v-connect-button-art-btc />
       </v-connect-card>
       <div class="connectText col-sm-2 col-md-4 off-6 col-2 off-lg-8 col-lg-3">
         <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
@@ -224,7 +224,7 @@ export default {
     }
   }
 
-  .VConnectCard {
+  .connectCard {
     grid-column-start: unset;
   }
 
@@ -254,12 +254,9 @@ export default {
     grid-column-start: unset;
   }
   .connectText {
-    grid-row: 1 / 2;
-  }
-  .connectText {
     grid-row: 1 / 3;
   }
-  .VConnectCard {
+  .connectCard {
     grid-row-start: 2;
     margin-bottom: 20px;
   }
@@ -279,20 +276,12 @@ export default {
       text-align: right;
     }
   }
-  a.VConnectCard {
-    &:first-of-type {
-      grid-column: 3 / 5;
-    }
-    &:nth-of-type(2) {
-      grid-column: 5 / 7;
-    }
-    &:last-of-type {
-      grid-column: 7 / 9;
-    }
-  }
   #connectSection .linkPulledRight {
     grid-row-start: 3;
     grid-column-start: 9;
+  }
+  .connectCard {
+    grid-row-start: 1;
   }
 }
 </style>
