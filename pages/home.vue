@@ -127,7 +127,7 @@ export default {
     let peopleData = data[0]
     let projectData = data[1]
     return {
-      people: selectPeople(peopleData.people, 3),
+      people: peopleData.people,
       projects: projectData.projects
     }
   },
@@ -144,7 +144,10 @@ export default {
   data: () => ({
     people: [],
     projects: []
-  })
+  }),
+  mounted() {
+    this.people = selectPeople(this.people, 3)
+  }
 }
 </script>
 
