@@ -49,12 +49,7 @@ export default {
   },
   methods: {
     expand() {
-      document.querySelector("html").classList.add("noScroll")
-      this.$store.commit("selectProject", this.project.id)
-      console.log(this.$route.path)
-      if (this.$route.path !== "/projects") {
-        this.$router.push("projects")
-      }
+      this.$router.push(`projects/${encodeURI(this.project.name)}`)
     },
     setRole(project) {
       if (!project.people || project.people.length === 0) return

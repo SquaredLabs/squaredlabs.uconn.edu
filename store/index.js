@@ -14,12 +14,6 @@ const createStore = () => {
       setWhite(state) {
         state.theme = "white"
       },
-      selectProject(state, projectToSelect) {
-        state.selectedProject = projectToSelect
-      },
-      unSelectProject(state) {
-        state.selectedProject = 0
-      },
       selectPerson(state, personToSelect) {
         state.selectedPerson = personToSelect
       },

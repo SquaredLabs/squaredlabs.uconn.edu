@@ -32,15 +32,15 @@
         
       </div>
       <div class="activeDetailSidebar">
-          <v-person-card-mini
-            v-for="person in project.people"
-            :key="person.id"
-            :icon="person.iconURL">
-            <template slot="name">{{ person.name }}</template>
-            <template slot="position">{{ person.role }}</template>
-          </v-person-card-mini>
-        </div>
+        <v-person-card-mini
+          v-for="person in project.people"
+          :key="person.id"
+          :icon="person.iconURL">
+          <template slot="name">{{ person.name }}</template>
+          <template slot="position">{{ person.role }}</template>
+        </v-person-card-mini>
       </div>
+    </div>
       
   </div>
 </template>
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     unexpand() {
-      this.$store.commit("unSelectProject")
+      this.$router.push("/projects")
       document.querySelector(".noScroll").classList.remove("noScroll")
     }
   }
@@ -86,8 +86,8 @@ export default {
 
 .content {
   display: flex;
-  flex-wrap: wrap;  
- }
+  flex-wrap: wrap;
+}
 
 .title {
   font-size: 5.96em;
@@ -123,7 +123,7 @@ export default {
   margin: 1.56em 0;
 }
 
-.activeDetailSidebar { 
+.activeDetailSidebar {
   width: 15em;
 }
 
@@ -187,5 +187,4 @@ img {
     --image-width: calc((100% - 3.75em) / 3);
   }
 }
-
 </style>
