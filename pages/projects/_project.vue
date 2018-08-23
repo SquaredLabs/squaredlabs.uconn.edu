@@ -7,7 +7,6 @@ import VProjectModal from "~/components/VProjectModal.vue"
 const getProject = (projects, name) => {
   let match = {}
   projects.forEach(project => {
-    console.log(project.name === name)
     if (project.name === name) return (match = project)
   })
   return match
@@ -25,8 +24,9 @@ export default {
     VProjectModal
   },
   mounted() {
+    let html = document.querySelector("html").classList.add("noScroll")
     if (!this.project.name) this.$router.push(`/projects`)
-    document.querySelector("html").classList.add("noScroll")
+    
   }
 }
 </script>
