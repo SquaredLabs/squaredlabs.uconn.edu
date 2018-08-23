@@ -22,7 +22,7 @@
             :role="person.title"
             @click.native="selectPerson(person.order)">
             <template slot="name">{{ person.name }}</template>
-            <template slot="title"> {{ person.title }} </template>>
+            <template slot="title"> {{ person.title }} </template>
             <template slot="class"> {{ person.class }} </template>
             <template slot="degree"> {{ person.degree }} </template>
             {{ person.description }}
