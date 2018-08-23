@@ -20,6 +20,15 @@
           <p class="service">{{ project.services }}</p>
           <p class="tech">{{ project.technologies }}</p>
         </div>
+        <div
+          class="images">
+          <img
+            v-for="(image, index) in project.images"
+            :key="`image-${index}`"
+            :src="image"
+            :alt="`Project Image ${index}`"
+            class="projectImage" >
+        </div>
         
       </div>
       <div class="activeDetailSidebar">
@@ -32,25 +41,7 @@
           </v-person-card-mini>
         </div>
       </div>
-      <div
-        class="preview-images">
-        <img
-          v-for="index in 3"
-          :key="`image-${index}`"
-          :src="project.images[index - 1]"
-          :alt="`Project Image ${index}`"
-          class="projectImage" >
-      </div>
-      <div
-        class="images">
-        <img
-          v-for="(image, index) in project.images"
-          v-if="index>2"
-          :key="`image-${index}`"
-          :src="image"
-          :alt="`Project Image ${index}`"
-          class="projectImage" >
-      </div>
+      
   </div>
 </template>
 
