@@ -34,7 +34,7 @@
       <transition
         name="slide"
         mode="out-in">
-        <v-selected-project
+        <v-project-modal
           v-show="$store.state.selectedProject!==0"
           :project="selectedProject" />
       </transition>
@@ -48,7 +48,7 @@ import VProjectCard from "~/components/VProjectCard.vue"
 import VPersonCardMini from "~/components/VPersonCardMini.vue"
 import Directus from "~/directus"
 import VBackgroundText from "~/components/VBackgroundText.vue"
-import VSelectedProject from "~/components/VSelectedProject.vue"
+import VProjectModal from "~/components/VProjectModal.vue"
 
 const setPeople = function(person, projects) {
   let role = person.roles
@@ -92,7 +92,7 @@ export default {
     VProjectCard,
     VPersonCardMini,
     VBackgroundText,
-    VSelectedProject
+    VProjectModal
   },
   data: () => ({
     hoverData: {}
