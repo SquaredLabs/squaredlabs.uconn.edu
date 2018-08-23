@@ -24,7 +24,7 @@ export default {
 
 .miniPersonPhoto {
   box-sizing: border-box;
-  margin: 0.312em;
+  margin: 0.25em 0.35em;
   justify-self: center;
   position: relative;
   width: 4.768em;

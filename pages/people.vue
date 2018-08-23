@@ -31,7 +31,7 @@
         <div v-if="!people">Loading people...</div>
         <div
           v-else
-          class="people-quick-select col-sm-4 col-md-4 off-md-1 off-2 off-lg-3">
+          class="people-quick-select col-sm-4 col-md-6 off-1 off-lg-3">
           <v-person-photo
             v-for="person in people"
             :key="person.id"
@@ -149,6 +149,11 @@ export default {
   margin-right: -1.25em;
   overflow: hidden;
 }
+
+.people-quick-select {
+  text-align: center;
+}
+
 #alumniCarousel {
   padding-bottom: 3.052em;
   padding-right: 1.25em;
