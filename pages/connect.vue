@@ -52,7 +52,7 @@ export default {
 }
 
 .header {
-  font-family: "Space Mono";
+  font-family: SpaceMono;
   font-size: 4.768em;
   margin: 0;
 }
