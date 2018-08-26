@@ -184,6 +184,10 @@ export default {
   margin: auto;
 }
 
+div.project {
+  width: auto;
+}
+
 #connectSection:before {
   left: 0;
   text-align: left;
