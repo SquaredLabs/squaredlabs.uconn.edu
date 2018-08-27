@@ -76,14 +76,6 @@ export default {
   async asyncData({ params }) {
     let data = await Directus()
     let peopleData = data[0]
-    let imageData = data[2].images
-    let imageDataDirty = imageData.filter(image => {
-      return image.page === "people"
-    })
-    let images = {}
-    for (let image of imageDataDirty) {
-      images[image.page_location] = image.imageURL
-    }
     return {
       people: peopleData.people
         .filter(person => !person.alumni)
@@ -99,8 +91,7 @@ export default {
         .map((person, index) => {
           person.order = index
           return person
-        }),
-      images: images
+        })
     }
   },
   components: {
