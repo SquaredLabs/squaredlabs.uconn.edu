@@ -14,7 +14,8 @@
       to="/">
       <img
         class="brand"
-        src="~/assets/images/wordmark.svg">
+        src="~/assets/images/wordmark.svg"
+        alt="Squared Labs">
     </router-link>
     <v-link
       class="link col-sm-1 off-3 off-lg-6"

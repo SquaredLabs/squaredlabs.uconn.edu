@@ -12,7 +12,9 @@
         <div
           id="pixelsPerDay"
           class="graphicInner">
-          <img src="~/assets/images/connect/pixels.svg">
+          <img 
+            src="~/assets/images/connect/pixels.svg" 
+            alt="40m pixels per day">
           <p class="statisticText">{{ statCount }}m+</p>
           <p class="statisticSubText">pixels per day</p>
         </div>
@@ -24,7 +26,9 @@
         <div
           id="covfefe"
           class="graphicInner">
-          <img src="~/assets/images/connect/kawffeeh.svg">
+          <img 
+            src="~/assets/images/connect/kawffeeh.svg"
+            alt="10+ coffees per day (definitely +)">
           <p class="statisticText">{{ statCount }}+</p>
           <p class="statisticSubText">coffees per day (definitely +)</p>
         </div>
@@ -62,7 +66,8 @@
               @mouseleave="endCounter">
               <img
                 id="gitlabBlack"
-                src="~/assets/images/connect/gitlab.svg">
+                src="~/assets/images/connect/gitlab.svg"
+                alt="gitlab">
               <p class="statisticTextS">{{ statCount }}</p>
               <p class="statisticSubTextS">repos</p>
             </div>
@@ -73,7 +78,9 @@
               class="graphicIconI"
               @mouseover="startCounter(size)"
               @mouseleave="endCounter">
-              <img src="~/assets/images/connect/code_lines.svg">
+              <img 
+                src="~/assets/images/connect/code_lines.svg"
+                alt="100,000 lines of code">
               <p class="statisticTextS">{{ statCount }}mb</p>
               <p class="statisticSubTextS">in our codebase</p>
             </div>

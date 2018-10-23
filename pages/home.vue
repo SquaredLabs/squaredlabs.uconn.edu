@@ -5,7 +5,8 @@
       section="landing">
       <img
         class="logo col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1"
-        src="~/assets/images/full-wordmark.svg">
+        src="~/assets/images/full-wordmark.svg"
+        alt="Squared Labs">
     </v-grid-layout>
     <v-grid-layout
       id="projectSection"
