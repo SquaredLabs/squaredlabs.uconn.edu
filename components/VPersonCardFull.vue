@@ -7,6 +7,7 @@
       {immediate: immediate},
       {penultimate: penultimate}
     ]"
+    :tabindex="order" 
     class="fullSizePersonCard">
     <div
       :style="`background-image: url('${background}')`"

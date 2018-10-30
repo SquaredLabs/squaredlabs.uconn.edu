@@ -1,9 +1,13 @@
 <template>
   <div
     :style="`background: rgba(0,0,0,0.03) url('${project.imageURL}') center / cover no-repeat`"
+    :tabindex="project.id"
     class="project"
     @mouseover="$emit('hoverProject', {
-      name:project.name,client:project.client,timespan:project.timespan,people:setRole(project)
+      name:project.name,
+      client:project.client,
+      timespan:project.timespan,
+      people:setRole(project)
   })">
     <div
       ref="title"
@@ -52,13 +56,12 @@ export default {
     setRole(project) {
       if (!project.people || project.people.length === 0) return
       for (let person of project.people) {
-        let projectsInRole = Object.keys(person.roles).map(role =>
+        const projectsInRole = Object.keys(person.roles).map(role =>
           role.toLowerCase()
         )
-        let projectName = project.name.toLowerCase()
-        if (projectsInRole.includes(projectName)) {
+        const projectName = project.name.toLowerCase()
+        if (projectsInRole.includes(projectName))
           person.role = person.roles[project.name]
-        }
       }
       return project.people
     }

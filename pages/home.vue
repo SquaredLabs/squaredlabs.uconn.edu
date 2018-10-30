@@ -147,7 +147,7 @@ export default {
     projects: []
   }),
   mounted() {
-    this.people = selectPeople(this.people, 3)
+    this.people = selectPeople(this.people, 3).sort((a, b) => a.order - b.order)
   }
 }
 </script>
