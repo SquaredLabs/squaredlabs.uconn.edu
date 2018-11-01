@@ -1,7 +1,6 @@
 <template>
   <div
     :style="`background: rgba(0,0,0,0.03) url('${project.imageURL}') center / cover no-repeat`"
-    :tabindex="project.id"
     class="project"
     @mouseover="$emit('hoverProject', {
       name:project.name,

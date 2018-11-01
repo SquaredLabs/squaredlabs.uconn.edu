@@ -1,7 +1,6 @@
 <template>
   <div
     :class="{selected: selected}"
-    :tabindex="order" 
     class="person">
     <div
       :style="`background-image: url('${background}')`"
