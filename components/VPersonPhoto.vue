@@ -1,8 +1,8 @@
 <template>
-  <div
+  <img
     :class="{selected: selected}"
-    :style="`background-image: url('${background}')`"
-    class="miniPersonPhoto"/>
+    :src="background"
+    class="miniPersonPhoto">
 </template>
 
 <script>
@@ -23,24 +23,22 @@ export default {
 @import "~assets/styles/vars";
 
 .miniPersonPhoto {
-  box-sizing: border-box;
+  // box-sizing: border-box;
   margin: 0.25em 0.35em;
   justify-self: center;
   position: relative;
   width: 4.768em;
   height: 4.768em;
+  object-fit: cover;
   display: inline-block;
-  background-size: cover;
-  background-position: center;
-  border-color: $dodger-blue;
-  border-style: dashed;
-  border-width: 0px;
-  transition: border-width 0.1s ease;
+  outline: 0px dashed $dodger-blue;
+  outline-offset: -5px;
+  transition: outline-width 0.1s ease;
 }
 
 .miniPersonPhoto.selected,
 .miniPersonPhoto:hover {
-  border-width: 5px;
+  outline-width: 5px;
 }
 
 .miniPersonPhoto:hover {

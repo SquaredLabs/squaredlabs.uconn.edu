@@ -1,10 +1,12 @@
 <template>
   <div
-    :style="`background: rgba(0,0,0,0.03) url('${project.imageURL}') center / cover no-repeat`"
     class="project"
     @mouseover="$emit('hoverProject', {
       name:project.name,client:project.client,timespan:project.timespan,people:setRole(project)
   })">
+    <img 
+      :src="project.imageURL" 
+      class="projectPhoto">
     <div
       ref="title"
       :class="{twoLineTitle}"
@@ -71,20 +73,16 @@ export default {
 
 .project {
   --side-length: calc(50vw - 50px);
-  background-blend-mode: darken;
   box-sizing: border-box;
   padding: 10px;
   display: flex;
   align-items: flex-end;
   height: var(--side-length);
   width: var(--side-length);
-
-  &:hover {
-    background-size: 175%;
-  }
+  overflow: hidden;
 
   &:hover .projectContent {
-    height: calc(50vw - 70px);
+    height: calc(50vw - 40px);
   }
 
   &:hover .projectTitle {
@@ -96,6 +94,13 @@ export default {
   }
 }
 
+.projectPhoto {
+  max-width: 100%;
+  height: 100%;
+  display: inline-block;
+  object-fit: cover;
+}
+
 .projectContent {
   transition: 0.25s ease;
   overflow: hidden;
@@ -103,10 +108,14 @@ export default {
   padding: 10px;
   height: 3.052em;
   display: flex;
-  min-width: 100%;
+  width: calc(var(--side-length) - 40px);
+  margin-left: 10px;
+  margin-bottom: 8px;
   justify-content: space-between;
   flex-flow: column nowrap;
   background-color: white;
+  position: absolute;
+
   &.twoLineTitle {
     height: 4.768em;
   }
@@ -141,7 +150,7 @@ export default {
   .project {
     --side-length: calc((100vw - 8.75em) / 3 + 1em);
     &:hover .projectContent {
-      height: calc((100vw - 8.75em) / 3 - 0.25em);
+      height: calc((100vw - 11.75em) / 3 - 0.25em);
     }
   }
 }
@@ -150,7 +159,7 @@ export default {
   .project {
     --side-length: calc((100vw - 11.25em) / 4 + 1em);
     &:hover .projectContent {
-      height: calc((100vw - 11.25em) / 4 - 0.25em);
+      height: calc((100vw - 15.25em) / 4 - 0.25em);
     }
   }
 }

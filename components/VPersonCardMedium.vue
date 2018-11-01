@@ -2,9 +2,9 @@
   <div
     :class="{selected: selected}"
     class="person">
-    <div
-      :style="`background-image: url('${background}')`"
-      class="personPhoto" />
+    <img 
+      :src="background" 
+      class="personPhoto" >
     <div class="personPreview">
       <p class="personName"><slot name="name" /></p>
       <p class="personRole"><slot name="role" /></p>
@@ -40,9 +40,10 @@ export default {
 .person {
   position: relative;
   z-index: 4;
-  height: 14.552em;
+  height: 16.552em;
   padding-bottom: 40px;
   overflow: hidden;
+  text-align: center;
 
   &:hover .personPreview {
     height: 11.642em;
@@ -57,16 +58,16 @@ export default {
   }
 
   &:hover .personPhoto {
-    margin: 30px;
+    max-height: 90%;
+    margin-top: 1em;
     filter: brightness(60%);
   }
 }
 
 .personPhoto {
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: margin 0.25s ease, filter 0.25s ease;
+  max-height: 100%;
+  object-fit: cover;
+  transition: margin 0.25s ease, max-height 0.25s ease, filter 0.25s ease;
 }
 
 .personPreview {

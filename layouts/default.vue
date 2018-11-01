@@ -40,7 +40,7 @@ body {
 *:active,
 *:checked,
 *:enabled {
-  outline: none !important;
+  outline: none;
 }
 
 .noScroll {

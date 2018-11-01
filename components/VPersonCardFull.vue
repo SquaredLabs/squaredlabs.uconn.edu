@@ -8,9 +8,9 @@
       {penultimate: penultimate}
     ]"
     class="fullSizePersonCard">
-    <div
-      :style="`background-image: url('${background}')`"
-      class="personPhoto" />
+    <img 
+      :src="background" 
+      class="personPhoto" >
     <div class="personContent">
       <div class="personPreview">
         <p class="personName">
@@ -76,8 +76,7 @@ export default {
 .personPhoto {
   height: 100%;
   display: inline-block;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 
 .personContent {
