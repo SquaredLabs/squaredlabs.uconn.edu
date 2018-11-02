@@ -6,6 +6,7 @@
   })">
     <img 
       :src="project.imageURL" 
+      :alt="project.name"
       class="projectPhoto">
     <div
       ref="title"

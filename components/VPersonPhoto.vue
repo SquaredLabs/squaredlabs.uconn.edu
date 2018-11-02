@@ -2,6 +2,7 @@
   <img
     :class="{selected: selected}"
     :src="background"
+    :alt="`${name} mini`"
     class="miniPersonPhoto">
 </template>
 
@@ -9,7 +10,8 @@
 export default {
   props: {
     background: { type: String, required: true },
-    order: { type: Number, required: true }
+    order: { type: Number, required: true },
+    name: { type: String, required: true }
   },
   computed: {
     selected() {

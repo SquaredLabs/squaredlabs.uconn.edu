@@ -4,6 +4,7 @@
     class="person">
     <img 
       :src="background" 
+      :alt="name"
       class="personPhoto" >
     <div class="personPreview">
       <p class="personName"><slot name="name" /></p>
@@ -19,7 +20,8 @@
 export default {
   props: {
     background: { type: String, required: true },
-    order: { type: Number, required: true }
+    order: { type: Number, required: true },
+    name: { type: String, required: true }
   },
   computed: {
     selected() {

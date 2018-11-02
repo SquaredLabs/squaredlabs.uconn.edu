@@ -38,7 +38,6 @@
             :background="person.imageURL"
             :order="person.order"
             :name="person.name"
-            :alt="person.name"
             :role="person.title"
             @click.native="selectPerson(person.order)"/>
         </div>

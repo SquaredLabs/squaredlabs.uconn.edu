@@ -10,6 +10,7 @@
     class="fullSizePersonCard">
     <img 
       :src="background" 
+      :alt="name"
       class="personPhoto" >
     <div class="personContent">
       <div class="personPreview">
@@ -39,7 +40,8 @@
 export default {
   props: {
     background: { type: String, required: true },
-    order: { type: Number, required: true }
+    order: { type: Number, required: true },
+    name: { type: String, required: true }
   },
   computed: {
     selected() {
