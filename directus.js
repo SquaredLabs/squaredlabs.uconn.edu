@@ -61,6 +61,7 @@ function loadProjects(url, endpoint) {
         id: projectData.id,
         order: projectData.sort,
         name: projectData.name,
+        nameURL: projectData.name.split(" ").join("_"),
         client: projectData.client,
         timespan: projectData.timespan,
         services: projectData.services,

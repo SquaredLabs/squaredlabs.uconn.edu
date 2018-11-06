@@ -31,13 +31,6 @@
           @hoverProject="hoverData = $event">
           <span v-html="project.small_summary" />
         </v-project-card>
-        <transition
-          name="slide"
-          mode="out-in">
-          <v-project-modal
-            v-if="$store.state.selectedProject!==0"
-            :project="selectedProject" />
-        </transition>
       </div>
     </section>
   </div>
@@ -49,7 +42,6 @@ import VProjectCard from "~/components/VProjectCard.vue"
 import VPersonCardMini from "~/components/VPersonCardMini.vue"
 import Directus from "~/directus"
 import VBackgroundText from "~/components/VBackgroundText.vue"
-import VProjectModal from "~/components/VProjectModal.vue"
 
 const setPeople = function(person, projects) {
   let role = person.roles
@@ -92,8 +84,7 @@ export default {
     VGridLayout,
     VProjectCard,
     VPersonCardMini,
-    VBackgroundText,
-    VProjectModal
+    VBackgroundText
   },
   data: () => ({
     hoverData: {}

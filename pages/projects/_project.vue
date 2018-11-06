@@ -5,10 +5,10 @@
 import Directus from "~/directus"
 import VProjectModal from "~/components/VProjectModal.vue"
 
-const getProject = (projects, name) => {
+const getProject = (projects, URL) => {
   let match = {}
   projects.forEach(project => {
-    if (project.name === name) return (match = project)
+    if (project.nameURL === URL) return (match = project)
   })
   return match
 }
@@ -26,7 +26,6 @@ export default {
     VProjectModal
   },
   mounted() {
-    document.querySelector("html").classList.add("noScroll")
     if (!this.project.name) this.$router.push(`/projects`)
   }
 }
