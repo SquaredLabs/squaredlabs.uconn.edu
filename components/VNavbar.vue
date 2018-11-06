@@ -42,6 +42,10 @@
       href="/connect">
       connect
     </v-link>
+    <button 
+      v-show="currentPage=='/labs'" 
+      class="highContrast" 
+      @click="$store.commit('highContrast')">High Contrast</button>
   </nav>
 </template>
 <script>
@@ -55,6 +59,11 @@ export default {
     theme: {
       type: String,
       required: true
+    }
+  },
+  computed: {
+    currentPage() {
+      return this.$route.path
     }
   },
   mounted() {
@@ -106,6 +115,18 @@ export default {
 
 .mobile {
   display: none;
+}
+.highContrast {
+  outline: none;
+  border: none;
+  background-color: $white;
+  padding: 0.2em;
+  transition: all ease 0.2s;
+  border: dashed 2px $solid-blue;
+}
+.highContrast:hover {
+  box-sizing: border-box;
+  border: dashed 2px $pale-orange;
 }
 
 @media screen and (max-width: $tablet) {

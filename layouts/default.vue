@@ -1,6 +1,8 @@
 <template>
   <div
-    :class="{blueAppTheme:$store.state.theme=='blue'}"
+    :class="{
+      blueAppTheme:$store.state.theme=='blue', 
+      highContrast:$store.state.highContrast}"
     class="app">
     <v-navbar :theme="$store.state.theme"/>
     <nuxt />
@@ -69,6 +71,10 @@ body {
 
 .blueAppTheme {
   background-color: $dodger-blue;
+}
+
+.blueAppTheme.highContrast {
+  background-color: $solid-blue;
 }
 </style>
 

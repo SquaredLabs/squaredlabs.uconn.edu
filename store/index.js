@@ -5,7 +5,8 @@ const createStore = () => {
     state: {
       theme: "white",
       selectedProject: 0,
-      selectedPerson: 4
+      selectedPerson: 4,
+      highContrast: false
     },
     mutations: {
       setBlue(state) {
@@ -13,6 +14,9 @@ const createStore = () => {
       },
       setWhite(state) {
         state.theme = "white"
+      },
+      highContrast(state) {
+        state.highContrast = !state.highContrast
       },
       selectPerson(state, personToSelect) {
         state.selectedPerson = personToSelect
