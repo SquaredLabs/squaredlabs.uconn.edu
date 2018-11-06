@@ -106,7 +106,7 @@ export default {
 }
 
 .title {
-  font-family: SpaceMono;
+  font-family: "SpaceMono";
   font-weight: 500;
   margin-top: 0;
 }
