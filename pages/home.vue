@@ -27,6 +27,7 @@
         v-for="index in 3"
         v-else
         :key="index"
+        :tabindex="index"
         :project="projects[index]"
         class="col-lg-2 col-sm-2"/>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
@@ -54,6 +55,7 @@
         :key="person.id"
         :background="person.imageURL"
         :order="person.order"
+        :tabindex="person.id+3"
         :name="person.name"
         :role="person.title"
         class="col-sm-2">
@@ -147,7 +149,7 @@ export default {
     projects: []
   }),
   mounted() {
-    this.people = selectPeople(this.people, 3)
+    this.people = selectPeople(this.people, 3).sort((a, b) => a.order - b.order)
   }
 }
 </script>

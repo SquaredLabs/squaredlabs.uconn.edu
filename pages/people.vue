@@ -13,9 +13,10 @@
           class="col-sm-4 col-md-6 col-8 col-lg-12">
           <div v-if="!people">Loading people...</div>
           <v-person-card-full
-            v-for="person in people"
+            v-for="(person, index) in people"
             v-else
             :key="person.id"
+            :tabindex="index"
             :background="person.imageURL"
             :order="person.order"
             :name="person.name"
@@ -33,8 +34,9 @@
           v-else
           class="people-quick-select col-sm-4 col-md-6 off-1 off-lg-3">
           <v-person-photo
-            v-for="person in people"
+            v-for="(person, index) in people"
             :key="person.id"
+            :tabindex="index"
             :background="person.imageURL"
             :order="person.order"
             :name="person.name"
@@ -46,8 +48,9 @@
         <v-background-text :lines="['alu','mni']" />
         <v-grid-layout id="alumniPeopleSection">
           <v-person-card-medium
-            v-for="person in alumni"
+            v-for="(person, index) in alumni"
             :key="person.id"
+            :tabindex="index + people.length"
             :background="person.imageURL"
             :order="person.order"
             :name="person.name"
