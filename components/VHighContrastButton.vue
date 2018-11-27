@@ -1,11 +1,17 @@
 <template>
   <button
     class="high-contrast"
-    @click="$emit('click')">High Contrast Mode</button>
+    @click="$emit('click')">{{ (highContrast ? 'Low' : 'High') }} Contrast Mode</button>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    highContrast() {
+      return this.$store.state.highContrast
+    }
+  }
+}
 </script>
 
 
