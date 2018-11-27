@@ -1,9 +1,14 @@
 <template>
   <div
     :class="{
-      blueAppTheme:$store.state.theme=='blue', 
-      highContrast:$store.state.highContrast}"
+      blueAppTheme:$store.state.theme=='blue',
+      highContrast:$store.state.highContrast,
+      labs:currentPage=='/labs'}"
     class="app">
+    <v-high-contrast-button
+      v-show="currentPage=='/labs'"
+      class="high-contrast-button"
+      @click="$store.commit('highContrast')"/>
     <v-navbar :theme="$store.state.theme"/>
     <nuxt />
     <v-footbar :theme="$store.state.theme"/>
@@ -12,10 +17,18 @@
 <script>
 import VNavbar from "~/components/VNavbar"
 import VFootbar from "~/components/VFootbar"
+import VHighContrastButton from "~/components/VHighContrastButton"
+
 export default {
   components: {
     VNavbar,
-    VFootbar
+    VFootbar,
+    VHighContrastButton
+  },
+  computed: {
+    currentPage() {
+      return this.$route.path
+    }
   }
 }
 </script>
@@ -90,5 +103,17 @@ body {
 .page-leave-to {
   opacity: 0;
   transform: translateX(30%);
+}
+
+.labs {
+  margin-bottom: 2.43em;
+}
+
+.high-contrast-button {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
 }
 </style>
