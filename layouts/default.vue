@@ -6,7 +6,7 @@
       labs:currentPage=='/labs'}"
     class="app">
     <v-high-contrast-button
-      v-show="currentPage=='/labs'"
+      v-show="currentPage=='labs'"
       class="high-contrast-button"
       @click="$store.commit('highContrast')"/>
     <v-navbar :theme="$store.state.theme"/>
@@ -27,7 +27,8 @@ export default {
   },
   computed: {
     currentPage() {
-      return this.$route.path
+      console.log()
+      return this.$route.name
     }
   }
 }
