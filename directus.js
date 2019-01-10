@@ -2,6 +2,8 @@
  * Extremely basic API to fetch data from directus for the frontend components to easily work with 
 */
 import fetch from "isomorphic-fetch"
+require("es6-promise")
+
 const thumbnailUrl =
   "https://admin.squaredlabs.uconn.edu/thumbnail/500/400/contain/best/"
 const thumbnailUrlIcon =
