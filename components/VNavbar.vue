@@ -41,11 +41,8 @@ export default {
       navLinks.addEventListener("click", function() {
         document.querySelector(".menu.link").textContent = "[menu ↑]"
         document.querySelector("nav").classList.remove("expanded")
-        try {
+        if (document.querySelector("nav ~ *.dimmed"))
           document.querySelector("nav ~ *.dimmed").classList.remove("dimmed")
-        } catch (e) {
-          throw e
-        }
       })
     })
     window.addEventListener("scroll", function() {
