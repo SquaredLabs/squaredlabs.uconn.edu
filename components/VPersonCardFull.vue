@@ -1,37 +1,25 @@
 <template>
   <div
     :class="[
-      {selected:selected},
-      {previousAdjacent:previous},
-      {nextAdjacent:next},
-      {immediate: immediate},
-      {penultimate: penultimate}
+      { selected: selected },
+      { previousAdjacent: previous },
+      { nextAdjacent: next },
+      { immediate: immediate },
+      { penultimate: penultimate }
     ]"
-    class="fullSizePersonCard">
-    <img 
-      :src="background" 
-      :alt="name"
-      class="personPhoto" >
+    class="fullSizePersonCard"
+  >
+    <img :src="background" :alt="name" class="personPhoto" />
     <div class="personContent">
       <div class="personPreview">
-        <p class="personName">
-          <slot name="name" />
-        </p>
-        <p class="title">
-          <slot name="title" />
-        </p>
+        <p class="personName"><slot name="name" /></p>
+        <p class="title"><slot name="title" /></p>
       </div>
       <div class="personInfo">
-        <p class="degree">
-          <slot name="degree" />
-        </p>
-        <p class="class">
-          <slot name="class" />
-        </p>
+        <p class="degree"><slot name="degree" /></p>
+        <p class="class"><slot name="class" /></p>
       </div>
-      <div class="personAbout">
-        <slot />
-      </div>
+      <div class="personAbout"><slot /></div>
     </div>
   </div>
 </template>

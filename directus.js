@@ -1,6 +1,6 @@
 /* Currently, all of this is referenced in the getAsyncData() method of our pages
- * Extremely basic API to fetch data from directus for the frontend components to easily work with 
-*/
+ * Extremely basic API to fetch data from directus for the frontend components to easily work with
+ */
 import fetch from "isomorphic-fetch"
 require("es6-promise")
 

@@ -1,7 +1,5 @@
 <template>
-  <section class="gridded">
-    <slot/>
-  </section>
+  <section class="gridded"><slot /></section>
 </template>
 
 <style scoped lang="scss">

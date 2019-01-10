@@ -1,16 +1,34 @@
 module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    node: true
+  },
   parserOptions: {
-    "parser": "babel-eslint",
-    "sourceType": "module"
+    parser: 'babel-eslint'
   },
   extends: [
-    "standard",
-    "prettier",
-    "prettier/standard",
-    "plugin:vue/recommended"
+    "eslint:recommended",
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
   ],
-  plugins: ["vue","prettier","standard"],
+  // required to lint *.vue files
+  plugins: [
+    'vue'
+  ],
+  // add your custom rules here
   rules: {
-    "prettier/prettier": "error"
-  }
+    "semi": [2, "never"],
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "prettier/prettier": ["error", { "semi": false }],
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "always",
+      }
+    }]
+  },
+
 }

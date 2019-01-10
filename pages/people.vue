@@ -1,16 +1,20 @@
 <template>
   <div>
-    <v-background-text :lines="['peo','ple']" />
+    <v-background-text :lines="['peo', 'ple']" />
     <div id="peoplePage">
       <v-grid-layout id="currentPeopleSection">
-        <div
-          class="whiteBox col-sm-4 col-md-3 off-md-3 off-5 off-lg-8">
-          <p>Without people, an organization is, well, nothing useful. ⬚² labs team members are a stellar group who share
-          a passion for building beautiful and functional websites. Meet them — here and/or in real life.</p>
+        <div class="whiteBox col-sm-4 col-md-3 off-md-3 off-5 off-lg-8">
+          <p>
+            Without people, an organization is, well, nothing useful. ⬚² labs
+            team members are a stellar group who share a passion for building
+            beautiful and functional websites. Meet them — here and/or in real
+            life.
+          </p>
         </div>
         <v-grid-layout
           id="peopleCarousel"
-          class="col-sm-4 col-md-6 col-8 col-lg-12">
+          class="col-sm-4 col-md-6 col-8 col-lg-12"
+        >
           <div v-if="!people">Loading people...</div>
           <v-person-card-full
             v-for="(person, index) in people"
@@ -21,18 +25,26 @@
             :order="person.order"
             :name="person.name"
             :role="person.title"
-            @click.native="selectPerson(person.order)">
+            @click.native="selectPerson(person.order)"
+          >
             <template slot="name">{{ person.name }}</template>
-            <template slot="title"> {{ person.title }} </template>
-            <template slot="class"> {{ person.class }} </template>
-            <template slot="degree"> {{ person.degree }} </template>
+            <template slot="title">
+              {{ person.title }}
+            </template>
+            <template slot="class">
+              {{ person.class }}
+            </template>
+            <template slot="degree">
+              {{ person.degree }}
+            </template>
             {{ person.description }}
           </v-person-card-full>
         </v-grid-layout>
         <div v-if="!people">Loading people...</div>
         <div
           v-else
-          class="people-quick-select col-sm-4 col-md-6 off-1 off-lg-3">
+          class="people-quick-select col-sm-4 col-md-6 off-1 off-lg-3"
+        >
           <v-person-photo
             v-for="(person, index) in people"
             :key="person.id"
@@ -41,11 +53,12 @@
             :order="person.order"
             :name="person.name"
             :role="person.title"
-            @click.native="selectPerson(person.order)"/>
+            @click.native="selectPerson(person.order)"
+          />
         </div>
       </v-grid-layout>
       <section class="alumni-section">
-        <v-background-text :lines="['alu','mni']" />
+        <v-background-text :lines="['alu', 'mni']" />
         <v-grid-layout id="alumniPeopleSection">
           <v-person-card-medium
             v-for="(person, index) in alumni"
@@ -55,7 +68,8 @@
             :order="person.order"
             :name="person.name"
             :role="person.title"
-            class="col-sm-2 alumni">
+            class="col-sm-2 alumni"
+          >
             <template slot="name">{{ person.name }}</template>
             <template slot="role">{{ person.role }}</template>
             {{ person.description }}
@@ -75,7 +89,7 @@ import VBackgroundText from "~/components/VBackgroundText.vue"
 import Directus from "~/directus"
 
 export default {
-  async asyncData({ params }) {
+  async asyncData() {
     let data = await Directus()
     let peopleData = data[0]
     return {

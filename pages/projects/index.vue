@@ -1,12 +1,15 @@
 <template>
   <div>
-    <v-background-text :lines="['proj','ects']" />
+    <v-background-text :lines="['proj', 'ects']" />
     <section class="projectSection">
       <div class="information">
-        <div
-          class="whiteBox">
-          <p>We build websites that support UConn research. All of our projects are presently conceived of internally. Eventually
-          we’d love to get to a point where we have the bandwidth to take on externally proposed projects.</p>
+        <div class="whiteBox">
+          <p>
+            We build websites that support UConn research. All of our projects
+            are presently conceived of internally. Eventually we’d love to get
+            to a point where we have the bandwidth to take on externally
+            proposed projects.
+          </p>
         </div>
         <div class="detailSidebar">
           <b>{{ hoverData.name }}</b>
@@ -15,7 +18,8 @@
           <v-person-card-mini
             v-for="person in hoverData.people"
             :key="person.id"
-            :icon="person.iconURL">
+            :icon="person.iconURL"
+          >
             <template slot="name">{{ person.name }}</template>
             <template slot="position">{{ person.role }}</template>
           </v-person-card-mini>
@@ -28,15 +32,15 @@
           v-else
           :key="project.id"
           :project="project"
-          @hoverProject="hoverData = $event">
+          @hoverProject="hoverData = $event"
+        >
           <span v-html="project.small_summary" />
         </v-project-card>
-        <transition
-          name="slide"
-          mode="out-in">
+        <transition name="slide" mode="out-in">
           <v-project-modal
-            v-if="$store.state.selectedProject!==0"
-            :project="selectedProject" />
+            v-if="$store.state.selectedProject !== 0"
+            :project="selectedProject"
+          />
         </transition>
       </div>
     </section>
@@ -64,7 +68,7 @@ const setPeople = function(person, projects) {
 }
 
 export default {
-  async asyncData({ params }) {
+  async asyncData() {
     let data = await Directus()
     let projectData = data[1].projects
     let peopleData = data[0].people

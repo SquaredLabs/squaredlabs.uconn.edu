@@ -1,13 +1,10 @@
 <template>
   <div class="miniCard">
-    <div class="miniPortrait">
-      <img
-        :src="icon"
-        alt="Portrait">
-    </div>
+    <div class="miniPortrait"><img :src="icon" alt="Portrait" /></div>
+
     <div class="miniBio">
-      <strong><slot name="name" /></strong><br>
-      <span><slot name="position" /></span>
+      <strong><slot name="name"/></strong><br />
+      <span><slot name="position"/></span>
     </div>
   </div>
 </template>
@@ -19,7 +16,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";

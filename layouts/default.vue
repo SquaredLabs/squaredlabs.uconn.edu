@@ -1,17 +1,20 @@
 <template>
   <div
     :class="{
-      blueAppTheme:$store.state.theme=='blue',
-      highContrast:$store.state.highContrast,
-      labs:currentPage=='/labs'}"
-    class="app">
+      blueAppTheme: $store.state.theme == 'blue',
+      highContrast: $store.state.highContrast,
+      labs: currentPage == '/labs'
+    }"
+    class="app"
+  >
     <v-high-contrast-button
-      v-show="currentPage=='labs'"
+      v-show="currentPage == 'labs'"
       class="high-contrast-button"
-      @click="$store.commit('highContrast')"/>
-    <v-navbar :theme="$store.state.theme"/>
+      @click="$store.commit('highContrast')"
+    />
+    <v-navbar :theme="$store.state.theme" />
     <nuxt />
-    <v-footbar :theme="$store.state.theme"/>
+    <v-footbar :theme="$store.state.theme" />
   </div>
 </template>
 <script>

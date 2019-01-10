@@ -4,7 +4,8 @@
     v-bind="dynamicProps"
     :class="{ white: shouldApplyWhite }"
     class="button"
-    @click="$emit('click')">
+    @click="$emit('click')"
+  >
     <slot />
   </component>
 </template>

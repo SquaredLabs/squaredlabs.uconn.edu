@@ -1,15 +1,7 @@
 <template>
-  <a
-    :href="link"
-    :title="title"
-    class="connectCard link"
-    target="_blank">
-    <div class="svgWrapper">
-      <slot />
-    </div>
-    <p class="btnTxt">
-      {{ title }}
-    </p>
+  <a :href="link" :title="title" class="connectCard link" target="_blank">
+    <div class="svgWrapper"><slot /></div>
+    <p class="btnTxt">{{ title }}</p>
   </a>
 </template>
 

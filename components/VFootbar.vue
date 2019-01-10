@@ -1,24 +1,24 @@
 <template>
-  <div
-    :class="{blueTheme:theme=='blue'}"
-    class="footbar gridded">
+  <div :class="{ blueTheme: theme == 'blue' }" class="footbar gridded">
     <v-link
       class="link col-sm-2 off-md-1 off-2 off-lg-4 row-off-md-0"
-      href="https://uconn.edu">
+      href="https://uconn.edu"
+    >
       ©2018 UConn
     </v-link>
     <v-link
       class="link col-sm-2 off-md-3 off-4 off-lg-6 row-off-sm-1 row-off-md-0"
-      href="https://core.uconn.edu">
+      href="https://core.uconn.edu"
+    >
       UConn COR²E
     </v-link>
     <span
-      :class="{blueTheme:theme=='blue'}"
-      class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1">
-      Designed & developed by
-      <br>
-      <span class="footbarSignature-mono">[squared labs]</span>
-      <br> at UCONN
+      :class="{ blueTheme: theme == 'blue' }"
+      class="footbarSignature col-sm-4 off-md-1 off-2 off-lg-4 row-off-md-1 row-off-sm-2 row-off-md-1"
+    >
+      Designed & developed by <br />
+      <span class="footbarSignature-mono">[squared labs]</span> <br />
+      at UCONN
     </span>
   </div>
 </template>

@@ -4,29 +4,33 @@
       id="selector"
       name="animateSelect"
       @after-leave="readyForBack"
-      @before-leave="disableBack">
+      @before-leave="disableBack"
+    >
       <div
         v-for="(value, key) in views"
         :key="key"
         class="select"
         @click="select(key)"
         @mouseover="hover"
-        @mouseleave="hoverLeave">
+        @mouseleave="hoverLeave"
+      >
         <transition name="fade">
           <p
-            :class="{expandedTitle:(selected && hoverable)}"
-            class="selectTitle">{{ key }}</p>
+            :class="{ expandedTitle: selected && hoverable }"
+            class="selectTitle"
+          >
+            {{ key }}
+          </p>
         </transition>
-        <p
-          v-show="selected && hoverable"
-          class="selectBack">Back</p>
+        <p v-show="selected && hoverable" class="selectBack">Back</p>
       </div>
     </transition-group>
     <transition name="slideUp">
       <component
         v-if="selected"
         :is="selected_view[Object.keys(selected_view)[0]]"
-        :back="resetSelection"/>
+        :back="resetSelection"
+      />
     </transition>
   </div>
 </template>

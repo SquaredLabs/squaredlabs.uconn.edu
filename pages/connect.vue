@@ -1,29 +1,22 @@
 <template>
   <div>
-    <v-background-text :lines="['con','nect']"/>
+    <v-background-text :lines="['con', 'nect']" />
     <v-grid-layout id="connectPageContent">
-      <p
-        id="mainHeader"
-        class="header col-sm-4 col-md-6 col-7 off-1">
+      <p id="mainHeader" class="header col-sm-4 col-md-6 col-7 off-1">
         Like what we do?
       </p>
-      <v-connect-graphics class="col-sm-4 col-md-6 col-7 off-1 col-lg-10"/>
-      <p
-        id="secondaryHeader"
-        class="header col-sm-4 col-md-6 off-1">
+      <v-connect-graphics class="col-sm-4 col-md-6 col-7 off-1 col-lg-10" />
+      <p id="secondaryHeader" class="header col-sm-4 col-md-6 off-1">
         So do we.
       </p>
-      <div
-        id="subHeader"
-        class="col-sm-4 off-1">
+      <div id="subHeader" class="col-sm-4 off-1">
         <p>
-          We’ve got a good thing going here, and we’d like to keep it going. Here’s how you can help.
+          We’ve got a good thing going here, and we’d like to keep it going.
+          Here’s how you can help.
         </p>
-        <p>
-          If you’re a…
-        </p>
+        <p>If you’re a…</p>
       </div>
-      <v-connect-select class="col-sm-4 col-md-6 col-8 col-lg-12"/>
+      <v-connect-select class="col-sm-4 col-md-6 col-8 col-lg-12" />
     </v-grid-layout>
   </div>
 </template>

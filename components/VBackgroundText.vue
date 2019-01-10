@@ -2,8 +2,11 @@
   <div class="backgroundText">
     <p
       v-for="(line, index) in lines"
-      :key="'line'+index"
-      class="backgroundTextLine">{{ line }}</p>
+      :key="'line' + index"
+      class="backgroundTextLine"
+    >
+      {{ line }}
+    </p>
   </div>
 </template>
 

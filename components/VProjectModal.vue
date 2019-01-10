@@ -1,19 +1,10 @@
 <template>
-  <div
-    id="selectedProjectModal" >
+  <div id="selectedProjectModal">
     <h1 class="title">{{ project.name }}</h1>
-    <v-link
-      class="return"
-      @click="unexpand">
-      ← Return to all projects
-    </v-link>
+    <v-link class="return" @click="unexpand"> ← Return to all projects </v-link>
     <div class="content">
       <div class="information">
-        <div
-          class="desc"
-          v-html="project.large_summary">
-          <slot />
-        </div>
+        <div class="desc" v-html="project.large_summary"><slot /></div>
         <div class="projectInfo">
           <p class="client">Client: {{ project.client }}</p>
           <p class="timespan">{{ project.timespan }}</p>
@@ -24,7 +15,8 @@
           <v-person-card-mini
             v-for="person in project.people"
             :key="person.id"
-            :icon="person.iconURL">
+            :icon="person.iconURL"
+          >
             <template slot="name">{{ person.name }}</template>
             <template slot="position">{{ person.role }}</template>
           </v-person-card-mini>
@@ -75,7 +67,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";

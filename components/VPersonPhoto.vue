@@ -1,9 +1,10 @@
 <template>
   <img
-    :class="{selected: selected}"
+    :class="{ selected: selected }"
     :src="background"
     :alt="`${name} mini`"
-    class="miniPersonPhoto">
+    class="miniPersonPhoto"
+  />
 </template>
 
 <script>

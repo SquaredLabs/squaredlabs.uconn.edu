@@ -1,24 +1,22 @@
 <template>
   <div id="homePage">
-    <v-grid-layout
-      id="landSection"
-      section="landing">
+    <v-grid-layout id="landSection" section="landing">
       <img
         class="logo col-lg-10 col-8 col-sm-4 col-md-6 off-lg-1"
         src="~/assets/images/full-wordmark.svg"
-        alt="Squared Labs">
+        alt="Squared Labs"
+      />
     </v-grid-layout>
-    <v-grid-layout
-      id="projectSection"
-      section="projects">
-      <div
-        text="projects"
-        class="col-sm-4 col-md-2 off-lg-1">
-        <p>Welcome to ⬚² [squared] labs. Together with UConn’s very best
+    <v-grid-layout id="projectSection" section="projects">
+      <div text="projects" class="col-sm-4 col-md-2 off-lg-1">
+        <p>
+          Welcome to ⬚² [squared] labs. Together with UConn’s very best
           <v-link href="/people">students</v-link>, we build cutting-edge
-          <v-link href="/projects">websites</v-link> that support UConn’s world-class research infrastructure.
+          <v-link href="/projects">websites</v-link> that support UConn’s
+          world-class research infrastructure.
         </p>
-        <p>View our history, purpose, and space on the
+        <p>
+          View our history, purpose, and space on the
           <v-link href="/labs">lab page</v-link>.
         </p>
       </div>
@@ -29,25 +27,24 @@
         :key="index"
         :tabindex="index"
         :project="projects[index]"
-        class="col-lg-2 col-sm-2"/>
+        class="col-lg-2 col-sm-2"
+      />
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
-        <v-link href="/projects">
-          See all projects &rarr;
-        </v-link>
+        <v-link href="/projects"> See all projects &rarr; </v-link>
       </div>
     </v-grid-layout>
-    <v-grid-layout
-      v-if="people"
-      id="peopleSection"
-      section="people">
+    <v-grid-layout v-if="people" id="peopleSection" section="people">
       <div class="peopleText col-sm-4 col-md-2 off-lg-1">
-        <p>⬚² labs team members are a stellar group who share a passion for building beautiful, functional websites.</p>
-        <p>We are always looking for talented and hard-working students to join our ranks. We look for students with a track
-        record of building cool stuff in their spare time, web experience, and a passion for innovation and creation. If
-        that sounds like you,
-          <v-link href="/connect">
-            get in touch!
-          </v-link>
+        <p>
+          ⬚² labs team members are a stellar group who share a passion for
+          building beautiful, functional websites.
+        </p>
+        <p>
+          We are always looking for talented and hard-working students to join
+          our ranks. We look for students with a track record of building cool
+          stuff in their spare time, web experience, and a passion for
+          innovation and creation. If that sounds like you,
+          <v-link href="/connect"> get in touch! </v-link>
         </p>
       </div>
       <v-person-card-medium
@@ -55,51 +52,52 @@
         :key="person.id"
         :background="person.imageURL"
         :order="person.order"
-        :tabindex="person.id+3"
+        :tabindex="person.id + 3"
         :name="person.name"
         :role="person.title"
-        class="col-sm-2">
+        class="col-sm-2"
+      >
         <template slot="name">{{ person.name }}</template>
         <template slot="role">{{ person.role }}</template>
         {{ person.description }}
       </v-person-card-medium>
       <div v-if="!people">Loading people</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
-        <v-link href="/people">
-          Meet the full team &rarr;
-        </v-link>
+        <v-link href="/people"> Meet the full team &rarr; </v-link>
       </div>
     </v-grid-layout>
-    <v-grid-layout
-      id="connectSection"
-      section="connect">
+    <v-grid-layout id="connectSection" section="connect">
       <v-connect-card
         title="Contribute on GitHub"
         link="https://github.com/squaredlabs"
-        class="col-sm-2 col-md-2 off-lg-1">
+        class="col-sm-2 col-md-2 off-lg-1"
+      >
         <v-connect-button-art-git-hub />
       </v-connect-card>
       <v-connect-card
         title="Contact ⬚² labs"
         link="mailto:squaredlabs@uconn.edu"
-        class="col-sm-2 col-md-2">
+        class="col-sm-2 col-md-2"
+      >
         <v-connect-button-art-mail />
       </v-connect-card>
       <v-connect-card
         title="Donate to ⬚² labs"
         link="http://www.foundation.uconn.edu/send-your-gift/"
-        class="col-sm-2 col-md-2">
+        class="col-sm-2 col-md-2"
+      >
         <v-connect-button-art-btc />
       </v-connect-card>
       <div class="connectText col-sm-2 col-md-4 off-6 col-2 off-lg-8 col-lg-3">
-        <p>If you like what you see here and want to offer support, or get involved as something other than a member of ⬚²
-        labs, we would love to hear from you! From workshops, to open source contributions, to donations, there are plenty
-        ways to become a part of what we do. </p>
+        <p>
+          If you like what you see here and want to offer support, or get
+          involved as something other than a member of ⬚² labs, we would love to
+          hear from you! From workshops, to open source contributions, to
+          donations, there are plenty ways to become a part of what we do.
+        </p>
       </div>
       <div class="linkPulledRight col-sm-2">
-        <v-link href="/connect">
-          Connect with us &rarr;
-        </v-link>
+        <v-link href="/connect"> Connect with us &rarr; </v-link>
       </div>
     </v-grid-layout>
   </div>
@@ -125,7 +123,7 @@ const selectPeople = (people, numberToSelect) => {
 }
 
 export default {
-  async asyncData({ params }) {
+  async asyncData() {
     let data = await Directus()
     let peopleData = data[0]
     let projectData = data[1]

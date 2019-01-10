@@ -1,32 +1,23 @@
 <template>
   <div
     class="project"
-    @mouseover="$emit('hoverProject', {
-      name:project.name,
-      client:project.client,
-      timespan:project.timespan,
-      people:setRole(project)
-  })">
-    <img 
-      :src="project.imageURL" 
-      :alt="project.name"
-      class="projectPhoto">
-    <div
-      ref="title"
-      :class="{twoLineTitle}"
-      class="projectContent">
+    @mouseover="
+      $emit('hoverProject', {
+        name: project.name,
+        client: project.client,
+        timespan: project.timespan,
+        people: setRole(project)
+      })
+    "
+  >
+    <img :src="project.imageURL" :alt="project.name" class="projectPhoto" />
+    <div ref="title" :class="{ twoLineTitle }" class="projectContent">
       <div>
         <p class="projectTitle">{{ project.name }}</p>
-        <div class="projectDescription">
-          <slot />
-        </div>
+        <div class="projectDescription"><slot /></div>
       </div>
       <div class="projectLink">
-        <v-link
-          class="VLink"
-          @click="expand">
-          View Project &rarr;
-        </v-link>
+        <v-link class="VLink" @click="expand"> View Project &rarr; </v-link>
       </div>
     </div>
   </div>

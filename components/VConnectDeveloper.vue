@@ -1,37 +1,39 @@
 <template>
   <div id="container">
     <div id="content">
-      If you’re a UConn or non-UConn developer but want to get involved with ⬚² labs you can:
-      <p><span class="contentStyleList">
-        <span class="black">1</span>) Contribute to any of our open source
-        <v-link
-          lighter-background
-          href="/projects">
-          projects
-        </v-link>,
-      </span>
+      If you’re a UConn or non-UConn developer but want to get involved with ⬚²
+      labs you can:
+      <p>
         <span class="contentStyleList">
-          <span class="black">2</span>) contact us about presenting a
-          in an area of your expertise, and/or
+          <span class="black">1</span>) Contribute to any of our open source
+          <v-link lighter-background href="/projects"> projects </v-link>,
+        </span>
+        <span class="contentStyleList">
+          <span class="black">2</span>) contact us about presenting a in an area
+          of your expertise, and/or
         </span>
         <span class="contentStyleList">
           <span class="black">3</span>) make a monetary contribution to the lab.
-      </span></p>
+        </span>
+      </p>
 
       <div class="connectButtons">
         <v-connect-card
           title="Contribute on GitHub"
-          link="https://github.com/squaredlabs" >
+          link="https://github.com/squaredlabs"
+        >
           <v-connect-button-art-git-hub />
         </v-connect-card>
         <v-connect-card
           title="Contact ⬚² labs"
-          link="mailto:squaredlabs@uconn.edu" >
+          link="mailto:squaredlabs@uconn.edu"
+        >
           <v-connect-button-art-mail />
         </v-connect-card>
         <v-connect-card
           title="Donate to ⬚² labs"
-          link="http://www.foundation.uconn.edu/send-your-gift/" >
+          link="http://www.foundation.uconn.edu/send-your-gift/"
+        >
           <v-connect-button-art-btc />
         </v-connect-card>
       </div>

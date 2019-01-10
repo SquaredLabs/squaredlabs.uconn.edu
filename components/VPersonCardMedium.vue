@@ -1,18 +1,11 @@
 <template>
-  <div
-    :class="{selected: selected}"
-    class="person">
-    <img 
-      :src="background" 
-      :alt="name"
-      class="personPhoto" >
+  <div :class="{ selected: selected }" class="person">
+    <img :src="background" :alt="name" class="personPhoto" />
     <div class="personPreview">
       <p class="personName"><slot name="name" /></p>
       <p class="personRole"><slot name="role" /></p>
     </div>
-    <div class="personAbout">
-      <slot />
-    </div>
+    <div class="personAbout"><slot /></div>
   </div>
 </template>
 

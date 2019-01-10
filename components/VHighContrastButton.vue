@@ -1,7 +1,7 @@
 <template>
-  <button
-    class="high-contrast"
-    @click="$emit('click')">{{ (highContrast ? 'Low' : 'High') }} Contrast Mode</button>
+  <button class="high-contrast" @click="$emit('click')">
+    {{ highContrast ? "Low" : "High" }} Contrast Mode
+  </button>
 </template>
 
 <script>
@@ -13,7 +13,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import "~assets/styles/vars";

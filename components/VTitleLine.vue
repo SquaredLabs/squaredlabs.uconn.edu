@@ -2,9 +2,7 @@
   <div class="titleTextContainer">
     <div class="title"><slot name="title" /></div>
     <div class="hoverContent">
-      <div
-        :class="[titlePositioning+'Content']"
-        class="hoverContentI">
+      <div :class="[titlePositioning + 'Content']" class="hoverContentI">
         <slot name="hoverContent" />
       </div>
     </div>
