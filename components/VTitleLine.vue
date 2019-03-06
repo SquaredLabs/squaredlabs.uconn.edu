@@ -51,7 +51,7 @@ export default {
   width: 90%;
   left: 5%;
   height: 15em;
-  margin-top: 7em;
+  margin-top: 2em;
   opacity: 0;
   pointer-events: none;
   z-index: 5;
@@ -66,21 +66,13 @@ export default {
   background-color: white;
   color: black;
   padding: 1em;
+  margin-top: -6vh;
 }
 .hoverContentI p:first-child {
   margin-top: 0;
 }
 .hoverContentI p:last-child {
   margin-bottom: 0;
-}
-.designContent {
-  top: -15vh;
-}
-.developContent {
-  top: 0;
-}
-.createContent {
-  top: 15vh;
 }
 @media (min-width: $tablet) and (max-width: $desktop) {
   .hoverContentI {
