@@ -1,14 +1,8 @@
-FROM node:10
-LABEL maintainer = "SquaredLabs"
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-RUN npm install --only=production
-
-COPY . .
+FROM node:8
+WORKDIR /home/node/app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY ./ ./
+EXPOSE 8080
 RUN npm run build
-
-EXPOSE 3000
-ENV HOST=0.0.0.0
-CMD [ "npm", "start" ]
+CMD ["npm","start"]

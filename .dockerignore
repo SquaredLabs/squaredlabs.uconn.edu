@@ -1,5 +1,2 @@
-.nuxt
-dist
-Dockerfile
+docker
 node_modules
-npm-debug.log
