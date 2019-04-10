@@ -11,7 +11,7 @@ pipeline:
     commands:
       - npm run lint
 
-  deploy:
+  deploy_review:
     image: drillster/drone-rsync
     secrets: [ rsync_key, rsync_user ]
     hosts:
@@ -23,5 +23,22 @@ pipeline:
       - TARGET_PATH=~/squaredlabs-${DRONE_BUILD_NUMBER}
       - DEPLOY_PATH=/srv/nginx/pages/ci/squaredlabs/${DRONE_BRANCH}/public
       - mkdir -p $DEPLOY_PATH
+      - rsync -az --delete $TARGET_PATH/* $DEPLOY_PATH
+      - rm -rf $TARGET_PATH
+
+  deploy_prod:
+    image: drillster/drone-rsync
+    secrets: [ rsync_key, rsync_user ]
+    hosts:
+      - squaredlabs.uconn.edu
+    source: ./dist/*
+    target: ~/squaredlabs-${DRONE_BUILD_NUMBER}
+    delete: true
+    when:
+      branch:
+        - master
+    script:
+      - TARGET_PATH=~/squaredlabs-${DRONE_BUILD_NUMBER}
+      - DEPLOY_PATH=/var/www/squaredlabs
       - rsync -az --delete $TARGET_PATH/* $DEPLOY_PATH
       - rm -rf $TARGET_PATH
