@@ -66,6 +66,7 @@ function loadProjects(url, endpoint) {
         client: projectData.client,
         timespan: projectData.timespan,
         services: projectData.services,
+        url: projectData.url,
         technologies: projectData.technologies,
         large_summary: unescapeHTML(projectData.large_summary),
         small_summary: unescapeHTML(projectData.small_summary),
