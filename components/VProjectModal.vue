@@ -1,6 +1,11 @@
 <template>
   <div id="selectedProjectModal">
     <h1 class="title">{{ project.name }}</h1>
+    <h2>
+      <a :href="project.url" target="_blank" rel="noopener">{{
+        project.url
+      }}</a>
+    </h2>
     <v-link class="return" @click="unexpand"> ← Return to all projects </v-link>
     <div class="content">
       <div class="information">
@@ -90,10 +95,18 @@ export default {
   flex-wrap: wrap;
 }
 
+a {
+  color: white;
+}
+
 .title {
   font-size: 5.96em;
   margin: 0.25em 0 0.08em;
   font-weight: normal;
+}
+
+h2 {
+  padding-left: 1em;
 }
 
 .return {
