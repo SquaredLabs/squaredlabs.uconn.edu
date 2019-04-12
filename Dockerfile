@@ -3,6 +3,5 @@ WORKDIR /home/node/app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY ./ ./
-EXPOSE 8080
-RUN npm run build
+RUN npm build
 CMD ["npm","start"]

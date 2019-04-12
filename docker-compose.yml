@@ -5,6 +5,8 @@ services:
         container_name: squaredlabs-nuxt
         environment:
             - HOST=0.0.0.0
+        ports:
+            - 3000:3000
     mysql:
         image: mysql:5.6
         container_name: squaredlabs-mysql
