@@ -26,7 +26,6 @@ export default {
     VProjectModal
   },
   mounted() {
-    document.querySelector("html").classList.add("noScroll")
     if (!this.project.name) this.$router.push(`/projects`)
   }
 }

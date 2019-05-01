@@ -67,7 +67,6 @@ export default {
   methods: {
     unexpand() {
       this.$router.push("/projects")
-      document.querySelector(".noScroll").classList.remove("noScroll")
     }
   }
 }
