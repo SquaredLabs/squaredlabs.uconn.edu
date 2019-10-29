@@ -16,9 +16,8 @@
       <p>
         The earlier you are in your college career the better (while we don’t
         typically hire seniors, exceptions have been made). If you’ve read
-        through this website and think you’d be a good fit, you can apply for a
-        <v-link lighter-background> web development </v-link> or
-        <v-link lighter-background> design </v-link>position.
+        through this website and think you’d be a good fit, you can apply for 
+        a web development or design position.
       </p>
       <p>
         The other way to get involved with us as a student is to attend our
