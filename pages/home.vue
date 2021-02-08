@@ -34,7 +34,7 @@
         <v-link href="/projects"> See all projects &rarr; </v-link>
       </div>
     </v-grid-layout>
-    <v-grid-layout v-if="people" id="peopleSection" section="people">
+    <v-grid-layout v-if="currentEmployees" id="peopleSection" section="people">
       <div class="peopleText col-sm-4 col-md-2 off-lg-1">
         <p>
           ⬚² labs team members are a stellar gang of creators, developers, and
@@ -49,7 +49,7 @@
         </p>
       </div>
       <v-person-card-medium
-        v-for="person in people"
+        v-for="person in currentEmployees"
         :key="person.id"
         :background="person.imageURL"
         :order="person.order"
@@ -62,7 +62,7 @@
         <template slot="role">{{ person.role }}</template>
         {{ person.description }}
       </v-person-card-medium>
-      <div v-if="!people">Loading people</div>
+      <div v-if="!currentEmployees">Loading people</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
         <v-link href="/people"> Meet the full team &rarr; </v-link>
       </div>
@@ -115,12 +115,15 @@ import VConnectButtonArtGitHub from "~/components/VConnectButtonArtGitHub.vue"
 import VConnectButtonArtBtc from "~/components/VConnectButtonArtBtc.vue"
 import Directus from "~/directus"
 
-//  Recursive function to pick 3 different random people.
-const selectPeople = (people, numberToSelect) => {
+//  Recursive function to pick 3 different random current employees.
+const selectCurrentEmployees = (currentEmployees, numberToSelect) => {
   if (numberToSelect === 0) return []
-  const randIndex = Math.floor(Math.random() * people.length)
-  const selected = people.splice(randIndex, 1)[0]
-  return [selected, ...selectPeople(people, numberToSelect - 1)]
+  const randIndex = Math.floor(Math.random() * currentEmployees.length)
+  const selected = currentEmployees.splice(randIndex, 1)[0]
+  return [
+    selected,
+    ...selectCurrentEmployees(currentEmployees, numberToSelect - 1)
+  ]
 }
 
 export default {
@@ -129,7 +132,7 @@ export default {
     let peopleData = data[0]
     let projectData = data[1]
     return {
-      people: peopleData.people,
+      currentEmployees: peopleData.people.filter(person => !person.alumni),
       projects: projectData.projects
     }
   },
@@ -144,11 +147,14 @@ export default {
     VConnectButtonArtBtc
   },
   data: () => ({
-    people: [],
+    currentEmployees: [],
     projects: []
   }),
   mounted() {
-    this.people = selectPeople(this.people, 3).sort((a, b) => a.order - b.order)
+    this.currentEmployees = selectCurrentEmployees(
+      this.currentEmployees,
+      3
+    ).sort((a, b) => a.order - b.order)
   }
 }
 </script>
