@@ -12,8 +12,9 @@
         <p>
           Welcome to ⬚² [squared] labs. Together with UConn’s very best
           <v-link href="/people">students</v-link>, we build cutting-edge
-          <v-link href="/projects">websites</v-link> that support UConn’s
-          world-class research infrastructure.
+          <v-link href="/projects">websites</v-link>, beautiful art, and
+          unrivaled designs that support UConn's world class research
+          infrastructure
         </p>
         <p>
           View our history, purpose, and space on the
@@ -36,14 +37,14 @@
     <v-grid-layout v-if="people" id="peopleSection" section="people">
       <div class="peopleText col-sm-4 col-md-2 off-lg-1">
         <p>
-          ⬚² labs team members are a stellar group who share a passion for
-          building beautiful, functional websites.
+          ⬚² labs team members are a stellar gang of creators, developers, and
+          designers who share a passion for advancing UConn's research.
         </p>
         <p>
           We are always looking for talented and hard-working students to join
           our ranks. We look for students with a track record of building cool
-          stuff in their spare time, web experience, and a passion for
-          innovation and creation. If that sounds like you,
+          stuff in their spare time, web experience, strong communication, and a
+          passion for innovation and creation. If that sounds like you,
           <v-link href="/connect"> get in touch! </v-link>
         </p>
       </div>
