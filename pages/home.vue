@@ -6,6 +6,7 @@
         src="~/assets/images/full-wordmark.svg"
         alt="Squared Labs"
       />
+      <a href="#projectSection" class="arrow" />
     </v-grid-layout>
     <v-grid-layout id="projectSection" section="projects">
       <div text="projects" class="col-sm-4 col-md-2 off-lg-1">
@@ -184,12 +185,36 @@ export default {
 }
 
 #landSection {
+  display: flex;
   min-height: 40vh;
+  flex-direction: column;
 }
 
 .logo {
   width: 80%;
   margin: auto;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 0.5vw 0.5vw 0;
+  padding: 2vw;
+  margin-top: 3vw;
+  transform: rotate(45deg);
+  animation: blink 2s linear infinite;
+  align-self: center;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 div.project {
