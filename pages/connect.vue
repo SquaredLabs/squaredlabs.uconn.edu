@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-background-text :lines="['con', 'nect']" />
     <v-grid-layout id="connectPageContent">
+      <v-background-text id="backgroundText" :lines="['connect']" />
       <p id="mainHeader" class="header col-sm-4 col-md-6 col-7 off-1">
         Like what we do?
       </p>
@@ -40,14 +40,14 @@ export default {
 <style scoped lang="scss">
 @import "~assets/styles/vars";
 
-#connectPageContent {
-  margin-top: -9.313em;
-}
-
 .header {
   font-family: SpaceMono;
   font-size: 4.768em;
   margin: 0;
+}
+
+#backgroundText {
+  top: -0.4em;
 }
 
 p:first-child {
