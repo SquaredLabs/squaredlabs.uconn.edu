@@ -199,7 +199,7 @@ export default {
   border: solid black;
   border-width: 0 0.5vw 0.5vw 0;
   padding: 2vw;
-  margin-top: 3vw;
+  margin-top: 14vh;
   transform: rotate(45deg);
   animation: blink 2s linear infinite;
   align-self: center;
