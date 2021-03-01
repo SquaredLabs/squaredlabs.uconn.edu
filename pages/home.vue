@@ -22,7 +22,7 @@
       </div>
       <div v-if="!projects">Loading projects...</div>
       <v-project-card
-        v-for="index in 3"
+        v-for="index in [0, 1, 2]"
         v-else
         :key="index"
         :tabindex="index"
@@ -148,6 +148,7 @@ export default {
   }),
   mounted() {
     this.people = selectPeople(this.people, 3).sort((a, b) => a.order - b.order)
+    this.projects = this.projects.sort((a, b) => b.start - a.start)
   }
 }
 </script>

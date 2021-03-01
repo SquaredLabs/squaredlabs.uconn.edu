@@ -65,6 +65,7 @@ function loadProjects(url, endpoint) {
         name: projectData.name,
         client: projectData.client,
         timespan: projectData.timespan,
+        start: projectData.start,
         services: projectData.services,
         url: projectData.url,
         technologies: projectData.technologies,
