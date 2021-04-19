@@ -6,14 +6,16 @@
         src="~/assets/images/full-wordmark.svg"
         alt="Squared Labs"
       />
+      <a href="#projectSection" class="arrow" />
     </v-grid-layout>
     <v-grid-layout id="projectSection" section="projects">
       <div text="projects" class="col-sm-4 col-md-2 off-lg-1">
         <p>
           Welcome to ⬚² [squared] labs. Together with UConn’s very best
           <v-link href="/people">students</v-link>, we build cutting-edge
-          <v-link href="/projects">websites</v-link> that support UConn’s
-          world-class research infrastructure.
+          <v-link href="/projects">websites</v-link>, beautiful art, and
+          unrivaled designs that support UConn's world class research
+          infrastructure
         </p>
         <p>
           View our history, purpose, and space on the
@@ -33,22 +35,22 @@
         <v-link href="/projects"> See all projects &rarr; </v-link>
       </div>
     </v-grid-layout>
-    <v-grid-layout v-if="people" id="peopleSection" section="people">
+    <v-grid-layout v-if="currentEmployees" id="peopleSection" section="people">
       <div class="peopleText col-sm-4 col-md-2 off-lg-1">
         <p>
-          ⬚² labs team members are a stellar group who share a passion for
-          building beautiful, functional websites.
+          ⬚² labs team members are a stellar gang of creators, developers, and
+          designers who share a passion for advancing UConn's research.
         </p>
         <p>
           We are always looking for talented and hard-working students to join
           our ranks. We look for students with a track record of building cool
-          stuff in their spare time, web experience, and a passion for
-          innovation and creation. If that sounds like you,
+          stuff in their spare time, web experience, strong communication, and a
+          passion for innovation and creation. If that sounds like you,
           <v-link href="/connect"> get in touch! </v-link>
         </p>
       </div>
       <v-person-card-medium
-        v-for="person in people"
+        v-for="person in currentEmployees"
         :key="person.id"
         :background="person.imageURL"
         :order="person.order"
@@ -61,7 +63,7 @@
         <template slot="role">{{ person.role }}</template>
         {{ person.description }}
       </v-person-card-medium>
-      <div v-if="!people">Loading people</div>
+      <div v-if="!currentEmployees">Loading people</div>
       <div class="linkPulledRight off-lg-9 off-6 off-md-4 off-sm-2 col-sm-2">
         <v-link href="/people"> Meet the full team &rarr; </v-link>
       </div>
@@ -114,12 +116,15 @@ import VConnectButtonArtGitHub from "~/components/VConnectButtonArtGitHub.vue"
 import VConnectButtonArtBtc from "~/components/VConnectButtonArtBtc.vue"
 import Directus from "~/directus"
 
-//  Recursive function to pick 3 different random people.
-const selectPeople = (people, numberToSelect) => {
+//  Recursive function to pick 3 different random current employees.
+const selectCurrentEmployees = (currentEmployees, numberToSelect) => {
   if (numberToSelect === 0) return []
-  const randIndex = Math.floor(Math.random() * people.length)
-  const selected = people.splice(randIndex, 1)[0]
-  return [selected, ...selectPeople(people, numberToSelect - 1)]
+  const randIndex = Math.floor(Math.random() * currentEmployees.length)
+  const selected = currentEmployees.splice(randIndex, 1)[0]
+  return [
+    selected,
+    ...selectCurrentEmployees(currentEmployees, numberToSelect - 1)
+  ]
 }
 
 export default {
@@ -128,7 +133,7 @@ export default {
     let peopleData = data[0]
     let projectData = data[1]
     return {
-      people: peopleData.people,
+      currentEmployees: peopleData.people.filter(person => !person.alumni),
       projects: projectData.projects
     }
   },
@@ -143,11 +148,14 @@ export default {
     VConnectButtonArtBtc
   },
   data: () => ({
-    people: [],
+    currentEmployees: [],
     projects: []
   }),
   mounted() {
-    this.people = selectPeople(this.people, 3).sort((a, b) => a.order - b.order)
+    this.currentEmployees = selectCurrentEmployees(
+      this.currentEmployees,
+      3
+    ).sort((a, b) => a.order - b.order)
   }
 }
 </script>
@@ -177,12 +185,36 @@ export default {
 }
 
 #landSection {
+  display: flex;
   min-height: 40vh;
+  flex-direction: column;
 }
 
 .logo {
   width: 80%;
   margin: auto;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 0.5vw 0.5vw 0;
+  padding: 2vw;
+  margin-top: 14vh;
+  transform: rotate(45deg);
+  animation: blink 2s linear infinite;
+  align-self: center;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 div.project {

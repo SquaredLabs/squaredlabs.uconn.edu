@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-background-text :lines="['proj', 'ects']" />
     <section class="projectSection">
+      <v-background-text id="backgroundText" :lines="['projects']" />
       <div class="information">
         <div class="whiteBox">
           <p>
@@ -139,6 +139,7 @@ section {
   padding: 1.25em;
   width: 100%;
   margin-left: -1.25em;
+  margin-top: 4em;
   p {
     margin: 0;
   }
@@ -165,9 +166,13 @@ section {
   margin-bottom: 1.25em;
 }
 
+#backgroundText {
+  top: -0.4em;
+}
+
 @media (min-width: $tablet) {
   section {
-    margin-top: 18.19em;
+    margin-top: 10em;
     flex-flow: row nowrap;
   }
 

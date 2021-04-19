@@ -21,7 +21,8 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/styles/vars";
 .backgroundText {
-  font-size: 9.313em;
+  font-size: 16vw;
+  margin-top: -0.35em;
   font-family: SpaceMono;
   position: absolute;
   height: 0;
@@ -38,16 +39,9 @@ export default {
   position: relative;
 }
 
-@media screen and (min-width: $tablet) {
-  .backgroundText {
-    font-size: 18.19em;
-  }
-}
-
 @media screen and (min-width: $desktopLg) {
   .backgroundText {
     left: 5vw;
-    font-size: 22.737em;
   }
 }
 </style>

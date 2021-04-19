@@ -1,9 +1,9 @@
 <template>
   <div>
-    <v-background-text :lines="['peo', 'ple']" />
     <div id="peoplePage">
       <v-grid-layout id="currentPeopleSection">
-        <div class="whiteBox col-sm-4 col-md-3 off-md-3 off-5 off-lg-8">
+        <v-background-text id="peopleBackgroundText" :lines="['people']" />
+        <div class="whiteBox col-sm-4 col-md-3 off-md-4 off-5 off-lg-8">
           <p>
             Without people, an organization is, well, nothing useful. ⬚² labs
             team members are a stellar group who share a passion for building
@@ -58,7 +58,7 @@
         </div>
       </v-grid-layout>
       <section class="alumni-section">
-        <v-background-text :lines="['alu', 'mni']" />
+        <v-background-text :lines="['alumni']" />
         <v-grid-layout id="alumniPeopleSection">
           <v-person-card-medium
             v-for="(person, index) in alumni"
@@ -174,13 +174,7 @@ export default {
 }
 
 .alumni-section .gridded {
-  padding-top: 30em;
-}
-
-@media (min-width: $desktopLg) {
-  .alumni-section .gridded {
-    padding-top: 35em;
-  }
+  padding-top: 10em;
 }
 
 @media (min-width: $desktopLg) {
@@ -194,10 +188,16 @@ export default {
     margin-left: 0;
     height: fit-content;
     width: auto;
-    margin-bottom: 9.313em;
+    margin-bottom: 3em;
   }
   #peopleCarousel {
     height: 22.737em;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  #peopleBackgroundText {
+    margin-top: -1em;
   }
 }
 </style>
