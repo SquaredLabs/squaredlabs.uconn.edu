@@ -4,7 +4,7 @@
       class="link col-sm-2 off-md-1 off-2 off-lg-4 row-off-md-0"
       href="https://uconn.edu"
     >
-      ©2018 UConn
+      ©{{ year }} UConn
     </v-link>
     <v-link
       class="link col-sm-2 off-md-3 off-4 off-lg-6 row-off-sm-1 row-off-md-0"
@@ -32,6 +32,11 @@ export default {
     theme: {
       type: String,
       required: true
+    }
+  },
+  computed: {
+    year() {
+      return new Date().getFullYear()
     }
   }
 }
